@@ -1,0 +1,305 @@
+{
+	Tools = ordered() {
+		ekawaComposite_PrismNoise1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Default = 10,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "XScale",
+					Default = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "SeetheRate",
+					Default = 0.032,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "PrismBlur1",
+					Source = "AberrationDistance",
+					Name = "Prism Distance",
+					Default = 0.193,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue1",
+					ControlGroup = 5,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation1",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle1",
+					ControlGroup = 5,
+					Default = 1.75,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength1",
+					ControlGroup = 5,
+					Default = 0.0058,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelRangeDummy1",
+					ControlGroup = 5,
+					Default = 0,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue2",
+					ControlGroup = 5,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation2",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle2",
+					ControlGroup = 5,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength2",
+					ControlGroup = 5,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue3",
+					ControlGroup = 5,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation3",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle3",
+					ControlGroup = 5,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength3",
+					ControlGroup = 5,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue4",
+					ControlGroup = 5,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation4",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle4",
+					ControlGroup = 5,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength4",
+					ControlGroup = 5,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "BlendClone",
+					Name = "View effect only",
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input28 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ApplyMode",
+				},
+				Input29 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "BlendClone",
+					Default = 0.65,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge3",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						SeetheRate = Input { Value = 0.032, },
+						Discontinuous = Input { Value = 1, },
+						Inverted = Input { Value = 1, },
+						Type = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 166.251, -63.2068 } },
+				},
+				PrismBlur1 = ofx.com.blackmagicdesign.resolvefx.PrismBlur {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						CenterXPos = Input { Value = 0.5, },
+						CenterYPos = Input { Value = 0.5, },
+						xyPosition = Input { Value = { 0.5, 0.5 }, },
+						BlurStrength = Input { Value = 0, },
+						AberrationDistance = Input { Value = 0.193, },
+						AberrationStrength = Input { Value = 1, },
+						VignetteSize = Input { Value = 0.100000001490116, },
+						VignetteSharpness = Input { Value = 5, },
+						BlendAmount = Input { Value = 0, },
+						isUseLegacyPosition = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "2.3", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 215.278, -7.92224 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						WheelTintAngle1 = Input { Value = 1.75, },
+						WheelTintLength1 = Input { Value = 0.0058, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 454.833, -11.858 } },
+				},
+				Merge2 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "PrismBlur1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Darken" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 491.293, -47.7756 } },
+				},
+				Merge3 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0, },
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+						Operator = Input { Value = FuID { "In" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 394.737, 37.9309 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0.65, },
+						Foreground = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Hard Light" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 289.451, 40.5022 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaComposite_PrismNoise1"
+}

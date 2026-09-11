@@ -1,0 +1,380 @@
+{
+	Tools = ordered() {
+		ekawaGlitch3_artifactstreaks = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Rectangle1",
+					Source = "Level",
+					Name = "Mask Level",
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Rectangle1",
+					Source = "SoftEdge",
+					Name = "Mask Soft Edge",
+					Default = 0.085,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Rectangle1",
+					Source = "Center",
+					Name = "Mask Center",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "ErodeDilate1",
+					Source = "XAmount",
+					Name = "Erode/Dilate X",
+					Default = 0.01,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ErodeDilate1",
+					Source = "YAmount",
+					Name = "Erode/Dilate Y",
+					Default = -0.00018,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ApplyMode",
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ProcessRed",
+					Name = "RGB Split",
+					ControlGroup = 9,
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ProcessGreen",
+					ControlGroup = 9,
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ProcessBlue",
+					ControlGroup = 9,
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ProcessAlpha",
+					ControlGroup = 9,
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Contrast = Input { Value = 5, },
+						LockXY = Input { Value = 0, },
+						XScale = Input { Value = 0, },
+						YScale = Input { Value = 100000, },
+						SeetheRate = Input { Value = 10000, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -452.442, 11.4694 } },
+				},
+				LumaKeyer1 = LumaKeyer {
+					CtrlWZoom = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -168.656, -21.1003 } },
+				},
+				Transform1 = ofx.com.blackmagicdesign.resolvefx.Transform {
+					Inputs = {
+						Source = Input {
+							SourceOp = "FastNoise1_1",
+							Source = "Output",
+						},
+						controlMode = Input { Value = FuID { "TransformControlsSliders" }, },
+						controlReset = Input { Value = 0, },
+						controlGroup = Input { Value = 1, },
+						controlVisibility = Input { Value = FuID { "Show" }, },
+						posX = Input { Value = 0, },
+						posY = Input { Value = 0, },
+						zoom = Input { Value = 1, },
+						rotate = Input { Value = 0, },
+						scaleX = Input { Value = 1, },
+						scaleY = Input { Value = 1, },
+						pitch = Input { Value = 0, },
+						yaw = Input { Value = 0, },
+						flipH = Input { Value = 0, },
+						flipV = Input { Value = 0, },
+						adjustGroup = Input { Value = 0, },
+						isCrop = Input { Value = 0, },
+						cropL = Input { Value = 0, },
+						cropR = Input { Value = 0, },
+						cropT = Input { Value = 0, },
+						cropB = Input { Value = 0, },
+						edgeSoftness = Input { Value = 0, },
+						edgeRounding = Input { Value = 0, },
+						animationGroup = Input { Value = 0, },
+						serializedWarpable = Input {
+							Value = Text {
+							},
+						},
+						serializedPinnable = Input {
+							Value = Text {
+							},
+						},
+						motionBlur = Input { Value = 0, },
+						advancedGroup = Input { Value = 0, },
+						edgeBehaviour = Input { Value = FuID { "Constant" }, },
+						CompositeType = Input { Value = FuID { "COMPOSITE_NORMAL" }, },
+						olayAntiAlias = Input { Value = 1, },
+						previewAlpha = Input { Value = 0, },
+						isLegacyCrop = Input { Value = 0, },
+						isLegacyAlphaHandling = Input { Value = 0, },
+						isEnforceBlanking = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.4", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -105.797, 51.7531 } },
+				},
+				Displace1 = Displace {
+					Inputs = {
+						Type = Input { Value = 1, },
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input { Value = 1.6, },
+						Offset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = 0.1, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -293.107, 59.467 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					Inputs = {
+						MasterRGBGain = Input { Value = 5, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "JPEGDamage1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -219.243, 58.1797 } },
+				},
+				JPEGDamage1 = ofx.com.blackmagicdesign.resolvefx.JPEGDamage {
+					Inputs = {
+						Source = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+						ofxQuality = Input { Value = 2.36, },
+						Resolution = Input { Value = 1, },
+						AspectRatio = Input { Value = 5, },
+						FrequencyScale = Input { Value = 10, },
+						FrequencyType = Input { Value = FuID { "FREQUENCY_TYPE_XY" }, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -288.393, 66.7507 } },
+				},
+				JPEGDamage1_1 = ofx.com.blackmagicdesign.resolvefx.JPEGDamage {
+					Inputs = {
+						Source = Input {
+							SourceOp = "JPEGDamage1",
+							Source = "Output",
+						},
+						ofxQuality = Input { Value = 100, },
+						Resolution = Input { Value = 1, },
+						AspectRatio = Input { Value = 5, },
+						FrequencyScale = Input { Value = 10, },
+						FrequencyType = Input { Value = FuID { "FREQUENCY_TYPE_XY" }, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -263.246, 76.1821 } },
+				},
+				FastNoise1_1 = FastNoise {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Contrast = Input { Value = 5, },
+						LockXY = Input { Value = 0, },
+						XScale = Input { Value = 7.56, },
+						YScale = Input { Value = 100000, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -55.5191, -3.95834 } },
+				},
+				Rectangle1 = RectangleMask {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						SoftEdge = Input { Value = 0.085, },
+						BorderWidth = Input { Value = -0.0689, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.342391304347826, 0.494839 }, },
+						Width = Input { Value = 2.561652, },
+						Height = Input { Value = 1.197, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 85.9026, -19.813 } },
+				},
+				ErodeDilate1 = ErodeDilate {
+					Inputs = {
+						LockXY = Input { Value = 0, },
+						XAmount = Input { Value = 0.01, },
+						YAmount = Input { Value = -0.00018, },
+						Input = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 112.318, 64.1827 } },
+				},
+				Merge1 = Merge {
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -315.735, 157.176 } },
+				},
+				Merge2 = Merge {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Bitmap1",
+							Source = "Mask",
+						},
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -86.6318, 168.319 } },
+				},
+				Displace2 = Displace {
+					Inputs = {
+						Input = Input {
+							SourceOp = "Rectangle1",
+							Source = "Mask",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 198.097, 24.3259 } },
+				},
+				LumaKeyer2 = LumaKeyer {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Displace2",
+							Source = "Output",
+						},
+						Channel = Input { Value = 3, },
+						Low = Input { Value = 1, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MatteBlur = Input { Value = 0.12, },
+						MatteContrast = Input { Value = -1, },
+						MatteGamma = Input { Value = 1e-06, },
+						Input = Input {
+							SourceOp = "ErodeDilate1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 225.146, 71.8966 } },
+				},
+				Bitmap1 = BitmapMask {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Image = Input {
+							SourceOp = "LumaKeyer2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 293.663, 100.178 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaGlitch3_artifactstreaks"
+}

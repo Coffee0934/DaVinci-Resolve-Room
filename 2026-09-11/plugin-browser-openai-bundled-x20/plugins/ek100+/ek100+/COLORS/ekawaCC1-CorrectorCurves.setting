@@ -1,0 +1,770 @@
+{
+	Tools = ordered() {
+		ekawaCC1CorrectorCurves_1 = MacroOperator {
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "MainInput1",
+				},
+				Input19 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelHue1",
+					ControlGroup = 20,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelSaturation1",
+					ControlGroup = 20,
+					Default = 1,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelTintAngle1",
+					ControlGroup = 20,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelTintLength1",
+					ControlGroup = 20,
+					Default = 0.0037,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelRangeDummy1",
+					ControlGroup = 20,
+					Default = 0,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelHue2",
+					ControlGroup = 20,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelSaturation2",
+					ControlGroup = 20,
+					Default = 1,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelTintAngle2",
+					ControlGroup = 20,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelTintLength2",
+					ControlGroup = 20,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelHue3",
+					ControlGroup = 20,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelSaturation3",
+					ControlGroup = 20,
+					Default = 1,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelTintAngle3",
+					ControlGroup = 20,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelTintLength3",
+					ControlGroup = 20,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelHue4",
+					ControlGroup = 20,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelSaturation4",
+					ControlGroup = 20,
+					Default = 1,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelTintAngle4",
+					ControlGroup = 20,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "WheelTintLength4",
+					ControlGroup = 20,
+				},
+				Input1 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input6",
+					ControlGroup = 2,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input17",
+					ControlGroup = 3,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input18",
+					ControlGroup = 4,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input1",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input2",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input3",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input4",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input5",
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input12",
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input13",
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input14",
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input15",
+					Default = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input16",
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input7",
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input8",
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input9",
+					Default = 0,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input10",
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "ekawaCC1CorrectorCurves1_4_1_1",
+					Source = "Input11",
+					Default = 0,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "ColorCorrector1_9_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { -688.874, 126.818 } },
+			Tools = ordered() {
+				ekawaCC1CorrectorCurves1_4_1_1 = MacroOperator {
+					CtrlWShown = false,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						}
+					},
+					Inputs = ordered() {
+						MainInput1 = InstanceInput {
+							SourceOp = "ColorCorrector1_8_1_1",
+							Source = "Input",
+						},
+						Input6 = InstanceInput {
+							SourceOp = "ColorCurves1_5_1_1",
+							Source = "Red",
+							ControlGroup = 7,
+						},
+						Input17 = InstanceInput {
+							SourceOp = "ColorCurves1_1_5_1_1",
+							Source = "Green",
+							ControlGroup = 18,
+						},
+						Input18 = InstanceInput {
+							SourceOp = "ColorCurves1_1_1_4_1_1",
+							Source = "Blue",
+							ControlGroup = 19,
+						},
+						Input1 = InstanceInput {
+							SourceOp = "ColorCorrector1_8_1_1",
+							Source = "MasterRGBContrast",
+							Name = "RED Contrast",
+							Default = 1,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "ColorCorrector1_8_1_1",
+							Source = "MasterRGBGain",
+							Name = "RED Gain",
+							Default = 1,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "ColorCorrector1_8_1_1",
+							Source = "MasterRGBLift",
+							Name = "RED Lift",
+							Default = 0,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "ColorCorrector1_8_1_1",
+							Source = "MasterRGBGamma",
+							Name = "RED Gamma",
+							Default = 1,
+						},
+						Input5 = InstanceInput {
+							SourceOp = "ColorCorrector1_8_1_1",
+							Source = "MasterRGBBrightness",
+							Name = "RED Brightness",
+							Default = 0,
+						},
+						Input12 = InstanceInput {
+							SourceOp = "ColorCorrector1_3_4_1_1",
+							Source = "MasterRGBContrast",
+							Name = "GREEN Contrast",
+							Default = 1,
+						},
+						Input13 = InstanceInput {
+							SourceOp = "ColorCorrector1_3_4_1_1",
+							Source = "MasterRGBGain",
+							Name = "GREEN Gain",
+							Default = 1,
+						},
+						Input14 = InstanceInput {
+							SourceOp = "ColorCorrector1_3_4_1_1",
+							Source = "MasterRGBLift",
+							Name = "GREEN Lift",
+							Default = 0,
+						},
+						Input15 = InstanceInput {
+							SourceOp = "ColorCorrector1_3_4_1_1",
+							Source = "MasterRGBGamma",
+							Name = "GREEN Gamma",
+							Default = 1,
+						},
+						Input16 = InstanceInput {
+							SourceOp = "ColorCorrector1_3_4_1_1",
+							Source = "MasterRGBBrightness",
+							Name = "GREEN Brightness",
+							Default = 0,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "ColorCorrector1_4_4_1_1",
+							Source = "MasterRGBContrast",
+							Name = "BLUE Contrast",
+							Default = 1,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "ColorCorrector1_4_4_1_1",
+							Source = "MasterRGBGain",
+							Name = "BLUE Gain",
+							Default = 1,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "ColorCorrector1_4_4_1_1",
+							Source = "MasterRGBLift",
+							Name = "BLUE Lift",
+							Default = 0,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "ColorCorrector1_4_4_1_1",
+							Source = "MasterRGBGamma",
+							Name = "BLUE Gamma",
+							Default = 1,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "ColorCorrector1_4_4_1_1",
+							Source = "MasterRGBBrightness",
+							Name = "BLUE Brightness",
+							Default = 0,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "ColorCorrector2_4_1_1",
+							Source = "Output",
+						},
+						Output3 = InstanceOutput {
+							SourceOp = "ColorCurves1_5_1_1Alpha",
+							Source = "Value",
+						},
+						Output4 = InstanceOutput {
+							SourceOp = "ColorCurves1_5_1_1Blue",
+							Source = "Value",
+						},
+						Output2 = InstanceOutput {
+							SourceOp = "ColorCurves1_5_1_1Green",
+							Source = "Value",
+						},
+						Output1 = InstanceOutput {
+							SourceOp = "ColorCurves1_5_1_1Red",
+							Source = "Value",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { -71.666, 9.36407 } },
+					Tools = ordered() {
+						ColorCorrector1_8_1_1 = ColorCorrector {
+							CtrlWShown = false,
+							Inputs = {
+								ProcessGreen = Input { Value = 0, },
+								ProcessBlue = Input { Value = 0, },
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								PreDividePostMultiply = Input { Value = 1, },
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "MediaIn3",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -320.666, 13.1816 } },
+						},
+						ColorCurves1_5_1_1 = ColorCurves {
+							PickColor = true,
+							CtrlWShown = false,
+							Inputs = {
+								EditGreen = Input { Value = 0, },
+								EditBlue = Input { Value = 0, },
+								EditAlpha = Input { Value = 0, },
+								Red = Input {
+									SourceOp = "ColorCurves1_5_1_1Red",
+									Source = "Value",
+								},
+								Green = Input {
+									SourceOp = "ColorCurves1_5_1_1Green",
+									Source = "Value",
+								},
+								Blue = Input {
+									SourceOp = "ColorCurves1_5_1_1Blue",
+									Source = "Value",
+								},
+								Alpha = Input {
+									SourceOp = "ColorCurves1_5_1_1Alpha",
+									Source = "Value",
+								},
+								NumberOfSamplesOnMatchCurve = Input { Value = 64, },
+								IgnoreTransparent = Input { Value = 1, },
+								PreDividePostMultiply = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "ColorCorrector1_4_4_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -28, 11.9696 } },
+							Tools = {
+								ColorCurves1_5_1_1Blue = LUTBezier {
+									KeyColorSplines = {
+										[0] = {
+											[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+											[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+										}
+									},
+									SplineColor = { Red = 68, Green = 68, Blue = 255 },
+									CtrlWZoom = false,
+									NameSet = true,
+								},
+								ColorCurves1_5_1_1Alpha = LUTBezier {
+									KeyColorSplines = {
+										[0] = {
+											[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+											[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+										}
+									},
+									SplineColor = { Red = 204, Green = 204, Blue = 204 },
+									CtrlWZoom = false,
+									NameSet = true,
+								},
+								ColorCurves1_5_1_1Red = LUTBezier {
+									KeyColorSplines = {
+										[0] = {
+											[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+											[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+										}
+									},
+									SplineColor = { Red = 255, Green = 52, Blue = 52 },
+									NameSet = true,
+								},
+								ColorCurves1_5_1_1Green = LUTBezier {
+									KeyColorSplines = {
+										[0] = {
+											[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+											[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+										}
+									},
+									SplineColor = { Red = 0, Green = 255, Blue = 0 },
+									CtrlWZoom = false,
+									NameSet = true,
+								}
+							},
+						},
+						ColorCorrector1_4_4_1_1 = ColorCorrector {
+							CtrlWShown = false,
+							Inputs = {
+								ProcessRed = Input { Value = 0, },
+								ProcessGreen = Input { Value = 0, },
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								PreDividePostMultiply = Input { Value = 1, },
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "ColorCorrector1_3_4_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -100.666, 13.1816 } },
+						},
+						ColorCorrector1_3_4_1_1 = ColorCorrector {
+							CtrlWShown = false,
+							Inputs = {
+								ProcessRed = Input { Value = 0, },
+								ProcessBlue = Input { Value = 0, },
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								PreDividePostMultiply = Input { Value = 1, },
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "ColorCorrector1_8_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -210.666, 13.1816 } },
+						},
+						ColorCurves1_1_5_1_1 = ColorCurves {
+							PickColor = true,
+							CtrlWShown = false,
+							Inputs = {
+								EditRed = Input { Value = 0, },
+								EditBlue = Input { Value = 0, },
+								EditAlpha = Input { Value = 0, },
+								Red = Input {
+									SourceOp = "ColorCurves1_1_5_1_1Red",
+									Source = "Value",
+								},
+								Green = Input {
+									SourceOp = "ColorCurves1_1_5_1_1Green",
+									Source = "Value",
+								},
+								Blue = Input {
+									SourceOp = "ColorCurves1_1_5_1_1Blue",
+									Source = "Value",
+								},
+								Alpha = Input {
+									SourceOp = "ColorCurves1_1_5_1_1Alpha",
+									Source = "Value",
+								},
+								NumberOfSamplesOnMatchCurve = Input { Value = 64, },
+								IgnoreTransparent = Input { Value = 1, },
+								PreDividePostMultiply = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "ColorCurves1_5_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 78, 8.33356 } },
+							Tools = {
+								ColorCurves1_1_5_1_1Alpha = LUTBezier {
+									KeyColorSplines = {
+										[0] = {
+											[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+											[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+										}
+									},
+									SplineColor = { Red = 204, Green = 204, Blue = 204 },
+									CtrlWZoom = false,
+									NameSet = true,
+								},
+								ColorCurves1_1_5_1_1Red = LUTBezier {
+									KeyColorSplines = {
+										[0] = {
+											[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+											[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+										}
+									},
+									SplineColor = { Red = 255, Green = 52, Blue = 52 },
+									CtrlWZoom = false,
+									NameSet = true,
+								},
+								ColorCurves1_1_5_1_1Blue = LUTBezier {
+									KeyColorSplines = {
+										[0] = {
+											[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+											[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+										}
+									},
+									SplineColor = { Red = 68, Green = 68, Blue = 255 },
+									CtrlWZoom = false,
+									NameSet = true,
+								},
+								ColorCurves1_1_5_1_1Green = LUTBezier {
+									KeyColorSplines = {
+										[0] = {
+											[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+											[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+										}
+									},
+									SplineColor = { Red = 0, Green = 255, Blue = 0 },
+									NameSet = true,
+								}
+							},
+						},
+						ColorCurves1_1_1_4_1_1 = ColorCurves {
+							PickColor = true,
+							CtrlWShown = false,
+							Inputs = {
+								EditRed = Input { Value = 0, },
+								EditGreen = Input { Value = 0, },
+								EditAlpha = Input { Value = 0, },
+								Red = Input {
+									SourceOp = "ColorCurves1_1_1_4_1_1Red",
+									Source = "Value",
+								},
+								Green = Input {
+									SourceOp = "ColorCurves1_1_1_4_1_1Green",
+									Source = "Value",
+								},
+								Blue = Input {
+									SourceOp = "ColorCurves1_1_1_4_1_1Blue",
+									Source = "Value",
+								},
+								Alpha = Input {
+									SourceOp = "ColorCurves1_1_1_4_1_1Alpha",
+									Source = "Value",
+								},
+								NumberOfSamplesOnMatchCurve = Input { Value = 64, },
+								IgnoreTransparent = Input { Value = 1, },
+								PreDividePostMultiply = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "ColorCurves1_1_5_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 210, 10.7576 } },
+							Tools = {
+								ColorCurves1_1_1_4_1_1Alpha = LUTBezier {
+									KeyColorSplines = {
+										[0] = {
+											[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+											[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+										}
+									},
+									SplineColor = { Red = 204, Green = 204, Blue = 204 },
+									CtrlWZoom = false,
+									NameSet = true,
+								},
+								ColorCurves1_1_1_4_1_1Red = LUTBezier {
+									KeyColorSplines = {
+										[0] = {
+											[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+											[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+										}
+									},
+									SplineColor = { Red = 255, Green = 52, Blue = 52 },
+									CtrlWZoom = false,
+									NameSet = true,
+								},
+								ColorCurves1_1_1_4_1_1Green = LUTBezier {
+									KeyColorSplines = {
+										[0] = {
+											[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+											[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+										}
+									},
+									SplineColor = { Red = 0, Green = 255, Blue = 0 },
+									CtrlWZoom = false,
+									NameSet = true,
+								},
+								ColorCurves1_1_1_4_1_1Blue = LUTBezier {
+									KeyColorSplines = {
+										[0] = {
+											[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+											[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+										}
+									},
+									SplineColor = { Red = 68, Green = 68, Blue = 255 },
+									CtrlWZoom = false,
+									NameSet = true,
+								}
+							},
+						},
+						ColorCorrector2_4_1_1 = ColorCorrector {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								PreDividePostMultiply = Input { Value = 1, },
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "ColorCurves1_1_1_4_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 320, 8.33356 } },
+						}
+					},
+				},
+				ColorCorrector1_9_1 = ColorCorrector {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						WheelTintAngle1 = Input { Value = 1.875, },
+						WheelTintLength1 = Input { Value = 0.0005, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "ColorCorrector2_4_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 71, 8.15108 } },
+				}
+			},
+		}
+	}
+}

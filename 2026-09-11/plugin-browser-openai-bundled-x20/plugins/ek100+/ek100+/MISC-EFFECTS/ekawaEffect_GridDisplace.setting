@@ -1,0 +1,126 @@
+{
+	Tools = ordered() {
+		ekawaEffect_GridDisplace11 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "MosaicBlur1",
+					Source = "PixelFrequency",
+					Name = "Grid Scale",
+					MinScale = 0.2000000029802,
+					Default = 600,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "XRefraction",
+					MinScale = -1,
+					MaxScale = 1,
+					Default = 0.1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "YRefraction",
+					MinScale = -1,
+					MaxScale = 1,
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Spread",
+					MaxScale = 1,
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input5 = InstanceInput {
+					SourceOp = "CreateBumpMap1",
+					Source = "HeightScale",
+					Name = "Overall Strength",
+					Default = 100,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Displace1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				MosaicBlur1 = ofx.com.blackmagicdesign.resolvefx.MosaicBlur {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						PixelFrequency = Input { Value = 600, },
+						SmoothStrength = Input { Value = 0, },
+						cellShape = Input { Value = FuID { "CellShapeSquare" }, },
+						aliasing = Input { Value = 1, },
+						advancedControlsGroup = Input { Value = 0, },
+						xOffset = Input { Value = 0, },
+						yOffset = Input { Value = 0, },
+						aspect = Input { Value = 1, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_REFLECT" }, },
+						isAntiAlias = Input { Value = 0, },
+						isBlurAlpha = Input { Value = 1, },
+						isBinarizeAlpha = Input { Value = 0, },
+						isLegacyMethod = Input { Value = 0, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "3.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -149.494, 5.391 } },
+				},
+				Displace1 = Displace {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Type = Input { Value = 1, },
+						XChannel = Input { Value = 1, },
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input { Value = 0.1, },
+						YChannel = Input { Value = 0, },
+						YOffset = Input { Value = -0.5, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "CreateBumpMap1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -52.1093, 63.7157 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -224.919, 64.5308 } },
+				},
+				CreateBumpMap1 = CreateBumpMap {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "MosaicBlur1",
+							Source = "Output",
+						},
+						HeightScale = Input { Value = 100, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -20.3296, -5.75128 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaEffect_GridDisplace11"
+}

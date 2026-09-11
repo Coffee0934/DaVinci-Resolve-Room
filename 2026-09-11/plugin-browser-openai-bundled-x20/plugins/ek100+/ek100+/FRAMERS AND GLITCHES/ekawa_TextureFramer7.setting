@@ -1,0 +1,146 @@
+{
+	Tools = ordered() {
+		ekawa_TextureFramer71 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Scanlines1",
+					Source = "frequency",
+					Default = 6.98,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Scanlines1",
+					Source = "sharpness",
+					Default = 2,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge8",
+					Source = "Background",
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Merge8",
+					Source = "ApplyMode",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Merge8",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Scanlines1_1",
+					Source = "frequency",
+					Default = 1.31,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge8",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Background6 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1280.87, 213.609 } },
+				},
+				Scanlines1 = ofx.com.blackmagicdesign.resolvefx.ScanlineV2 {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Background6",
+							Source = "Output",
+						},
+						appearanceGroup = Input { Value = 1, },
+						frequency = Input { Value = 6.98, },
+						sharpness = Input { Value = 2, },
+						angle = Input { Value = 90, },
+						width = Input { Value = 0.921, },
+						shift = Input { Value = 1, },
+						colorGroup = Input { Value = 1, },
+						color1Red = Input { Value = 1, },
+						color1Green = Input { Value = 1, },
+						color1Blue = Input { Value = 1, },
+						color2Red = Input { Value = 0, },
+						color2Green = Input { Value = 0, },
+						color2Blue = Input { Value = 0, },
+						phaseOffR = Input { Value = 0, },
+						phaseOffG = Input { Value = 0, },
+						phaseOffB = Input { Value = 0, },
+						compositeGroup = Input { Value = 1, },
+						LinesOnly = Input { Value = 1, },
+						CompositeType = Input {
+							Value = FuID { "COMPOSITE_OVERLAY" },
+							Disabled = true,
+						},
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1447.13, 220.238 } },
+				},
+				Merge8 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "Scanlines1_1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Lighten" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1451.51, 376.69 } },
+				},
+				Scanlines1_1 = ofx.com.blackmagicdesign.resolvefx.ScanlineV2 {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Scanlines1",
+							Source = "Output",
+						},
+						appearanceGroup = Input { Value = 1, },
+						frequency = Input { Value = 1.31, },
+						sharpness = Input { Value = 1.48, },
+						angle = Input { Value = 180, },
+						width = Input { Value = 1, },
+						shift = Input { Value = 1, },
+						colorGroup = Input { Value = 1, },
+						color1Red = Input { Value = 1, },
+						color1Green = Input { Value = 1, },
+						color1Blue = Input { Value = 1, },
+						color2Red = Input { Value = 0, },
+						color2Green = Input { Value = 0, },
+						color2Blue = Input { Value = 0, },
+						phaseOffR = Input { Value = 0, },
+						phaseOffG = Input { Value = 0, },
+						phaseOffB = Input { Value = 0, },
+						compositeGroup = Input { Value = 1, },
+						LinesOnly = Input { Value = 0, },
+						CompositeType = Input { Value = FuID { "COMPOSITE_COLOR_BURN" }, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1561.51, 250.733 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_TextureFramer71"
+}

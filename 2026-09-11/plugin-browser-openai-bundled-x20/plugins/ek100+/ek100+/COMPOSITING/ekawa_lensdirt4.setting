@@ -1,0 +1,61 @@
+{
+	Tools = ordered() {
+		ekawa_lensdirt4 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise2_1",
+					Source = "Detail",
+					Default = 2,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise2_1",
+					Source = "Contrast",
+					Default = 5,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise2_1",
+					Source = "Brightness",
+					Default = -6.75,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise2_1",
+					Source = "YScale",
+					Default = 2,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "FastNoise2_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise2_1 = FastNoise {
+					CtrlWZoom = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Contrast = Input { Value = 5, },
+						Brightness = Input { Value = -6.75, },
+						XScale = Input { Value = 330, },
+						Discontinuous = Input { Value = 1, },
+						Type = Input { Value = 1, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 0 },
+									[1] = { 1, 1, 1, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 414.292, -129.029 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_lensdirt4"
+}

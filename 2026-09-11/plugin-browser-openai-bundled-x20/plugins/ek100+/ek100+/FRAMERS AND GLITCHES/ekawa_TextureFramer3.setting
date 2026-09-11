@@ -1,0 +1,204 @@
+{
+	Tools = ordered() {
+		ekawa_TextureFramer31 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Default = 10,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Contrast",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Brightness",
+					Default = -1.62,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "XScale",
+					Default = 1290,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "YScale",
+					Default = 90,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Angle",
+					Default = 90,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "DirectionalBlur2",
+					Source = "BlurStrength",
+					Default = 0.362,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "DirectionalBlur2",
+					Source = "BlurAngle",
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ApplyMode",
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "EffectMask",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						Brightness = Input { Value = -1.62, },
+						LockXY = Input { Value = 0, },
+						XScale = Input { Value = 1290, },
+						YScale = Input { Value = 90, },
+						Angle = Input { Value = 90, },
+						SeetheRate = Input { Value = 300, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 416.667, -52.0303 } },
+				},
+				JPEGDamage1 = ofx.com.blackmagicdesign.resolvefx.JPEGDamage {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						ofxQuality = Input { Value = 20.49, },
+						Resolution = Input { Value = 1, },
+						AspectRatio = Input { Value = 5, },
+						FrequencyScale = Input { Value = 10, },
+						FrequencyType = Input { Value = FuID { "FREQUENCY_TYPE_XY" }, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 529.333, -47.1818 } },
+				},
+				Background1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 392.667, -3.54548 } },
+				},
+				Merge2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "DirectionalBlur2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 558, -1.12123 } },
+				},
+				Background2 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 439.333, 34.0303 } },
+				},
+				DirectionalBlur2 = ofx.com.blackmagicdesign.resolvefx.DirectionalBlur {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "JPEGDamage1",
+							Source = "Output",
+						},
+						BlurStrength = Input { Value = 0.362, },
+						BlurAngle = Input { Value = 0, },
+						advancedControlsGroup = Input { Value = 1, },
+						blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+						isSymmetric = Input { Value = 1, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_REFLECT" }, },
+						isBlurAlpha = Input { Value = 1, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "3.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 642, -47.1818 } },
+				},
+				Merge1 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 620.667, 80.0909 } },
+				},
+				Merge3 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Background2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 735.333, 26.7576 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_TextureFramer31"
+}

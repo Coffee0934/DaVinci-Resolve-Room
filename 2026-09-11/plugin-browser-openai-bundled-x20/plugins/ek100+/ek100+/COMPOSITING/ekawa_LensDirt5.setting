@@ -1,0 +1,288 @@
+{
+	Tools = ordered() {
+		ekawa_LensDirt511 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Contrast",
+					Default = 1.13,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Brightness",
+					Default = 1.17,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "RefractionStrength",
+					Default = 1.707,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Duplicate1",
+					Source = "Copies",
+					Default = 30,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Duplicate1",
+					Source = "XSize",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Duplicate1",
+					Source = "Angle",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Duplicate1",
+					Source = "RedScale",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Duplicate1",
+					Source = "GreenScale",
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Duplicate1",
+					Source = "BlueScale",
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ekawaheatblur",
+					Source = "Input13",
+					Default = 13.4,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ApplyMode",
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "BlendClone",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						Contrast = Input { Value = 1.13, },
+						Brightness = Input { Value = 1.17, },
+						XScale = Input { Value = 17.4, },
+						Seethe = Input { Value = 0.21, },
+						Discontinuous = Input { Value = 1, },
+						Type = Input { Value = 1, },
+						GradientType = Input { Value = 5, },
+						Start = Input { Value = { 0.503, 0.5 }, },
+						End = Input { Value = { 0.571, 0.5 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 1, 1, 1 },
+									[1] = { 0, 0, 0, 0 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -242.001, -25.3635 } },
+				},
+				Displace1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						RefractionStrength = Input { Value = 1.707, },
+						Input = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -120.001, -13.2423 } },
+				},
+				Duplicate1 = Fuse.Duplicate {
+					CtrlWShown = false,
+					Inputs = {
+						Copies = Input { Value = 30, },
+						JitterCenter = Input { Value = { 0.498, 0.784 }, },
+						JitterXSize = Input { Value = 5, },
+						JitterAngle = Input { Value = 753.27, },
+						JitterGainNest = Input { Value = 1, },
+						JitterRedGain = Input { Value = 1, },
+						JitterGreenGain = Input { Value = 1, },
+						JitterBlueGain = Input { Value = 1, },
+						JitterBlurNest = Input { Value = 1, },
+						Background = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 7.33278, -16.8787 } },
+				},
+				ekawaheatblur = MacroOperator {
+					CtrlWShown = false,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						}
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "Center",
+						},
+						Input2 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "Detail",
+							Default = 2,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "Contrast",
+							Default = 4.56,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "Brightness",
+							Default = 0.19,
+						},
+						Input5 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "LockXY",
+							Default = 1,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "XScale",
+							Default = 3.15,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "YScale",
+							Default = 2,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "Angle",
+							Default = 0,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "Seethe",
+							Default = 0,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "SeetheRate",
+							Default = 0.079,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "Discontinuous",
+							Default = 0,
+						},
+						Input12 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "Inverted",
+							Default = 0,
+						},
+						MainInput1 = InstanceInput {
+							SourceOp = "Blur1",
+							Source = "Input",
+						},
+						Input13 = InstanceInput {
+							SourceOp = "Blur1",
+							Source = "XBlurSize",
+							Default = 7.9,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Blur1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 11.3328, 23.394 } },
+					Tools = ordered() {
+						FastNoise1_1 = FastNoise {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Contrast = Input { Value = 0.94, },
+								Brightness = Input { Value = 1, },
+								XScale = Input { Value = 3.15, },
+								SeetheRate = Input { Value = 0.079, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -29.203, 8.22223 } },
+						},
+						Blur1 = Blur {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "FastNoise1_1",
+									Source = "Output",
+								},
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								XBlurSize = Input { Value = 13.4, },
+								Input = Input {
+									SourceOp = "Duplicate1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 28, 101.293 } },
+						}
+					},
+				},
+				Glow1 = Glow {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0.299, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XGlowSize = Input { Value = 300, },
+						Input = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 7.33278, 56.394 } },
+				},
+				Merge1 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "Glow1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -0.667315, 105.152 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_LensDirt511"
+}

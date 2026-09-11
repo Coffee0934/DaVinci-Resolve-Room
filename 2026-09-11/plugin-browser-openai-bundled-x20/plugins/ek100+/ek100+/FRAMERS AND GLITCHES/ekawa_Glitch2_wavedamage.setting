@@ -1,0 +1,387 @@
+{
+	Tools = ordered() {
+		ekawaGlitch2_wavedamage111 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Name = "Roughness",
+					Default = 10,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "StopMotion1",
+					Source = "frameRepeat",
+					Name = "Repeat Frames",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "JPEGDamage2",
+					Source = "Blend",
+					Name = "Artifacts",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "JPEGDamage1",
+					Source = "Resolution",
+					Name = "Damage",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue1",
+					ControlGroup = 5,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation1",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle1",
+					ControlGroup = 5,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength1",
+					ControlGroup = 5,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelRangeDummy1",
+					ControlGroup = 5,
+					Default = 0,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue2",
+					ControlGroup = 5,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation2",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle2",
+					ControlGroup = 5,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength2",
+					ControlGroup = 5,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue3",
+					ControlGroup = 5,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation3",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle3",
+					ControlGroup = 5,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength3",
+					ControlGroup = 5,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue4",
+					ControlGroup = 5,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation4",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle4",
+					ControlGroup = 5,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength4",
+					ControlGroup = 5,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "TintMode",
+					Default = 0,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "Saturation1",
+					Name = "Saturation",
+					Default = 1,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "Saturation2",
+					Name = "Saturation",
+					Default = 1,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "Saturation3",
+					Name = "Saturation",
+					Default = 1,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input31 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ApplyMode",
+				},
+				Input32 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ProcessRed",
+					Name = "RGB Split",
+					ControlGroup = 18,
+					Default = 1,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ProcessGreen",
+					ControlGroup = 18,
+					Default = 1,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ProcessBlue",
+					ControlGroup = 18,
+					Default = 1,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ProcessAlpha",
+					ControlGroup = 18,
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						LockXY = Input { Value = 0, },
+						XScale = Input { Value = 0, },
+						YScale = Input { Value = 40, },
+						SeetheRate = Input { Value = 65, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -368.532, -5.67255 } },
+				},
+				StopMotion1 = ofx.com.blackmagicdesign.resolvefx.StopMotion {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						advancedGroup = Input { Value = 0, },
+						setReferenceButton = Input { Value = 0, },
+						referenceFrame = Input {
+							Value = 0,
+							Disabled = true,
+						},
+						frameRepeatVar = Input { Value = 0, },
+						frameRepeat = Input { Value = 1, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -220.511, 29.4685 } },
+				},
+				JPEGDamage2 = ofx.com.blackmagicdesign.resolvefx.JPEGDamage {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "JPEGDamage1",
+							Source = "Output",
+						},
+						ofxQuality = Input { Value = 100, },
+						Resolution = Input { Value = 1, },
+						AspectRatio = Input { Value = 5, },
+						FrequencyScale = Input { Value = 10, },
+						FrequencyType = Input { Value = FuID { "FREQUENCY_TYPE_XY" }, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -256.647, 73.1806 } },
+				},
+				Displace1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						Type = Input { Value = 1, },
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input { Value = 0.1, },
+						Offset = Input { Value = -0.5, },
+						Input = Input {
+							SourceOp = "JPEGDamage2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "StopMotion1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -152.304, 80.4676 } },
+				},
+				JPEGDamage1 = ofx.com.blackmagicdesign.resolvefx.JPEGDamage {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						ofxQuality = Input { Value = 100, },
+						Resolution = Input { Value = 1, },
+						AspectRatio = Input { Value = 5, },
+						FrequencyScale = Input { Value = 10, },
+						FrequencyType = Input { Value = FuID { "FREQUENCY_TYPE_XY" }, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -367.589, 75.7519 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						TintMode = Input { Value = 0, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -44.8064, 86.0371 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -358.259, 155.035 } },
+				},
+				Merge2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -70.6046, 161.462 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaGlitch2_wavedamage111"
+}

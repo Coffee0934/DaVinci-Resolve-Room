@@ -1,0 +1,150 @@
+{
+	Tools = ordered() {
+		ekawaWarp_RadialWarp1 = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Input",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Center",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Offset",
+					Default = -0.5,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "RefractionStrength",
+					MinScale = -10,
+					MaxScale = 10,
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Blend",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Displace1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Ellipse1 = EllipseMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						SoftEdge = Input { Value = 0.2, },
+						BorderWidth = Input { Value = -0.069, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.5, 0.548969072164949 }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 167.333, -45.9697 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Ellipse1",
+							Source = "Mask",
+						},
+						MasterRGBBrightness = Input { Value = 4.8, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 250, 2.51515 } },
+				},
+				Background1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 62, -4.75758 } },
+				},
+				CreateBumpMap1 = CreateBumpMap {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+						ClampNormalZ = Input { Value = 1, },
+						HeightScale = Input { Value = 100, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 301.333, -37.4848 } },
+				},
+				Blur1 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 100, },
+						Input = Input {
+							SourceOp = "CreateBumpMap1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 381, 34.303 } },
+				},
+				Displace1 = Displace {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input { Value = 0.3, },
+						YOffset = Input { Value = -0.5, },
+						YRefraction = Input {
+							Value = 0.3,
+							Expression = "XRefraction",
+						},
+						Offset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = 0, },
+						Foreground = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 389.333, 87.0758 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaWarp_RadialWarp1"
+}

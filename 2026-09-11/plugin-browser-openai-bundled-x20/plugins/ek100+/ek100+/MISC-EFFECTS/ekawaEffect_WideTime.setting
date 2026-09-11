@@ -1,0 +1,71 @@
+{
+	Tools = ordered() {
+		ekawa_WideTIme = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FrameAverage1",
+					Source = "SampleDirection",
+					Name = "Trail direction",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FrameAverage1",
+					Source = "Frames",
+					Default = 5,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "Background",
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Blend",
+					Name = "Trail Opacity",
+					Default = 0.337,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FrameAverage1 = Fuse.FrameAverage {
+					Inputs = {
+						Frames = Input { Value = 5, },
+						Input = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 303.593, 15.216 } },
+				},
+				Merge2 = Merge {
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 202.712, 103.497 } },
+				},
+				Merge1 = Merge {
+					CtrlWZoom = false,
+					Inputs = {
+						Blend = Input { Value = 0.337, },
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FrameAverage1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 406.05, 112.068 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_WideTIme"
+}

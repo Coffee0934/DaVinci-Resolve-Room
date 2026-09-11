@@ -1,0 +1,1247 @@
+{
+	Tools = ordered() {
+		ekawaEffect_SwirlBlur111 = MacroOperator {
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "ekawaEffect_SwirlBlur",
+					Source = "Input1",
+					Default = 0.457,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ekawaEffect_SwirlBlur",
+					Source = "Input2",
+					Width = 0.385,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "ekawaEffect_SwirlBlur",
+					Source = "Input3",
+					Default = 0.4,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "ekawaEffect_SwirlBlur",
+					Source = "Input4",
+					Width = 0.385,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ekawaEffect_SwirlBlur",
+					Source = "Input5",
+					Width = 0.385,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ekawaEffect_SwirlBlur",
+					Source = "Input6",
+					Width = 0.385,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ekawaEffect_SwirlBlur",
+					Source = "Input7",
+					Width = 0.385,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ekawaEffect_SwirlBlur",
+					Source = "Input8",
+					Default = 0.353,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ekawaEffect_SwirlBlur",
+					Source = "Input9",
+					Width = 0.385,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ekawaEffect_SwirlBlur",
+					Source = "Input10",
+					Default = 0.454,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ekawaEffect_SwirlBlur",
+					Source = "Input11",
+					Width = 0.385,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ekawaEffect_SwirlBlur",
+					Source = "Input12",
+					Default = 0.454,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ekawaEffect_SwirlBlur",
+					Source = "Input13",
+					Width = 0.385,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "ekawaEffect_SwirlBlur",
+					Source = "Input14",
+					Default = 0.400000005960464,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "ekawaEffect_SwirlBlur",
+					Source = "Input15",
+					Width = 0.385,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Merge8",
+					Source = "ApplyMode",
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Merge8",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge9",
+					Source = "Background",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge8",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 584.755, 432.623 } },
+			Tools = ordered() {
+				ekawaEffect_SwirlBlur = MacroOperator {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						}
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "ZoomBlur1",
+							Source = "SmoothStrength",
+							Name = "Blur Strength",
+							Default = 0.457,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "Perturb4",
+							Source = "Randomize",
+							Width = 0.385,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "RadialBlur2_1_1_1_1",
+							Source = "SmoothStrength",
+							Name = "Blur Strength",
+							Default = 0.4,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "Perturb3_1_1",
+							Source = "Randomize",
+							Width = 0.385,
+						},
+						Input5 = InstanceInput {
+							SourceOp = "Perturb3",
+							Source = "Randomize",
+							Width = 0.385,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "Perturb3_1",
+							Source = "Randomize",
+							Width = 0.385,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "Perturb2_1",
+							Source = "Randomize",
+							Width = 0.385,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "RadialBlur2",
+							Source = "SmoothStrength",
+							Name = "Blur Strength",
+							Default = 0.353,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "Perturb2",
+							Source = "Randomize",
+							Width = 0.385,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "RadialBlur1_1",
+							Source = "SmoothStrength",
+							Name = "Blur Strength",
+							Default = 0.454,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "Perturb1_1_1",
+							Source = "Randomize",
+							Width = 0.385,
+						},
+						Input12 = InstanceInput {
+							SourceOp = "RadialBlur1",
+							Source = "SmoothStrength",
+							Name = "Blur Strength",
+							Default = 0.454,
+						},
+						Input13 = InstanceInput {
+							SourceOp = "Perturb1_1",
+							Source = "Randomize",
+							Width = 0.385,
+						},
+						MainInput1 = InstanceInput {
+							SourceOp = "DirectionalBlur1",
+							Source = "Source",
+						},
+						Input14 = InstanceInput {
+							SourceOp = "DirectionalBlur1",
+							Source = "BlurStrength",
+							Default = 0.400000005960464,
+						},
+						Input15 = InstanceInput {
+							SourceOp = "Perturb1",
+							Source = "Randomize",
+							Width = 0.385,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "ZoomBlur1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { -5.255, 8.75906 } },
+					Tools = ordered() {
+						ZoomBlur1 = ofx.com.blackmagicdesign.resolvefx.ZoomBlur {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "Ellipse3",
+									Source = "Mask",
+								},
+								Source = Input {
+									SourceOp = "RadialBlur2_1_1_1_1",
+									Source = "Output",
+								},
+								CenterXPos = Input { Value = 0.5, },
+								CenterYPos = Input { Value = 0.5, },
+								xyPosition = Input {
+									SourceOp = "Perturb4",
+									Source = "Value",
+								},
+								SmoothStrength = Input { Value = 0.457, },
+								zoomAmount = Input { Value = 0.48, },
+								blurTypeChoice = Input { Value = FuID { "BlurTypeStylized" }, },
+								centerExclusion = Input { Value = 0, },
+								advancedControlsGroup = Input { Value = 0, },
+								BorderType = Input {
+									Value = FuID { "BORDER_TYPE_REPLICATE" },
+									Disabled = true,
+								},
+								isFollowSizing = Input { Value = 1, },
+								isBlurAlpha = Input { Value = 1, },
+								BlendAmount = Input { Value = 0, },
+								isUseLegacyPosition = Input { Value = 0, },
+								blendGroup = Input { Value = 0, },
+								blendIn = Input { Value = 1, },
+								blend = Input { Value = 0, },
+								ignoreContentShape = Input { Value = 0, },
+								legacyIsProcessRGBOnly = Input { Value = 0, },
+								IsNoTemporalFramesReqd = Input { Value = 0, },
+								refreshTrigger = Input { Value = 1, },
+								resolvefxVersion = Input { Value = "2.1", },
+							},
+							ViewInfo = OperatorInfo { Pos = { 609.031, 285.031 } },
+						},
+						Perturb4 = PerturbPoint {
+							CtrlWZoom = false,
+							Inputs = {
+								RandomSeed = Input { Value = 28259, },
+								Speed = Input { Value = 0, },
+							},
+						},
+						RadialBlur2_1_1_1_1 = ofx.com.blackmagicdesign.resolvefx.RadialBlur {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "Ellipse2_1_1_1_1",
+									Source = "Mask",
+								},
+								Source = Input {
+									SourceOp = "RadialBlur2_1_1_1",
+									Source = "Output",
+								},
+								CenterXPos = Input { Value = 0.5, },
+								CenterYPos = Input { Value = 0.5, },
+								xyPosition = Input {
+									SourceOp = "Perturb3_1_1",
+									Source = "Value",
+								},
+								SmoothStrength = Input { Value = 0.4, },
+								blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+								blurSymmetry = Input { Value = FuID { "BlurSymmetryBothSides" }, },
+								advancedControlsGroup = Input { Value = 0, },
+								BorderType = Input { Value = FuID { "BORDER_TYPE_REPLICATE" }, },
+								isFollowSizing = Input { Value = 1, },
+								isBlurAlpha = Input { Value = 1, },
+								BlendAmount = Input { Value = 0, },
+								isUseLegacyPosition = Input { Value = 0, },
+								blendGroup = Input { Value = 0, },
+								blendIn = Input { Value = 1, },
+								blend = Input { Value = 0, },
+								ignoreContentShape = Input { Value = 0, },
+								legacyIsProcessRGBOnly = Input { Value = 0, },
+								IsNoTemporalFramesReqd = Input { Value = 0, },
+								refreshTrigger = Input { Value = 1, },
+								resolvefxVersion = Input { Value = "3.1", },
+							},
+							ViewInfo = OperatorInfo { Pos = { 492.821, 296.979 } },
+						},
+						Perturb3_1_1 = PerturbPoint {
+							CtrlWZoom = false,
+							Inputs = {
+								Value = Input { Value = { 0.839941, 0.590207 }, },
+								RandomSeed = Input { Value = 17396, },
+								Speed = Input { Value = 0, },
+							},
+						},
+						RadialBlur2_1_1 = ofx.com.blackmagicdesign.resolvefx.RadialBlur {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "Ellipse2_1_1",
+									Source = "Mask",
+								},
+								Source = Input {
+									SourceOp = "RadialBlur2_1",
+									Source = "Output",
+								},
+								CenterXPos = Input { Value = 0.5, },
+								CenterYPos = Input { Value = 0.5, },
+								xyPosition = Input {
+									SourceOp = "Perturb3",
+									Source = "Value",
+								},
+								SmoothStrength = Input { Value = 0.447, },
+								blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+								blurSymmetry = Input { Value = FuID { "BlurSymmetryBothSides" }, },
+								advancedControlsGroup = Input { Value = 0, },
+								BorderType = Input { Value = FuID { "BORDER_TYPE_REPLICATE" }, },
+								isFollowSizing = Input { Value = 1, },
+								isBlurAlpha = Input { Value = 1, },
+								BlendAmount = Input { Value = 0, },
+								isUseLegacyPosition = Input { Value = 0, },
+								blendGroup = Input { Value = 0, },
+								blendIn = Input { Value = 1, },
+								blend = Input { Value = 0, },
+								ignoreContentShape = Input { Value = 0, },
+								legacyIsProcessRGBOnly = Input { Value = 0, },
+								IsNoTemporalFramesReqd = Input { Value = 0, },
+								refreshTrigger = Input { Value = 1, },
+								resolvefxVersion = Input { Value = "3.1", },
+							},
+							ViewInfo = OperatorInfo { Pos = { 219.711, 269.373 } },
+						},
+						Perturb3 = PerturbPoint {
+							CtrlWZoom = false,
+							Inputs = {
+								Value = Input { Value = { 0.495, 0.5 }, },
+								RandomSeed = Input { Value = 10019, },
+								Speed = Input { Value = 0, },
+							},
+						},
+						RadialBlur2_1_1_1 = ofx.com.blackmagicdesign.resolvefx.RadialBlur {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "Ellipse2_1_1_1",
+									Source = "Mask",
+								},
+								Source = Input {
+									SourceOp = "RadialBlur2_1_1",
+									Source = "Output",
+								},
+								CenterXPos = Input { Value = 0.5, },
+								CenterYPos = Input { Value = 0.5, },
+								xyPosition = Input {
+									SourceOp = "Perturb3_1",
+									Source = "Value",
+								},
+								SmoothStrength = Input { Value = 0.447, },
+								blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+								blurSymmetry = Input { Value = FuID { "BlurSymmetryBothSides" }, },
+								advancedControlsGroup = Input { Value = 0, },
+								BorderType = Input { Value = FuID { "BORDER_TYPE_REPLICATE" }, },
+								isFollowSizing = Input { Value = 1, },
+								isBlurAlpha = Input { Value = 1, },
+								BlendAmount = Input { Value = 0, },
+								isUseLegacyPosition = Input { Value = 0, },
+								blendGroup = Input { Value = 0, },
+								blendIn = Input { Value = 1, },
+								blend = Input { Value = 0, },
+								ignoreContentShape = Input { Value = 0, },
+								legacyIsProcessRGBOnly = Input { Value = 0, },
+								IsNoTemporalFramesReqd = Input { Value = 0, },
+								refreshTrigger = Input { Value = 1, },
+								resolvefxVersion = Input { Value = "3.1", },
+							},
+							ViewInfo = OperatorInfo { Pos = { 298.151, 268.767 } },
+						},
+						Perturb3_1 = PerturbPoint {
+							CtrlWZoom = false,
+							Inputs = {
+								Value = Input { Value = { 0.126, 0.5 }, },
+								RandomSeed = Input { Value = 20579, },
+								Speed = Input { Value = 0, },
+							},
+						},
+						RadialBlur2_1 = ofx.com.blackmagicdesign.resolvefx.RadialBlur {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "Ellipse2_1",
+									Source = "Mask",
+								},
+								Source = Input {
+									SourceOp = "RadialBlur2",
+									Source = "Output",
+								},
+								CenterXPos = Input { Value = 0.5, },
+								CenterYPos = Input { Value = 0.5, },
+								xyPosition = Input {
+									SourceOp = "Perturb2_1",
+									Source = "Value",
+								},
+								SmoothStrength = Input { Value = 0.37, },
+								blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+								blurSymmetry = Input { Value = FuID { "BlurSymmetryBothSides" }, },
+								advancedControlsGroup = Input { Value = 0, },
+								BorderType = Input { Value = FuID { "BORDER_TYPE_REPLICATE" }, },
+								isFollowSizing = Input { Value = 1, },
+								isBlurAlpha = Input { Value = 1, },
+								BlendAmount = Input { Value = 0, },
+								isUseLegacyPosition = Input { Value = 0, },
+								blendGroup = Input { Value = 0, },
+								blendIn = Input { Value = 1, },
+								blend = Input { Value = 0, },
+								ignoreContentShape = Input { Value = 0, },
+								legacyIsProcessRGBOnly = Input { Value = 0, },
+								IsNoTemporalFramesReqd = Input { Value = 0, },
+								refreshTrigger = Input { Value = 1, },
+								resolvefxVersion = Input { Value = "3.1", },
+							},
+							ViewInfo = OperatorInfo { Pos = { 127.041, 243.295 } },
+						},
+						Perturb2_1 = PerturbPoint {
+							CtrlWZoom = false,
+							Inputs = {
+								Value = Input { Value = { 0.408910063561052, -0.0784143575329781 }, },
+								RandomSeed = Input { Value = 9887, },
+								Speed = Input { Value = 0, },
+							},
+						},
+						Ellipse2_1_1_1_1 = EllipseMask {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								SoftEdge = Input { Value = 0.0992, },
+								MaskWidth = Input { Value = 1920, },
+								MaskHeight = Input { Value = 1080, },
+								PixelAspect = Input { Value = { 1, 1 }, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								ClippingMode = Input { Value = FuID { "None" }, },
+								Center = Input {
+									Value = { 0.856532249732301, 0.590207 },
+									Expression = "RadialBlur2_1_1_1_1.xyPosition",
+								},
+								Height = Input { Value = 1.039, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 520.821, 206.07 } },
+						},
+						Ellipse3 = EllipseMask {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								SoftEdge = Input { Value = 0.0551, },
+								MaskWidth = Input { Value = 1920, },
+								MaskHeight = Input { Value = 1080, },
+								PixelAspect = Input { Value = { 1, 1 }, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								ClippingMode = Input { Value = FuID { "None" }, },
+								Center = Input {
+									Value = { 0.249035034328699, 1.07596206665039 },
+									Expression = "ZoomBlur1.xyPosition",
+								},
+								Width = Input { Value = 0.772, },
+								Height = Input { Value = 0.551, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 596.151, 200.01 } },
+						},
+						RadialBlur2 = ofx.com.blackmagicdesign.resolvefx.RadialBlur {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "Ellipse2",
+									Source = "Mask",
+								},
+								Source = Input {
+									SourceOp = "RadialBlur1_1",
+									Source = "Output",
+								},
+								CenterXPos = Input { Value = 0.5, },
+								CenterYPos = Input { Value = 0.5, },
+								xyPosition = Input {
+									SourceOp = "Perturb2",
+									Source = "Value",
+								},
+								SmoothStrength = Input { Value = 0.353, },
+								blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+								blurSymmetry = Input { Value = FuID { "BlurSymmetryBothSides" }, },
+								advancedControlsGroup = Input { Value = 0, },
+								BorderType = Input { Value = FuID { "BORDER_TYPE_REPLICATE" }, },
+								isFollowSizing = Input { Value = 1, },
+								isBlurAlpha = Input { Value = 1, },
+								BlendAmount = Input { Value = 0, },
+								isUseLegacyPosition = Input { Value = 0, },
+								blendGroup = Input { Value = 0, },
+								blendIn = Input { Value = 1, },
+								blend = Input { Value = 0, },
+								ignoreContentShape = Input { Value = 0, },
+								legacyIsProcessRGBOnly = Input { Value = 0, },
+								IsNoTemporalFramesReqd = Input { Value = 0, },
+								refreshTrigger = Input { Value = 1, },
+								resolvefxVersion = Input { Value = "3.1", },
+							},
+							ViewInfo = OperatorInfo { Pos = { 6.38141, 212.719 } },
+						},
+						Perturb2 = PerturbPoint {
+							CtrlWZoom = false,
+							Inputs = {
+								Value = Input { Value = { 0.431315511465073, 1.11904764175415 }, },
+								RandomSeed = Input { Value = 14127, },
+								Speed = Input { Value = 0, },
+							},
+						},
+						Ellipse2_1_1_1 = EllipseMask {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								SoftEdge = Input { Value = 0.0992, },
+								MaskWidth = Input { Value = 1920, },
+								MaskHeight = Input { Value = 1080, },
+								PixelAspect = Input { Value = { 1, 1 }, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								ClippingMode = Input { Value = FuID { "None" }, },
+								Center = Input {
+									Value = { -0.0417848708033562, 0.358207782109578 },
+									Expression = "RadialBlur2_1_1_1.xyPosition/3",
+								},
+								Width = Input { Value = 0.488, },
+								Height = Input { Value = 0.709, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 278.821, 172.737 } },
+						},
+						Ellipse2_1_1 = EllipseMask {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								SoftEdge = Input { Value = 0.0992, },
+								MaskWidth = Input { Value = 1920, },
+								MaskHeight = Input { Value = 1080, },
+								PixelAspect = Input { Value = { 1, 1 }, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								ClippingMode = Input { Value = FuID { "None" }, },
+								Center = Input {
+									Value = { 1.03082891821861, 0.436114265583456 },
+									Expression = "RadialBlur2_1_1.xyPosition",
+								},
+								Width = Input { Value = 0.787, },
+								Height = Input { Value = 0.693, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 222.321, 167.931 } },
+						},
+						Ellipse2_1 = EllipseMask {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								SoftEdge = Input { Value = 0.0992, },
+								MaskWidth = Input { Value = 1920, },
+								MaskHeight = Input { Value = 1080, },
+								PixelAspect = Input { Value = { 1, 1 }, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								ClippingMode = Input { Value = FuID { "None" }, },
+								Center = Input {
+									Value = { 0.408910063561052, -0.0784143575329781 },
+									Expression = "Perturb2_1.Value",
+								},
+								Width = Input { Value = 0.803, },
+								Height = Input { Value = 0.693, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 116.981, 152.174 } },
+						},
+						Ellipse2 = EllipseMask {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								SoftEdge = Input { Value = 0.0992, },
+								MaskWidth = Input { Value = 1920, },
+								MaskHeight = Input { Value = 1080, },
+								PixelAspect = Input { Value = { 1, 1 }, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								ClippingMode = Input { Value = FuID { "None" }, },
+								Center = Input {
+									Value = { 0.431315511465073, 1.11904764175415 },
+									Expression = "Perturb2.Value",
+								},
+								Width = Input { Value = 0.898, },
+								Height = Input { Value = 0.866, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -5.01862, 135.81 } },
+						},
+						Blur2_1_1 = Blur {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								XBlurSize = Input { Value = 7.9, },
+								Input = Input {
+									SourceOp = "Displace2_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -190.289, 170.962 } },
+						},
+						RadialBlur1_1 = ofx.com.blackmagicdesign.resolvefx.RadialBlur {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "Blur2_1_1",
+									Source = "Output",
+								},
+								Source = Input {
+									SourceOp = "RadialBlur1",
+									Source = "Output",
+								},
+								CenterXPos = Input { Value = 0.5, },
+								CenterYPos = Input { Value = 0.5, },
+								xyPosition = Input {
+									Value = { 0.197210038434124, 0.266433976681065 },
+									Expression = "Ellipse1_1_1.Center/2",
+								},
+								SmoothStrength = Input { Value = 0.454, },
+								blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+								blurSymmetry = Input { Value = FuID { "BlurSymmetryBothSides" }, },
+								advancedControlsGroup = Input { Value = 0, },
+								BorderType = Input { Value = FuID { "BORDER_TYPE_REPLICATE" }, },
+								isFollowSizing = Input { Value = 1, },
+								isBlurAlpha = Input { Value = 1, },
+								BlendAmount = Input { Value = 0, },
+								isUseLegacyPosition = Input { Value = 0, },
+								blendGroup = Input { Value = 0, },
+								blendIn = Input { Value = 1, },
+								blend = Input { Value = 0, },
+								ignoreContentShape = Input { Value = 0, },
+								legacyIsProcessRGBOnly = Input { Value = 0, },
+								IsNoTemporalFramesReqd = Input { Value = 0, },
+								refreshTrigger = Input { Value = 1, },
+								resolvefxVersion = Input { Value = "3.1", },
+							},
+							ViewInfo = OperatorInfo { Pos = { -214.289, 212.719 } },
+						},
+						Displace2_1_1 = Displace {
+							CtrlWShown = false,
+							Inputs = {
+								Offset = Input { Value = 0.5, },
+								RefractionStrength = Input { Value = -1.19, },
+								Input = Input {
+									SourceOp = "Ellipse1_1_1",
+									Source = "Mask",
+								},
+								Foreground = Input {
+									SourceOp = "Displace1_1_1_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -115.019, 117.629 } },
+						},
+						Displace2_1 = Displace {
+							CtrlWShown = false,
+							Inputs = {
+								Offset = Input { Value = 0.5, },
+								RefractionStrength = Input { Value = -1.19, },
+								Input = Input {
+									SourceOp = "Ellipse1_1",
+									Source = "Mask",
+								},
+								Foreground = Input {
+									SourceOp = "Displace1_1_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -299.079, 104.295 } },
+						},
+						Ellipse1_1_1 = EllipseMask {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								MaskWidth = Input { Value = 1920, },
+								MaskHeight = Input { Value = 1080, },
+								PixelAspect = Input { Value = { 1, 1 }, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								ClippingMode = Input { Value = FuID { "None" }, },
+								Center = Input {
+									SourceOp = "Perturb1_1_1",
+									Source = "Value",
+								},
+								Width = Input { Value = 0.866, },
+								Height = Input { Value = 0.362, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -224.949, 95.8103 } },
+						},
+						Perturb1_1_1 = PerturbPoint {
+							CtrlWZoom = false,
+							Inputs = {
+								Value = Input { Value = { 0.417243, 0.575925 }, },
+								XScale = Input { Value = 0.38, },
+								YScale = Input { Value = 0.38, },
+								RandomSeed = Input { Value = 21158, },
+								Strength = Input { Value = 1.81, },
+								Speed = Input { Value = 0, },
+							},
+						},
+						RadialBlur1 = ofx.com.blackmagicdesign.resolvefx.RadialBlur {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "Blur2_1",
+									Source = "Output",
+								},
+								Source = Input {
+									SourceOp = "DirectionalBlur1",
+									Source = "Output",
+								},
+								CenterXPos = Input { Value = 0.5, },
+								CenterYPos = Input { Value = 0.5, },
+								xyPosition = Input {
+									Value = { 0.2086215, 0.201608068247885 },
+									Expression = "Ellipse1_1.Center/2",
+								},
+								SmoothStrength = Input { Value = 0.454, },
+								blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+								blurSymmetry = Input { Value = FuID { "BlurSymmetryBothSides" }, },
+								advancedControlsGroup = Input { Value = 0, },
+								BorderType = Input { Value = FuID { "BORDER_TYPE_REPLICATE" }, },
+								isFollowSizing = Input { Value = 1, },
+								isBlurAlpha = Input { Value = 1, },
+								BlendAmount = Input { Value = 0, },
+								isUseLegacyPosition = Input { Value = 0, },
+								blendGroup = Input { Value = 0, },
+								blendIn = Input { Value = 1, },
+								blend = Input { Value = 0, },
+								ignoreContentShape = Input { Value = 0, },
+								legacyIsProcessRGBOnly = Input { Value = 0, },
+								IsNoTemporalFramesReqd = Input { Value = 0, },
+								refreshTrigger = Input { Value = 1, },
+								resolvefxVersion = Input { Value = "3.1", },
+							},
+							ViewInfo = OperatorInfo { Pos = { -358.351, 203.022 } },
+						},
+						Blur2_1 = Blur {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								XBlurSize = Input { Value = 7.9, },
+								Input = Input {
+									SourceOp = "Displace2_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -373.017, 153.992 } },
+						},
+						Ellipse1_1 = EllipseMask {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								MaskWidth = Input { Value = 1920, },
+								MaskHeight = Input { Value = 1080, },
+								PixelAspect = Input { Value = { 1, 1 }, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								ClippingMode = Input { Value = FuID { "None" }, },
+								Center = Input {
+									SourceOp = "Perturb1_1",
+									Source = "Value",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -407.684, 82.4764 } },
+						},
+						Perturb1_1 = PerturbPoint {
+							CtrlWZoom = false,
+							Inputs = {
+								Value = Input { Value = { 0.417243, 0.575925 }, },
+								XScale = Input { Value = 0.38, },
+								YScale = Input { Value = 0.39, },
+								RandomSeed = Input { Value = 18972, },
+								Strength = Input { Value = 1.81, },
+								Wobble = Input { Value = 1.42, },
+								Speed = Input { Value = 0, },
+							},
+						},
+						DirectionalBlur1 = ofx.com.blackmagicdesign.resolvefx.DirectionalBlur {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "Blur2",
+									Source = "Output",
+								},
+								Source = Input {
+									SourceOp = "Merge9",
+									Source = "Output",
+								},
+								BlurStrength = Input { Value = 0.4, },
+								BlurAngle = Input { Value = -45, },
+								advancedControlsGroup = Input { Value = 1, },
+								blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+								isSymmetric = Input { Value = 1, },
+								BorderType = Input { Value = FuID { "BORDER_TYPE_REFLECT" }, },
+								isBlurAlpha = Input { Value = 1, },
+								BlendAmount = Input { Value = 0, },
+								blendGroup = Input { Value = 0, },
+								blendIn = Input { Value = 1, },
+								blend = Input { Value = 0, },
+								ignoreContentShape = Input { Value = 0, },
+								legacyIsProcessRGBOnly = Input { Value = 0, },
+								IsNoTemporalFramesReqd = Input { Value = 0, },
+								refreshTrigger = Input { Value = 1, },
+								resolvefxVersion = Input { Value = "3.0", },
+							},
+							ViewInfo = OperatorInfo { Pos = { -504.351, 199.386 } },
+						},
+						ekawaWarp_QuickDistort1 = MacroOperator {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							CustomData = {
+								Path = {
+									Map = {
+										["Setting:"] = "Macros:\\"
+									}
+								}
+							},
+							Inputs = ordered() {
+								MainInput1 = InstanceInput {
+									SourceOp = "Merge2_1",
+									Source = "Background",
+								},
+								Input1 = InstanceInput {
+									SourceOp = "Blur1_1",
+									Source = "XBlurSize",
+									Name = "Blur Amount",
+									Default = 100,
+								},
+								Input2 = InstanceInput {
+									SourceOp = "Displace1_1_1",
+									Source = "YRefraction",
+									Name = "Distort Strength",
+									MinScale = -25,
+									MaxScale = 25,
+									Default = 0,
+								}
+							},
+							Outputs = {
+								MainOutput1 = InstanceOutput {
+									SourceOp = "Displace1_1_1",
+									Source = "Output",
+								}
+							},
+							ViewInfo = GroupInfo { Pos = { -498.413, 88.5364 } },
+							Tools = ordered() {
+								Merge2_1 = Merge {
+									CtrlWShown = false,
+									Inputs = {
+										Background = Input {
+											SourceOp = "FastNoise4",
+											Source = "Output",
+										},
+										PerformDepthMerge = Input { Value = 0, },
+									},
+									ViewInfo = OperatorInfo { Pos = { -114.333, 43.1371 } },
+								},
+								Blur1_1 = Blur {
+									CtrlWShown = false,
+									Inputs = {
+										Filter = Input { Value = FuID { "Fast Gaussian" }, },
+										XBlurSize = Input { Value = 100, },
+										Input = Input {
+											SourceOp = "CreateBumpMap1",
+											Source = "Output",
+										},
+									},
+									ViewInfo = OperatorInfo { Pos = { 43, 47.0461 } },
+								},
+								CreateBumpMap1 = CreateBumpMap {
+									CtrlWShown = false,
+									Inputs = {
+										Input = Input {
+											SourceOp = "Merge2_1",
+											Source = "Output",
+										},
+										ClampNormalZ = Input { Value = 1, },
+										HeightScale = Input { Value = 100, },
+									},
+									ViewInfo = OperatorInfo { Pos = { 113, 7.98507 } },
+								},
+								Displace1_1_1 = Displace {
+									CtrlWZoom = false,
+									CtrlWShown = false,
+									Inputs = {
+										Type = Input { Value = 1, },
+										XOffset = Input { Value = -0.5, },
+										XRefraction = Input {
+											Value = 7.1,
+											Expression = "YRefraction",
+										},
+										YOffset = Input { Value = -0.5, },
+										YRefraction = Input { Value = 7.1, },
+										Offset = Input { Value = -0.5, },
+										RefractionStrength = Input { Value = 16, },
+										Input = Input {
+											SourceOp = "Merge2_1",
+											Source = "Output",
+										},
+										Foreground = Input {
+											SourceOp = "Blur1_1",
+											Source = "Output",
+										},
+									},
+									ViewInfo = OperatorInfo { Pos = { 79.667, 121.53 } },
+								}
+							},
+						},
+						Blur2 = Blur {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								XBlurSize = Input { Value = 7.9, },
+								Input = Input {
+									SourceOp = "Displace2",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -507.08, 168.81 } },
+						},
+						Displace2 = Displace {
+							CtrlWShown = false,
+							Inputs = {
+								Offset = Input { Value = 0.5, },
+								RefractionStrength = Input { Value = -1.19, },
+								Input = Input {
+									SourceOp = "Ellipse1",
+									Source = "Mask",
+								},
+								Foreground = Input {
+									SourceOp = "Displace1_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -505.746, 135.81 } },
+						},
+						ekawaWarp_QuickDistort1_1_1 = MacroOperator {
+							CtrlWShown = false,
+							CustomData = {
+								Path = {
+									Map = {
+										["Setting:"] = "Macros:\\"
+									}
+								}
+							},
+							Inputs = ordered() {
+								MainInput1 = InstanceInput {
+									SourceOp = "Merge2_1_1_1",
+									Source = "Background",
+								},
+								Input1 = InstanceInput {
+									SourceOp = "Blur1_1_1_1",
+									Source = "XBlurSize",
+									Name = "Blur Amount",
+									Default = 100,
+								},
+								Input2 = InstanceInput {
+									SourceOp = "Displace1_1_1_1_1",
+									Source = "YRefraction",
+									Name = "Distort Strength",
+									MinScale = -25,
+									MaxScale = 25,
+									Default = 0,
+								}
+							},
+							Outputs = {
+								MainOutput1 = InstanceOutput {
+									SourceOp = "Displace1_1_1_1_1",
+									Source = "Output",
+								}
+							},
+							ViewInfo = GroupInfo { Pos = { -87.6785, 50.9614 } },
+							Tools = ordered() {
+								Merge2_1_1_1 = Merge {
+									CtrlWShown = false,
+									Inputs = {
+										Background = Input {
+											SourceOp = "FastNoise4_1_1",
+											Source = "Output",
+										},
+										PerformDepthMerge = Input { Value = 0, },
+									},
+									ViewInfo = OperatorInfo { Pos = { -114.333, 43.1371 } },
+								},
+								Blur1_1_1_1 = Blur {
+									CtrlWShown = false,
+									Inputs = {
+										Filter = Input { Value = FuID { "Fast Gaussian" }, },
+										XBlurSize = Input { Value = 100, },
+										Input = Input {
+											SourceOp = "CreateBumpMap1_1_1",
+											Source = "Output",
+										},
+									},
+									ViewInfo = OperatorInfo { Pos = { 43, 47.0461 } },
+								},
+								CreateBumpMap1_1_1 = CreateBumpMap {
+									CtrlWShown = false,
+									Inputs = {
+										Input = Input {
+											SourceOp = "Merge2_1_1_1",
+											Source = "Output",
+										},
+										ClampNormalZ = Input { Value = 1, },
+										HeightScale = Input { Value = 100, },
+									},
+									ViewInfo = OperatorInfo { Pos = { 113, 7.98513 } },
+								},
+								Displace1_1_1_1_1 = Displace {
+									CtrlWZoom = false,
+									CtrlWShown = false,
+									Inputs = {
+										Type = Input { Value = 1, },
+										XOffset = Input { Value = -0.5, },
+										XRefraction = Input {
+											Value = 7.1,
+											Expression = "YRefraction",
+										},
+										YOffset = Input { Value = -0.5, },
+										YRefraction = Input { Value = 7.1, },
+										Offset = Input { Value = -0.5, },
+										RefractionStrength = Input { Value = 16, },
+										Input = Input {
+											SourceOp = "Merge2_1_1_1",
+											Source = "Output",
+										},
+										Foreground = Input {
+											SourceOp = "Blur1_1_1_1",
+											Source = "Output",
+										},
+									},
+									ViewInfo = OperatorInfo { Pos = { 79.667, 121.53 } },
+								}
+							},
+						},
+						ekawaWarp_QuickDistort1_1 = MacroOperator {
+							CtrlWShown = false,
+							CustomData = {
+								Path = {
+									Map = {
+										["Setting:"] = "Macros:\\"
+									}
+								}
+							},
+							Inputs = ordered() {
+								MainInput1 = InstanceInput {
+									SourceOp = "Merge2_1_1",
+									Source = "Background",
+								},
+								Input1 = InstanceInput {
+									SourceOp = "Blur1_1_1",
+									Source = "XBlurSize",
+									Name = "Blur Amount",
+									Default = 100,
+								},
+								Input2 = InstanceInput {
+									SourceOp = "Displace1_1_1_1",
+									Source = "YRefraction",
+									Name = "Distort Strength",
+									MinScale = -25,
+									MaxScale = 25,
+									Default = 0,
+								}
+							},
+							Outputs = {
+								MainOutput1 = InstanceOutput {
+									SourceOp = "Displace1_1_1_1",
+									Source = "Output",
+								}
+							},
+							ViewInfo = GroupInfo { Pos = { -279.746, 36.4154 } },
+							Tools = ordered() {
+								Merge2_1_1 = Merge {
+									CtrlWShown = false,
+									Inputs = {
+										Background = Input {
+											SourceOp = "FastNoise4_1",
+											Source = "Output",
+										},
+										PerformDepthMerge = Input { Value = 0, },
+									},
+									ViewInfo = OperatorInfo { Pos = { -114.333, 43.1371 } },
+								},
+								Blur1_1_1 = Blur {
+									CtrlWShown = false,
+									Inputs = {
+										Filter = Input { Value = FuID { "Fast Gaussian" }, },
+										XBlurSize = Input { Value = 100, },
+										Input = Input {
+											SourceOp = "CreateBumpMap1_1",
+											Source = "Output",
+										},
+									},
+									ViewInfo = OperatorInfo { Pos = { 43, 47.0461 } },
+								},
+								CreateBumpMap1_1 = CreateBumpMap {
+									CtrlWShown = false,
+									Inputs = {
+										Input = Input {
+											SourceOp = "Merge2_1_1",
+											Source = "Output",
+										},
+										ClampNormalZ = Input { Value = 1, },
+										HeightScale = Input { Value = 100, },
+									},
+									ViewInfo = OperatorInfo { Pos = { 113, 7.98511 } },
+								},
+								Displace1_1_1_1 = Displace {
+									CtrlWZoom = false,
+									CtrlWShown = false,
+									Inputs = {
+										Type = Input { Value = 1, },
+										XOffset = Input { Value = -0.5, },
+										XRefraction = Input {
+											Value = 7.1,
+											Expression = "YRefraction",
+										},
+										YOffset = Input { Value = -0.5, },
+										YRefraction = Input { Value = 7.1, },
+										Offset = Input { Value = -0.5, },
+										RefractionStrength = Input { Value = 16, },
+										Input = Input {
+											SourceOp = "Merge2_1_1",
+											Source = "Output",
+										},
+										Foreground = Input {
+											SourceOp = "Blur1_1_1",
+											Source = "Output",
+										},
+									},
+									ViewInfo = OperatorInfo { Pos = { 79.667, 121.53 } },
+								}
+							},
+						},
+						FastNoise4 = FastNoise {
+							CtrlWShown = false,
+							Inputs = {
+								GlobalIn = Input { Value = 24, },
+								GlobalOut = Input { Value = 66, },
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Contrast = Input { Value = 5, },
+								Brightness = Input { Value = -0.59, },
+								XScale = Input { Value = 4.72, },
+								Discontinuous = Input { Value = 1, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -591.684, 33.9914 } },
+						},
+						FastNoise4_1_1 = FastNoise {
+							CtrlWShown = false,
+							Inputs = {
+								GlobalIn = Input { Value = 24, },
+								GlobalOut = Input { Value = 66, },
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Contrast = Input { Value = 5, },
+								Brightness = Input { Value = -0.59, },
+								XScale = Input { Value = 7.72, },
+								Discontinuous = Input { Value = 1, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -160.949, 12.1734 } },
+						},
+						FastNoise4_1 = FastNoise {
+							CtrlWShown = false,
+							Inputs = {
+								GlobalIn = Input { Value = 24, },
+								GlobalOut = Input { Value = 66, },
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Contrast = Input { Value = 5, },
+								Brightness = Input { Value = -0.59, },
+								XScale = Input { Value = 4.72, },
+								Discontinuous = Input { Value = 1, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -422.35, 8.53635 } },
+						},
+						Ellipse1 = EllipseMask {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								MaskWidth = Input { Value = 1920, },
+								MaskHeight = Input { Value = 1080, },
+								PixelAspect = Input { Value = { 1, 1 }, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								ClippingMode = Input { Value = FuID { "None" }, },
+								Center = Input {
+									SourceOp = "Perturb1",
+									Source = "Value",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -610.351, 94.5974 } },
+						},
+						Perturb1 = PerturbPoint {
+							CtrlWZoom = false,
+							Inputs = {
+								Value = Input { Value = { 0.188243252866197, 0.339925331380149 }, },
+								RandomSeed = Input { Value = 31594, },
+								Strength = Input { Value = 1.81, },
+								Speed = Input { Value = 0, },
+							},
+						}
+					},
+				},
+				Merge8 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge9",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ZoomBlur1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 53, 60.8301 } },
+				},
+				Merge9 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "MediaIn3",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -54.607, 62.7561 } },
+				}
+			},
+		}
+	}
+}

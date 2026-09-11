@@ -1,0 +1,236 @@
+{
+	Tools = ordered() {
+		ekawaEffect_QuickFlare11 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ColorCurves1",
+					Source = "EditAlpha",
+					Name = "Alpha",
+					Width = 0.5,
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "ColorCurves1",
+					Source = "Red",
+					ControlGroup = 3,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "ColorCurves1",
+					Source = "Green",
+					ControlGroup = 3,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ColorCurves1",
+					Source = "Blue",
+					ControlGroup = 3,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ColorCurves1",
+					Source = "Alpha",
+					ControlGroup = 3,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "Center",
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "BlendClone",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				ColorCorrector1 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -48.6416, 29.4605 } },
+				},
+				ColorCurves1 = ColorCurves {
+					PickColor = true,
+					CtrlWShown = false,
+					Inputs = {
+						Red = Input {
+							SourceOp = "ColorCurves1Red",
+							Source = "Value",
+						},
+						Green = Input {
+							SourceOp = "ColorCurves1Green",
+							Source = "Value",
+						},
+						Blue = Input {
+							SourceOp = "ColorCurves1Blue",
+							Source = "Value",
+						},
+						Alpha = Input {
+							SourceOp = "ColorCurves1Alpha",
+							Source = "Value",
+						},
+						NumberOfSamplesOnMatchCurve = Input { Value = 64, },
+						IgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 116.692, -4.47892 } },
+					Tools = {
+						ColorCurves1Red = LUTBezier {
+							KeyColorSplines = {
+								[0] = {
+									[0] = { 0, RH = { 0.582852049910891, 1.39645239816133e-16 } },
+									[1] = { 1, LH = { 0.914438502673797, -2.75387351811318e-15 } }
+								}
+							},
+							SplineColor = { Red = 255, Green = 52, Blue = 52 },
+							CtrlWZoom = false,
+							NameSet = true,
+						},
+						ColorCurves1Green = LUTBezier {
+							KeyColorSplines = {
+								[0] = {
+									[0] = { 0, RH = { 0.582852049910891, 1.39645239816133e-16 } },
+									[1] = { 1, LH = { 0.914438502673797, -2.75387351811318e-15 } }
+								}
+							},
+							SplineColor = { Red = 0, Green = 255, Blue = 0 },
+							CtrlWZoom = false,
+							NameSet = true,
+						},
+						ColorCurves1Alpha = LUTBezier {
+							KeyColorSplines = {
+								[0] = {
+									[0] = { 0, RH = { 0.582852049910891, 1.39645239816133e-16 } },
+									[1] = { 1, LH = { 0.914438502673797, -2.75387351811318e-15 } }
+								}
+							},
+							SplineColor = { Red = 204, Green = 204, Blue = 204 },
+							CtrlWZoom = false,
+							NameSet = true,
+						},
+						ColorCurves1Blue = LUTBezier {
+							KeyColorSplines = {
+								[0] = {
+									[0] = { 0, RH = { 0.582852049910891, 1.39645239816133e-16 } },
+									[1] = { 1, LH = { 0.914438502673797, -2.75387351811318e-15 } }
+								}
+							},
+							SplineColor = { Red = 68, Green = 68, Blue = 255 },
+							CtrlWZoom = false,
+							NameSet = true,
+						}
+					},
+				},
+				Background1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Type = Input { Value = FuID { "Gradient" }, },
+						GradientType = Input { Value = FuID { "Radial" }, },
+						Start = Input { Value = { 0.5, 0.5 }, },
+						End = Input { Value = { 0.748, 0.5 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 1, 1, 1 },
+									[1] = { 0, 0, 0, 0 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -157.308, 29.4605 } },
+				},
+				Merge2 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0, },
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Glow1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 245.358, 134.915 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "ColorCurves1",
+							Source = "Output",
+						},
+						Center = Input { Expression = "Merge2.Center", },
+						Size = Input { Value = 5, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 134.025, 133.703 } },
+				},
+				Glow1 = Glow {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XGlowSize = Input { Value = 300, },
+						Input = Input {
+							SourceOp = "ColorCurves1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 239.358, 51.2787 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaEffect_QuickFlare11"
+}

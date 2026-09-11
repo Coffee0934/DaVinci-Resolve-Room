@@ -1,0 +1,416 @@
+{
+	Tools = ordered() {
+		ekawaEffect_LightLeak11_2_1_1 = MacroOperator {
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Inputs = ordered() {
+				Input11 = InstanceInput {
+					SourceOp = "ekawa_ButtonMask_1_2_1_1",
+					Source = "Input1",
+					Name = "Lightleak 2",
+					Default = 0,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "ekawa_ButtonMask_3_1_1",
+					Source = "Input1",
+					Name = "Lightleak 3",
+					Default = 0,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Merge1_2_1_1",
+					Source = "ApplyMode",
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Merge1_2_1_1",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "FastNoise1_3_1_1",
+					Source = "Contrast",
+					Name = "Lightleak 1-Contrast",
+					Default = 2.59,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "FastNoise1_3_1_1",
+					Source = "Brightness",
+					Name = "Lightleak 1-Brightness",
+					Default = -0.45,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "FastNoise1_3_1_1",
+					Source = "XScale",
+					Name = "Lightleak 1-Scale",
+					Default = 0.43,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "FastNoise1_3_1_1",
+					Source = "SeetheRate",
+					Name = "Lightleak 1-Seethe Rate",
+					Default = 0.283,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "FastNoise1_3_1_1",
+					Source = "Gradient",
+					Name = "Lightleak 1-Gradient",
+				},
+				Input6 = InstanceInput {
+					SourceOp = "FastNoise1_1_3_1_1",
+					Source = "Contrast",
+					Name = "Lightleak 2-Contrast",
+					Default = 2.59,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "FastNoise1_1_3_1_1",
+					Source = "Brightness",
+					Name = "Lightleak 2-Brightness",
+					Default = -1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "FastNoise1_1_3_1_1",
+					Source = "XScale",
+					Name = "Lightleak 2-Scale",
+					Default = 0.43,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "FastNoise1_1_3_1_1",
+					Source = "SeetheRate",
+					Name = "Lightleak 2-Seethe Rate",
+					Default = 0.283,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "FastNoise1_1_3_1_1",
+					Source = "Gradient",
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1_2_1_1",
+					Source = "Background",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1_1_1_2_1_1",
+					Source = "Contrast",
+					Name = "Lightleak 3-Contrast",
+					Default = 2.59,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1_1_1_2_1_1",
+					Source = "Brightness",
+					Name = "Lightleak 3-Brightness",
+					Default = -1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise1_1_1_2_1_1",
+					Source = "XScale",
+					Name = "Lightleak 3-Scale",
+					Default = 0.43,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise1_1_1_2_1_1",
+					Source = "SeetheRate",
+					Name = "Lightleak 3-Seethe Rate",
+					Default = 0.283,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise1_1_1_2_1_1",
+					Source = "Gradient",
+					Name = "Lightleak 3-Gradient",
+				}
+			},
+			Outputs = {
+				MainOutput3 = InstanceOutput {
+					SourceOp = "Merge1_2_1_1",
+					Source = "Output",
+				},
+				MainOutput1 = InstanceOutput {
+					SourceOp = "ekawa_ButtonMask_1_2_1_1",
+					Source = "MainOutput1",
+				},
+				MainOutput2 = InstanceOutput {
+					SourceOp = "ekawa_ButtonMask_3_1_1",
+					Source = "MainOutput1",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { -272, 121.303 } },
+			Tools = ordered() {
+				FastNoise1_1_1_2_1_1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Contrast = Input { Value = 2.59, },
+						Brightness = Input { Value = -1, },
+						XScale = Input { Value = 0.43, },
+						Seethe = Input { Value = 2.152, },
+						SeetheRate = Input { Value = 0.283, },
+						Type = Input { Value = 1, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1 },
+									[1] = { 0.188235294117647, 0.431372549019608, 1, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -46, 25.1999 } },
+				},
+				FastNoise1_1_3_1_1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Contrast = Input { Value = 2.59, },
+						Brightness = Input { Value = -1, },
+						XScale = Input { Value = 0.43, },
+						Seethe = Input { Value = 1.145, },
+						SeetheRate = Input { Value = 0.283, },
+						Type = Input { Value = 1, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1 },
+									[1] = { 0.96078431372549, 0.431372549019608, 1, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -182, 55.5028 } },
+				},
+				ekawa_ButtonMask_1_2_1_1 = MacroOperator {
+					CtrlWShown = false,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						}
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "LumaKeyer1_1_1_2_1_1",
+							Source = "Invert",
+							Name = "Button",
+							Default = 0,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "LumaKeyer1_1_1_2_1_1",
+							Source = "Garbage.MaskInverted",
+							Name = "Invert control",
+							Default = 0,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "LumaKeyer1_1_1_2_1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 87.3333, 8.23016 } },
+					Tools = ordered() {
+						LumaKeyer1_1_1_2_1_1 = LumaKeyer {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								Channel = Input { Value = 3, },
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								Input = Input {
+									SourceOp = "Background1_1_2_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 62, 8.15153 } },
+						},
+						Background1_1_2_1_1 = Background {
+							CtrlWShown = false,
+							Inputs = {
+								GlobalOut = Input { Value = 119, },
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								TopLeftAlpha = Input { Value = 0, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -62, 9.36363 } },
+						}
+					},
+				},
+				Merge2_2_1_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Expression = "ekawa_ButtonMask_1_2_1_1.Input1", },
+						Background = Input {
+							SourceOp = "FastNoise1_3_1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise1_1_3_1_1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Screen" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -66.6669, 114.897 } },
+				},
+				FastNoise1_3_1_1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Contrast = Input { Value = 2.59, },
+						Brightness = Input { Value = -0.09, },
+						XScale = Input { Value = 2.36, },
+						SeetheRate = Input { Value = 0.283, },
+						Type = Input { Value = 1, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1 },
+									[1] = { 1, 0.666666666666667, 0, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -176.667, 112.473 } },
+				},
+				Merge3_2_1_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input {
+							Value = 0,
+							Expression = "ekawa_ButtonMask_3_1_1.Input1",
+						},
+						Background = Input {
+							SourceOp = "Merge2_2_1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise1_1_1_2_1_1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Screen" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 37.9997, 122.17 } },
+				},
+				PrismBlur1_2_1_1 = ofx.com.blackmagicdesign.resolvefx.PrismBlur {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Merge3_2_1_1",
+							Source = "Output",
+						},
+						CenterXPos = Input { Value = 0.5, },
+						CenterYPos = Input { Value = 0.5, },
+						xyPosition = Input { Value = { 0.5, 0.5 }, },
+						BlurStrength = Input { Value = 1, },
+						AberrationDistance = Input { Value = 1, },
+						AberrationStrength = Input { Value = 0.701, },
+						VignetteSize = Input { Value = 0.100000001490116, },
+						VignetteSharpness = Input { Value = 5, },
+						BlendAmount = Input { Value = 0, },
+						isUseLegacyPosition = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "2.3", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 180, 120.018 } },
+				},
+				ekawa_ButtonMask_3_1_1 = MacroOperator {
+					CtrlWShown = false,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						}
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "LumaKeyer1_1_3_1_1",
+							Source = "Invert",
+							Name = "Button",
+							Default = 0,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "LumaKeyer1_1_3_1_1",
+							Source = "Garbage.MaskInverted",
+							Name = "Invert control",
+							Default = 0,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "LumaKeyer1_1_3_1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 182, 13.0786 } },
+					Tools = ordered() {
+						LumaKeyer1_1_3_1_1 = LumaKeyer {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								Channel = Input { Value = 3, },
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								Input = Input {
+									SourceOp = "Background1_3_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 62, 8.15153 } },
+						},
+						Background1_3_1_1 = Background {
+							CtrlWShown = false,
+							Inputs = {
+								GlobalOut = Input { Value = 119, },
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								TopLeftAlpha = Input { Value = 0, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -62, 9.36363 } },
+						}
+					},
+				},
+				Merge1_2_1_1 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "MediaIn1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "PrismBlur1_2_1_1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Screen" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -13.3587, 181.285 } },
+				}
+			},
+		}
+	}
+}

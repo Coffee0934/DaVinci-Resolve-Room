@@ -1,0 +1,100 @@
+{
+	Tools = ordered() {
+		ekawaTransition_RadialNoise = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Default = 5.83,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Contrast",
+					Default = 0.97,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Brightness",
+					Name = "Transition Slider",
+					MinScale = -10,
+					MaxScale = 10,
+					Default = -0.5,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "XScale",
+					Default = 2,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "SeetheRate",
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "Background",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "Foreground",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 5.83, },
+						Contrast = Input { Value = 0.97, },
+						Brightness = Input { Value = -0.5, },
+						Type = Input { Value = 1, },
+						GradientType = Input { Value = 5, },
+						Start = Input { Value = { 0.543, 0.53 }, },
+						End = Input { Value = { 0.87, 0.526 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 0 },
+									[1] = { 0, 0, 0, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0.737749, -101.746 } },
+				},
+				Merge1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 64.849, -29.7467 } },
+				},
+				Merge2 = Merge {
+					CtrlWZoom = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						ApplyMaskInverted = Input { Value = 1, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 148.433, 61.1025 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaTransition_RadialNoise"
+}

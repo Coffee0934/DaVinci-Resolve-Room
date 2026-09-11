@@ -1,0 +1,167 @@
+{
+	Tools = ordered() {
+		ekawa_VHSTVInteference = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Default = 10,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Contrast",
+					Default = 2.33,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Brightness",
+					Default = -2,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "XScale",
+					Default = 34.72,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "YScale",
+					Default = 170,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "SeetheRate",
+					Default = 10,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color1Red",
+					Name = "Color 1",
+					ControlGroup = 7,
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color1Green",
+					ControlGroup = 7,
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color1Blue",
+					ControlGroup = 7,
+					Default = 0,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color1Alpha",
+					ControlGroup = 7,
+					Default = 0,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color2Red",
+					Name = "Color 2",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color2Green",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color2Blue",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color2Alpha",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "GradientType",
+				},
+				Input16 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Start",
+					DefaultX = 0,
+					DefaultY = 0.5,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "End",
+					DefaultX = 1,
+					DefaultY = 0.5,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Gradient",
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ApplyMode",
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "BlendClone",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					CtrlWZoom = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						Contrast = Input { Value = 2.33, },
+						Brightness = Input { Value = -2, },
+						LockXY = Input { Value = 0, },
+						XScale = Input { Value = 34.72, },
+						YScale = Input { Value = 170, },
+						SeetheRate = Input { Value = 10, },
+						Type = Input { Value = 1, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 0 },
+									[1] = { 1, 1, 1, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 226.667, 18.8788 } },
+				},
+				Merge1 = Merge {
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 274.333, 52.5303 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_VHSTVInteference"
+}

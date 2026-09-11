@@ -1,0 +1,113 @@
+{
+	Tools = ordered() {
+		ekawa_HeightShake = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "Source",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Shake1",
+					Source = "Smoothness",
+					Default = 2.95,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Shake1",
+					Source = "XMinimum",
+					MinScale = 0.8,
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Shake1",
+					Source = "XMaximum",
+					MinScale = 1,
+					MaxScale = 1.2,
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Transform1",
+					Source = "Output",
+				},
+				Output1 = InstanceOutput {
+					SourceOp = "Shake1",
+					Source = "Position",
+				},
+				Output2 = InstanceOutput {
+					SourceOp = "Shake1",
+					Source = "Y",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Transform1 = ofx.com.blackmagicdesign.resolvefx.Transform {
+					CtrlWZoom = false,
+					Inputs = {
+						controlMode = Input { Value = FuID { "TransformControlsSliders" }, },
+						controlReset = Input { Value = 0, },
+						controlGroup = Input { Value = 1, },
+						controlVisibility = Input { Value = FuID { "Show" }, },
+						posX = Input { Value = 0, },
+						posY = Input { Value = 0, },
+						zoom = Input { Value = 1, },
+						rotate = Input { Value = 0, },
+						scaleX = Input { Value = 1, },
+						scaleY = Input {
+							SourceOp = "Shake1",
+							Source = "X",
+						},
+						pitch = Input { Value = 0, },
+						yaw = Input { Value = 0, },
+						flipH = Input { Value = 0, },
+						flipV = Input { Value = 0, },
+						adjustGroup = Input { Value = 1, },
+						isCrop = Input { Value = 0, },
+						cropL = Input { Value = 0, },
+						cropR = Input { Value = 0, },
+						cropT = Input { Value = 0, },
+						cropB = Input { Value = 0, },
+						edgeSoftness = Input { Value = 0, },
+						edgeRounding = Input { Value = 0, },
+						animationGroup = Input { Value = 1, },
+						serializedWarpable = Input {
+							Value = Text {
+							},
+						},
+						serializedPinnable = Input {
+							Value = Text {
+							},
+						},
+						motionBlur = Input { Value = 0, },
+						advancedGroup = Input { Value = 1, },
+						edgeBehaviour = Input { Value = FuID { "Reflect" }, },
+						CompositeType = Input { Value = FuID { "COMPOSITE_NORMAL" }, },
+						olayAntiAlias = Input { Value = 1, },
+						previewAlpha = Input { Value = 0, },
+						isLegacyCrop = Input { Value = 0, },
+						isLegacyAlphaHandling = Input { Value = 0, },
+						isEnforceBlanking = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.4", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 247.667, 50.7121 } },
+				},
+				Shake1 = Shake {
+					Faster = true,
+					CtrlWZoom = false,
+					Inputs = {
+						Smoothness = Input { Value = 2.95, },
+						XMinimum = Input { Value = 1, },
+					},
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_HeightShake"
+}

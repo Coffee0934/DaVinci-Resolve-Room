@@ -1,0 +1,62 @@
+{
+	Tools = ordered() {
+		ekawa_quicklensdistort = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "LensDistortion1",
+					Source = "Source",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "LensDistortion1",
+					Source = "distortionAmountR",
+					MinScale = -5,
+					MaxScale = 5,
+					Default = -0.4,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "LensDistortion1",
+					Source = "xyPosition",
+					DefaultX = 0.5,
+					DefaultY = 0.5,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "LensDistortion1",
+					Source = "edgeBehaviour",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "LensDistortion1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				LensDistortion1 = ofx.com.blackmagicdesign.resolvefx.LensDistortion {
+					CtrlWZoom = false,
+					Inputs = {
+						gangSliders = Input { Value = 1, },
+						distortionAmountR = Input { Value = -0.4, },
+						distortionAmountG = Input { Value = -0.400000005960464, },
+						distortionAmountB = Input { Value = -0.400000005960464, },
+						fineAdjustment = Input { Value = 0, },
+						xyPosition = Input { Value = { 0.5, 0.5 }, },
+						edgeBehaviour = Input { Value = FuID { "EDGE_BEHAVIOUR_REFLECT" }, },
+						centerXPos = Input { Value = 0.5, },
+						centerYPos = Input { Value = 0.5, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.4", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -65.3333, -43.5454 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_quicklensdistort"
+}

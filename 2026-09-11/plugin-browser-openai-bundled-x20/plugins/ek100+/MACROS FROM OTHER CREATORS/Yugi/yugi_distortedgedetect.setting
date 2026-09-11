@@ -1,0 +1,474 @@
+{
+	Tools = ordered() {
+		yugi_distortedgedetect = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "Background",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "EdgeDetect1",
+					Source = "EdgeDetectMode",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "EdgeDetect1",
+					Source = "RGBColorRed",
+					Name = "Edge Color",
+					ControlGroup = 3,
+					Default = 0.3098039215686,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "EdgeDetect1",
+					Source = "RGBColorGreen",
+					Name = "Edge Color",
+					ControlGroup = 3,
+					Default = 0.2862745098039,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "EdgeDetect1",
+					Source = "RGBColorBlue",
+					Name = "Edge Color",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "EdgeDetect1",
+					Source = "EdgeThreshold",
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "EdgeDetect1",
+					Source = "Brightness",
+					Default = 2.5,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "EdgeDetect1",
+					Source = "edgeGamma",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "XRefraction",
+					Expression = "YRefraction",
+					Default = 0.032,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "YRefraction",
+					Default = 0.032,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "FastNoise1_1",
+					Source = "Detail",
+					Default = 2.68,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "FastNoise1_1",
+					Source = "XScale",
+					Default = 12.72,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "FastNoise1_1",
+					Source = "Seethe",
+					Default = 0,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "FastNoise1_1",
+					Source = "SeetheRate",
+					Default = 0.563,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "FastNoise1_1",
+					Source = "Discontinuous",
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "XGlow1",
+					Source = "ThresholdLow",
+					Name = "Glow Threshold",
+					ControlGroup = 14,
+					Default = 0,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "XGlow1",
+					Source = "Gain",
+					Name = "Glow Gain",
+					Default = 0.852,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "XGlow1",
+					Source = "XGlowSize",
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "XGlow1",
+					Source = "Gradient",
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Tintensity1",
+					Source = "Red",
+					Name = "Color",
+					ControlGroup = 18,
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Tintensity1",
+					Source = "Green",
+					Width = 0.5,
+					ControlGroup = 18,
+					Default = 0,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "Tintensity1",
+					Source = "Blue",
+					ControlGroup = 18,
+					Default = 0,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "Tintensity1",
+					Source = "Vibrance",
+					Default = 5,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "Tintensity1",
+					Source = "PostSaturation",
+					Default = 1.262,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "Tintensity1",
+					Source = "Hue",
+					Default = -0.19,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "Tintensity1",
+					Source = "PostGain",
+					Default = 1.305,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "Tintensity1",
+					Source = "PostGamma",
+					Default = 1.578,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "ekawaheatblur",
+					Source = "Input3",
+					Default = 4.56,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "ekawaheatblur",
+					Source = "Input4",
+					Default = 0.19,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "ekawaheatblur",
+					Source = "Input6",
+					Default = 8.75,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "ErodeDilate1",
+					Source = "XAmount",
+					Default = 0.0035,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "ErodeDilate1",
+					Source = "YAmount",
+					Default = 0,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Merge3 = Merge {
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 82.5 } },
+				},
+				EdgeDetect1 = ofx.com.blackmagicdesign.resolvefx.EdgeDetect {
+					Inputs = {
+						Source = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+						EdgeDetectMode = Input { Value = FuID { "EDGE_DETECT_MODE_GRAYSCALE" }, },
+						RGBColorRed = Input { Value = 0.3098039215686, },
+						RGBColorGreen = Input { Value = 0.2862745098039, },
+						RGBColorBlue = Input { Value = 1, },
+						detectionGroup = Input { Value = 1, },
+						EdgeThreshold = Input { Value = 0, },
+						EdgeSmooth = Input { Value = 0.100000001490116, },
+						edgeWidth = Input { Value = 0.200000002980232, },
+						Brightness = Input { Value = 2.5, },
+						edgeGamma = Input { Value = 1, },
+						DenoiseType = Input { Value = FuID { "DENOISE_TYPE_GAUSSIAN_BLUR" }, },
+						DenoiseStrength = Input { Value = 0.200000002980232, },
+						EdgeBlur = Input { Value = 0, },
+						EdgeOverlay = Input { Value = 0, },
+						filterGroup = Input { Value = 0, },
+						filterType = Input { Value = FuID { "FilterTypeNone" }, },
+						filterScale = Input { Value = 0.25, },
+						filterWater = Input { Value = 0.5, },
+						suppression = Input { Value = FuID { "SuppressionNone" }, },
+						halfEdgeGain = Input { Value = 10, },
+						advancedGroup = Input { Value = 0, },
+						autoGain = Input { Value = 0, },
+						isClamp = Input { Value = 1, },
+						BlendAmount = Input { Value = 0, },
+						isLegacy = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "2.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 220, -16.5 } },
+				},
+				Merge1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "EdgeDetect1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 330, -16.5 } },
+				},
+				Displace1 = Displace {
+					Inputs = {
+						Type = Input { Value = 1, },
+						XRefraction = Input {
+							Value = 0.032,
+							Expression = "YRefraction",
+						},
+						YOffset = Input { Value = -0.5, },
+						YRefraction = Input { Value = 0.032, },
+						Offset = Input { Value = -0.5, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 440, -16.5 } },
+				},
+				FastNoise1 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 2.68, },
+						Contrast = Input { Value = 1.83, },
+						Color2Red = Input { Value = 0, },
+						Color2Green = Input { Value = 0, },
+						Color2Blue = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 330, -82.5 } },
+				},
+				FastNoise1_1 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 2.68, },
+						Contrast = Input { Value = 1.83, },
+						Brightness = Input { Value = -0.393, },
+						XScale = Input { Value = 12.72, },
+						SeetheRate = Input { Value = 0.563, },
+						Discontinuous = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 495, -82.5 } },
+				},
+				XGlow1 = Fuse.XGlow {
+					Inputs = {
+						Gain = Input { Value = 0.852, },
+						Input = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 550, -16.5 } },
+					Version = 102
+				},
+				Merge2 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Screen" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 770, 82.5 } },
+				},
+				Tintensity1 = Fuse.Tintensity {
+					CtrlWZoom = false,
+					Inputs = {
+						Vibrance = Input { Value = 5, },
+						PostSaturation = Input { Value = 1.262, },
+						Hue = Input { Value = -0.19, },
+						PostGain = Input { Value = 1.305, },
+						PostGamma = Input { Value = 1.578, },
+						Image = Input {
+							SourceOp = "XGlow1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 770, -16.5 } },
+					Version = 150
+				},
+				ekawaheatblur = MacroOperator {
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Center",
+						},
+						Input2 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Detail",
+							Default = 2,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Contrast",
+							Default = 4.56,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Brightness",
+							Default = 0.19,
+						},
+						Input5 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "LockXY",
+							Default = 1,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "XScale",
+							Default = 3.15,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "YScale",
+							Default = 2,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Angle",
+							Default = 0,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Seethe",
+							Default = 0,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "SeetheRate",
+							Default = 0.079,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Discontinuous",
+							Default = 0,
+						},
+						Input12 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Inverted",
+							Default = 0,
+						},
+						MainInput1 = InstanceInput {
+							SourceOp = "Blur1",
+							Source = "Input",
+						},
+						Input13 = InstanceInput {
+							SourceOp = "Blur1",
+							Source = "XBlurSize",
+							Default = 7.9,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Blur1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 770, 49.5 } },
+					Tools = ordered() {
+						FastNoise1_2 = FastNoise {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Contrast = Input { Value = 4.56, },
+								Brightness = Input { Value = 0.19, },
+								XScale = Input { Value = 8.75, },
+								SeetheRate = Input { Value = 0.079, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -29.203, 8.22223 } },
+						},
+						Blur1 = Blur {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "FastNoise1_2",
+									Source = "Output",
+								},
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								XBlurSize = Input { Value = 7.9, },
+								Input = Input {
+									SourceOp = "ErodeDilate1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 28, 101.293 } },
+						}
+					},
+				},
+				ErodeDilate1 = ErodeDilate {
+					Inputs = {
+						LockXY = Input { Value = 0, },
+						XAmount = Input { Value = 0.0035, },
+						Input = Input {
+							SourceOp = "Tintensity1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 770, 16.5 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "yugi_distortedgedetect"
+}

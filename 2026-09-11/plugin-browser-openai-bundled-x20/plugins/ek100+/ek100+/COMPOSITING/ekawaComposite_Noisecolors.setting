@@ -1,0 +1,460 @@
+{
+	Tools = ordered() {
+		ekawa_NoiseColors = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopLeftRed",
+					Name = "Gradient Color 2",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopLeftGreen",
+					ControlGroup = 1,
+					Default = 0,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopLeftBlue",
+					ControlGroup = 1,
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopLeftAlpha",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopRightRed",
+					Name = "Top Right",
+					ControlGroup = 2,
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopRightGreen",
+					ControlGroup = 2,
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopRightBlue",
+					ControlGroup = 2,
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopRightAlpha",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomLeftRed",
+					Name = "Bottom Left",
+					ControlGroup = 3,
+					Default = 0,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomLeftGreen",
+					ControlGroup = 3,
+					Default = 0,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomLeftBlue",
+					ControlGroup = 3,
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomLeftAlpha",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomRightRed",
+					Name = "Bottom Right",
+					ControlGroup = 4,
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomRightGreen",
+					ControlGroup = 4,
+					Default = 0,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomRightBlue",
+					ControlGroup = 4,
+					Default = 0,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomRightAlpha",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftRed",
+					Name = "Gradient Color 1",
+					ControlGroup = 5,
+					Default = 0.1019607843137,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftGreen",
+					ControlGroup = 5,
+					Default = 0.0196078431373,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftBlue",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftAlpha",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopRightRed",
+					Name = "Top Right",
+					ControlGroup = 6,
+					Default = 0,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopRightGreen",
+					ControlGroup = 6,
+					Default = 0,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopRightBlue",
+					ControlGroup = 6,
+					Default = 0,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopRightAlpha",
+					ControlGroup = 6,
+					Default = 1,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomLeftRed",
+					Name = "Bottom Left",
+					ControlGroup = 7,
+					Default = 0,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomLeftGreen",
+					ControlGroup = 7,
+					Default = 0,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomLeftBlue",
+					ControlGroup = 7,
+					Default = 0,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomLeftAlpha",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomRightRed",
+					Name = "Bottom Right",
+					ControlGroup = 8,
+					Default = 0,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomRightGreen",
+					ControlGroup = 8,
+					Default = 0,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomRightBlue",
+					ControlGroup = 8,
+					Default = 0,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomRightAlpha",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Default = 2,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Contrast",
+					Default = 1,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Brightness",
+					Default = 0,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "LockXY",
+					Default = 1,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "XScale",
+					Default = 2,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "YScale",
+					Default = 2,
+				},
+				Input39 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "SeetheRate",
+					Default = 0.2,
+				},
+				Input40 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Discontinuous",
+					Default = 0,
+				},
+				Input41 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Inverted",
+					Default = 0,
+				},
+				Input42 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				Input43 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input44 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input45 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input46 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input47 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ApplyMode",
+				},
+				Input48 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "BlendClone",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Instance_FastNoise1 = FastNoise {
+					SourceOp = "FastNoise1",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						ImageNest = Input { },
+						["Gamut.ColorSpaceNest"] = Input { },
+						["Gamut.GammaSpaceNest"] = Input { },
+						NoiseNest = Input { },
+						Seethe = Input { Value = 1.123, },
+						Color1Nest = Input { },
+						Color2Nest = Input { },
+						GradientNest = Input { },
+						NoiseBrightnessMap = Input { },
+						NoiseDetailMap = Input { },
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { -230.577, -147.875 } },
+				},
+				Background2 = Background {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -69.2442, -179.39 } },
+				},
+				Background1 = Background {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.1019607843137, },
+						TopLeftGreen = Input { Value = 0.0196078431373, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -34.5775, -85.7845 } },
+				},
+				Merge4 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Instance_FastNoise1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background2",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Multiply" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 43.4225, -134.542 } },
+				},
+				FastNoise1 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						SeetheRate = Input { Value = 0.2, },
+						Type = Input { Value = 1, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1 },
+									[1] = { 0.996078431372549, 0.996078431372549, 0.996078431372549, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -231.911, -16.9663 } },
+				},
+				Merge2 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Multiply" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 18.0891, -10.633 } },
+				},
+				Merge3 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge4",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Screen" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 128.089, -6.99664 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					Inputs = {
+						WheelTintAngle1 = Input { Value = -0.875, },
+						WheelTintLength1 = Input { Value = 0.0005, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 238.089, -10.633 } },
+				},
+				Merge1 = Merge {
+					CtrlWZoom = false,
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Hard Light" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 201.698, 162.095 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_NoiseColors"
+}

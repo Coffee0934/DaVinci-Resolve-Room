@@ -1,0 +1,2035 @@
+{
+	Tools = ordered() {
+		Yugi_OrganicLinespreset = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "XGlow1",
+					Source = "Gain",
+					Name = "Line 1 Gain",
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "XGlow1",
+					Source = "XGlowSize",
+					Name = "Line 1 Glow Size",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "XGlow1",
+					Source = "Gradient",
+					Name = "Line 1 Gradient",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "XGlow1",
+					Source = "Blend",
+					Name = "Line 1 Blend",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "XGlow1_1",
+					Source = "Gain",
+					Name = "Line 2 Gain",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "XGlow1_1",
+					Source = "XGlowSize",
+					Name = "Line 2 Glow Size",
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "XGlow1_1",
+					Source = "Gradient",
+					Name = "Line 2 Gradient",
+				},
+				Input8 = InstanceInput {
+					SourceOp = "XGlow1_1",
+					Source = "Blend",
+					Name = "Line 2 Blend",
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "XGlow1_3",
+					Source = "Gain",
+					Name = "Line 3 Gain",
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "XGlow1_3",
+					Source = "XGlowSize",
+					Name = "Line 3 Glow Size",
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "XGlow1_3",
+					Source = "Gradient",
+					Name = "Line 3 Gradient",
+				},
+				Input12 = InstanceInput {
+					SourceOp = "XGlow1_3",
+					Source = "Blend",
+					Name = "Line 3 Blend",
+					Default = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "XGlow1_2",
+					Source = "Gain",
+					Name = "Line 4 Gain",
+					Default = 1,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "XGlow1_2",
+					Source = "XGlowSize",
+					Name = "Line 4 Glow Size",
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "XGlow1_2",
+					Source = "Gradient",
+					Name = "Line 4 Gradient",
+				},
+				Input16 = InstanceInput {
+					SourceOp = "XGlow1_2",
+					Source = "Blend",
+					Name = "Line 4 Blend",
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "XGlow1_4",
+					Source = "Gain",
+					Name = "Line 5 Gain",
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "XGlow1_4",
+					Source = "XGlowSize",
+					Name = "Line 5 Glow Size",
+					Default = 1,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "XGlow1_4",
+					Source = "Gradient",
+					Name = "Line 5 Gradient",
+				},
+				Input20 = InstanceInput {
+					SourceOp = "XGlow1_4",
+					Source = "Blend",
+					Name = "Line 5 Blend",
+					Default = 1,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "XGlow1_5",
+					Source = "Gain",
+					Name = "Line 6 Gain",
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "XGlow1_5",
+					Source = "XGlowSize",
+					Name = "Line 6 Glow Size",
+					Default = 1,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "XGlow1_5",
+					Source = "Gradient",
+					Name = "Line 6 Gradient",
+				},
+				Input24 = InstanceInput {
+					SourceOp = "XGlow1_5",
+					Source = "Blend",
+					Name = "Line 6 Blend",
+					Default = 1,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "ErodeDilate1",
+					Source = "LockXY",
+					Name = "Erode Lock X/Y",
+					Default = 1,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "ErodeDilate1",
+					Source = "XAmount",
+					Name = "Erode Amount",
+					Default = -0.0041,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "GradientType",
+					Name = "Fadein Gradient Type",
+				},
+				Input28 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "Start",
+					Name = "Fadein Start",
+					DefaultX = 0,
+					DefaultY = 0.5,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "End",
+					Name = "Fadein End",
+					DefaultX = 1,
+					DefaultY = 0.5,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "Gradient",
+					Name = "Fadein Gradient",
+				},
+				Input31 = InstanceInput {
+					SourceOp = "Unmult_1",
+					Source = "Unmult",
+					Page = "Controls",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "Path2",
+					Source = "Heading",
+				},
+				Output2 = InstanceOutput {
+					SourceOp = "Path3",
+					Source = "Heading",
+				},
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Unmult_1",
+					Source = "MainOutput1",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Background2 = Background {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon1",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 385, -313.5 } },
+				},
+				Background2_1 = Background {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon1_1",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 605, -313.5 } },
+				},
+				Polygon1_1 = PolylineMask {
+					DrawMode = "ClickAppend",
+					DrawMode2 = "InsertAndModify",
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						BorderWidth = Input { Value = 0.0012, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.5, 0.521 }, },
+						Polyline = Input {
+							SourceOp = "Polygon1_1Polyline",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 495, -313.5 } },
+				},
+				Polygon1_1Polyline = BezierSpline {
+					SplineColor = { Red = 173, Green = 255, Blue = 47 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline {
+								Points = {
+									{ X = -0.640483383685801, Y = 0.0254691689008043, RX = 0.445509949314388, RY = -0.029837380388095 },
+									{ X = 0.696374622356495, Y = 0.0978552278820375, LX = -0.445674028363954, LY = -0.0511117196846641 }
+								}
+							} }
+					}
+				},
+				Polygon1_1_1 = PolylineMask {
+					DrawMode = "ClickAppend",
+					DrawMode2 = "InsertAndModify",
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						BorderWidth = Input { Value = 0.0012, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.5, 0.48 }, },
+						Polyline = Input {
+							SourceOp = "Polygon1_1_1Polyline",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 715, -313.5 } },
+				},
+				Polygon1_1_1Polyline = BezierSpline {
+					SplineColor = { Red = 173, Green = 255, Blue = 47 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline {
+								Points = {
+									{ X = -0.640483383685801, Y = 0.0254691689008043, RX = 0.445509949314388, RY = -0.029837380388095 },
+									{ X = 0.696374622356495, Y = 0.0978552278820375, LX = -0.445674028363954, LY = -0.0511117196846641 }
+								}
+							} }
+					}
+				},
+				Polygon1 = PolylineMask {
+					DrawMode = "ClickAppend",
+					DrawMode2 = "InsertAndModify",
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						BorderWidth = Input { Value = 0.0012, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Polyline = Input {
+							SourceOp = "Polygon1Polyline",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 275, -313.5 } },
+				},
+				Polygon1Polyline = BezierSpline {
+					SplineColor = { Red = 173, Green = 255, Blue = 47 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline {
+								Points = {
+									{ X = -0.640483383685801, Y = 0.0254691689008043, RX = 0.445509949314388, RY = -0.029837380388095 },
+									{ X = 0.696374622356495, Y = 0.0978552278820375, LX = -0.445674028363954, LY = -0.0511117196846641 }
+								}
+							} }
+					}
+				},
+				Background2_1_1 = Background {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon1_1_1",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 825, -313.5 } },
+				},
+				Polygon1_2 = PolylineMask {
+					DrawMode = "ClickAppend",
+					DrawMode2 = "InsertAndModify",
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						BorderWidth = Input { Value = 0.0012, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.5, 0.453 }, },
+						Polyline = Input {
+							SourceOp = "Polygon1_2Polyline",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 935, -313.5 } },
+				},
+				Polygon1_2Polyline = BezierSpline {
+					SplineColor = { Red = 173, Green = 255, Blue = 47 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline {
+								Points = {
+									{ X = -0.640483383685801, Y = 0.0254691689008043, RX = 0.445509949314388, RY = -0.029837380388095 },
+									{ X = 0.696374622356495, Y = 0.0978552278820375, LX = -0.445674028363954, LY = -0.0511117196846641 }
+								}
+							} }
+					}
+				},
+				ekawa_TurbDisplace_1 = MacroOperator {
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "FastNoise1_3",
+							Source = "Detail",
+							Default = 2,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "FastNoise1_3",
+							Source = "XScale",
+							Default = 2,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "FastNoise1_3",
+							Source = "SeetheRate",
+							Default = 0,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "ColorCorrector2_1",
+							Source = "MasterRGBContrast",
+							Name = "Overall Strength",
+							Default = 1,
+						},
+						MainInput1 = InstanceInput {
+							SourceOp = "Displace1_1",
+							Source = "Input",
+						},
+						Input5 = InstanceInput {
+							SourceOp = "Displace1_1",
+							Source = "XRefraction",
+							Default = 0.1,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "Displace1_1",
+							Source = "YRefraction",
+							Default = 0.1,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "Displace1_1",
+							Source = "Blend",
+							Default = 1,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "Displace1_1",
+							Source = "ProcessRed",
+							Name = "Process",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "Displace1_1",
+							Source = "ProcessGreen",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "Displace1_1",
+							Source = "ProcessBlue",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "Displace1_1",
+							Source = "ProcessAlpha",
+							ControlGroup = 9,
+							Default = 1,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Displace1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 605, -280.5 } },
+					Tools = ordered() {
+						FastNoise1_3 = FastNoise {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Detail = Input { Value = 3.3, },
+								XScale = Input { Value = 1.27, },
+								SeetheRate = Input { Value = 0.026, },
+								Color1Red = Input { Value = -1, },
+								Color1Green = Input { Value = -1, },
+								Color1Blue = Input { Value = -1, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -106.864, 8.54697 } },
+						},
+						CreateBumpMap1_1 = CreateBumpMap {
+							CtrlWShown = false,
+							Inputs = {
+								Input = Input {
+									SourceOp = "FastNoise1_3",
+									Source = "Output",
+								},
+								ClampNormalZ = Input { Value = 1, },
+								HeightScale = Input { Value = 100, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -5.88499, 46.2593 } },
+						},
+						ColorCorrector2_1 = ColorCorrector {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "CreateBumpMap1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 106, 46.2593 } },
+						},
+						Displace1_1 = Displace {
+							CtrlWShown = false,
+							Inputs = {
+								Type = Input { Value = 1, },
+								XChannel = Input { Value = 1, },
+								XOffset = Input { Value = -0.5, },
+								XRefraction = Input { Value = 0.1, },
+								YChannel = Input { Value = 0, },
+								YOffset = Input { Value = -0.5, },
+								YRefraction = Input { Value = 0.1, },
+								Offset = Input { Value = -0.5, },
+								Input = Input {
+									SourceOp = "Background2_1",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "ColorCorrector2_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 62.533, 110.968 } },
+						}
+					},
+				},
+				ekawa_TurbDisplace_1_1 = MacroOperator {
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "FastNoise1_3_1",
+							Source = "Detail",
+							Default = 2,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "FastNoise1_3_1",
+							Source = "XScale",
+							Default = 2,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "FastNoise1_3_1",
+							Source = "SeetheRate",
+							Default = 0,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "MasterRGBContrast",
+							Name = "Overall Strength",
+							Default = 1,
+						},
+						MainInput1 = InstanceInput {
+							SourceOp = "Displace1_1_1",
+							Source = "Input",
+						},
+						Input5 = InstanceInput {
+							SourceOp = "Displace1_1_1",
+							Source = "XRefraction",
+							Default = 0.1,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "Displace1_1_1",
+							Source = "YRefraction",
+							Default = 0.1,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "Displace1_1_1",
+							Source = "Blend",
+							Default = 1,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "Displace1_1_1",
+							Source = "ProcessRed",
+							Name = "Process",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "Displace1_1_1",
+							Source = "ProcessGreen",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "Displace1_1_1",
+							Source = "ProcessBlue",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "Displace1_1_1",
+							Source = "ProcessAlpha",
+							ControlGroup = 9,
+							Default = 1,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Displace1_1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 825, -280.5 } },
+					Tools = ordered() {
+						FastNoise1_3_1 = FastNoise {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Detail = Input { Value = 3.3, },
+								XScale = Input { Value = 1.27, },
+								SeetheRate = Input { Value = 0.026, },
+								Color1Red = Input { Value = -1, },
+								Color1Green = Input { Value = -1, },
+								Color1Blue = Input { Value = -1, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -106.864, 8.54706 } },
+						},
+						CreateBumpMap1_1_1 = CreateBumpMap {
+							CtrlWShown = false,
+							Inputs = {
+								Input = Input {
+									SourceOp = "FastNoise1_3_1",
+									Source = "Output",
+								},
+								ClampNormalZ = Input { Value = 1, },
+								HeightScale = Input { Value = 100, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -5.885, 46.2594 } },
+						},
+						ColorCorrector2_1_1 = ColorCorrector {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "CreateBumpMap1_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 106, 46.2594 } },
+						},
+						Displace1_1_1 = Displace {
+							CtrlWShown = false,
+							Inputs = {
+								Type = Input { Value = 1, },
+								XChannel = Input { Value = 1, },
+								XOffset = Input { Value = -0.5, },
+								XRefraction = Input { Value = 0.1, },
+								YChannel = Input { Value = 0, },
+								YOffset = Input { Value = -0.5, },
+								YRefraction = Input { Value = 0.1, },
+								Offset = Input { Value = -0.5, },
+								Input = Input {
+									SourceOp = "Background2_1_1",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "ColorCorrector2_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 62.533, 110.968 } },
+						}
+					},
+				},
+				ekawa_TurbDisplace = MacroOperator {
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "FastNoise1",
+							Source = "Detail",
+							Default = 2,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "FastNoise1",
+							Source = "XScale",
+							Default = 2,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "FastNoise1",
+							Source = "SeetheRate",
+							Default = 0,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "MasterRGBContrast",
+							Name = "Overall Strength",
+							Default = 1,
+						},
+						MainInput1 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "Input",
+						},
+						Input5 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "XRefraction",
+							Default = 0.1,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "YRefraction",
+							Default = 0.1,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "Blend",
+							Default = 1,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "ProcessRed",
+							Name = "Process",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "ProcessGreen",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "ProcessBlue",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "ProcessAlpha",
+							ControlGroup = 9,
+							Default = 1,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Displace1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 385, -280.5 } },
+					Tools = ordered() {
+						FastNoise1 = FastNoise {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Detail = Input { Value = 2.23, },
+								XScale = Input { Value = 2.12, },
+								SeetheRate = Input { Value = 0.064, },
+								Color1Red = Input { Value = -1, },
+								Color1Green = Input { Value = -1, },
+								Color1Blue = Input { Value = -1, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -106.864, 8.54678 } },
+						},
+						CreateBumpMap1 = CreateBumpMap {
+							CtrlWShown = false,
+							Inputs = {
+								Input = Input {
+									SourceOp = "FastNoise1",
+									Source = "Output",
+								},
+								ClampNormalZ = Input { Value = 1, },
+								HeightScale = Input { Value = 100, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -5.88498, 46.2591 } },
+						},
+						ColorCorrector2 = ColorCorrector {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "CreateBumpMap1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 106, 46.2591 } },
+						},
+						Displace1 = Displace {
+							CtrlWShown = false,
+							Inputs = {
+								Type = Input { Value = 1, },
+								XChannel = Input { Value = 1, },
+								XOffset = Input { Value = -0.5, },
+								XRefraction = Input { Value = 0.1, },
+								YChannel = Input { Value = 0, },
+								YOffset = Input { Value = -0.5, },
+								YRefraction = Input { Value = 0.1, },
+								Offset = Input { Value = -0.5, },
+								Input = Input {
+									SourceOp = "Background2",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "ColorCorrector2",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 62.533, 110.968 } },
+						}
+					},
+				},
+				Background2_2 = Background {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon1_2",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1045, -313.5 } },
+				},
+				ekawa_TurbDisplace_2 = MacroOperator {
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "FastNoise1_4",
+							Source = "Detail",
+							Default = 2,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "FastNoise1_4",
+							Source = "XScale",
+							Default = 2,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "FastNoise1_4",
+							Source = "SeetheRate",
+							Default = 0,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "MasterRGBContrast",
+							Name = "Overall Strength",
+							Default = 1,
+						},
+						MainInput1 = InstanceInput {
+							SourceOp = "Displace1_2",
+							Source = "Input",
+						},
+						Input5 = InstanceInput {
+							SourceOp = "Displace1_2",
+							Source = "XRefraction",
+							Default = 0.1,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "Displace1_2",
+							Source = "YRefraction",
+							Default = 0.1,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "Displace1_2",
+							Source = "Blend",
+							Default = 1,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "Displace1_2",
+							Source = "ProcessRed",
+							Name = "Process",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "Displace1_2",
+							Source = "ProcessGreen",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "Displace1_2",
+							Source = "ProcessBlue",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "Displace1_2",
+							Source = "ProcessAlpha",
+							ControlGroup = 9,
+							Default = 1,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Displace1_2",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 1045, -280.5 } },
+					Tools = ordered() {
+						FastNoise1_4 = FastNoise {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Detail = Input { Value = 2.23, },
+								XScale = Input { Value = 2.12, },
+								SeetheRate = Input { Value = 0.064, },
+								Color1Red = Input { Value = -1, },
+								Color1Green = Input { Value = -1, },
+								Color1Blue = Input { Value = -1, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -106.864, 8.54697 } },
+						},
+						CreateBumpMap1_2 = CreateBumpMap {
+							CtrlWShown = false,
+							Inputs = {
+								Input = Input {
+									SourceOp = "FastNoise1_4",
+									Source = "Output",
+								},
+								ClampNormalZ = Input { Value = 1, },
+								HeightScale = Input { Value = 100, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -5.88499, 46.2593 } },
+						},
+						ColorCorrector2_2 = ColorCorrector {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "CreateBumpMap1_2",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 106, 46.2593 } },
+						},
+						Displace1_2 = Displace {
+							CtrlWShown = false,
+							Inputs = {
+								Type = Input { Value = 1, },
+								XChannel = Input { Value = 1, },
+								XOffset = Input { Value = -0.5, },
+								XRefraction = Input { Value = 0.1, },
+								YChannel = Input { Value = 0, },
+								YOffset = Input { Value = -0.5, },
+								YRefraction = Input { Value = 0.1, },
+								Offset = Input { Value = -0.5, },
+								Input = Input {
+									SourceOp = "Background2_2",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "ColorCorrector2_2",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 62.533, 110.968 } },
+						}
+					},
+				},
+				XGlow1 = Fuse.XGlow {
+					Inputs = {
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 0.16078431372549, 0.16078431372549, 1 }
+								}
+							},
+						},
+						Input = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 385, -247.5 } },
+					Version = 102
+				},
+				XGlow1_1 = Fuse.XGlow {
+					Inputs = {
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0.184313725490196, 0.23921568627451, 1, 1 }
+								}
+							},
+						},
+						Input = Input {
+							SourceOp = "Displace1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 605, -247.5 } },
+					Version = 102
+				},
+				XGlow1_3 = Fuse.XGlow {
+					Inputs = {
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0.976470588235294, 0.345098039215686, 1, 1 }
+								}
+							},
+						},
+						Input = Input {
+							SourceOp = "Displace1_2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1045, -247.5 } },
+					Version = 102
+				},
+				XGlow1_2 = Fuse.XGlow {
+					Inputs = {
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 0.945098039215686, 0.329411764705882, 1 }
+								}
+							},
+						},
+						Input = Input {
+							SourceOp = "Displace1_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 825, -247.5 } },
+					Version = 102
+				},
+				Polygon1_1_2 = PolylineMask {
+					DrawMode = "ClickAppend",
+					DrawMode2 = "InsertAndModify",
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						BorderWidth = Input { Value = 0.0012, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.5, 0.547 }, },
+						Polyline = Input {
+							SourceOp = "Polygon1_1_2Polyline",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1155, -313.5 } },
+				},
+				Polygon1_1_2Polyline = BezierSpline {
+					SplineColor = { Red = 173, Green = 255, Blue = 47 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline {
+								Points = {
+									{ X = -0.640483383685801, Y = 0.0254691689008043, RX = 0.445509949314388, RY = -0.029837380388095 },
+									{ X = 0.696374622356495, Y = 0.0978552278820375, LX = -0.445674028363954, LY = -0.0511117196846641 }
+								}
+							} }
+					}
+				},
+				ekawa_TurbDisplace_1_2 = MacroOperator {
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "FastNoise1_3_2",
+							Source = "Detail",
+							Default = 2,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "FastNoise1_3_2",
+							Source = "XScale",
+							Default = 2,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "FastNoise1_3_2",
+							Source = "SeetheRate",
+							Default = 0,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_2",
+							Source = "MasterRGBContrast",
+							Name = "Overall Strength",
+							Default = 1,
+						},
+						MainInput1 = InstanceInput {
+							SourceOp = "Displace1_1_2",
+							Source = "Input",
+						},
+						Input5 = InstanceInput {
+							SourceOp = "Displace1_1_2",
+							Source = "XRefraction",
+							Default = 0.1,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "Displace1_1_2",
+							Source = "YRefraction",
+							Default = 0.1,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "Displace1_1_2",
+							Source = "Blend",
+							Default = 1,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "Displace1_1_2",
+							Source = "ProcessRed",
+							Name = "Process",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "Displace1_1_2",
+							Source = "ProcessGreen",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "Displace1_1_2",
+							Source = "ProcessBlue",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "Displace1_1_2",
+							Source = "ProcessAlpha",
+							ControlGroup = 9,
+							Default = 1,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Displace1_1_2",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 1265, -280.5 } },
+					Tools = ordered() {
+						FastNoise1_3_2 = FastNoise {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Detail = Input { Value = 3.3, },
+								XScale = Input { Value = 1.27, },
+								SeetheRate = Input { Value = 0.026, },
+								Color1Red = Input { Value = -1, },
+								Color1Green = Input { Value = -1, },
+								Color1Blue = Input { Value = -1, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -106.864, 8.54706 } },
+						},
+						CreateBumpMap1_1_2 = CreateBumpMap {
+							CtrlWShown = false,
+							Inputs = {
+								Input = Input {
+									SourceOp = "FastNoise1_3_2",
+									Source = "Output",
+								},
+								ClampNormalZ = Input { Value = 1, },
+								HeightScale = Input { Value = 100, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -5.885, 46.2594 } },
+						},
+						ColorCorrector2_1_2 = ColorCorrector {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "CreateBumpMap1_1_2",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 106, 46.2594 } },
+						},
+						Displace1_1_2 = Displace {
+							CtrlWShown = false,
+							Inputs = {
+								Type = Input { Value = 1, },
+								XChannel = Input { Value = 1, },
+								XOffset = Input { Value = -0.5, },
+								XRefraction = Input { Value = 0.1, },
+								YChannel = Input { Value = 0, },
+								YOffset = Input { Value = -0.5, },
+								YRefraction = Input { Value = 0.1, },
+								Offset = Input { Value = -0.5, },
+								Input = Input {
+									SourceOp = "Background2_1_2",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "ColorCorrector2_1_2",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 62.533, 110.968 } },
+						}
+					},
+				},
+				Background2_1_2 = Background {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon1_1_2",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1265, -313.5 } },
+				},
+				XGlow1_4 = Fuse.XGlow {
+					Inputs = {
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 0.16078431372549, 0.16078431372549, 1 }
+								}
+							},
+						},
+						Input = Input {
+							SourceOp = "Displace1_1_2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1265, -247.5 } },
+					Version = 102
+				},
+				Merge5_1_2 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge5_2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "XGlow1_4",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1265, -214.5 } },
+				},
+				Merge5_1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge5",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "XGlow1_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 605, -214.5 } },
+				},
+				Merge5_1_1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge5_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "XGlow1_2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 825, -214.5 } },
+				},
+				Merge5_2 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge5_1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "XGlow1_3",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1045, -214.5 } },
+				},
+				Merge5 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "XGlow1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 385, -214.5 } },
+				},
+				Background1 = Background {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 275, -214.5 } },
+				},
+				Polygon1_1_1_1 = PolylineMask {
+					DrawMode = "ClickAppend",
+					DrawMode2 = "InsertAndModify",
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						BorderWidth = Input { Value = 0.0012, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.5, 0.424 }, },
+						Polyline = Input {
+							SourceOp = "Polygon1_1_1_1Polyline",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1375, -313.5 } },
+				},
+				Polygon1_1_1_1Polyline = BezierSpline {
+					SplineColor = { Red = 173, Green = 255, Blue = 47 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline {
+								Points = {
+									{ X = -0.640483383685801, Y = 0.0254691689008043, RX = 0.445509949314388, RY = -0.029837380388095 },
+									{ X = 0.696374622356495, Y = 0.0978552278820375, LX = -0.445674028363954, LY = -0.0511117196846641 }
+								}
+							} }
+					}
+				},
+				ekawa_TurbDisplace_1_1_1 = MacroOperator {
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "FastNoise1_3_1_1",
+							Source = "Detail",
+							Default = 2,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "FastNoise1_3_1_1",
+							Source = "XScale",
+							Default = 2,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "FastNoise1_3_1_1",
+							Source = "SeetheRate",
+							Default = 0,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1_1",
+							Source = "MasterRGBContrast",
+							Name = "Overall Strength",
+							Default = 1,
+						},
+						MainInput1 = InstanceInput {
+							SourceOp = "Displace1_1_1_1",
+							Source = "Input",
+						},
+						Input5 = InstanceInput {
+							SourceOp = "Displace1_1_1_1",
+							Source = "XRefraction",
+							Default = 0.1,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "Displace1_1_1_1",
+							Source = "YRefraction",
+							Default = 0.1,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "Displace1_1_1_1",
+							Source = "Blend",
+							Default = 1,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "Displace1_1_1_1",
+							Source = "ProcessRed",
+							Name = "Process",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "Displace1_1_1_1",
+							Source = "ProcessGreen",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "Displace1_1_1_1",
+							Source = "ProcessBlue",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "Displace1_1_1_1",
+							Source = "ProcessAlpha",
+							ControlGroup = 9,
+							Default = 1,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Displace1_1_1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 1485, -280.5 } },
+					Tools = ordered() {
+						FastNoise1_3_1_1 = FastNoise {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Detail = Input { Value = 3.3, },
+								XScale = Input { Value = 1.27, },
+								SeetheRate = Input { Value = 0.026, },
+								Color1Red = Input { Value = -1, },
+								Color1Green = Input { Value = -1, },
+								Color1Blue = Input { Value = -1, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -106.864, 8.5471 } },
+						},
+						CreateBumpMap1_1_1_1 = CreateBumpMap {
+							CtrlWShown = false,
+							Inputs = {
+								Input = Input {
+									SourceOp = "FastNoise1_3_1_1",
+									Source = "Output",
+								},
+								ClampNormalZ = Input { Value = 1, },
+								HeightScale = Input { Value = 100, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -5.88501, 46.2594 } },
+						},
+						ColorCorrector2_1_1_1 = ColorCorrector {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "CreateBumpMap1_1_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 106, 46.2594 } },
+						},
+						Displace1_1_1_1 = Displace {
+							CtrlWShown = false,
+							Inputs = {
+								Type = Input { Value = 1, },
+								XChannel = Input { Value = 1, },
+								XOffset = Input { Value = -0.5, },
+								XRefraction = Input { Value = 0.1, },
+								YChannel = Input { Value = 0, },
+								YOffset = Input { Value = -0.5, },
+								YRefraction = Input { Value = 0.1, },
+								Offset = Input { Value = -0.5, },
+								Input = Input {
+									SourceOp = "Background2_1_1_1",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "ColorCorrector2_1_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 62.533, 110.968 } },
+						}
+					},
+				},
+				XGlow1_5 = Fuse.XGlow {
+					Inputs = {
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 0.16078431372549, 0.16078431372549, 1 }
+								}
+							},
+						},
+						Input = Input {
+							SourceOp = "Displace1_1_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1485, -247.5 } },
+					Version = 102
+				},
+				Merge5_1_1_1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge5_1_2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "XGlow1_5",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1485, -214.5 } },
+				},
+				pEmitter1 = pEmitter {
+					ID = 61,
+					Inputs = {
+						["BezierRgn.Polyline"] = Input {
+							Value = Polyline {
+							},
+						},
+						["RectRgn.Width"] = Input { Value = 1, },
+						["RectRgn.Height"] = Input { Value = 0.573, },
+						Number = Input {
+							SourceOp = "pEmitter1Number",
+							Source = "Value",
+						},
+						VelocityControls = Input { Value = 1, },
+						Velocity = Input { Value = 0.031, },
+						Angle = Input { Value = -183.7, },
+						Style = Input { Value = FuID { "ParticleStyleBlob" }, },
+						Region = Input { Value = FuID { "CubeRgn" }, },
+						["ParticleStyle.SizeControls"] = Input { Value = 1, },
+						["ParticleStyle.Size"] = Input { Value = 1.1126, },
+						["ParticleStyle.SizeVariance"] = Input { Value = 0.0257, },
+						["ParticleStyle.SizeOverLife"] = Input {
+							SourceOp = "pEmitter1SizeOverLife",
+							Source = "Value",
+						},
+						["ParticleStyle.BlurOverLife"] = Input {
+							SourceOp = "pEmitter1BlurOverLife2D",
+							Source = "Value",
+						},
+						["CubeRgn.Width"] = Input { Value = 1, },
+						["CubeRgn.Height"] = Input { Value = 0.181, },
+						["CubeRgn.Depth"] = Input { Value = 0.848, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1485, -346.5 } },
+				},
+				pEmitter1Number = BezierSpline {
+					SplineColor = { Red = 233, Green = 206, Blue = 78 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 75, RH = { 0.333333333333333, 50 }, Flags = { Linear = true } },
+						[1] = { 0, LH = { 0.666666666666667, 25 }, Flags = { Linear = true } }
+					}
+				},
+				pEmitter1SizeOverLife = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+				},
+				pEmitter1BlurOverLife2D = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+				},
+				Background2_1_1_1 = Background {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon1_1_1_1",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1485, -313.5 } },
+				},
+				Merge7 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge5_1_1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "XGlow2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1650, -214.5 } },
+				},
+				pTurbulence1 = pTurbulence {
+					ID = 67,
+					Inputs = {
+						XStrength = Input { Value = 0.435, },
+						YStrength = Input { Value = 0.453, },
+						StrengthOverLifeLUT = Input {
+							SourceOp = "pTurbulence1StrengthOverLifeLUT",
+							Source = "Value",
+						},
+						Density = Input { Value = 12.3, },
+						Input = Input {
+							SourceOp = "pEmitter1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1650, -346.5 } },
+				},
+				pTurbulence1StrengthOverLifeLUT = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+				},
+				ErodeDilate1 = ErodeDilate {
+					Inputs = {
+						XAmount = Input { Value = -0.0041, },
+						Input = Input {
+							SourceOp = "Merge7",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1760, -214.5 } },
+				},
+				XGlow2 = Fuse.XGlow {
+					Inputs = {
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 0.274509803921569, 0.274509803921569, 1 }
+								}
+							},
+						},
+						Input = Input {
+							SourceOp = "pRender1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1815, -313.5 } },
+					Version = 102
+				},
+				pRender1 = pRender {
+					Inputs = {
+						_MotionBlurWarning = Input { Disabled = true, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.GammaType"] = Input { Value = FuID { "Space" }, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						OutputMode = Input {
+							Value = FuID { "TwoD" },
+							Disabled = true,
+						},
+						["MaterialID.MaterialID"] = Input { Value = 1, },
+						["ObjectID.ObjectID"] = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "pTurbulence1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1815, -346.5 } },
+				},
+				Background3 = Background {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Type = Input { Value = FuID { "Gradient" }, },
+						Start = Input {
+							SourceOp = "Path2",
+							Source = "Position",
+						},
+						End = Input {
+							SourceOp = "Path3",
+							Source = "Position",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1980, -280.5 } },
+				},
+				Path2 = PolyPath {
+					DrawMode = "InsertAndModify",
+					CtrlWZoom = false,
+					Inputs = {
+						Displacement = Input {
+							SourceOp = "Path2Displacement",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = 0.449176093916756, Y = -0.00189753320683111, RX = -0.43923353805754, RY = 0.00189513733156997 },
+									{ Linear = true, LockY = true, X = -0.868524520255864, Y = 0.00378787878787878, LX = 0.43923353805754, LY = -0.00189513733156997 }
+								}
+							},
+						},
+					},
+				},
+				Path2Displacement = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 255 },
+					CtrlWZoom = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, RH = { 1.1, 0.48 }, Flags = { LockedY = true } },
+						[10] = { 1, LH = { 5.05, 1.03 }, Flags = { LockedY = true } }
+					}
+				},
+				Path3 = PolyPath {
+					DrawMode = "InsertAndModify",
+					CtrlWZoom = false,
+					Inputs = {
+						Displacement = Input {
+							SourceOp = "Path3Displacement",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = 1.12083190921441, Y = -0.00761899264796073, RX = -0.104491814687855, RY = 0.00423277705298782 },
+									{ Linear = true, X = 0.807356465150845, Y = 0.00507933851100273, LX = 0.104491814687855, LY = -0.00423277705298782, RX = -0.427118821716949, RY = -0.00169311283700091 },
+									{ Linear = true, LockY = true, X = -0.474, Y = 0, LX = 0.427118821716949, LY = 0.00169311283700091 }
+								}
+							},
+						},
+					},
+				},
+				Path3Displacement = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 178 },
+					CtrlWZoom = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, RH = { 1.6, 0.36 }, Flags = { LockedY = true } },
+						[10] = { 1, LH = { 4.8, 1 }, Flags = { LockedY = true } }
+					}
+				},
+				Merge6 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "ErodeDilate1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background3",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Geometric" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1980, -214.5 } },
+				},
+				Unmult_1 = MacroOperator {
+					CtrlWZoom = false,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						MainInput1 = InstanceInput {
+							SourceOp = "unmult",
+							Source = "Background",
+						},
+						Unmult = InstanceInput {
+							SourceOp = "unmult",
+							Source = "Unmult",
+							Page = "Controls",
+							Default = 1,
+						},
+						EffectMask = InstanceInput {
+							SourceOp = "unmult",
+							Source = "EffectMask",
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "unmult",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 2145, -214.5 } },
+					Tools = ordered() {
+						unmult = ChannelBoolean {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								ToRed = Input { Value = 4, },
+								ToGreen = Input { Value = 4, },
+								ToBlue = Input { Value = 4, },
+								ToAlpha = Input {
+									Value = 13,
+									Expression = "iif(Unmult==1,13.0,4)",
+								},
+								Background = Input {
+									SourceOp = "Merge6",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 0, 8.75757 } },
+							UserControls = ordered() {
+								Unmult = {
+									INP_MaxAllowed = 1000000,
+									INP_Integer = false,
+									INPID_InputControl = "CheckboxControl",
+									INP_MaxScale = 1,
+									INP_Default = 1,
+									INP_MinScale = 0,
+									INP_MinAllowed = -1000000,
+									LINKID_DataType = "Number",
+									ICS_ControlPage = "Controls",
+									CBC_TriState = false,
+									LINKS_Name = "Unmult"
+								}
+							}
+						}
+					},
+				}
+			},
+		}
+	},
+	ActiveTool = "Yugi_OrganicLinespreset"
+}

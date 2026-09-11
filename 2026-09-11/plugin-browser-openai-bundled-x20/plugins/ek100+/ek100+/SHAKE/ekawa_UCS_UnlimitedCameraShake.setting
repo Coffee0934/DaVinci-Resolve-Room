@@ -1,0 +1,148 @@
+{
+	Tools = ordered() {
+		ekawa_UCS_UnlimitedCameraShake_1_1 = MacroOperator {
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "CameraShake1_1_1",
+					Source = "Source",
+				},
+				Input9 = InstanceInput {
+					SourceOp = "CameraShake1_1_1",
+					Source = "MotionScale",
+					Page = "Controls",
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "CameraShake1_1_1",
+					Source = "SpeedScale",
+					Page = "Controls",
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "CameraShake1_1_1",
+					Source = "Blend",
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "CameraShake1_1_1",
+					Source = "XAmpl",
+					Default = 0.100000001490116,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "CameraShake1_1_1",
+					Source = "YAmpl",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "CameraShake1_1_1",
+					Source = "RAmpl",
+					Default = 0.100000001490116,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "CameraShake1_1_1",
+					Source = "XYFreq",
+					Default = 0.5,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "CameraShake1_1_1",
+					Source = "ZAmpl",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "CameraShake1_1_1",
+					Source = "ZFreq",
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "CameraShake1_1_1",
+					Source = "zoomType",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "CameraShake1_1_1",
+					Source = "EffectMask",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "CameraShake1_1_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 460.667, 167.364 } },
+			Tools = ordered() {
+				CameraShake1_1_1 = ofx.com.blackmagicdesign.resolvefx.CameraShake {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						MotionBlurAmt = Input { Value = 0, },
+						ShakeLevelsGroup = Input { Value = 1, },
+						XAmpl = Input { Value = 0.100000001490116, },
+						YAmpl = Input { Value = 1, },
+						RAmpl = Input { Value = 0.100000001490116, },
+						XYFreq = Input { Value = 0.5, },
+						ZAmpl = Input { Value = 0, },
+						ZFreq = Input { Value = 0, },
+						zoomType = Input { Value = FuID { "ZOOM_OUTWARD" }, },
+						ShakeQualityGroup = Input { Value = 1, },
+						motionType = Input { Value = FuID { "MOTION_TYPE_SINE" }, },
+						XYPhase = Input { Value = 0.5, },
+						ShakeRand = Input { Value = 0, },
+						RandSpeed = Input { Value = 0, },
+						ShakePsLen = Input { Value = 0, },
+						ShakePsInt = Input { Value = 0, },
+						PauseRand = Input { Value = 0, },
+						RandSeed = Input { Value = 1, },
+						BlankingHandlingGroup = Input { Value = 1, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_REFLECT" }, },
+						ZoomCrop = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.2", },
+						MotionScale = Input { Value = 1, },
+						SpeedScale = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 8.75758 } },
+					UserControls = ordered() {
+						MotionScale = {
+							INP_MaxAllowed = 15,
+							INP_Integer = false,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 15,
+							INP_Default = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							ICS_ControlPage = "Controls",
+							LINKS_Name = "Motion Scale"
+						},
+						SpeedScale = {
+							INP_MaxAllowed = 15,
+							INP_Integer = false,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 15,
+							INP_Default = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							ICS_ControlPage = "Controls",
+							LINKS_Name = "Speed Scale"
+						}
+					}
+				}
+			},
+		}
+	}
+}

@@ -1,0 +1,155 @@
+{
+	Tools = ordered() {
+		ek_pfx_TurbDisplace = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Name = "Noise Detail",
+					Default = 3,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "LockXY",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "XScale",
+					Default = 2.2,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "YScale",
+					Default = 2,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Seethe",
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "SeetheRate",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Input",
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Type",
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "RefractionStrength",
+					Default = 2,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Displace1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 3, },
+						XScale = Input { Value = 2.2, },
+						Type = Input { Value = 1, },
+						Color1Red = Input { Value = -1, },
+						Color1Green = Input { Value = -1, },
+						Color1Blue = Input { Value = -1, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { -1, -1, -1, 1 },
+									[1] = { 1, 1, 1, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 242, -78.697 } },
+				},
+				CreateBumpMap1 = CreateBumpMap {
+					Inputs = {
+						Input = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						ClampNormalZ = Input { Value = 1, },
+						HeightScale = Input { Value = 100, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 264, -12.697 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					Inputs = {
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "CreateBumpMap1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 262.667, 20.303 } },
+				},
+				Displace1 = Displace {
+					CtrlWZoom = false,
+					Inputs = {
+						Type = Input { Value = 1, },
+						Channel = Input { Value = 1, },
+						XChannel = Input { Value = 1, },
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input { Value = 0.1, },
+						YChannel = Input { Value = 0, },
+						YOffset = Input { Value = -0.5, },
+						YRefraction = Input { Value = 0.1, },
+						Offset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = 2, },
+						Foreground = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 275.667, 53.303 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ek_pfx_TurbDisplace"
+}

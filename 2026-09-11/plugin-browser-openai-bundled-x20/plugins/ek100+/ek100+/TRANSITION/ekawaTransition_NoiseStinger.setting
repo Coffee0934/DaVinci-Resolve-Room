@@ -1,0 +1,200 @@
+{
+	Tools = ordered() {
+		ekawaTransition_NoiseStinger = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Default = 10,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Contrast",
+					Default = 5,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Brightness",
+					Name = "Transition Slider",
+					MinScale = -4,
+					MaxScale = 3,
+					Default = -3,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "XScale",
+					Default = 20,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "SeetheRate",
+					Default = 0.063,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "DirectionalBlur1",
+					Source = "BlurAngle",
+					Default = 180,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Blur1",
+					Source = "XBlurSize",
+					MaxScale = 2,
+					Default = 0.9,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "Background",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "Foreground",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge3",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						Contrast = Input { Value = 5, },
+						Brightness = Input { Value = -3, },
+						XScale = Input { Value = 20, },
+						SeetheRate = Input { Value = 0.063, },
+						Type = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 9.99203, 115.105 } },
+				},
+				JPEGDamage1 = ofx.com.blackmagicdesign.resolvefx.JPEGDamage {
+					Inputs = {
+						Source = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						ofxQuality = Input { Value = 1, },
+						Resolution = Input { Value = 1, },
+						AspectRatio = Input { Value = 5, },
+						FrequencyScale = Input { Value = 10, },
+						FrequencyType = Input { Value = FuID { "FREQUENCY_TYPE_XY" }, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 181.032, 138.857 } },
+				},
+				DirectionalBlur1 = ofx.com.blackmagicdesign.resolvefx.DirectionalBlur {
+					Inputs = {
+						Source = Input {
+							SourceOp = "JPEGDamage1",
+							Source = "Output",
+						},
+						BlurStrength = Input { Value = 1, },
+						BlurAngle = Input { Value = 180, },
+						advancedControlsGroup = Input { Value = 1, },
+						blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+						isSymmetric = Input { Value = 1, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_REFLECT" }, },
+						isBlurAlpha = Input { Value = 1, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "3.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 296.366, 133.323 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					Inputs = {
+						WheelTintAngle1 = Input { Value = 0.75, },
+						WheelTintLength1 = Input { Value = 0.0002, },
+						MasterRGBGain = Input { Value = 5, },
+						MasterRGBLift = Input { Value = 1, },
+						MasterRGBGamma = Input { Value = 0, },
+						MasterRGBBrightness = Input { Value = -1, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						PreDividePostMultiply = Input { Value = 1, },
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "DirectionalBlur1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 414.469, 121.252 } },
+				},
+				LumaKeyer1 = LumaKeyer {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 500.469, 131.222 } },
+				},
+				Blur1 = Blur {
+					Inputs = {
+						Filter = Input { Value = FuID { "Box" }, },
+						XBlurSize = Input { Value = 0.9, },
+						YBlurSize = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 629.774, 87.9457 } },
+				},
+				Merge3 = Merge {
+					CtrlWZoom = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 586.769, 254.844 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaTransition_NoiseStinger"
+}

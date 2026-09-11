@@ -1,0 +1,149 @@
+{
+	Tools = ordered() {
+		ekawa_TextureFramer5 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise6_1",
+					Source = "Start",
+					DefaultX = 0.497579535913971,
+					DefaultY = 0.504218515767438,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise6_1",
+					Source = "End",
+					DefaultX = 1.4163984208928,
+					DefaultY = 0.5300151709546,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "Gradient",
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge12",
+					Source = "Background",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Merge12",
+					Source = "ApplyMode",
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Merge12",
+					Source = "BlendClone",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge12",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise6_1 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 0.47, },
+						Contrast = Input { Value = 4.24, },
+						Brightness = Input { Value = -0.22, },
+						LockXY = Input { Value = 0, },
+						XScale = Input { Value = 170, },
+						YScale = Input { Value = 20, },
+						Seethe = Input { Value = 0.123, },
+						SeetheRate = Input { Value = 0.102, },
+						Discontinuous = Input { Value = 1, },
+						Type = Input { Value = 1, },
+						GradientType = Input { Value = 5, },
+						Start = Input { Value = { 0.497579535913971, 0.504218515767438 }, },
+						End = Input { Value = { 1.4163984208928, 0.5300151709546 }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1966.98, 137.564 } },
+				},
+				JPEGDamage1_1 = ofx.com.blackmagicdesign.resolvefx.JPEGDamage {
+					Inputs = {
+						Source = Input {
+							SourceOp = "FastNoise6_1",
+							Source = "Output",
+						},
+						ofxQuality = Input { Value = 7.24, },
+						Resolution = Input { Value = 13.1, },
+						AspectRatio = Input { Value = 0.200000002980232, },
+						FrequencyScale = Input { Value = 1, },
+						FrequencyType = Input { Value = FuID { "FREQUENCY_TYPE_XY" }, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2118.32, 139.988 } },
+				},
+				FastNoise6 = FastNoise {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "JPEGDamage1_1",
+							Source = "Output",
+						},
+						ApplyMaskInverted = Input { Value = 1, },
+						MaskChannel = Input { Value = 5, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 0.39, },
+						Contrast = Input { Value = 2.9, },
+						LockXY = Input { Value = 0, },
+						XScale = Input { Value = 100, },
+						YScale = Input { Value = 2.2, },
+						SeetheRate = Input { Value = 0.031, },
+						Discontinuous = Input { Value = 1, },
+						Type = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1986.98, 196.958 } },
+				},
+				JPEGDamage1 = ofx.com.blackmagicdesign.resolvefx.JPEGDamage {
+					CtrlWZoom = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "FastNoise6",
+							Source = "Output",
+						},
+						ofxQuality = Input { Value = 7.24, },
+						Resolution = Input { Value = 4.65, },
+						AspectRatio = Input { Value = 0.200000002980232, },
+						FrequencyScale = Input { Value = 1, },
+						FrequencyType = Input { Value = FuID { "FREQUENCY_TYPE_XY" }, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2147.65, 194.534 } },
+				},
+				Merge12 = Merge {
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "JPEGDamage1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2353.65, 228.473 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_TextureFramer5"
+}

@@ -1,0 +1,230 @@
+{
+	Tools = ordered() {
+		ekawaEffectFramer_LightStreaks = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Default = 2,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Contrast",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Brightness",
+					Default = -1.16,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "XScale",
+					Default = 8.03,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "YScale",
+					Default = 1.26,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Angle",
+					Default = -31.4,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Seethe",
+					Default = -0.094,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "SeetheRate",
+					Default = 0.094,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Gradient",
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "Hue1",
+					Name = "Hue",
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "Hue2",
+					Name = "Hue",
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "Hue3",
+					Name = "Hue",
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "Hue4",
+					Name = "Hue",
+				},
+				Input14 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBGain",
+					Name = "Gain",
+					Default = 17,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "DirectionalBlur1",
+					Source = "BlurStrength",
+					Default = 0.512,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "DirectionalBlur1",
+					Source = "BlurAngle",
+					Default = -25,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Center",
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "RefractionStrength",
+					Default = 0.51,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ApplyMode",
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "BlendClone",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Brightness = Input { Value = -1.16, },
+						LockXY = Input { Value = 0, },
+						XScale = Input { Value = 8.03, },
+						YScale = Input { Value = 1.26, },
+						Angle = Input { Value = -31.4, },
+						Seethe = Input { Value = -0.094, },
+						SeetheRate = Input { Value = 0.094, },
+						Type = Input { Value = 1, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1 },
+									[1] = { 1, 0.6, 0.0392156862745098, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 116.73, -46.4988 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					Inputs = {
+						MasterRGBGain = Input { Value = 17, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 224.064, -46.4988 } },
+				},
+				DirectionalBlur1 = ofx.com.blackmagicdesign.resolvefx.DirectionalBlur {
+					Inputs = {
+						Source = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+						BlurStrength = Input { Value = 0.512, },
+						BlurAngle = Input { Value = -25, },
+						advancedControlsGroup = Input { Value = 1, },
+						blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+						isSymmetric = Input { Value = 1, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_REFLECT" }, },
+						isBlurAlpha = Input { Value = 1, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "3.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 337.397, 10.7436 } },
+				},
+				Displace1 = Displace {
+					Inputs = {
+						Center = Input { Value = { 0.769, 0.5 }, },
+						RefractionStrength = Input { Value = 0.51, },
+						Input = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 341.397, -95.6503 } },
+				},
+				Merge1 = Merge {
+					CtrlWZoom = false,
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "DirectionalBlur1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Color Dodge" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 221, 57.3497 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaEffectFramer_LightStreaks"
+}

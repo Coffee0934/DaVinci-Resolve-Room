@@ -1,0 +1,796 @@
+{
+	Tools = ordered() {
+		ekawaFastTint1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input1",
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input2",
+					ControlGroup = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input3",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input4",
+					ControlGroup = 2,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input5",
+					ControlGroup = 2,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input6",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input7",
+					ControlGroup = 2,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input8",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input9",
+					ControlGroup = 2,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input10",
+					ControlGroup = 2,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input11",
+					ControlGroup = 2,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input12",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input13",
+					ControlGroup = 2,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input14",
+					ControlGroup = 2,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input15",
+					ControlGroup = 2,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input16",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input17",
+					ControlGroup = 2,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input18",
+					ControlGroup = 2,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input19",
+					Default = 2,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input21",
+					Default = 2,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input22",
+					ControlGroup = 5,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input23",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input24",
+					ControlGroup = 5,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input25",
+					ControlGroup = 5,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input26",
+					ControlGroup = 5,
+					Default = 2,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input27",
+					ControlGroup = 5,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input28",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input29",
+					ControlGroup = 5,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input30",
+					ControlGroup = 5,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input31",
+					ControlGroup = 5,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input32",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input33",
+					ControlGroup = 5,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input34",
+					ControlGroup = 5,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input35",
+					ControlGroup = 5,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input36",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input37",
+					ControlGroup = 5,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input38",
+					ControlGroup = 5,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input39",
+					Default = 2,
+				},
+				Input39 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input41",
+					Default = 3,
+				},
+				Input40 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input42",
+					ControlGroup = 8,
+				},
+				Input41 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input43",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input42 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input44",
+					ControlGroup = 8,
+				},
+				Input43 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input45",
+					ControlGroup = 8,
+				},
+				Input44 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input46",
+					ControlGroup = 8,
+					Default = 3,
+				},
+				Input45 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input47",
+					ControlGroup = 8,
+				},
+				Input46 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input48",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input47 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input49",
+					ControlGroup = 8,
+				},
+				Input48 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input50",
+					ControlGroup = 8,
+				},
+				Input49 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input51",
+					ControlGroup = 8,
+				},
+				Input50 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input52",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input51 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input53",
+					ControlGroup = 8,
+				},
+				Input52 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input54",
+					ControlGroup = 8,
+				},
+				Input53 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input55",
+					ControlGroup = 8,
+				},
+				Input54 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input56",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input55 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input57",
+					ControlGroup = 8,
+				},
+				Input56 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input58",
+					ControlGroup = 8,
+				},
+				Input57 = InstanceInput {
+					SourceOp = "ekawaFastTint",
+					Source = "Input59",
+					Default = 2,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "Background",
+				},
+				Input58 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "BlendClone",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				ekawaFastTint = MacroOperator {
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "CorrectionRange",
+							Default = 1,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelHue1",
+							ControlGroup = 2,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelSaturation1",
+							ControlGroup = 2,
+							Default = 1,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelTintAngle1",
+							ControlGroup = 2,
+						},
+						Input5 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelTintLength1",
+							ControlGroup = 2,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelRangeDummy1",
+							ControlGroup = 2,
+							Default = 1,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelHue2",
+							ControlGroup = 2,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelSaturation2",
+							ControlGroup = 2,
+							Default = 1,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelTintAngle2",
+							ControlGroup = 2,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelTintLength2",
+							ControlGroup = 2,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelHue3",
+							ControlGroup = 2,
+						},
+						Input12 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelSaturation3",
+							ControlGroup = 2,
+							Default = 1,
+						},
+						Input13 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelTintAngle3",
+							ControlGroup = 2,
+						},
+						Input14 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelTintLength3",
+							ControlGroup = 2,
+						},
+						Input15 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelHue4",
+							ControlGroup = 2,
+						},
+						Input16 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelSaturation4",
+							ControlGroup = 2,
+							Default = 1,
+						},
+						Input17 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelTintAngle4",
+							ControlGroup = 2,
+						},
+						Input18 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "WheelTintLength4",
+							ControlGroup = 2,
+						},
+						Input19 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "TintMode",
+							Default = 2,
+						},
+						Input20 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "Blend",
+							Default = 1,
+						},
+						MainInput1 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "Input",
+						},
+						Input21 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "CorrectionRange",
+							Default = 2,
+						},
+						Input22 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelHue1",
+							ControlGroup = 7,
+						},
+						Input23 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelSaturation1",
+							ControlGroup = 7,
+							Default = 1,
+						},
+						Input24 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelTintAngle1",
+							ControlGroup = 7,
+						},
+						Input25 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelTintLength1",
+							ControlGroup = 7,
+						},
+						Input26 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelRangeDummy1",
+							ControlGroup = 7,
+							Default = 2,
+						},
+						Input27 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelHue2",
+							ControlGroup = 7,
+						},
+						Input28 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelSaturation2",
+							ControlGroup = 7,
+							Default = 1,
+						},
+						Input29 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelTintAngle2",
+							ControlGroup = 7,
+						},
+						Input30 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelTintLength2",
+							ControlGroup = 7,
+						},
+						Input31 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelHue3",
+							ControlGroup = 7,
+						},
+						Input32 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelSaturation3",
+							ControlGroup = 7,
+							Default = 1,
+						},
+						Input33 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelTintAngle3",
+							ControlGroup = 7,
+						},
+						Input34 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelTintLength3",
+							ControlGroup = 7,
+						},
+						Input35 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelHue4",
+							ControlGroup = 7,
+						},
+						Input36 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelSaturation4",
+							ControlGroup = 7,
+							Default = 1,
+						},
+						Input37 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelTintAngle4",
+							ControlGroup = 7,
+						},
+						Input38 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "WheelTintLength4",
+							ControlGroup = 7,
+						},
+						Input39 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "TintMode",
+							Default = 2,
+						},
+						Input40 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "Blend",
+							Default = 1,
+						},
+						Input41 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "CorrectionRange",
+							Default = 3,
+						},
+						Input42 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelHue1",
+							ControlGroup = 11,
+						},
+						Input43 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelSaturation1",
+							ControlGroup = 11,
+							Default = 1,
+						},
+						Input44 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelTintAngle1",
+							ControlGroup = 11,
+						},
+						Input45 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelTintLength1",
+							ControlGroup = 11,
+						},
+						Input46 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelRangeDummy1",
+							ControlGroup = 11,
+							Default = 3,
+						},
+						Input47 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelHue2",
+							ControlGroup = 11,
+						},
+						Input48 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelSaturation2",
+							ControlGroup = 11,
+							Default = 1,
+						},
+						Input49 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelTintAngle2",
+							ControlGroup = 11,
+						},
+						Input50 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelTintLength2",
+							ControlGroup = 11,
+						},
+						Input51 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelHue3",
+							ControlGroup = 11,
+						},
+						Input52 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelSaturation3",
+							ControlGroup = 11,
+							Default = 1,
+						},
+						Input53 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelTintAngle3",
+							ControlGroup = 11,
+						},
+						Input54 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelTintLength3",
+							ControlGroup = 11,
+						},
+						Input55 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelHue4",
+							ControlGroup = 11,
+						},
+						Input56 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelSaturation4",
+							ControlGroup = 11,
+							Default = 1,
+						},
+						Input57 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelTintAngle4",
+							ControlGroup = 11,
+						},
+						Input58 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "WheelTintLength4",
+							ControlGroup = 11,
+						},
+						Input59 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "TintMode",
+							Default = 2,
+						},
+						Input60 = InstanceInput {
+							SourceOp = "ColorCorrector3",
+							Source = "Blend",
+							Default = 1,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "ColorCorrector3",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 357, -87.4697 } },
+					Tools = ordered() {
+						ColorCorrector3 = ColorCorrector {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								CorrectionRange = Input { Value = 3, },
+								WheelRangeDummy1 = Input { Value = 3, },
+								SuppressionRangeDummy = Input { Value = 3, },
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "ColorCorrector2",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 106, 8.12118 } },
+						},
+						ColorCorrector1 = ColorCorrector {
+							CtrlWShown = false,
+							Inputs = {
+								CorrectionRange = Input { Value = 2, },
+								WheelRangeDummy1 = Input { Value = 2, },
+								SuppressionRangeDummy = Input { Value = 2, },
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "Merge2",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -106, 15.394 } },
+						},
+						ColorCorrector2 = ColorCorrector {
+							CtrlWShown = false,
+							Inputs = {
+								CorrectionRange = Input { Value = 1, },
+								WheelRangeDummy1 = Input { Value = 1, },
+								SuppressionRangeDummy = Input { Value = 1, },
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "ColorCorrector1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 1.33301, 12.9697 } },
+						}
+					},
+				},
+				Merge2 = Merge {
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 255.619, 29.1864 } },
+				},
+				Merge1 = Merge {
+					CtrlWZoom = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector3",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 454, 27.9699 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaFastTint1"
+}

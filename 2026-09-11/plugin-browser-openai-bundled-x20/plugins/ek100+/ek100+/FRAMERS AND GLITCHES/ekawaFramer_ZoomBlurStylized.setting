@@ -1,0 +1,82 @@
+{
+	Tools = ordered() {
+		ekawaFramer_ZoomBlurStylized = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Ellipse1",
+					Source = "SoftEdge",
+					Default = 0.0535,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Ellipse1",
+					Source = "BorderWidth",
+					MinScale = -1,
+					MaxScale = 1,
+					Default = -0.34,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "ZoomBlur2",
+					Source = "Source",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "ZoomBlur2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Ellipse1 = EllipseMask {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						SoftEdge = Input { Value = 0.0535, },
+						BorderWidth = Input { Value = -0.34, },
+						Invert = Input { Value = 1, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1342.02, 29.2827 } },
+				},
+				ZoomBlur2 = ofx.com.blackmagicdesign.resolvefx.ZoomBlur {
+					CtrlWZoom = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Ellipse1",
+							Source = "Mask",
+						},
+						CenterXPos = Input { Value = 0.5, },
+						CenterYPos = Input { Value = 0.5, },
+						xyPosition = Input { Value = { 0.5, 0.5 }, },
+						SmoothStrength = Input { Value = 0.512, },
+						zoomAmount = Input { Value = 0.400000005960464, },
+						blurTypeChoice = Input { Value = FuID { "BlurTypeStylized" }, },
+						centerExclusion = Input { Value = 0, },
+						advancedControlsGroup = Input { Value = 0, },
+						BorderType = Input {
+							Value = FuID { "BORDER_TYPE_REPLICATE" },
+							Disabled = true,
+						},
+						isFollowSizing = Input { Value = 1, },
+						isBlurAlpha = Input { Value = 1, },
+						BlendAmount = Input { Value = 0, },
+						isUseLegacyPosition = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "2.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1350.53, 65.7849 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaFramer_ZoomBlurStylized"
+}

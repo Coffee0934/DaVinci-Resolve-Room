@@ -1,0 +1,240 @@
+{
+	Tools = ordered() {
+		yugi_TextSpiral1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "ErodeDilate1",
+					Source = "XAmount",
+					Name = "X Thickness",
+					Default = 0.0006,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ErodeDilate1",
+					Source = "YAmount",
+					Name = "Y Thickness",
+					Default = 0,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "StopMotion1",
+					Source = "frameRepeat",
+					Name = "Laggy Amount",
+					Default = 3,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Bender3D1",
+					Source = "Amount",
+					Name = "Bend",
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Text3D1",
+					Source = "Transform3DOp.Translate.X",
+					Name = "Position X",
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Text3D1",
+					Source = "Transform3DOp.Translate.Y",
+					Name = "Position Y",
+					Default = -0.138,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Text3D1",
+					Source = "Transform3DOp.Translate.Z",
+					Name = "Position Z",
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Text3D1",
+					Source = "StyledText",
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Text3D1",
+					Source = "Font",
+					ControlGroup = 9,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Text3D1",
+					Source = "Style",
+					ControlGroup = 9,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Text3D1",
+					Source = "Red1Clone",
+					Name = "Color",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Text3D1",
+					Source = "Green1Clone",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Text3D1",
+					Source = "Blue1Clone",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Text3D1",
+					Source = "Alpha1Clone",
+					ControlGroup = 10,
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "ErodeDilate1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				ErodeDilate1 = ErodeDilate {
+					CtrlWShown = false,
+					Inputs = {
+						XAmount = Input { Value = 0.0006, },
+						Input = Input {
+							SourceOp = "StopMotion1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1265, 82.5 } },
+				},
+				StopMotion1 = ofx.com.blackmagicdesign.resolvefx.StopMotion {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Renderer3D1",
+							Source = "Output",
+						},
+						advancedGroup = Input { Value = 1, },
+						setReferenceButton = Input { Value = 0, },
+						referenceFrame = Input {
+							Value = 0,
+							Disabled = true,
+						},
+						frameRepeatVar = Input { Value = 0, },
+						frameRepeat = Input { Value = 3, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1155, 82.5 } },
+				},
+				Renderer3D1 = Renderer3D {
+					CtrlWShown = false,
+					CustomData = {
+						ToolVersion = 2
+					},
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						SceneInput = Input {
+							SourceOp = "Merge3D1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1045, 82.5 } },
+				},
+				Merge3D1 = Merge3D {
+					CtrlWShown = false,
+					Inputs = {
+						["Transform3DOp.Translate.X"] = Input {
+							SourceOp = "Merge3D1XOffset",
+							Source = "Value",
+						},
+						["Transform3DOp.Translate.Y"] = Input { Value = -0.473, },
+						SceneInput1 = Input {
+							SourceOp = "Bender3D1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 880, 82.5 } },
+				},
+				Merge3D1XOffset = BezierSpline {
+					SplineColor = { Red = 250, Green = 59, Blue = 49 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { -0.024, RH = { 2.3, -0.0723999999999999 }, Flags = { Linear = true } },
+						[9] = { -0.081, LH = { 6.18, -0.0404 } }
+					}
+				},
+				Bender3D1 = Bender3D {
+					CtrlWShown = false,
+					Inputs = {
+						SceneInput = Input {
+							SourceOp = "Text3D1",
+							Source = "Output",
+						},
+						Amount = Input {
+							SourceOp = "Bender3D1Amount",
+							Source = "Value",
+						},
+						Axis = Input { Value = 0, },
+						Group = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 770, 82.5 } },
+				},
+				Bender3D1Amount = BezierSpline {
+					SplineColor = { Red = 6, Green = 235, Blue = 218 },
+					CtrlWZoom = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 4.8, RH = { 1.5117965807081, 5.19438171670646 }, Flags = { Linear = true } },
+						[9] = { 5.71, LH = { 4.82612683152327, 5.20387679689337 } }
+					}
+				},
+				Text3D1 = Text3D {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						["Transform3DOp.Translate.Y"] = Input { Value = -0.138, },
+						["Transform3DOp.Rotate.Y"] = Input { Value = -19.2, },
+						["Transform3DOp.Scale.X"] = Input { Value = 0.552, },
+						LayoutSize = Input { Value = 0.984, },
+						LayoutRotation = Input { Value = 1, },
+						WordSpacing = Input { Value = 0.567, },
+						CharacterSpacing = Input { Value = 1.354, },
+						TransformRotation = Input { Value = 1, },
+						StyledText = Input { Value = "TextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextText", },
+						Font = Input { Value = "Palatino", },
+						Style = Input { Value = "Roman", },
+						Size = Input { Value = 0.94, },
+						VerticalTopCenterBottom = Input { Value = -1, },
+						VerticalJustification = Input { Value = 3, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ExtrusionProfile = Input {
+							SourceOp = "Text3D1ExtrusionProfile",
+							Source = "Value",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 605, 82.5 } },
+				},
+				Text3D1ExtrusionProfile = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.0666666666666667, 0.333333333333333 }, Flags = { Linear = true } },
+							[0.2] = { 1, LH = { 0.133333333333333, 0.666666666666667 }, RH = { 0.4, 1 }, Flags = { Linear = true } },
+							[0.8] = { 1, LH = { 0.6, 1 }, RH = { 0.866666666666667, 0.666666666666667 }, Flags = { Linear = true } },
+							[1] = { 0, LH = { 0.933333333333333, 0.333333333333333 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+				}
+			},
+		}
+	},
+	ActiveTool = "yugi_TextSpiral1"
+}

@@ -1,0 +1,63 @@
+{
+	Tools = ordered() {
+		ekawa_fastgrid = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "Grid1",
+					Source = "Source",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Grid1",
+					Source = "blend",
+					Default = 0,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Grid1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Grid1 = ofx.com.blackmagicdesign.resolvefx.Grid {
+					CtrlWZoom = false,
+					Inputs = {
+						Blend = Input { Value = 0.646, },
+						vernum = Input { Value = 4, },
+						hornum = Input { Value = 6, },
+						majorspace = Input { Value = 4, },
+						lineprop = Input { Value = 1, },
+						linecolorRed = Input { Value = 1, },
+						linecolorGreen = Input { Value = 1, },
+						linecolorBlue = Input { Value = 1, },
+						horwidth = Input { Value = 0.003, },
+						verwidth = Input { Value = 0.008, },
+						majorwidth = Input { Value = 2.5, },
+						tranform = Input { Value = 1, },
+						pan = Input { Value = 0, },
+						tilt = Input { Value = 0, },
+						zoom = Input { Value = 1, },
+						rotate = Input { Value = 0, },
+						gridwidth = Input { Value = 1, },
+						gridheight = Input { Value = 1, },
+						ShearX = Input { Value = 0, },
+						ShearY = Input { Value = 0, },
+						pitch = Input { Value = 0, },
+						yaw = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 426.913, 283.263 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_fastgrid"
+}

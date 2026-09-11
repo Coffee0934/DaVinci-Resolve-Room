@@ -1,0 +1,152 @@
+{
+	Tools = ordered() {
+		ekawa_HeatDistBlur = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise6_2",
+					Source = "Detail",
+					Name = "Blur Detail",
+					Default = 2.99,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise6_2",
+					Source = "Contrast",
+					Name = "Blur Contrast",
+					Default = 1.51,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise6_2",
+					Source = "Brightness",
+					Name = "Blur Brightness",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise6_2",
+					Source = "XScale",
+					Name = "Blur Scale",
+					Default = 7.24,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise6_2",
+					Source = "Seethe",
+					Name = "Blur Seethe",
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "FastNoise6_2",
+					Source = "SeetheRate",
+					Name = "Blur Seethe Rate",
+					Default = 0.409,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Blur9",
+					Source = "XBlurSize",
+					Default = 5.7,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "FastNoise6_1",
+					Source = "Detail",
+					Name = "Distort Detail",
+					Default = 10,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "FastNoise6_1",
+					Source = "Contrast",
+					Name = "Distort Contrast",
+					Default = 0.72,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "FastNoise6_1",
+					Source = "Brightness",
+					Name = "Distort Brightness",
+					Default = -1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "FastNoise6_1",
+					Source = "XScale",
+					Name = "Distort Scale",
+					Default = 30,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "FastNoise6_1",
+					Source = "SeetheRate",
+					Name = "Distort Seethe Rate",
+					Default = 0.504,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Displace2_1",
+					Source = "Input",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Blur9",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise6_2 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 2.99, },
+						Contrast = Input { Value = 1.51, },
+						Brightness = Input { Value = 1, },
+						XScale = Input { Value = 7.24, },
+						SeetheRate = Input { Value = 0.409, },
+						Type = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2525.64, 647.949 } },
+				},
+				Blur9 = Blur {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "FastNoise6_2",
+							Source = "Output",
+						},
+						MaskChannel = Input { Value = 5, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 5.7, },
+						Input = Input {
+							SourceOp = "Displace2_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 2557.88, 735.162 } },
+				},
+				FastNoise6_1 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						Contrast = Input { Value = 0.72, },
+						Brightness = Input { Value = -1, },
+						XScale = Input { Value = 30, },
+						SeetheRate = Input { Value = 0.504, },
+						Discontinuous = Input { Value = 1, },
+						Type = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2408.88, 666.946 } },
+				},
+				Displace2_1 = Displace {
+					CtrlWZoom = false,
+					Inputs = {
+						Offset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = 0.035, },
+						Foreground = Input {
+							SourceOp = "FastNoise6_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 2429.22, 729.102 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_HeatDistBlur"
+}

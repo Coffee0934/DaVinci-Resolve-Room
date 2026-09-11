@@ -1,0 +1,490 @@
+{
+	Tools = ordered() {
+		ekawaComposite_LeafParticles = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Gradient",
+					Name = "Leaves Color",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Blur1",
+					Source = "XBlurSize",
+					Name = "Blur",
+					Default = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "pTurbulence1",
+					Source = "XStrength",
+					Name = "Turbulence X",
+					Default = 0.142,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "pTurbulence1",
+					Source = "YStrength",
+					Name = "Turbulence Y",
+					Default = 0.11,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "pTurbulence1",
+					Source = "ZStrength",
+					Name = "Turbulence Z",
+					Default = 0.165,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "pTurbulence1",
+					Source = "StrengthOverLifeLUT",
+					Name = "Turbulence Strength Over Life",
+				},
+				Input7 = InstanceInput {
+					SourceOp = "pTurbulence1",
+					Source = "Density",
+					Name = "Turbulence Density",
+					Default = 100,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "Number",
+					Default = 10,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "Lifespan",
+					Default = 100,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "Velocity",
+					Default = 0.071,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "VelocityVariance",
+					Default = 0.039,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "Angle",
+					Default = 0,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "AngleVariance",
+					Default = 83.6,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.Red",
+					Name = "Color",
+					ControlGroup = 14,
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.Green",
+					ControlGroup = 14,
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.Blue",
+					ControlGroup = 14,
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.Alpha",
+					ControlGroup = 14,
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.RedLow",
+					ControlGroup = 15,
+					Default = 0,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.RedHigh",
+					ControlGroup = 15,
+					Default = 0,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.GreenLow",
+					ControlGroup = 16,
+					Default = 0,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.GreenHigh",
+					ControlGroup = 16,
+					Default = 0,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.BlueLow",
+					ControlGroup = 17,
+					Default = 0,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.BlueHigh",
+					ControlGroup = 17,
+					Default = 0,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.AlphaLow",
+					ControlGroup = 18,
+					Default = 0,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.AlphaHigh",
+					ControlGroup = 18,
+					Default = 0,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.LockColorVariance",
+					Default = 1,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.ColorOverLife",
+				},
+				Input28 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.Size",
+					Default = 0.0157,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.SizeVariance",
+					Default = 0.2244,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.SizeToVelocity",
+					Default = 0,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.SizeZScale",
+					Default = 0,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.SizeOverLife",
+				},
+				Input33 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.FadeIn",
+					Name = "In",
+					ControlGroup = 26,
+					Default = 0,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.FadeOut",
+					Name = "Out",
+					ControlGroup = 26,
+					Default = 1,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "Region",
+				},
+				Input36 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "SphereRgn.Size",
+					Default = 0.717,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "SphereRgn.Translate.X",
+					Default = -0.432,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "SphereRgn.Translate.Y",
+					Default = -0.1719181818182,
+				},
+				Input39 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "SphereRgn.Translate.Z",
+					Default = 0,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "pRender1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise2 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						XScale = Input { Value = 20, },
+						Seethe = Input { Value = 0.928, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -187.334, -98.0909 } },
+				},
+				Polygon1 = PolylineMask {
+					DrawMode = "InsertAndModify",
+					DrawMode2 = "InsertAndModify",
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Polyline = Input {
+							SourceOp = "Polygon1Polyline",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -279.334, -67.7878 } },
+				},
+				Polygon1Polyline = BezierSpline {
+					SplineColor = { Red = 173, Green = 255, Blue = 47 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline {
+								Closed = true,
+								Points = {
+									{ Linear = true, X = 0.0282805429864253, Y = 0.208249496981891, LX = 0.00980392156862745, LY = 0.00603621730382294, RX = -0.00942684766214178, RY = -0.0100603621730382 },
+									{ Linear = true, X = 0, Y = 0.178068410462777, LX = 0.00942684766214178, LY = 0.0100603621730382, RX = -0.0079185520361991, RY = -0.0147551978537894 },
+									{ X = -0.0237556561085973, Y = 0.133802816901408, LX = 0.00904977375565605, LY = 0.0261569416498995, RX = -0.00509990198815193, RY = -0.0147404611790348 },
+									{ X = -0.0407239819004525, Y = 0.0915492957746479, LX = 0.00339366515837103, LY = 0.0140845070422535, RX = -0.0033379946505683, RY = -0.0138534613666779 },
+									{ X = -0.0497737556561086, Y = 0.0492957746478874, LX = 0.00113122171945701, LY = 0.0160965794768612, RX = -0.00131706520511862, RY = -0.0187410163593539 },
+									{ X = -0.0531674208144796, Y = -0.00704225352112675, LX = 0.00113122171945701, LY = 0.0261569416498994, RX = -0.000638868426439324, RY = -0.0147723862306655 },
+									{ X = -0.0554298642533937, Y = -0.051307847082495, LX = 7.61940881822448e-19, LY = 0.0221327967806841, RX = 0, RY = -0.0187913034958345 },
+									{ X = -0.0565610859728507, Y = -0.107645875251509, LX = -0.00113122171945701, LY = 0.0120724346076459, RX = 0.00120362979153338, RY = -0.0128451758838895 },
+									{ X = -0.0520361990950226, Y = -0.145875251509054, LX = 0.00113122171945701, LY = 0.0140845070422535, RX = -0.000693197363112063, RY = -0.00863079533790233 },
+									{ X = -0.0463800904977376, Y = -0.170020120724346, LX = -0.00317465298019855, LY = 0.00775703693869471, RX = 0.0139517345399698, RY = 0.00670690811535883 },
+									{ Linear = true, X = -0.00452488687782804, Y = -0.14989939637827, LX = -0.0139517345399698, LY = -0.00670690811535883, RX = 0.0128205128205128, RY = 0.0120724346076459 },
+									{ Linear = true, X = 0.0339366515837104, Y = -0.113682092555332, LX = -0.0128205128205128, LY = -0.0120724346076459, RX = 0.00641025641025642, RY = 0.016767270288397 },
+									{ X = 0.0531674208144797, Y = -0.0633802816901409, LX = -0.00678733031674206, LY = -0.0120724346076459, RX = 0.0120474459624726, RY = 0.0214284551928084 },
+									{ X = 0.0769230769230769, Y = 0.0171026156941649, LX = -0.00585410507306233, LY = -0.0295272210957487, RX = 0.000377073906485674, RY = 0.0174379610999329 },
+									{ X = 0.0780542986425339, Y = 0.0694164989939637, LX = -0, LY = -0.012072434607646, RX = 0, RY = 0.0208884491989381 },
+									{ X = 0.0746606334841629, Y = 0.131790744466801, LX = 0.00226244343891402, LY = -0.0140845070422535, RX = -0.0033165253329994, RY = 0.0206465379885315 },
+									{ X = 0.0656108597285068, Y = 0.194164989939638, LX = 0.00286662421132834, LY = -0.0208638537421527, RX = -0.00263951734539969, RY = 0.0107310529845741 },
+									{ Linear = true, X = 0.0576923076923077, Y = 0.22635814889336, LX = 0.00263951734539969, LY = -0.0107310529845741, RX = -0.00980392156862745, RY = -0.00603621730382294 }
+								}
+							} }
+					}
+				},
+				FastNoise1 = FastNoise {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						Contrast = Input { Value = 0.7, },
+						Brightness = Input { Value = -0.2, },
+						XScale = Input { Value = 20, },
+						Angle = Input { Value = -6.029943, },
+						Type = Input { Value = 1, },
+						GradientType = Input { Value = 5, },
+						Start = Input { Value = { 0.524886877828054, 0.592555331991952 }, },
+						End = Input { Value = { 0.805429864253394, 0.335010060362173 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0.615686274509804, 0.258823529411765, 0.0784313725490196, 1 },
+									[1] = { 1, 0.768627450980392, 0.72156862745098, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -3.33362, -54.4545 } },
+				},
+				Displace1 = Displace {
+					Inputs = {
+						Offset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = 0.41, },
+						Input = Input {
+							SourceOp = "Polygon1",
+							Source = "Mask",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -145.396, -55.6666 } },
+				},
+				Blur1 = Blur {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 2, },
+						Input = Input {
+							SourceOp = "Dent1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 231.333, -27.7879 } },
+				},
+				Dent1 = ofx.com.blackmagicdesign.resolvefx.Dent {
+					CtrlWZoom = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						dentType = Input { Value = FuID { "DENT_TYPE_THREE" }, },
+						xyPosition = Input { Value = { 0.515837132930756, 0.530181109905243 }, },
+						size = Input { Value = 0.400000005960464, },
+						strength = Input { Value = -0.02, },
+						edgeBehaviour = Input { Value = FuID { "EDGE_BEHAVIOUR_REFLECT" }, },
+						xPosition = Input { Value = 0.5, },
+						yPosition = Input { Value = 0.5, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.3", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 121.333, -27.7879 } },
+				},
+				pTurbulence1 = pTurbulence {
+					ID = 8,
+					Inputs = {
+						XStrength = Input { Value = 0.142, },
+						YStrength = Input { Value = 0.11, },
+						ZStrength = Input { Value = 0.165, },
+						StrengthOverLifeLUT = Input {
+							SourceOp = "pTurbulence1StrengthOverLifeLUT",
+							Source = "Value",
+						},
+						Density = Input { Value = 100, },
+						Input = Input {
+							SourceOp = "pEmitter1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 480.666, -37.2121 } },
+				},
+				pTurbulence1StrengthOverLifeLUT = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+					NameSet = true,
+				},
+				pEmitter1 = pEmitter {
+					ID = 10,
+					Inputs = {
+						["CubeRgn.Width"] = Input { Value = 0.488, },
+						["CubeRgn.Height"] = Input { Value = 0.575, },
+						Number = Input {
+							SourceOp = "pEmitter1Number",
+							Source = "Value",
+						},
+						VelocityControls = Input { Value = 1, },
+						Velocity = Input { Value = 0.071, },
+						VelocityVariance = Input { Value = 0.039, },
+						AngleVariance = Input { Value = 83.6, },
+						RotationControls = Input { Value = 1, },
+						RotationZVariance = Input { Value = 1390.3, },
+						SpinControls = Input { Value = 1, },
+						Style = Input { Value = FuID { "ParticleStyleBitmap" }, },
+						["ParticleStyleBitmap.DropToolsHere"] = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+						["SphereRgn.Size"] = Input { Value = 0.717, },
+						["SphereRgn.Translate.X"] = Input { Value = -0.432, },
+						["SphereRgn.Translate.Y"] = Input { Value = -0.1719181818182, },
+						["ParticleStyle.SizeControls"] = Input { Value = 1, },
+						["ParticleStyle.Size"] = Input { Value = 0.0157, },
+						["ParticleStyle.SizeVariance"] = Input { Value = 0.2244, },
+						["ParticleStyle.SizeOverLife"] = Input {
+							SourceOp = "pEmitter1SizeOverLife",
+							Source = "Value",
+						},
+						["ParticleStyle.BlurOverLife"] = Input {
+							SourceOp = "pEmitter1BlurOverLife2D",
+							Source = "Value",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 372, -37.2121 } },
+				},
+				pEmitter1Number = BezierSpline {
+					SplineColor = { Red = 233, Green = 206, Blue = 78 },
+					CtrlWZoom = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 100, RH = { 0.333333333333333, 66.6666666666667 }, Flags = { Linear = true } },
+						[1] = { 0, LH = { 0.666666666666667, 33.3333333333333 }, Flags = { Linear = true } }
+					}
+				},
+				pEmitter1SizeOverLife = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+					NameSet = true,
+				},
+				pEmitter1BlurOverLife2D = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+				},
+				pRender1 = pRender {
+					Inputs = {
+						_MotionBlurWarning = Input { Disabled = true, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						OutputMode = Input { Value = FuID { "TwoD" }, },
+						["MaterialID.MaterialID"] = Input { Value = 1, },
+						["ObjectID.ObjectID"] = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "pTurbulence1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 590.666, -26.5757 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaComposite_LeafParticles"
+}

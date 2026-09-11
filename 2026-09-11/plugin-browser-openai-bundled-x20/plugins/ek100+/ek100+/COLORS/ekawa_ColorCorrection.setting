@@ -1,0 +1,751 @@
+{
+	Tools = ordered() {
+		ekawa_ColorCorrection = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "MainInput1",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input1",
+					Default = 0.7,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input2",
+					Default = 3,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input3",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input4",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input5",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input6",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input7",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input8",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input9",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input10",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input11",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input12",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input13",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input14",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input15",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input16",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input17",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input18",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input19",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input20",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input21",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input22",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input23",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input24",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input25",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input26",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input27",
+					ControlGroup = 4,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input28",
+					Default = 0,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input29",
+					Default = 0,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input30",
+					Default = 0,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input31",
+					Default = 0,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input32",
+				},
+				Input33 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input33",
+					ControlGroup = 10,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input34",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input35",
+					ControlGroup = 10,
+					Default = 0.75,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input36",
+					ControlGroup = 10,
+					Default = 0.0037,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input37",
+					ControlGroup = 10,
+					Default = 0,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input38",
+					ControlGroup = 10,
+				},
+				Input39 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input39",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input40 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input40",
+					ControlGroup = 10,
+				},
+				Input41 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input41",
+					ControlGroup = 10,
+				},
+				Input42 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input42",
+					ControlGroup = 10,
+				},
+				Input43 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input43",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input44 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input44",
+					ControlGroup = 10,
+				},
+				Input45 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input45",
+					ControlGroup = 10,
+				},
+				Input46 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input46",
+					ControlGroup = 10,
+				},
+				Input47 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input47",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input48 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input48",
+					ControlGroup = 10,
+				},
+				Input49 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input49",
+					ControlGroup = 10,
+				},
+				Input50 = InstanceInput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "Input50",
+					ControlGroup = 11,
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "ekawa_ColorCorrection11",
+					Source = "MainOutput1",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				ekawa_ColorCorrection11 = MacroOperator {
+					CtrlWZoom = false,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						MainInput1 = InstanceInput {
+							SourceOp = "ColorCorrector1_1",
+							Source = "Input",
+						},
+						Input1 = InstanceInput {
+							SourceOp = "ColorCorrector1_1",
+							Source = "EqualizeRed",
+							Name = "1. RGB Balance Strength",
+							Default = 0.7,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Menu",
+						},
+						Input3 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Red1",
+							ControlGroup = 4,
+							Default = 0.7,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Yellow1",
+							ControlGroup = 4,
+							Default = 0.55,
+						},
+						Input5 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Green1",
+							ControlGroup = 4,
+							Default = 0.79,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Cyan1",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Blue1",
+							ControlGroup = 4,
+							Default = 0.59,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Magenta1",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Red2",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Yellow2",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Green2",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input12 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Cyan2",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input13 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Blue2",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input14 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Magenta2",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input15 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Red3",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input16 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Yellow3",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input17 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Green3",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input18 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Cyan3",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input19 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Blue3",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input20 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Magenta3",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input21 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Red4",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input22 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Yellow4",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input23 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Green4",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input24 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Cyan4",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input25 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Blue4",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input26 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Magenta4",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						Input27 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "SuppressionRangeDummy",
+							ControlGroup = 4,
+						},
+						Input28 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "SuppressionAngle1",
+							MaxScale = 0.1666666666667,
+							Default = 0,
+						},
+						Input29 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "SuppressionAngle2",
+							MaxScale = 0.1666666666667,
+							Default = 0,
+						},
+						Input30 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "SuppressionAngle3",
+							MaxScale = 0.1666666666667,
+							Default = 0,
+						},
+						Input31 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "SuppressionAngle4",
+							MaxScale = 0.1666666666667,
+							Default = 0,
+						},
+						Input32 = InstanceInput {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "ResetAllSuppression",
+						},
+						Input33 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelHue1",
+							ControlGroup = 10,
+						},
+						Input34 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelSaturation1",
+							ControlGroup = 10,
+							Default = 1,
+						},
+						Input35 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelTintAngle1",
+							ControlGroup = 10,
+						},
+						Input36 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelTintLength1",
+							ControlGroup = 10,
+						},
+						Input37 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelRangeDummy1",
+							ControlGroup = 10,
+							Default = 0,
+						},
+						Input38 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelHue2",
+							ControlGroup = 10,
+						},
+						Input39 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelSaturation2",
+							ControlGroup = 10,
+							Default = 1,
+						},
+						Input40 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelTintAngle2",
+							ControlGroup = 10,
+						},
+						Input41 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelTintLength2",
+							ControlGroup = 10,
+						},
+						Input42 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelHue3",
+							ControlGroup = 10,
+						},
+						Input43 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelSaturation3",
+							ControlGroup = 10,
+							Default = 1,
+						},
+						Input44 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelTintAngle3",
+							ControlGroup = 10,
+						},
+						Input45 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelTintLength3",
+							ControlGroup = 10,
+						},
+						Input46 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelHue4",
+							ControlGroup = 10,
+						},
+						Input47 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelSaturation4",
+							ControlGroup = 10,
+							Default = 1,
+						},
+						Input48 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelTintAngle4",
+							ControlGroup = 10,
+						},
+						Input49 = InstanceInput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "WheelTintLength4",
+							ControlGroup = 10,
+						},
+						Input50 = InstanceInput {
+							SourceOp = "WhiteBalance1_1",
+							Source = "RedInMid",
+							Name = "3. Select white reference",
+							ControlGroup = 11,
+							Default = 0.9672167301178,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "ColorCorrector2_2",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 255.351, 106.764 } },
+					Tools = ordered() {
+						ColorCorrector1_1 = ColorCorrector {
+							CtrlWShown = false,
+							Inputs = {
+								Menu = Input { Value = 2, },
+								Channel = Input { Value = 1, },
+								HistogramType = Input { Value = 1, },
+								EqualizeRed = Input { Value = 0.7, },
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -189.718, 12.9554 } },
+						},
+						ColorCorrector2_1_1 = ColorCorrector {
+							CtrlWShown = false,
+							Inputs = {
+								Menu = Input { Value = 3, },
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "ColorCorrector1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -49.857, 10.2739 } },
+						},
+						ColorCorrector2_2 = ColorCorrector {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								WheelTintAngle1 = Input { Value = 0.75, },
+								WheelTintLength1 = Input { Value = 0.0037, },
+								TintMode = Input { Value = 1, },
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "WhiteBalance1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 189, 8.55972 } },
+						},
+						WhiteBalance1_1 = WhiteBalance {
+							CtrlWShown = false,
+							Inputs = {
+								RedInMid = Input { Value = 1, },
+								GreenInMid = Input { Value = 0.9716210365295, },
+								BlueInMid = Input { Value = 0.9228504300117, },
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								Input = Input {
+									SourceOp = "ColorCorrector2_1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 79, 8.55972 } },
+						}
+					},
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_ColorCorrection"
+}

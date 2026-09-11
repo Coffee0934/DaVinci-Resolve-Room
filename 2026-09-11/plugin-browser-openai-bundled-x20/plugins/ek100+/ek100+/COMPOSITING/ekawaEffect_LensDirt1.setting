@@ -1,0 +1,416 @@
+{
+	Tools = ordered() {
+		ekawaEffect_LensDirt = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "High",
+					ControlGroup = 1,
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "Low",
+					ControlGroup = 1,
+					Default = 0,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "Number",
+					Name = "Dirt1 Number",
+					Default = 10,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "MasterRGBGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Blur1",
+					Source = "XBlurSize",
+					Default = 4.8,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "Background",
+				},
+				Input6 = InstanceInput {
+					SourceOp = "pEmitter2",
+					Source = "Number",
+					Name = "Dirt2 Number",
+					Default = 10,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Blur2",
+					Source = "XBlurSize",
+					Default = 6.4,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge4",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				LumaKeyer1 = LumaKeyer {
+					CtrlWShown = false,
+					Inputs = {
+						High = Input { Value = 0, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 215.333, -155.061 } },
+				},
+				pEmitter1 = pEmitter {
+					ID = 3,
+					CtrlWShown = false,
+					Inputs = {
+						Number = Input {
+							SourceOp = "pEmitter1Number",
+							Source = "Value",
+						},
+						Lifespan = Input { Value = 10000, },
+						Style = Input { Value = FuID { "ParticleStyleBlob" }, },
+						Region = Input { Value = FuID { "AllRgn" }, },
+						["ParticleStyle.SizeControls"] = Input { Value = 1, },
+						["ParticleStyle.Size"] = Input { Value = 0.1496, },
+						["ParticleStyle.SizeVariance"] = Input { Value = 1.071, },
+						["ParticleStyle.SizeOverLife"] = Input {
+							SourceOp = "pEmitter1SizeOverLife",
+							Source = "Value",
+						},
+						["ParticleStyle.BlurOverLife"] = Input {
+							SourceOp = "pEmitter1BlurOverLife2D",
+							Source = "Value",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 168.667, -50.8182 } },
+				},
+				pEmitter1Number = BezierSpline {
+					SplineColor = { Red = 233, Green = 206, Blue = 78 },
+					CtrlWZoom = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 3000, RH = { 0.333333333333333, 2000 }, Flags = { Linear = true } },
+						[1] = { 0, LH = { 0.666666666666667, 1000 }, Flags = { Linear = true } }
+					}
+				},
+				pEmitter1SizeOverLife = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+				},
+				pEmitter1BlurOverLife2D = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+				},
+				pRender1 = pRender {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+						_MotionBlurWarning = Input { Disabled = true, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						OutputMode = Input {
+							Value = FuID { "TwoD" },
+							Disabled = true,
+						},
+						["MaterialID.MaterialID"] = Input { Value = 1, },
+						["ObjectID.ObjectID"] = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "pEmitter1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 297.333, -59.303 } },
+				},
+				ColorCorrector2 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 284.667, -9.99994 } },
+				},
+				Blur1 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 4.8, },
+						Input = Input {
+							SourceOp = "pRender1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 389.333, -44.2121 } },
+				},
+				Merge2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Overlay" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 394.667, -9.99994 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector2",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Color Dodge" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 302, 57.0606 } },
+				},
+				Merge3 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 118.333, 55.5606 } },
+				},
+				pEmitter2 = pEmitter {
+					ID = 13,
+					CtrlWShown = false,
+					Inputs = {
+						Number = Input {
+							SourceOp = "pEmitter2Number",
+							Source = "Value",
+						},
+						Lifespan = Input { Value = 10000, },
+						PositionVariance = Input { Value = 0.0094, },
+						TemporalDistribution = Input { Value = 2, },
+						Style = Input { Value = FuID { "ParticleStyleBlob" }, },
+						Region = Input { Value = FuID { "AllRgn" }, },
+						["ParticleStyle.ColorControls"] = Input { Value = 1, },
+						["ParticleStyle.Red"] = Input { Value = 0.7019607843137, },
+						["ParticleStyle.Green"] = Input { Value = 0.8196078431373, },
+						["ParticleStyle.ColorVariance"] = Input { Value = 1, },
+						["ParticleStyle.RedHigh"] = Input { Value = 0.262, },
+						["ParticleStyle.GreenHigh"] = Input { Value = 0.45, },
+						["ParticleStyle.SizeControls"] = Input { Value = 1, },
+						["ParticleStyle.Size"] = Input { Value = 0.3968, },
+						["ParticleStyle.SizeOverLife"] = Input {
+							SourceOp = "pEmitter2SizeOverLife",
+							Source = "Value",
+						},
+						["ParticleStyle.BlurOverLife"] = Input {
+							SourceOp = "pEmitter2BlurOverLife2D",
+							Source = "Value",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 524.666, -77.4849 } },
+				},
+				pEmitter2Number = BezierSpline {
+					SplineColor = { Red = 233, Green = 206, Blue = 78 },
+					CtrlWZoom = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 2000, RH = { 0.333333333333333, 1333.33333333333 }, Flags = { Linear = true } },
+						[1] = { 0, LH = { 0.666666666666667, 666.666666666667 }, Flags = { Linear = true } }
+					}
+				},
+				pEmitter2SizeOverLife = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+				},
+				pEmitter2BlurOverLife2D = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+				},
+				ColorCorrector1 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Blur2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 514, 27.303 } },
+				},
+				Blur2 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 6.4, },
+						Input = Input {
+							SourceOp = "DirectionalBlur1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 520.666, -11.7576 } },
+				},
+				DirectionalBlur1 = ofx.com.blackmagicdesign.resolvefx.DirectionalBlur {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "pRender2",
+							Source = "Output",
+						},
+						BlurStrength = Input { Value = 0.236, },
+						BlurAngle = Input { Value = 90, },
+						advancedControlsGroup = Input { Value = 1, },
+						blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+						isSymmetric = Input { Value = 1, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_REFLECT" }, },
+						isBlurAlpha = Input { Value = 1, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "3.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 520.666, -43.5455 } },
+				},
+				Merge4 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 508.666, 67.9696 } },
+				},
+				pRender2 = pRender {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						_MotionBlurWarning = Input { Disabled = true, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						OutputMode = Input {
+							Value = FuID { "TwoD" },
+							Disabled = true,
+						},
+						["MaterialID.MaterialID"] = Input { Value = 2, },
+						["ObjectID.ObjectID"] = Input { Value = 2, },
+						Input = Input {
+							SourceOp = "pEmitter2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 630.666, -43.5455 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaEffect_LensDirt"
+}

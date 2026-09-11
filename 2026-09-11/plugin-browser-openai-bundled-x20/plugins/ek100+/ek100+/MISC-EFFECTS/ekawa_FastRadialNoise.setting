@@ -1,0 +1,123 @@
+{
+	Tools = ordered() {
+		ekawa_FastRadialNoise = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Default = 2,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Contrast",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Brightness",
+					Default = -1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "XScale",
+					Default = 2,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "SeetheRate",
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Start",
+					DefaultX = 0.502,
+					DefaultY = 0.5,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "End",
+					DefaultX = 1.267,
+					DefaultY = 0.5,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Gradient",
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Blur1",
+					Source = "XBlurSize",
+					Name = "Softness",
+					Default = 300,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "Background",
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "ApplyMode",
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "BlendClone",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge3",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					CtrlWZoom = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Brightness = Input { Value = -1, },
+						Type = Input { Value = 1, },
+						GradientType = Input { Value = 5, },
+						Start = Input { Value = { 0.502, 0.5 }, },
+						End = Input { Value = { 1.267, 0.5 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 1, 1, 1 },
+									[1] = { 0, 0, 0, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 304.667, -58.0909 } },
+				},
+				Blur1 = Blur {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 300, },
+						Input = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 414.667, -58.0909 } },
+				},
+				Merge3 = Merge {
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Soft Light" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 419.667, 49.5 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_FastRadialNoise"
+}

@@ -1,0 +1,3098 @@
+{
+	Tools = ordered() {
+		Spheres = MacroOperator {
+			NameSet = true,
+			CustomData = { SxSFilename = "C:\\Users\\PC\\AppData\\Roaming\\Blackmagic Design\\DaVinci Resolve\\Support\\Fusion\\Macros\\Blob.setting", Path = { Map = { ["Setting:"] = "Macros:\\" } } },
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Blob_1",
+					Source = "Width",
+					Name = "Size/Resolution",
+					MaxScale = 150,
+					Default = 76,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Blob_1",
+					Source = "Detail",
+					Default = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Blob_1",
+					Source = "Contrast",
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Blob_1",
+					Source = "Brightness",
+					Default = 0.56,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Blob_1",
+					Source = "XScale",
+					Default = 4.09,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Blob_1",
+					Source = "SeetheRate",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Blob_1",
+					Source = "Discontinuous",
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Blob_1",
+					Source = "Gradient",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Blob_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { -3793.58, -246.422 } },
+			Tools = ordered() {
+				Blob_1 = FastNoise {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 30, },
+						Height = Input {
+							Value = 30,
+							Expression = "Width",
+						},
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Contrast = Input { Value = 0, },
+						Brightness = Input { Value = 0.56, },
+						XScale = Input { Value = 4.09, },
+						Type = Input { Value = 1, },
+						GradientType = Input { Value = 5, },
+						Start = Input { Value = { 0.5, 0.5 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 1, 1, 1 },
+									[0.960199004975124] = { 0.935323383084577, 0.935323383084577, 0.935323383084577, 0.935323383084577 },
+									[1] = { 0, 0, 0, 0 }
+								}
+							},
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 8.75758 } },
+				}
+			},
+		},
+		Blob1 = MacroOperator {
+			CustomData = { SxSFilename = "C:\\Users\\PC\\AppData\\Roaming\\Blackmagic Design\\DaVinci Resolve\\Support\\Fusion\\Macros\\Blob.setting", Path = { Map = { ["Setting:"] = "Macros:\\" } } },
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Blob",
+					Source = "Width",
+					Name = "Size/Resolution",
+					MaxScale = 150,
+					Default = 76,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Blob",
+					Source = "Detail",
+					Default = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Blob",
+					Source = "Contrast",
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Blob",
+					Source = "Brightness",
+					Default = 0.56,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Blob",
+					Source = "XScale",
+					Default = 4.09,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Blob",
+					Source = "SeetheRate",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Blob",
+					Source = "Discontinuous",
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Blob",
+					Source = "Gradient",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Blob",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { -3790.92, -207.633 } },
+			Tools = ordered() {
+				Blob = FastNoise {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 74, },
+						Height = Input {
+							Value = 74,
+							Expression = "Width",
+						},
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Contrast = Input { Value = 0, },
+						Brightness = Input { Value = 0.56, },
+						XScale = Input { Value = 4.09, },
+						Type = Input { Value = 1, },
+						GradientType = Input { Value = 5, },
+						Start = Input { Value = { 0.5, 0.5 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 1, 1, 1 },
+									[1] = { 0, 0, 0, 0 }
+								}
+							},
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 8.75758 } },
+				}
+			},
+		},
+		Smoke1 = FastNoise {
+			NameSet = true,
+			CustomData = { Path = { Map = { ["Setting:"] = "Macros:\\" } }, },
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 100, },
+				Height = Input {
+					Value = 100,
+					Expression = "Width",
+				},
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				Detail = Input { Value = 10, },
+				XScale = Input { Value = 3.15, },
+				SeetheRate = Input { Value = 0.189, },
+				Type = Input { Value = 1, },
+				GradientType = Input { Value = 5, },
+				Start = Input { Value = { 0.49, 0.5 }, },
+				End = Input { Value = { 0.869, 0.5 }, },
+				Gradient = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0.780392156862745, 0.780392156862745, 0.780392156862745, 0.701 },
+							[1] = { 0, 0, 0, 0 }
+						}
+					},
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { -3806.91, -159.15 } },
+		},
+		CustomInput = MacroOperator {
+			NameSet = true,
+			CustomData = { SxSFilename = "C:\\Users\\PC\\AppData\\Roaming\\Blackmagic Design\\DaVinci Resolve\\Support\\Fusion\\Macros\\OUT.setting", Path = { Map = { ["Setting:"] = "Macros:\\" } } },
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "OUT_2",
+					Source = "BlendClone",
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "OUT_2",
+					Source = "Background",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "OUT_2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { -3448.72, -201.653 } },
+			Tools = ordered() {
+				OUT_2 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Blend = Input { Value = 0, },
+						Background = Input {
+							SourceOp = "Resize1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 8.75758 } },
+				}
+			},
+			UserControls = ordered() { Input1 = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 1, INP_Default = 0, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICS_ControlPage = "Common", INP_SplineType = "Default", LINKS_Name = "Blend" } }
+		},
+		Resize1 = BetterResize {
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Inputs = {
+				Width = Input { Value = 388, },
+				Height = Input { Value = 690, },
+				KeepAspect = Input { Value = 1, },
+				HiQOnly = Input { Value = 0, },
+				PixelAspect = Input { Value = { 1, 1 }, }
+			},
+			ViewInfo = OperatorInfo { Pos = { -3446.84, -241.534 } },
+		},
+		pAvoidBITMAP = MacroOperator {
+			NameSet = true,
+			CustomData = { SxSFilename = "C:\\Users\\PC\\AppData\\Roaming\\Blackmagic Design\\DaVinci Resolve\\Support\\Fusion\\Macros\\OUT.setting", Path = { Map = { ["Setting:"] = "Macros:\\" } }, },
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "OUT_1",
+					Source = "BlendClone",
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "OUT_1",
+					Source = "Background",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "OUT_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { -3316.54, -188.061 } },
+			Tools = ordered() {
+				OUT_1 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Blend = Input { Value = 0, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 8.75758 } },
+				}
+			},
+			UserControls = ordered() { Input1 = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 1, INP_Default = 0, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICS_ControlPage = "Common", INP_SplineType = "Default", LINKS_Name = "Blend" } }
+		},
+		Cloudy = FastNoise {
+			NameSet = true,
+			CustomData = { Path = { Map = { ["Setting:"] = "Macros:\\" } }, },
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 150, },
+				Height = Input { Value = 150, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				Detail = Input { Value = 10, },
+				Contrast = Input { Value = 0.42, },
+				XScale = Input { Value = 1.89, },
+				YScale = Input { Value = 4.57, },
+				SeetheRate = Input { Value = 0.039, },
+				Discontinuous = Input { Value = 1, },
+				Type = Input { Value = 1, },
+				GradientType = Input { Value = 5, },
+				Start = Input { Value = { 0.5, 0.5 }, },
+				End = Input { Value = { 0.904, 0.5 }, },
+				Gradient = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 1, 1, 1, 1 },
+							[1] = { 0.0144927536231884, 0.0144927536231884, 0.0144927536231884, 0 }
+						}
+					},
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { -3788.25, -110.665 } },
+		},
+		BezierControl = pEmitter {
+			ID = 1385,
+			NameSet = true,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			SourceOp = "EmitterMain_1_1",
+			Inputs = {
+				["BezierRgn.Translation"] = Input {
+				},
+				LayersNest = Input {
+				},
+				Randomize = Input {
+				},
+				EmitterNest = Input {
+				},
+				VelocityControls = Input {
+					Value = 1,
+				},
+				RotationControls = Input {
+					Value = 1,
+				},
+				SpinControls = Input {
+					Value = 1,
+				},
+				SetsNest = Input {
+				},
+				StyleNest = Input {
+				},
+				["ParticleStylePoint.ApplyMode"] = Input {
+				},
+				["ParticleStylePoint.SubPixelRendered"] = Input {
+				},
+				["ParticleStyleBitmap.DropToolsHere"] = Input {
+				},
+				RegionNest = Input {
+				},
+				["SphereRgn.Translation"] = Input {
+				},
+				["SphereRgn.Rotation"] = Input {
+				},
+				["SphereRgn.PivotNest"] = Input {
+				},
+				CommentsNest = Input {
+				},
+				FrameRenderScriptNest = Input {
+				},
+				StartRenderScripts = Input {
+				},
+				EndRenderScripts = Input {
+				},
+				["ParticleStyle.ColorControls"] = Input {
+					Value = 1,
+				},
+				["ParticleStyle.ColorVariance"] = Input {
+					Value = 1,
+				},
+				["ParticleStyle.GreenLow"] = Input {
+					Expression = "EmitterMain_1_1.ParticleStyle.RedLow"
+				},
+				["ParticleStyle.BlueLow"] = Input {
+					Expression = "EmitterMain_1_1.ParticleStyle.RedLow"
+				},
+				["ParticleStyle.ColorOverLifeControls"] = Input {
+					Value = 1,
+				},
+				["ParticleStyle.SizeControls"] = Input {
+					Value = 1,
+				},
+				["ParticleStyle.FadeControls"] = Input {
+					Value = 1,
+				},
+				["ParticleStyle.MergeControls"] = Input {
+				},
+				["ParticleStyle.BlurControls"] = Input {
+					Value = 1,
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { -3170.56, -169.693 } },
+			UserControls = ordered() { AngleVariance = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ScrewControl", INP_MaxScale = 360, INP_Default = 0, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", ICS_ControlPage = "Controls", INP_SplineType = "Default", LINKS_Name = "Angle Variance" } }
+		},
+		PipeRouter1 = PipeRouter {
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Inputs = {
+				Input = Input {
+					SourceOp = "LumaKeyer1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = PipeRouterInfo { Pos = { -3459.34, -93.3293 } },
+			Colors = { TileColor = { R = 0.6, G = 0.450980392156863, B = 0.627450980392157 }, }
+		},
+		PipeRouter6 = PipeRouter {
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Inputs = {
+				Input = Input {
+					SourceOp = "OUT_2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = PipeRouterInfo { Pos = { -3464.68, -92.1172 } },
+			Colors = { TileColor = { R = 0.6, G = 0.450980392156863, B = 0.627450980392157 }, }
+		},
+		PipeRouter5 = PipeRouter {
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Inputs = {
+				Input = Input {
+					SourceOp = "Blob_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = PipeRouterInfo { Pos = { -3459.34, -92.1172 } },
+			Colors = { TileColor = { R = 0.6, G = 0.450980392156863, B = 0.627450980392157 }, }
+		},
+		PipeRouter2 = PipeRouter {
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Inputs = {
+				Input = Input {
+					SourceOp = "Cloudy",
+					Source = "Output",
+				}
+			},
+			ViewInfo = PipeRouterInfo { Pos = { -3466.01, -92.1172 } },
+			Colors = { TileColor = { R = 0.6, G = 0.450980392156863, B = 0.627450980392157 }, }
+		},
+		PipeRouter4 = PipeRouter {
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Inputs = {
+				Input = Input {
+					SourceOp = "Blob",
+					Source = "Output",
+				}
+			},
+			ViewInfo = PipeRouterInfo { Pos = { -3460.68, -92.1172 } },
+			Colors = { TileColor = { R = 0.6, G = 0.450980392156863, B = 0.627450980392157 }, }
+		},
+		PipeRouter3 = PipeRouter {
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Inputs = {
+				Input = Input {
+					SourceOp = "Smoke1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = PipeRouterInfo { Pos = { -3463.34, -90.9053 } },
+			Colors = { TileColor = { R = 0.6, G = 0.450980392156863, B = 0.627450980392157 }, }
+		},
+		ATOMIC_UI_1 = GroupOperator {
+			NameSet = true,
+			CustomData = { SxSFilename = "C:\\Users\\PC\\AppData\\Roaming\\Blackmagic Design\\DaVinci Resolve\\Support\\Fusion\\Macros\\ek_ATOMIC.setting", Path = { Map = { ["Setting:"] = "Macros:\\" } } },
+			Inputs = ordered() {
+				Comments = Input { Value = "ek_ATOMIC by ekawa\nVersion: 1.1\n\n- discord.gg/rn85D6e382\n- youtube.com/@ekawa001\n\n", },
+				Input1 = InstanceInput {
+					SourceOp = "MosaicBlur1_1",
+					Source = "Source",
+				}
+			},
+			Outputs = {
+				Output3 = InstanceOutput {
+					SourceOp = "Merge21_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { -2928.68, -197.571 },
+				Flags = {
+					AllowPan = false,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 2938.63, 674.053, 1469.32, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { -1187.6, -146.372 }
+			},
+			Tools = ordered() {
+				Text7_1 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						Center = Input { Value = { 0.505, 0.5 }, },
+						LayoutRotation = Input { Value = 1, },
+						CharacterSpacing = Input { Value = 0.961, },
+						CharacterOffset = Input { Value = { 0, -0.197 }, },
+						TransformRotation = Input { Value = 1, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Value = "Particle movement preview", },
+						Font = Input { Value = "Consolas", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.0171, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 2128.59, 636.126 } },
+				},
+				MosaicBlur1_1 = ofx.com.blackmagicdesign.resolvefx.MosaicBlur {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Instance_pRender2_1_1_1_1_1_1",
+							Source = "Output",
+						},
+						PixelFrequency = Input { Value = 100, },
+						SmoothStrength = Input { Value = 0, },
+						cellShape = Input { Value = FuID { "CellShapeTriangle" }, },
+						aliasing = Input { Value = 0, },
+						advancedControlsGroup = Input { Value = 0, },
+						xOffset = Input { Value = 0, },
+						yOffset = Input { Value = 0, },
+						aspect = Input { Value = 1, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_REFLECT" }, },
+						isAntiAlias = Input { Value = 0, },
+						isBlurAlpha = Input { Value = 1, },
+						isBinarizeAlpha = Input { Value = 0, },
+						isLegacyMethod = Input { Value = 0, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = 1, },
+						dstProcessingAlphaMode = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "4.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1813.94, 607.129 } },
+				},
+				Background6_1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 180, },
+						Height = Input { Value = 113, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 2024.61, 578.038 } },
+				},
+				Merge17_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Transform2_2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "MosaicBlur1_1",
+							Source = "Output",
+						},
+						Center = Input { Value = { 0.522, 0.5 }, },
+						Size = Input { Value = 0.801, },
+						ApplyMode = Input { Value = FuID { "Difference" }, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1957.27, 636.492 } },
+				},
+				Transform2_2 = ofx.com.blackmagicdesign.resolvefx.Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Background6_1",
+							Source = "Output",
+						},
+						controlMode = Input { Value = FuID { "TransformControlsSliders" }, },
+						controlReset = Input { Value = 0, },
+						controlGroup = Input { Value = 1, },
+						controlVisibility = Input { Value = FuID { "Show" }, },
+						posX = Input { Value = 0, },
+						posY = Input { Value = 0, },
+						zoom = Input { Value = 1, },
+						rotate = Input { Value = 0, },
+						scaleX = Input { Value = 1, },
+						scaleY = Input { Value = 1, },
+						pitch = Input { Value = 0, },
+						yaw = Input { Value = 0, },
+						flipH = Input { Value = 0, },
+						flipV = Input { Value = 0, },
+						adjustGroup = Input { Value = 1, },
+						isCrop = Input { Value = 0, },
+						cropL = Input { Value = 0, },
+						cropR = Input { Value = 0, },
+						cropT = Input { Value = 0, },
+						cropB = Input { Value = 0, },
+						edgeSoftness = Input { Value = 1, },
+						edgeRounding = Input { Value = 0, },
+						animationGroup = Input { Value = 0, },
+						serializedWarpable = Input {
+							Value = Text {
+							},
+						},
+						serializedPinnable = Input {
+							Value = Text {
+							},
+						},
+						motionBlur = Input { Value = 0, },
+						advancedGroup = Input { Value = 0, },
+						edgeBehaviour = Input { Value = FuID { "Constant" }, },
+						CompositeType = Input { Value = FuID { "COMPOSITE_NORMAL" }, },
+						olayAntiAlias = Input { Value = 1, },
+						previewAlpha = Input { Value = 0, },
+						isLegacyCrop = Input { Value = 0, },
+						isLegacyAlphaHandling = Input { Value = 0, },
+						isEnforceBlanking = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = -1, },
+						dstProcessingAlphaMode = Input { Value = -1, },
+						resolvefxVersion = Input { Value = "1.4", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1914.61, 578.038 } },
+				},
+				Background2_1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1080, },
+						Height = Input { Value = 1324, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Type = Input { Value = FuID { "Gradient" }, },
+						Start = Input { Value = { 0.0607476635514019, 1.34351145038168 }, },
+						End = Input { Value = { 1.11214953271028, -0.251908396946565 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1 },
+									[0.791044776119403] = { 0.145098039215686, 0.0352941176470588, 0.498039215686275, 1 },
+									[0.985074626865672] = { 0.317647058823529, 0.0196078431372549, 0.0745098039215686, 1 }
+								}
+							},
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -218.716, 404.698 } },
+				},
+				Vignette1_1 = ofx.com.blackmagicdesign.resolvefx.Vignette {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Background2_1",
+							Source = "Output",
+						},
+						controlMode = Input { Value = FuID { "VIGNETTE_PLUGIN_MODE_BASIC" }, },
+						shapeGroup = Input { Value = 1, },
+						shape = Input { Value = FuID { "VIGNETTE_SHAPE_OVAL" }, },
+						size = Input { Value = 0.3179, },
+						rotation = Input {
+							Value = 0,
+							Disabled = true,
+						},
+						anamorphism = Input { Value = 0.33, },
+						xyPosition = Input { Value = { 0.5, 0.5 }, },
+						appearanceGroup = Input { Value = 1, },
+						softness = Input { Value = 1, },
+						transparency = Input { Value = 0, },
+						colorRed = Input { Value = 0, },
+						colorGreen = Input { Value = 0, },
+						colorBlue = Input { Value = 0, },
+						CompositeType = Input { Value = FuID { "COMPOSITE_MULTIPLY" }, },
+						centerX = Input { Value = 0.5, },
+						centerY = Input { Value = 0.5, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = -1, },
+						dstProcessingAlphaMode = Input { Value = -1, },
+						resolvefxVersion = Input { Value = "1.2", }
+					},
+					ViewInfo = OperatorInfo { Pos = { -76.0496, 399.85 } },
+				},
+				Text1_1 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						Center = Input { Value = { 0.505, 0.507 }, },
+						LayoutRotation = Input { Value = 1, },
+						TransformRotation = Input { Value = 1, },
+						TransformSize = Input { Value = 1, },
+						Red1 = Input { Value = 0.27843137254902, },
+						Blue1 = Input { Value = 0.952941176470588, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Value = "ek-ATOMIC", },
+						Font = Input { Value = "Arial", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.0368, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 41.2844, 348.001 } },
+				},
+				Text2_2 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						Center = Input { Value = { 0.230578271028038, 1.00066440486288 }, },
+						LayoutRotation = Input { Value = 1, },
+						TransformRotation = Input { Value = 1, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Value = "Particles generated \non current frame:\n\n\nLength of fusion composition:\n\nParticle lifespan: ", },
+						Font = Input { Value = "Consolas", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.0187, },
+						VerticalTopCenterBottom = Input { Value = -1, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 215.95, 363.486 } },
+				},
+				Text3_2 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						Center = Input { Value = { 0.38786, 0.975929 }, },
+						LayoutRotation = Input { Value = 1, },
+						CharacterOffset = Input { Value = { 0.02, 0 }, },
+						TransformRotation = Input { Value = 1, },
+						SelectElement = Input { Value = 3, },
+						Select = Input { Value = 3, },
+						Enabled4 = Input { Value = 1, },
+						Red1 = Input { Value = 0.0509803921568627, },
+						Blue1 = Input { Value = 0, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Expression = "EmitterMain_1_1.Number", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.0325, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ExtendHorizontal4 = Input { Value = 2, },
+						ExtendVertical4 = Input { Value = -0.5, },
+						Softness4 = Input { Value = 1, },
+						SoftnessX4 = Input { Value = 6.14, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 353.284, 353.789 } },
+				},
+				Text3_1_2 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						Center = Input { Value = { 0.46286, 0.882929 }, },
+						LayoutRotation = Input { Value = 1, },
+						CharacterOffset = Input { Value = { 0.02, 0 }, },
+						TransformRotation = Input { Value = 1, },
+						SelectElement = Input { Value = 3, },
+						Select = Input { Value = 3, },
+						Enabled4 = Input { Value = 1, },
+						Red1 = Input { Value = 0.0509803921568627, },
+						Blue1 = Input { Value = 0, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Expression = "comp.RenderEnd ", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.0267, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ExtendHorizontal4 = Input { Value = 2, },
+						ExtendVertical4 = Input { Value = -0.5, },
+						Softness4 = Input { Value = 1, },
+						SoftnessX4 = Input { Value = 6.14, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 516.618, 367.123 } },
+				},
+				Text3_1_1_2 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						Center = Input { Value = { 0.46286, 0.882929 }, },
+						LayoutRotation = Input { Value = 1, },
+						CharacterOffset = Input { Value = { 0.02, 0 }, },
+						TransformRotation = Input { Value = 1, },
+						SelectElement = Input { Value = 3, },
+						Select = Input { Value = 3, },
+						Enabled4 = Input { Value = 1, },
+						Red1 = Input { Value = 0.0509803921568627, },
+						Blue1 = Input { Value = 0, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Expression = "EmitterMain_1_1.Lifespan", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.0267, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ExtendHorizontal4 = Input { Value = 2, },
+						ExtendVertical4 = Input { Value = -0.5, },
+						Softness4 = Input { Value = 1, },
+						SoftnessX4 = Input { Value = 6.14, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 625.284, 373.183 } },
+				},
+				Text2_1_1 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						Center = Input { Value = { 0.225578, 0.999664 }, },
+						LayoutRotation = Input { Value = 1, },
+						TransformRotation = Input { Value = 1, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Value = "Lifespan variance:", },
+						Font = Input { Value = "Consolas", },
+						Style = Input { Value = "Bold Italic", },
+						Size = Input { Value = 0.0187, },
+						VerticalTopCenterBottom = Input { Value = -1, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 391.951, 388.941 } },
+				},
+				ErodeDilate2_1 = ErodeDilate {
+					CtrlWShown = false,
+					Inputs = {
+						LockXY = Input { Value = 0, },
+						XAmount = Input { Value = -0.0006, },
+						Input = Input {
+							SourceOp = "Text1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 39.9504, 381.001 } },
+				},
+				ErodeDilate1_1 = ErodeDilate {
+					CtrlWShown = false,
+					Inputs = {
+						LockXY = Input { Value = 0, },
+						XAmount = Input { Value = 0.00013, },
+						YAmount = Input { Value = -0.00052, },
+						Input = Input {
+							SourceOp = "Merge2_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 152.617, 399.183 } },
+				},
+				Text3_1_1_1_1 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						Center = Input { Value = { 0.42986, 0.847929 }, },
+						LayoutRotation = Input { Value = 1, },
+						CharacterOffset = Input { Value = { 0.02, 0 }, },
+						TransformRotation = Input { Value = 1, },
+						SelectElement = Input { Value = 3, },
+						Select = Input { Value = 3, },
+						Enabled4 = Input { Value = 1, },
+						Red1 = Input { Value = 0.0509803921568627, },
+						Blue1 = Input { Value = 0, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Expression = "EmitterMain_1_1.LifespanVariance", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold Italic", },
+						Size = Input { Value = 0.0203, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ExtendHorizontal4 = Input { Value = 2, },
+						ExtendVertical4 = Input { Value = -0.5, },
+						Softness4 = Input { Value = 1, },
+						SoftnessX4 = Input { Value = 6.14, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 754.618, 383.971 } },
+				},
+				Merge2_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Vignette1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ErodeDilate2_1",
+							Source = "Output",
+						},
+						Center = Input { Value = { 0.128, 0.951 }, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 35.2833, 409.153 } },
+				},
+				Merge3_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "ErodeDilate1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Text2_2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 164.617, 428.274 } },
+				},
+				Duplicate1_1 = Fuse.Duplicate {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Merge7_1",
+							Source = "Output",
+						},
+						ApplyMaskInverted = Input { Value = 1, },
+						MultiplyByMask = Input { Value = 1, },
+						MaskHigh = Input { Value = 0.017, },
+						Copies = Input { Value = 25, },
+						GainNest = Input { Value = 1, },
+						Polyline = Input {
+							Value = Polyline {
+							},
+						},
+						JitterAngle = Input {
+							Value = 15.7,
+							Expression = "EmitterMain_1_1.AngleVariance",
+						},
+						JitterGainNest = Input { Value = 1, },
+						Background = Input {
+							SourceOp = "Merge7_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 921.285, 355.032 } },
+				},
+				ColorCorrector1_1 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						WheelTintAngle1 = Input { Value = 0.141759036128335, },
+						WheelTintLength1 = Input { Value = 1, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Duplicate1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 942.618, 430.454 } },
+				},
+				Merge5_2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge6_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Text3_1_2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 470.617, 439.183 } },
+				},
+				ColorCorrector2_1 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						WheelTintAngle1 = Input { Value = 0.190468979788241, },
+						WheelTintLength1 = Input { Value = 1, },
+						MasterRGBGain = Input { Value = 2.21, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						PreDividePostMultiply = Input { Value = 1, },
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "ZoomBlur1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 800.618, 447.153 } },
+				},
+				Merge6_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge4_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Text2_1_1",
+							Source = "Output",
+						},
+						Center = Input { Value = { 0.426, 0.411 }, },
+						Size = Input { Value = 0.826, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 361.951, 440.123 } },
+				},
+				Merge4_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge3_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Text3_2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 251.95, 440.123 } },
+				},
+				Merge5_1_2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge5_2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Text3_1_1_2",
+							Source = "Output",
+						},
+						Center = Input { Value = { 0.343, 0.462 }, },
+						Size = Input { Value = 0.981, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 580.617, 440.668 } },
+				},
+				Transform1_1 = ofx.com.blackmagicdesign.resolvefx.Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "ColorCorrector2_1",
+							Source = "Output",
+						},
+						controlMode = Input { Value = FuID { "TransformControlsSliders" }, },
+						controlReset = Input { Value = 0, },
+						controlGroup = Input { Value = 1, },
+						controlVisibility = Input { Value = FuID { "Show" }, },
+						posX = Input { Value = 0, },
+						posY = Input { Value = 0, },
+						zoom = Input { Value = 0.856, },
+						rotate = Input { Value = 0, },
+						scaleX = Input { Value = 1, },
+						scaleY = Input { Value = 1, },
+						pitch = Input { Value = 0, },
+						yaw = Input { Value = 0, },
+						flipH = Input { Value = 0, },
+						flipV = Input { Value = 0, },
+						adjustGroup = Input { Value = 0, },
+						isCrop = Input { Value = 0, },
+						cropL = Input { Value = 0, },
+						cropR = Input { Value = 0, },
+						cropT = Input { Value = 0, },
+						cropB = Input { Value = 0, },
+						edgeSoftness = Input { Value = 0, },
+						edgeRounding = Input { Value = 0, },
+						animationGroup = Input { Value = 0, },
+						serializedWarpable = Input {
+							Value = Text {
+							},
+						},
+						serializedPinnable = Input {
+							Value = Text {
+							},
+						},
+						motionBlur = Input { Value = 0, },
+						advancedGroup = Input { Value = 0, },
+						edgeBehaviour = Input { Value = FuID { "Constant" }, },
+						CompositeType = Input { Value = FuID { "COMPOSITE_NORMAL" }, },
+						olayAntiAlias = Input { Value = 1, },
+						previewAlpha = Input { Value = 0, },
+						isLegacyCrop = Input { Value = 0, },
+						isLegacyAlphaHandling = Input { Value = 0, },
+						isEnforceBlanking = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = -1, },
+						dstProcessingAlphaMode = Input { Value = -1, },
+						resolvefxVersion = Input { Value = "1.4", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1006.62, 396.786 } },
+				},
+				Rectangle1_1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Height = Input { Value = 0.008, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1059.93, 373.183 } },
+				},
+				Merge9_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Transform1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge7_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1114.62, 431.938 } },
+				},
+				ColorCorrector3_1 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						MasterRGBGain = Input { Value = 1.25, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Merge9_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 1114.62, 464.938 } },
+				},
+				ZoomBlur1_1 = ofx.com.blackmagicdesign.resolvefx.ZoomBlur {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "RadialBlur1_1",
+							Source = "Output",
+						},
+						SmoothStrength = Input { Value = 0.400000005960464, },
+						zoomAmount = Input { Value = 0.54, },
+						blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+						centerExclusion = Input { Value = 0, },
+						relativeRGBAGroup = Input { Value = 0, },
+						relativeR = Input { Value = 1, },
+						relativeG = Input { Value = 1, },
+						relativeB = Input { Value = 1, },
+						relativeA = Input { Value = 1, },
+						centerPosGroup = Input { Value = 0, },
+						CenterXPos = Input { Value = 0.5, },
+						CenterYPos = Input { Value = 0.5, },
+						xyPosition = Input { Value = { 0.5, 0.5 }, },
+						advancedControlsGroup = Input { Value = 0, },
+						qualityMode = Input { Value = FuID { "QualityModeBetter" }, },
+						BorderType = Input {
+							Value = FuID { "BORDER_TYPE_REPLICATE" },
+							Disabled = true,
+						},
+						isFollowSizing = Input { Value = 1, },
+						isBlurAlpha = Input { Value = 1, },
+						BlendAmount = Input { Value = 0, },
+						isUseLegacyPosition = Input { Value = 0, },
+						isUseLegacyAlgorithm = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = 1, },
+						dstProcessingAlphaMode = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "3.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 909.285, 476.785 } },
+				},
+				Merge7_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Background3_1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background3_2",
+							Source = "Output",
+						},
+						Angle = Input {
+							Value = 34.5,
+							Expression = "EmitterMain_1_1.Angle",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1149.28, 339.001 } },
+				},
+				Text4_2 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						Softness4 = Input {
+							Value = Number {
+								Value = 1
+							},
+						},
+						Green4 = Input {
+							Value = Number {
+								Value = 1
+							},
+						},
+						Red4 = Input {
+							Value = Number {
+								Value = 1
+							},
+						},
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						Center = Input { Value = { 0.438, 0.635 }, },
+						LayoutRotation = Input { Value = 1, },
+						TransformRotation = Input { Value = 1, },
+						SelectElement = Input { Value = 3, },
+						Select = Input { Value = 3, },
+						Green1 = Input { Value = 0.301960784313725, },
+						Blue1 = Input { Value = 0.0901960784313725, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Value = "Angle:", },
+						Font = Input { Value = "Consolas", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.0177, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1149.28, 508.94 } },
+				},
+				Background3_2 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Rectangle1_1",
+							Source = "Mask",
+						},
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 300, },
+						Height = Input { Value = 300, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1237.95, 410.758 } },
+				},
+				RadialBlur1_1 = ofx.com.blackmagicdesign.resolvefx.RadialBlur {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "ColorCorrector1_1",
+							Source = "Output",
+						},
+						SmoothStrength = Input { Value = 0.74, },
+						blurTypeChoice = Input { Value = FuID { "BlurTypeStylized" }, },
+						blurSymmetry = Input {
+							Value = FuID { "BlurSymmetryBothSides" },
+							Disabled = true,
+						},
+						relativeRGBAGroup = Input { Value = 1, },
+						relativeR = Input { Value = 1, },
+						relativeG = Input { Value = 1, },
+						relativeB = Input { Value = 1, },
+						relativeA = Input { Value = 1, },
+						centerPosGroup = Input { Value = 1, },
+						CenterXPos = Input { Value = 0.5, },
+						CenterYPos = Input { Value = 0.5, },
+						xyPosition = Input { Value = { 0.5, 0.5 }, },
+						advancedControlsGroup = Input { Value = 1, },
+						qualityMode = Input { Value = FuID { "QualityModeFaster" }, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_REPLICATE" }, },
+						isFollowSizing = Input { Value = 1, },
+						isBlurAlpha = Input { Value = 1, },
+						BlendAmount = Input { Value = 0, },
+						isUseLegacyPosition = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = 1, },
+						dstProcessingAlphaMode = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "4.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1032.62, 504.269 } },
+				},
+				Text4_1_1 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						Softness4 = Input {
+							Value = Number {
+								Value = 1
+							},
+						},
+						Green4 = Input {
+							Value = Number {
+								Value = 1
+							},
+						},
+						Red4 = Input {
+							Value = Number {
+								Value = 1
+							},
+						},
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						Center = Input { Value = { 0.438, 0.635 }, },
+						LayoutRotation = Input { Value = 1, },
+						TransformRotation = Input { Value = 1, },
+						SelectElement = Input { Value = 3, },
+						Select = Input { Value = 3, },
+						Red1 = Input { Value = 0.901960784313726, },
+						Blue1 = Input { Value = 0.0313725490196078, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Value = "Angle variance:", },
+						Font = Input { Value = "Consolas", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.0177, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1258.61, 503.421 } },
+				},
+				Background4_1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 291, },
+						Height = Input { Value = 260, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 855.951, 509.481 } },
+				},
+				Background3_1_1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 300, },
+						Height = Input { Value = 300, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1347.95, 393.789 } },
+				},
+				Transform2_1_1 = ofx.com.blackmagicdesign.resolvefx.Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Background4_1",
+							Source = "Output",
+						},
+						controlMode = Input { Value = FuID { "TransformControlsSliders" }, },
+						controlReset = Input { Value = 0, },
+						controlGroup = Input { Value = 1, },
+						controlVisibility = Input { Value = FuID { "Show" }, },
+						posX = Input { Value = 0, },
+						posY = Input { Value = 0, },
+						zoom = Input { Value = 1, },
+						rotate = Input { Value = 0, },
+						scaleX = Input { Value = 1, },
+						scaleY = Input { Value = 1, },
+						pitch = Input { Value = 0, },
+						yaw = Input { Value = 0, },
+						flipH = Input { Value = 0, },
+						flipV = Input { Value = 0, },
+						adjustGroup = Input { Value = 1, },
+						isCrop = Input { Value = 0, },
+						cropL = Input { Value = 0, },
+						cropR = Input { Value = 0, },
+						cropT = Input { Value = 0, },
+						cropB = Input { Value = 0, },
+						edgeSoftness = Input { Value = 1, },
+						edgeRounding = Input { Value = 0, },
+						animationGroup = Input { Value = 0, },
+						serializedWarpable = Input {
+							Value = Text {
+							},
+						},
+						serializedPinnable = Input {
+							Value = Text {
+							},
+						},
+						motionBlur = Input { Value = 0, },
+						advancedGroup = Input { Value = 0, },
+						edgeBehaviour = Input { Value = FuID { "Constant" }, },
+						CompositeType = Input { Value = FuID { "COMPOSITE_NORMAL" }, },
+						olayAntiAlias = Input { Value = 1, },
+						previewAlpha = Input { Value = 0, },
+						isLegacyCrop = Input { Value = 0, },
+						isLegacyAlphaHandling = Input { Value = 0, },
+						isEnforceBlanking = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = -1, },
+						dstProcessingAlphaMode = Input { Value = -1, },
+						resolvefxVersion = Input { Value = "1.4", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 820.591, 539.544 } },
+				},
+				Merge5_1_1_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge5_1_2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Text3_1_1_1_1",
+							Source = "Output",
+						},
+						Center = Input { Value = { 0.35, 0.456 }, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 673.283, 541.153 } },
+				},
+				Text5_2 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						Center = Input { Value = { 0.387, 0.993 }, },
+						LayoutRotation = Input { Value = 1, },
+						TransformRotation = Input { Value = 1, },
+						SelectElement = Input { Value = 3, },
+						Select = Input { Value = 3, },
+						Enabled4 = Input { Value = 1, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Expression = "EmitterMain_1_1.Angle", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ExtendHorizontal4 = Input { Value = 2, },
+						Softness4 = Input { Value = 1, },
+						SoftnessX4 = Input { Value = 8.5, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1362.61, 540.728 } },
+				},
+				Text5_1_1 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						Center = Input { Value = { 0.387, 0.993 }, },
+						LayoutRotation = Input { Value = 1, },
+						TransformRotation = Input { Value = 1, },
+						SelectElement = Input { Value = 3, },
+						Select = Input { Value = 3, },
+						Enabled4 = Input { Value = 1, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Expression = "EmitterMain_1_1.AngleVariance", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ExtendHorizontal4 = Input { Value = 2, },
+						Softness4 = Input { Value = 1, },
+						SoftnessX4 = Input { Value = 8.5, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1447.95, 505.304 } },
+				},
+				Merge11_1_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge11_2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Text4_1_1",
+							Source = "Output",
+						},
+						Center = Input { Value = { 0.56, 0.467 }, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1272.62, 559.486 } },
+				},
+				Merge8_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge10_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector3_1",
+							Source = "Output",
+						},
+						Center = Input { Value = { 0.182, 0.538 }, },
+						Size = Input { Value = 1.991, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1014.62, 564.062 } },
+				},
+				Merge11_2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge8_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Text4_2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1139.28, 565.274 } },
+				},
+				Merge14_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "ErodeDilate3_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background5_1",
+							Source = "Output",
+						},
+						Center = Input { Value = { 0.5, 0.553 }, },
+						Size = Input { Value = 33, },
+						Operator = Input { Value = FuID { "Under" }, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1627.96, 483.757 } },
+				},
+				Merge10_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge5_1_1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform2_1_1",
+							Source = "Output",
+						},
+						Center = Input { Value = { 0.18, 0.536 }, },
+						Size = Input { Value = 1.074, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 800.618, 571.332 } },
+				},
+				Merge12_2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge11_1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Text5_2",
+							Source = "Output",
+						},
+						Size = Input { Value = 0.27, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1365.95, 571.304 } },
+				},
+				Merge12_1_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge12_2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Text5_1_1",
+							Source = "Output",
+						},
+						Center = Input { Value = { 0.631, 0.467 }, },
+						Size = Input { Value = 0.27, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1467.29, 576.425 } },
+				},
+				ErodeDilate3_1 = ErodeDilate {
+					CtrlWShown = false,
+					Inputs = {
+						XAmount = Input { Value = 0.0011, },
+						Input = Input {
+							SourceOp = "pRender2_2",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 1673.29, 550.151 } },
+				},
+				pRender2_2 = pRender {
+					CtrlWShown = false,
+					Inputs = {
+						_MotionBlurWarning = Input { Disabled = true, },
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 500, },
+						Height = Input { Value = 500, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						OutputMode = Input {
+							Value = FuID { "TwoD" },
+							Disabled = true,
+						},
+						["MaterialID.MaterialID"] = Input { Value = 3, },
+						["ObjectID.ObjectID"] = Input { Value = 3, },
+						Input = Input {
+							SourceOp = "pEmitter2_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 1781.96, 550.152 } },
+				},
+				Background5_1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 10, },
+						Height = Input { Value = 10, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1845.29, 493.455 } },
+				},
+				Merge13_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge12_1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge14_1",
+							Source = "Output",
+						},
+						Center = Input { Value = { 0.174, 0.315 }, },
+						Size = Input { Value = 0.781, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1601.96, 636.757 } },
+				},
+				Text6_1 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Wrap = Input { Value = 1, },
+						Center = Input { Value = { 0.322, 0.152 }, },
+						LayoutRotation = Input { Value = 1, },
+						TransformRotation = Input { Value = 1, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Value = "Rotation Variance", },
+						Font = Input { Value = "Consolas", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.0131, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1739.96, 644.977 } },
+				},
+				pEmitter2_1 = pEmitter {
+					ID = 1371,
+					CtrlWShown = false,
+					Inputs = {
+						["LineRgn.Start.Y"] = Input {
+							Value = Number {
+								Value = -0.174
+							},
+						},
+						["LineRgn.Start.X"] = Input {
+							Value = Number {
+								Value = 0.029
+							},
+						},
+						Number = Input {
+							SourceOp = "pEmitter2_1Number",
+							Source = "Value",
+						},
+						Lifespan = Input { Value = 1000000, },
+						TemporalDistribution = Input { Value = 1, },
+						VelocityControls = Input { Value = 1, },
+						RotationControls = Input { Value = 1, },
+						RotationZ = Input {
+							Value = 15.6,
+							Expression = "EmitterMain_1_1.Angle",
+						},
+						RotationZVariance = Input {
+							Value = 20,
+							Expression = "EmitterMain_1_1.RotationZVariance",
+						},
+						SpinControls = Input { Value = 1, },
+						Style = Input { Value = FuID { "ParticleStyleLine" }, },
+						["ParticleStyleLine.Fade"] = Input { Value = 0, },
+						Region = Input { Value = FuID { "CubeRgn" }, },
+						["ParticleStyle.SizeControls"] = Input { Value = 1, },
+						["ParticleStyle.Size"] = Input { Value = 2.27, },
+						["ParticleStyle.SizeOverLife"] = Input {
+							SourceOp = "pEmitter2_1SizeOverLife",
+							Source = "Value",
+						},
+						["ParticleStyle.BlurOverLife"] = Input {
+							SourceOp = "pEmitter2_1BlurOverLife2D",
+							Source = "Value",
+						},
+						["CubeRgn.Width"] = Input { Value = 0.575, },
+						["CubeRgn.Height"] = Input { Value = 0.543, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1955.3, 511.364 } },
+				},
+				Merge16_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge15_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge17_1",
+							Source = "Output",
+						},
+						Center = Input { Value = { 0.5, 0.329 }, },
+						Size = Input { Value = 2.52, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1973.95, 695.485 } },
+				},
+				Merge15_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge13_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Text6_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1728.62, 689.152 } },
+				},
+				Merge18_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge16_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Text7_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 2131.29, 715.152 } },
+				},
+				Merge19_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge18_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 2295.29, 723.91 } },
+				},
+				Merge21_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge19_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 2455.62, 737.727 } },
+				}
+			},
+			Colors = { TileColor = { R = 0.584313725490196, G = 0.294117647058824, B = 0.803921568627451 }, }
+		},
+		pEmitter2_1Number = BezierSpline {
+			SplineColor = { Red = 233, Green = 206, Blue = 78 },
+			CtrlWZoom = false,
+			CustomData = { Path = { Map = { ["Setting:"] = "Macros:\\" } }, },
+			KeyFrames = {
+				[0] = { 24.4, RH = { 0.333333333333333, 16.2666666666667 }, Flags = { Linear = true } },
+				[1] = { 0, LH = { 0.666666666666667, 8.13333333333333 }, Flags = { Linear = true } }
+			}
+		},
+		pEmitter2_1SizeOverLife = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+					[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64 },
+			CtrlWZoom = false,
+			CustomData = { Path = { Map = { ["Setting:"] = "Macros:\\" } }, },
+		},
+		pEmitter2_1BlurOverLife2D = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+					[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 0, Blue = 180 },
+			CtrlWZoom = false,
+			CustomData = { Path = { Map = { ["Setting:"] = "Macros:\\" } }, },
+		},
+		OUTPUT = MacroOperator {
+			CtrlWZoom = false,
+			NameSet = true,
+			CustomData = { SxSFilename = "C:\\Users\\PC\\AppData\\Roaming\\Blackmagic Design\\DaVinci Resolve\\Support\\Fusion\\Macros\\ek_ATOMIC1.1.setting", Path = { Map = { ["Setting:"] = "Macros:\\" } }, },
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "OUT",
+					Source = "BlendClone",
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "OUT",
+					Source = "Background",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "OUT",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { -2926.01, -77.5713 } },
+			Tools = ordered() {
+				OUT = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Blend = Input { Value = 0, },
+						Background = Input {
+							SourceOp = "Displace2_1_1_1_1_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 8.75758 } },
+				}
+			},
+			UserControls = ordered() { Input1 = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 1, INP_Default = 0, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICS_ControlPage = "Common", INP_SplineType = "Default", LINKS_Name = "Blend" } }
+		},
+		ATOMICMAIN = GroupOperator {
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Inputs = ordered() {
+				Comments = Input { Value = "ek_ATOMIC by ekawa\nVersion: 1.1\n\n- discord.gg/rn85D6e382\n- youtube.com/@ekawa001\n\n", },
+				Input1 = InstanceInput {
+					SourceOp = "Displace2_1_1_1_1_1",
+					Source = "Blend",
+					Name = "Displace2",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Displace1_1_1_1_1_1_1_1",
+					Source = "Blend",
+					Name = "Displace1",
+					Default = 1,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Switch1_1_1_1_1_1",
+					Source = "Input0",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "Switch1_1_1_1_1_1",
+					Source = "Input1",
+				},
+				MainInput3 = InstanceInput {
+					SourceOp = "Switch1_1_1_1_1_1",
+					Source = "Input2",
+				},
+				MainInput4 = InstanceInput {
+					SourceOp = "Switch1_1_1_1_1_1",
+					Source = "Input3",
+				},
+				MainInput5 = InstanceInput {
+					SourceOp = "Switch1_1_1_1_1_1",
+					Source = "Input4",
+				},
+				MainInput6 = InstanceInput {
+					SourceOp = "Switch1_1_1_1_1_1",
+					Source = "Input5",
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Switch1_1_1_1_1_1",
+					Source = "Source",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "pTurbulence1_1_1_1_1_1_1_1",
+					Source = "XStrength",
+					Name = "X Turbulence",
+					Default = 0.031,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "pTurbulence1_1_1_1_1_1_1_1",
+					Source = "YStrength",
+					Name = "Y Turbulence",
+					Default = 0.047,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "pTurbulence1_1_1_1_1_1_1_1",
+					Source = "Density",
+					Name = "Turbulence Density",
+					Default = 10,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "Number",
+					Default = 10,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "NumberVariance",
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "Lifespan",
+					Default = 197,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "LifespanVariance",
+					Default = 0,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "Velocity",
+					Default = 0.023,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "VelocityVariance",
+					Default = 0.016,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "Angle",
+					Default = 15.6,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "RotationZVariance",
+					Name = "Rotation Variance",
+					Default = 0,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "AngleVariance",
+					Page = "Controls",
+					Default = 15.7,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.Red",
+					Name = "Color",
+					ControlGroup = 22,
+					Default = 0.678431372549,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.Green",
+					ControlGroup = 22,
+					Default = 0.678431372549,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.Blue",
+					ControlGroup = 22,
+					Default = 0.678431372549,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.Alpha",
+					ControlGroup = 22,
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.RedLow",
+					ControlGroup = 23,
+					Default = -0.537,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.RedHigh",
+					ControlGroup = 23,
+					Default = -0.012,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.GreenLow",
+					Expression = "EmitterMain_1_1.ParticleStyle.RedLow",
+					ControlGroup = 24,
+					Default = -1,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.GreenHigh",
+					ControlGroup = 24,
+					Default = 0,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.BlueLow",
+					Expression = "EmitterMain_1_1.ParticleStyle.RedLow",
+					ControlGroup = 25,
+					Default = -1,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.BlueHigh",
+					ControlGroup = 25,
+					Default = 0,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.AlphaLow",
+					ControlGroup = 26,
+					Default = 0,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.AlphaHigh",
+					ControlGroup = 26,
+					Default = 0,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.Size",
+					Default = 2,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.SizeVariance",
+					Default = 1.15,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.SizeOverLife",
+				},
+				Input31 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.FadeIn",
+					Name = "In",
+					ControlGroup = 30,
+					Default = 0.072,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.FadeOut",
+					Name = "Out",
+					ControlGroup = 30,
+					Default = 0.933,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "ParticleStyle.BlurVariance",
+					Default = 0.236,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "Region",
+				},
+				Input35 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "SphereRgn.Size",
+					Default = 0.205,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "SphereRgn.Translate.X",
+					Default = -0.234,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "SphereRgn.Translate.Y",
+					Default = -0.154,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "SphereRgn.Translate.Z",
+					Default = 0,
+				},
+				Input39 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "SphereRgn.Rotate.X",
+					Default = 0,
+				},
+				Input40 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "SphereRgn.Rotate.Y",
+					Default = 0,
+				},
+				Input41 = InstanceInput {
+					SourceOp = "EmitterMain_1_1",
+					Source = "SphereRgn.Rotate.Z",
+					Default = 0,
+				},
+				MainInput7 = InstanceInput {
+					SourceOp = "pAvoid1_1_1_1_1_1",
+					Source = "BitmapRgn.Bitmap",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Displace2_1_1_1_1_1",
+					Source = "Output",
+				},
+				MainOutput2 = InstanceOutput {
+					SourceOp = "Instance_pRender2_1_1_1_1_1_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { -3278.68, -75.814 },
+				Flags = {
+					AllowPan = false,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 1469.33, 266.145, 734.667, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				EmitterMain_1_1BlurOverLife2D = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+				},
+				EmitterMain_1_1SizeOverLife = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5 }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+				},
+				Note1_1_1_1 = Note {
+					CtrlWShown = false,
+					ViewInfo = StickyNoteInfo {
+						Pos = { 671, 192.148 },
+						Size = { 196, 181.364 }
+					},
+				},
+				PipeRouter1_1_1_1_1_1 = PipeRouter {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "pRender2_1_1_1_1_1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = PipeRouterInfo { Pos = { 190.995, 176.39 } },
+				},
+				Displace2_1_1_1_1_1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0, },
+						Center = Input {
+							Value = { -0.357969004893964, -0.235696574225122 },
+							Expression = "Point(EmitterMain_1_1.SphereRgn.Translate.X, EmitterMain_1_1.SphereRgn.Translate.Y)",
+						},
+						Offset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = 0.08, },
+						Input = Input {
+							SourceOp = "Displace1_1_1_1_1_1_1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Blur1_1_1_1_1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 569, 175.178 } },
+				},
+				Displace1_1_1_1_1_1_1_1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						Type = Input { Value = 1, },
+						Center = Input { Value = { 0.888707, 0.795287 }, },
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input { Value = -0.02, },
+						YOffset = Input { Value = -0.5, },
+						YRefraction = Input { Value = -0.014, },
+						Offset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = -0.09, },
+						Input = Input {
+							SourceOp = "PipeRouter1_1_1_1_1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "PipeRouter1_1_1_1_1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 385.662, 171.813 } },
+				},
+				Switch1_1_1_1_1_1 = Switch {
+					CtrlWShown = false,
+					Inputs = {
+						NumberOfInputs = Input { Value = 6, },
+						Source = Input { Value = 1, },
+						Name0 = Input { Value = "Custom Input", },
+						Input0 = Input {
+							SourceOp = "PipeRouter6",
+							Source = "Output",
+						},
+						Name1 = Input { Value = "Smoke ", },
+						Input1 = Input {
+							SourceOp = "PipeRouter3",
+							Source = "Output",
+						},
+						Name2 = Input { Value = "Blob", },
+						Input2 = Input {
+							SourceOp = "PipeRouter4",
+							Source = "Output",
+						},
+						Name3 = Input { Value = "Spheres", },
+						Input3 = Input {
+							SourceOp = "PipeRouter5",
+							Source = "Output",
+						},
+						Name4 = Input { Value = "Cloud", },
+						Input4 = Input {
+							SourceOp = "PipeRouter2",
+							Source = "Output",
+						},
+						Name5 = Input { Value = "Misty", },
+						Input5 = Input {
+							SourceOp = "PipeRouter1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -672.334, 155.697 } },
+					Colors = { TileColor = { R = 0.6, G = 0.450980392156863, B = 0.627450980392157 }, },
+					UserControls = ordered() { Input0 = { INP_Integer = false, LINKID_DataType = "Number", ICS_ControlPage = "Controls", INP_SplineType = "Default", LINKS_Name = "Smoke 1", } }
+				},
+				pTurbulence1_1_1_1_1_1_1_1StrengthOverLifeLUT = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 180, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				pFlock1_1_1_1_1_1_1_1 = pFlock {
+					ID = 1303,
+					PassThrough = true,
+					Inputs = {
+						FlockNumber = Input { Value = 2, },
+						FollowStrength = Input { Value = 0.005, },
+						AttractStrength = Input { Value = 1, },
+						MinimumSpace = Input { Value = 0, },
+						MaximumSpace = Input { Value = 0.1, },
+						Input = Input {
+							SourceOp = "pTurbulence1_1_1_1_1_1_1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -149.005, 156.996 } },
+				},
+				Instance_pFlock1_1_1_1_1_1_1_1 = pFlock {
+					ID = 1304,
+					CtrlWShown = false,
+					SourceOp = "pFlock1_1_1_1_1_1_1_1",
+					Inputs = {
+						LayersNest = Input {
+						},
+						Randomize = Input {
+						},
+						UseSetNest = Input {
+						},
+						Input = Input {
+							SourceOp = "Instance_pTurbulence1_1_1_1_1_1_1_1",
+							Source = "Output",
+						},
+						ConditionsNest = Input {
+						},
+						RegionNest = Input {
+						},
+						SetsNest = Input {
+						},
+						CommentsNest = Input {
+						},
+						FrameRenderScriptNest = Input {
+						},
+						StartRenderScripts = Input {
+						},
+						EndRenderScripts = Input {
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 435.1, 52.0329 } },
+				},
+				pTurbulence1_1_1_1_1_1_1_1 = pTurbulence {
+					ID = 1305,
+					CtrlWShown = false,
+					Inputs = {
+						XStrength = Input { Value = 0.079, },
+						YStrength = Input { Value = 0.055, },
+						ZStrength = Input { Value = 0, },
+						StrengthOverLifeLUT = Input {
+							SourceOp = "pTurbulence1_1_1_1_1_1_1_1StrengthOverLifeLUT",
+							Source = "Value",
+						},
+						Density = Input { Value = 37, },
+						Input = Input {
+							SourceOp = "pAvoid1_1_1_1_1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -261.672, 148.511 } },
+				},
+				Instance_pTurbulence1_1_1_1_1_1_1_1 = pTurbulence {
+					ID = 1306,
+					CtrlWShown = false,
+					SourceOp = "pTurbulence1_1_1_1_1_1_1_1",
+					Inputs = {
+						LayersNest = Input {
+						},
+						Randomize = Input {
+						},
+						StrengthOverLife = Input {
+						},
+						Input = Input {
+							SourceOp = "Instance_pAvoid1_1_1_1_1_1",
+							Source = "Output",
+						},
+						ConditionsNest = Input {
+						},
+						RegionNest = Input {
+						},
+						SetsNest = Input {
+						},
+						CommentsNest = Input {
+						},
+						FrameRenderScriptNest = Input {
+						},
+						StartRenderScripts = Input {
+						},
+						EndRenderScripts = Input {
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 386.433, 49.6085 } },
+				},
+				EmitterMain_1_1 = pEmitter {
+					ID = 1307,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						["RectRgn.Translate.Y"] = Input {
+							Value = Number {
+								Value = -0.203
+							},
+						},
+						["CubeRgn.Width"] = Input {
+							Value = Number {
+								Value = 0.299
+							},
+						},
+						["CubeRgn.Translate.Y"] = Input {
+							Value = Number {
+								Value = -0.136
+							},
+						},
+						["CubeRgn.Translate.X"] = Input {
+							Value = Number {
+								Value = -0.068
+							},
+						},
+						["RectRgn.Width"] = Input {
+							Value = Number {
+								Value = 0.402
+							},
+						},
+						["RectRgn.Translate.X"] = Input {
+							Value = Number {
+								Value = -0.087
+							},
+						},
+						["RectRgn.Height"] = Input {
+							Value = Number {
+								Value = 0.1
+							},
+						},
+						["BezierRgn.Polyline"] = Input {
+							Value = Polyline {
+							},
+						},
+						Number = Input { Value = 3.1, },
+						Lifespan = Input { Value = 197, },
+						VelocityControls = Input { Value = 1, },
+						Velocity = Input { Value = 0.063, },
+						VelocityVariance = Input { Value = 0.039, },
+						Angle = Input { Value = 2.6, },
+						RotationControls = Input { Value = 1, },
+						RotationZVariance = Input { Value = 20, },
+						SpinControls = Input { Value = 1, },
+						Style = Input { Value = FuID { "ParticleStyleBitmap" }, },
+						["ParticleStyleBitmap.DropToolsHere"] = Input {
+							SourceOp = "Switch1_1_1_1_1_1",
+							Source = "Output",
+						},
+						["SphereRgn.Size"] = Input { Value = 0.26, },
+						["SphereRgn.Translate.X"] = Input { Value = -0.357969004893964, },
+						["SphereRgn.Translate.Y"] = Input { Value = -0.235696574225122, },
+						AngleVariance = Input { Value = 53.6, },
+						["ParticleStyle.ColorControls"] = Input { Value = 1, },
+						["ParticleStyle.Red"] = Input { Value = 0.678431372549, },
+						["ParticleStyle.Green"] = Input { Value = 0.678431372549, },
+						["ParticleStyle.Blue"] = Input { Value = 0.678431372549, },
+						["ParticleStyle.ColorVariance"] = Input { Value = 1, },
+						["ParticleStyle.RedLow"] = Input { Value = -0.633, },
+						["ParticleStyle.RedHigh"] = Input { Value = -0.012, },
+						["ParticleStyle.GreenLow"] = Input {
+							Value = -1,
+							Expression = "EmitterMain_1_1.ParticleStyle.RedLow",
+						},
+						["ParticleStyle.BlueLow"] = Input {
+							Value = -1,
+							Expression = "EmitterMain_1_1.ParticleStyle.RedLow",
+						},
+						["ParticleStyle.ColorOverLifeControls"] = Input { Value = 1, },
+						["ParticleStyle.ColorOverLife"] = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 1, 1, 1 },
+									[1] = { 1, 1, 1, 1 }
+								}
+							},
+						},
+						["ParticleStyle.SizeControls"] = Input { Value = 1, },
+						["ParticleStyle.Size"] = Input { Value = 4, },
+						["ParticleStyle.SizeVariance"] = Input { Value = 2, },
+						["ParticleStyle.SizeOverLife"] = Input {
+							SourceOp = "EmitterMain_1_1SizeOverLife",
+							Source = "Value",
+						},
+						["ParticleStyle.FadeControls"] = Input { Value = 1, },
+						["ParticleStyle.FadeIn"] = Input { Value = 0.072, },
+						["ParticleStyle.FadeOut"] = Input { Value = 0.933, },
+						["ParticleStyle.BlurControls"] = Input { Value = 1, },
+						["ParticleStyle.BlurVariance"] = Input { Value = 0.236, },
+						["ParticleStyle.BlurOverLife"] = Input {
+							SourceOp = "EmitterMain_1_1BlurOverLife2D",
+							Source = "Value",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -516.334, 156.996 } },
+					UserControls = ordered() { AngleVariance = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ScrewControl", INP_MaxScale = 360, INP_Default = 0, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", ICS_ControlPage = "Controls", INP_SplineType = "Default", LINKS_Name = "Angle Variance" } }
+				},
+				Instance_EmitterMain_1_1_1_1_1 = pEmitter {
+					ID = 1308,
+					CtrlWShown = false,
+					NameSet = true,
+					SourceOp = "EmitterMain_1_1",
+					Inputs = {
+						["ParticleStyleBrush.Brush"] = Input {
+							Value = Number {
+								Value = 49
+							},
+							UserString1 = "swirl",
+						},
+						["ParticleStyleBrush.UseAspectFrom"] = Input {
+						},
+						["LineRgn.EndNest"] = Input {
+						},
+						["BezierRgn.Translation"] = Input {
+						},
+						["ParticleStyleBrush.TimeScale"] = Input {
+						},
+						["ParticleStyleBrush.Gain"] = Input {
+						},
+						["BitmapRgn.Bitmap"] = Input {
+						},
+						["ParticleStylePoint.SubPixelRendered"] = Input {
+						},
+						["ParticleStyleBrush.TimeOffset"] = Input {
+						},
+						["LineRgn.StartNest"] = Input {
+						},
+						["ParticleStyleBrush.Animate"] = Input {
+						},
+						["ParticleStyleNGon.NGonSides"] = Input {
+							Value = Number {
+								Value = 4
+							},
+						},
+						["ParticleStyleNGon.NGonType"] = Input {
+						},
+						["ParticleStyleNGon.NGonStarryness"] = Input {
+						},
+						["ParticleStyleBrush.PixelAspect"] = Input {
+						},
+						["ParticleStyleBitmap.DropToolsHere"] = Input {
+						},
+						["ParticleStylePoint.ApplyMode"] = Input {
+						},
+						LayersNest = Input {
+						},
+						Randomize = Input {
+						},
+						EmitterNest = Input {
+						},
+						VelocityControls = Input {
+							Value = 1,
+						},
+						RotationControls = Input {
+							Value = 1,
+						},
+						SpinControls = Input {
+							Value = 1,
+						},
+						SetsNest = Input {
+						},
+						StyleNest = Input {
+						},
+						Style = Input {
+							Value = FuID { "ParticleStyleBlob" },
+						},
+						["ParticleStyleBlob.Noise"] = Input {
+						},
+						RegionNest = Input {
+						},
+						["SphereRgn.Translation"] = Input {
+						},
+						["SphereRgn.Translate.Z"] = Input {
+						},
+						["SphereRgn.Rotation"] = Input {
+						},
+						["SphereRgn.Rotate.X"] = Input {
+						},
+						["SphereRgn.Rotate.Y"] = Input {
+						},
+						["SphereRgn.Rotate.Z"] = Input {
+						},
+						["SphereRgn.PivotNest"] = Input {
+						},
+						["SphereRgn.Pivot.X"] = Input {
+						},
+						["SphereRgn.Pivot.Y"] = Input {
+						},
+						["SphereRgn.Pivot.Z"] = Input {
+						},
+						CommentsNest = Input {
+						},
+						FrameRenderScriptNest = Input {
+						},
+						StartRenderScripts = Input {
+						},
+						EndRenderScripts = Input {
+						},
+						["ParticleStyle.ColorControls"] = Input {
+							Value = 1,
+						},
+						["ParticleStyle.ColorVariance"] = Input {
+							Value = 1,
+						},
+						["ParticleStyle.GreenLow"] = Input {
+							Expression = "EmitterMain_1_1.ParticleStyle.RedLow"
+						},
+						["ParticleStyle.BlueLow"] = Input {
+							Expression = "EmitterMain_1_1.ParticleStyle.RedLow"
+						},
+						["ParticleStyle.ColorOverLifeControls"] = Input {
+							Value = 1,
+						},
+						["ParticleStyle.SizeControls"] = Input {
+							Value = 1,
+						},
+						["ParticleStyle.Size"] = Input {
+							Value = 0.205,
+						},
+						["ParticleStyle.SizeVariance"] = Input {
+						},
+						["ParticleStyle.FadeControls"] = Input {
+							Value = 1,
+						},
+						["ParticleStyle.MergeControls"] = Input {
+							Value = 1,
+						},
+						["ParticleStyle.BlurControls"] = Input {
+							Value = 1,
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 247.777, 25.3671 } },
+					UserControls = ordered() { AngleVariance = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ScrewControl", INP_MaxScale = 360, INP_Default = 0, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", ICS_ControlPage = "Controls", INP_SplineType = "Default", LINKS_Name = "Angle Variance" } }
+				},
+				pAvoid1_1_1_1_1_1 = pAvoid {
+					ID = 1309,
+					Inputs = {
+						Input = Input {
+							SourceOp = "EmitterMain_1_1",
+							Source = "Output",
+						},
+						Distance = Input { Value = 1, },
+						Strength = Input { Value = 1, },
+						Region = Input { Value = FuID { "BitmapRgn" }, },
+						["BitmapRgn.Bitmap"] = Input {
+							SourceOp = "OUT_1",
+							Source = "Output",
+						},
+						["BitmapRgn.Channel"] = Input { Value = 4, },
+						["BitmapRgn.Low"] = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -382.339, 153.36 } },
+				},
+				Instance_pAvoid1_1_1_1_1_1 = pAvoid {
+					ID = 1310,
+					CtrlWShown = false,
+					SourceOp = "pAvoid1_1_1_1_1_1",
+					Inputs = {
+						LayersNest = Input {
+						},
+						Randomize = Input {
+						},
+						Input = Input {
+							SourceOp = "Instance_EmitterMain_1_1_1_1_1",
+							Source = "Output",
+						},
+						ConditionsNest = Input {
+						},
+						RegionNest = Input {
+						},
+						["BitmapRgn.Bitmap"] = Input {
+						},
+						SetsNest = Input {
+						},
+						CommentsNest = Input {
+						},
+						FrameRenderScriptNest = Input {
+						},
+						StartRenderScripts = Input {
+						},
+						EndRenderScripts = Input {
+						},
+						["LineRgn.StartNest"] = Input {
+						},
+						["LineRgn.Start.X"] = Input {
+						},
+						["LineRgn.Start.Y"] = Input {
+						},
+						["LineRgn.Start.Z"] = Input {
+						},
+						["LineRgn.EndNest"] = Input {
+						},
+						["LineRgn.End.X"] = Input {
+						},
+						["LineRgn.End.Y"] = Input {
+						},
+						["LineRgn.End.Z"] = Input {
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 329.767, 25.6455 } },
+				},
+				pRender2_1_1_1_1_1_1 = pRender {
+					CtrlWShown = false,
+					Inputs = {
+						_MotionBlurWarning = Input { Disabled = true, },
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.ColorSpaceNest"] = Input { Value = 1, },
+						["Gamut.GammaSpaceNest"] = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						OutputMode = Input {
+							Value = FuID { "TwoD" },
+							Disabled = true,
+						},
+						["MaterialID.Nest"] = Input { Value = 1, },
+						["MaterialID.MaterialID"] = Input { Value = 2, },
+						["ObjectID.Nest"] = Input { Value = 1, },
+						["ObjectID.ObjectID"] = Input { Value = 2, },
+						Translation = Input { Value = 1, },
+						Rotation = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "pFlock1_1_1_1_1_1_1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -4.3377, 156.995 } },
+				},
+				Instance_pRender2_1_1_1_1_1_1 = pRender {
+					CtrlWShown = false,
+					SourceOp = "pRender2_1_1_1_1_1_1",
+					Inputs = {
+						EffectMask = Input {
+						},
+						SettingsNest = Input {
+						},
+						_MotionBlurWarning = Input {
+							Disabled = true,
+						},
+						LayersNest = Input {
+						},
+						ImageNest = Input {
+						},
+						Width = Input {
+							Value = 192,
+						},
+						Height = Input {
+							Value = 108,
+						},
+						UseFrameFormatSettings = Input {
+						},
+						["Gamut.ColorSpaceNest"] = Input {
+							Value = 1,
+						},
+						["Gamut.GammaSpaceNest"] = Input {
+							Value = 1,
+						},
+						OutputMode = Input {
+							Value = FuID { "TwoD" },
+							Disabled = true,
+						},
+						Restart = Input {
+						},
+						PreRoll = Input {
+						},
+						["MaterialID.Nest"] = Input {
+							Value = 1,
+						},
+						["ObjectID.Nest"] = Input {
+							Value = 1,
+						},
+						Translation = Input {
+							Value = 1,
+						},
+						Rotation = Input {
+							Value = 1,
+						},
+						PivotNest = Input {
+						},
+						Input = Input {
+							SourceOp = "Instance_pFlock1_1_1_1_1_1_1_1",
+							Source = "Output",
+						},
+						Camera = Input {
+						},
+						CommentsNest = Input {
+						},
+						FrameRenderScriptNest = Input {
+						},
+						StartRenderScripts = Input {
+						},
+						EndRenderScripts = Input {
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 468.146, 78.5517 } },
+				},
+				Blur1_1_1_1_1_1 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 2.1, },
+						Input = Input {
+							SourceOp = "PipeRouter1_1_1_1_1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 330.999, 143.662 } },
+				}
+			},
+		},
+		Misty = GroupOperator {
+			NameSet = true,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "LumaKeyer1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { -3797.88, -51.9102 },
+				Flags = {
+					AllowPan = false,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 127.333, 126.03, 63.6667, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 913.984, -449.356 }
+			},
+			Tools = ordered() {
+				Unmult_1 = MacroOperator {
+					CtrlWShown = false,
+					CustomData = { SxSFilename = "C:\\Users\\PC\\AppData\\Roaming\\Blackmagic Design\\DaVinci Resolve\\Support\\Fusion\\Macros\\Unmult.setting", Path = { Map = { ["Setting:"] = "Macros:\\" } } },
+					Inputs = ordered() {
+						MainInput1 = InstanceInput {
+							SourceOp = "unmult",
+							Source = "Background",
+						},
+						Unmult = InstanceInput {
+							SourceOp = "unmult",
+							Source = "Unmult",
+							Page = "Controls",
+							Default = 1,
+						},
+						EffectMask = InstanceInput {
+							SourceOp = "unmult",
+							Source = "EffectMask",
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "unmult",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { -914.651, 489.78 } },
+					Tools = ordered() {
+						unmult = ChannelBoolean {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								ToRed = Input { Value = 4, },
+								ToGreen = Input { Value = 4, },
+								ToBlue = Input { Value = 4, },
+								ToAlpha = Input {
+									Value = 13,
+									Expression = "iif(Unmult==1,13.0,4)",
+								},
+								Background = Input {
+									SourceOp = "FastNoise2",
+									Source = "Output",
+								}
+							},
+							ViewInfo = OperatorInfo { Pos = { 0, 8.75758 } },
+							UserControls = ordered() { Unmult = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "CheckboxControl", INP_MaxScale = 1, INP_Default = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICS_ControlPage = "Controls", CBC_TriState = false, LINKS_Name = "Unmult" } }
+						}
+					},
+				},
+				FastNoise2 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 200, },
+						Height = Input { Value = 200, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						Contrast = Input { Value = 0.58, },
+						Brightness = Input { Value = 1, },
+						LockXY = Input { Value = 0, },
+						XScale = Input { Value = 0.63, },
+						YScale = Input { Value = 4.09, },
+						SeetheRate = Input { Value = 0.063, },
+						Discontinuous = Input { Value = 1, },
+						Type = Input { Value = 1, },
+						GradientType = Input { Value = 5, },
+						Start = Input { Value = { 0.445, 0.5 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 1, 1, 1 },
+									[1] = { 0, 0, 0, 1 }
+								}
+							},
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -907.984, 522.508 } },
+				},
+				LumaKeyer1 = LumaKeyer {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0, },
+						High = Input { Value = 0.572, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "unmult",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -913.317, 457.992 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "OUTPUT"
+}

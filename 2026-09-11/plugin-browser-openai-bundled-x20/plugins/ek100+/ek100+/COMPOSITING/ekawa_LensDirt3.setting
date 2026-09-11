@@ -1,0 +1,292 @@
+{
+	Tools = ordered() {
+		ekawa_LensDirt3 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "pEmitter3",
+					Source = "Number",
+					Default = 10,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "pEmitter3",
+					Source = "ParticleStyle.Size",
+					Default = 0.1496,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "pEmitter3",
+					Source = "ParticleStyle.SizeVariance",
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "ekawaheatblur_2",
+					Source = "Input3",
+					Name = "Heatblur Contrast",
+					Default = 4.56,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ekawaheatblur_2",
+					Source = "Input4",
+					Name = "Heatblur  Brightness",
+					Default = 0.48,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ekawaheatblur_2",
+					Source = "Input6",
+					Name = "Heatblur Scale",
+					Default = 3.15,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ekawaheatblur_2",
+					Source = "Input13",
+					Name = "Heatblur Blur Size",
+					Default = 7.9,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Blur3",
+					Source = "XBlurSize",
+					Default = 0.7,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge5",
+					Source = "Background",
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Merge5",
+					Source = "ApplyMode",
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Merge5",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Merge5",
+					Source = "EffectMask",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge5",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				pEmitter3 = pEmitter {
+					ID = 1,
+					Inputs = {
+						Number = Input {
+							SourceOp = "pEmitter3Number",
+							Source = "Value",
+						},
+						Lifespan = Input { Value = 10000, },
+						Style = Input { Value = FuID { "ParticleStyleBlob" }, },
+						Region = Input { Value = FuID { "AllRgn" }, },
+						["ParticleStyle.SizeControls"] = Input { Value = 1, },
+						["ParticleStyle.Size"] = Input { Value = 0.1496, },
+						["ParticleStyle.SizeOverLife"] = Input {
+							SourceOp = "pEmitter3SizeOverLife",
+							Source = "Value",
+						},
+						["ParticleStyle.BlurOverLife"] = Input {
+							SourceOp = "pEmitter3BlurOverLife2D",
+							Source = "Value",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 535.333, -7.18182 } },
+				},
+				pEmitter3Number = BezierSpline {
+					SplineColor = { Red = 233, Green = 206, Blue = 78 },
+					CtrlWZoom = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 1000, RH = { 0.333333333333333, 666.666666666667 }, Flags = { Linear = true } },
+						[1] = { 0, LH = { 0.666666666666667, 333.333333333333 }, Flags = { Linear = true } }
+					}
+				},
+				pEmitter3SizeOverLife = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+				},
+				pEmitter3BlurOverLife2D = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+				},
+				pRender3 = pRender {
+					Inputs = {
+						_MotionBlurWarning = Input { Disabled = true, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						OutputMode = Input {
+							Value = FuID { "TwoD" },
+							Disabled = true,
+						},
+						["MaterialID.MaterialID"] = Input { Value = 3, },
+						["ObjectID.ObjectID"] = Input { Value = 3, },
+						Input = Input {
+							SourceOp = "pEmitter3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 645.333, -5.9697 } },
+				},
+				ekawaheatblur_2 = MacroOperator {
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Center",
+						},
+						Input2 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Detail",
+							Default = 2,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Contrast",
+							Default = 4.56,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Brightness",
+							Default = 0.19,
+						},
+						Input5 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "LockXY",
+							Default = 1,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "XScale",
+							Default = 3.15,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "YScale",
+							Default = 2,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Angle",
+							Default = 0,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Seethe",
+							Default = 0,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "SeetheRate",
+							Default = 0.079,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Discontinuous",
+							Default = 0,
+						},
+						Input12 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Inverted",
+							Default = 0,
+						},
+						MainInput1 = InstanceInput {
+							SourceOp = "Blur1_3",
+							Source = "Input",
+						},
+						Input13 = InstanceInput {
+							SourceOp = "Blur1_3",
+							Source = "XBlurSize",
+							Default = 7.9,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Blur1_3",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 645.333, 27.0303 } },
+					Tools = ordered() {
+						FastNoise1_2 = FastNoise {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Contrast = Input { Value = 4.56, },
+								Brightness = Input { Value = 0.48, },
+								XScale = Input { Value = 3.15, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -29.203, 8.22223 } },
+						},
+						Blur1_3 = Blur {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "FastNoise1_2",
+									Source = "Output",
+								},
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								XBlurSize = Input { Value = 7.9, },
+								Input = Input {
+									SourceOp = "pRender3",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 28, 101.293 } },
+						}
+					},
+				},
+				Blur3 = Blur {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 0.7, },
+						Input = Input {
+							SourceOp = "Blur1_3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 755.333, 27.0303 } },
+				},
+				Merge5 = Merge {
+					CtrlWZoom = false,
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "Blur3",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Luminosity" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 719, 82.1212 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_LensDirt3"
+}

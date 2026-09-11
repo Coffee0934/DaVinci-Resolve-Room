@@ -1,0 +1,417 @@
+{
+	Tools = ordered() {
+		ekawaFastedgedetect1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "EdgeDetect1",
+					Source = "edgeWidth",
+					Default = 0.200000002980232,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "EdgeDetect1",
+					Source = "Brightness",
+					Default = 2.5,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "EdgeDetect1",
+					Source = "edgeGamma",
+					Default = 2,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue1",
+					ControlGroup = 4,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation1",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle1",
+					ControlGroup = 4,
+					Default = 1.647167,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength1",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelRangeDummy1",
+					ControlGroup = 4,
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue2",
+					ControlGroup = 4,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation2",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle2",
+					ControlGroup = 4,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength2",
+					ControlGroup = 4,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue3",
+					ControlGroup = 4,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation3",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle3",
+					ControlGroup = 4,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength3",
+					ControlGroup = 4,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue4",
+					ControlGroup = 4,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation4",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle4",
+					ControlGroup = 4,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength4",
+					ControlGroup = 4,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "Glow1",
+					Source = "LockXY",
+					Name = "Lock Glow X/Y",
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "Glow1",
+					Source = "XGlowSize",
+					Default = 17.3,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "Glow1",
+					Source = "Glow",
+					Default = 0.8,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "Glow1",
+					Source = "BlendClone",
+					Name = "Glow Blend",
+					Default = 0.2,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "Background",
+				},
+				Input25 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "posX",
+					Default = 0,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "posY",
+					Default = 0,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "zoom",
+					Default = 1.815,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "rotate",
+					Default = 0,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "scaleX",
+					Default = 1,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "scaleY",
+					Default = 1,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "cropL",
+					MinScale = -0.1000000014901,
+					Default = 0,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "cropR",
+					MinScale = -0.1000000014901,
+					Default = 0,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "cropT",
+					MinScale = -0.1000000014901,
+					Default = 0,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "cropB",
+					MinScale = -0.1000000014901,
+					Default = 0,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "Blur1",
+					Source = "LockXY",
+					Name = "Lock Blur X/Y",
+					Default = 1,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "Blur1",
+					Source = "XBlurSize",
+					Name = "Blur ",
+					Default = 6.3,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "Blur1",
+					Source = "YBlurSize",
+					Default = 1,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ApplyMode",
+				},
+				Input39 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "BlendClone",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				EdgeDetect1 = ofx.com.blackmagicdesign.resolvefx.EdgeDetect {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						EdgeDetectMode = Input { Value = FuID { "EDGE_DETECT_MODE_GRAYSCALE" }, },
+						RGBColorRed = Input { Value = 1, },
+						RGBColorGreen = Input { Value = 1, },
+						RGBColorBlue = Input { Value = 1, },
+						detectionGroup = Input { Value = 1, },
+						EdgeThreshold = Input { Value = 0, },
+						EdgeSmooth = Input { Value = 0.100000001490116, },
+						edgeWidth = Input { Value = 0.2, },
+						Brightness = Input { Value = 2.5, },
+						edgeGamma = Input { Value = 2, },
+						DenoiseType = Input { Value = FuID { "DENOISE_TYPE_GAUSSIAN_BLUR" }, },
+						DenoiseStrength = Input { Value = 0.200000002980232, },
+						EdgeBlur = Input { Value = 0, },
+						EdgeOverlay = Input { Value = 0, },
+						filterGroup = Input { Value = 1, },
+						filterType = Input { Value = FuID { "FilterTypeNone" }, },
+						filterScale = Input { Value = 0.25, },
+						filterWater = Input { Value = 0.5, },
+						suppression = Input { Value = FuID { "SuppressionNone" }, },
+						halfEdgeGain = Input { Value = 10, },
+						advancedGroup = Input { Value = 1, },
+						autoGain = Input { Value = 0, },
+						isClamp = Input { Value = 1, },
+						BlendAmount = Input { Value = 0, },
+						isLegacy = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "2.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 184.333, -58.3788 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						WheelTintAngle1 = Input { Value = 1.647167, },
+						WheelTintLength1 = Input { Value = 1, },
+						TintMode = Input { Value = 0, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "EdgeDetect1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 293, -85.0455 } },
+				},
+				Glow1 = Glow {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0.2, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XGlowSize = Input { Value = 17.3, },
+						Input = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 383, -18.1061 } },
+				},
+				Merge2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 191.333, 47.3636 } },
+				},
+				Transform1 = ofx.com.blackmagicdesign.resolvefx.Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+						controlMode = Input { Value = FuID { "TransformControlsSliders" }, },
+						controlReset = Input { Value = 0, },
+						controlGroup = Input { Value = 1, },
+						controlVisibility = Input { Value = FuID { "Show" }, },
+						posX = Input { Value = 0, },
+						posY = Input { Value = 0, },
+						zoom = Input { Value = 1.815, },
+						rotate = Input { Value = 0, },
+						scaleX = Input { Value = 1, },
+						scaleY = Input { Value = 1, },
+						pitch = Input { Value = 0, },
+						yaw = Input { Value = 0, },
+						flipH = Input { Value = 0, },
+						flipV = Input { Value = 0, },
+						adjustGroup = Input { Value = 0, },
+						isCrop = Input { Value = 1, },
+						cropL = Input { Value = 0, },
+						cropR = Input { Value = 0, },
+						cropT = Input { Value = 0, },
+						cropB = Input { Value = 0, },
+						edgeSoftness = Input { Value = 0, },
+						edgeRounding = Input { Value = 0, },
+						animationGroup = Input { Value = 0, },
+						serializedWarpable = Input {
+							Value = Text {
+							},
+						},
+						serializedPinnable = Input {
+							Value = Text {
+							},
+						},
+						motionBlur = Input { Value = 0, },
+						advancedGroup = Input { Value = 0, },
+						edgeBehaviour = Input { Value = FuID { "Reflect" }, },
+						CompositeType = Input { Value = FuID { "COMPOSITE_NORMAL" }, },
+						olayAntiAlias = Input { Value = 1, },
+						previewAlpha = Input { Value = 0, },
+						isLegacyCrop = Input { Value = 0, },
+						isLegacyAlphaHandling = Input { Value = 0, },
+						isEnforceBlanking = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.4", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 399, -62.0152 } },
+				},
+				Blur1 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 6.3, },
+						Input = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 418.333, -87.4697 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Glow1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Screen" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 376.667, 55.8485 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaFastedgedetect1"
+}

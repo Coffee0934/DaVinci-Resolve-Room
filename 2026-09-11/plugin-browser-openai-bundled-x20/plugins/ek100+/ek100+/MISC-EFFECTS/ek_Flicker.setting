@@ -1,0 +1,366 @@
+{
+	Tools = ordered() {
+		ekawaTool_BetterFlicker = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "ekawaTool_BetterFlicker1111_1",
+					Source = "MainInput1",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "ekawaTool_BetterFlicker1111_1",
+					Source = "MainInput2",
+					Name = "Custom Input",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "ekawaTool_BetterFlicker1111_1",
+					Source = "Input2",
+					Width = 1,
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ekawaTool_BetterFlicker1111_1",
+					Source = "Input3",
+					Default = 4,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "ekawaTool_BetterFlicker1111_1",
+					Source = "Input4",
+					Default = 0.6,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "ekawaTool_BetterFlicker1111_1",
+					Source = "Input5",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ekawaTool_BetterFlicker1111_1",
+					Source = "Input1",
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ekawaTool_BetterFlicker1111_1",
+					Source = "Input6",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ekawaTool_BetterFlicker1111_1",
+					Source = "Input7",
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ekawaTool_BetterFlicker1111_1",
+					Source = "Input8",
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ekawaTool_BetterFlicker1111_1",
+					Source = "Input9",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "ekawaTool_BetterFlicker1111_1",
+					Source = "Output2",
+				},
+				MainOutput1 = InstanceOutput {
+					SourceOp = "ekawaTool_BetterFlicker1111_1",
+					Source = "MainOutput1",
+				},
+				Output2 = InstanceOutput {
+					SourceOp = "ekawaTool_BetterFlicker1111_1",
+					Source = "Output1",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				ekawaTool_BetterFlicker1111_1 = MacroOperator {
+					CtrlWZoom = false,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						Input2 = InstanceInput {
+							SourceOp = "Shake1_1",
+							Source = "RandomSeed",
+							Width = 1,
+							Default = 0,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "Shake1_1",
+							Source = "Smoothness",
+							Default = 4,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "Shake1_1",
+							Source = "XMinimum",
+							Default = 0.6,
+						},
+						Input5 = InstanceInput {
+							SourceOp = "Shake1_1",
+							Source = "XMaximum",
+							Default = 1,
+						},
+						Input1 = InstanceInput {
+							SourceOp = "ColorCorrector4_1",
+							Source = "Blend",
+							Name = "Flicker Brightness",
+							Default = 0,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "ColorCorrector3_1",
+							Source = "Blend",
+							Name = "Flicker Lift",
+							Default = 0,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "ColorCorrector2_1",
+							Source = "Blend",
+							Name = "Flicker Gain",
+							Default = 0,
+						},
+						MainInput1 = InstanceInput {
+							SourceOp = "ColorCorrector1_1",
+							Source = "Input",
+						},
+						Input8 = InstanceInput {
+							SourceOp = "ColorCorrector1_1",
+							Source = "Blend",
+							Name = "Flicker Gamma",
+							Default = 1,
+						},
+						MainInput2 = InstanceInput {
+							SourceOp = "Merge2_1",
+							Source = "Foreground",
+						},
+						Input9 = InstanceInput {
+							SourceOp = "Merge2_1",
+							Source = "BlendClone",
+							Name = "Flicker Custom Input",
+							Default = 1,
+						}
+					},
+					Outputs = {
+						Output2 = InstanceOutput {
+							SourceOp = "Shake1_1",
+							Source = "Y",
+						},
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Merge1_1",
+							Source = "Output",
+						},
+						Output1 = InstanceOutput {
+							SourceOp = "Shake1_1",
+							Source = "Position",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 67.2288, 144.045 } },
+					Tools = ordered() {
+						Shake1_1 = Shake {
+							Faster = true,
+							CtrlWZoom = false,
+							Inputs = {
+								Smoothness = Input { Value = 4, },
+								XMinimum = Input { Value = 0.6, },
+							},
+						},
+						Merge1_1 = Merge {
+							CtrlWShown = false,
+							Inputs = {
+								Blend = Input {
+									SourceOp = "Shake1_1",
+									Source = "X",
+								},
+								Background = Input {
+									SourceOp = "ColorCorrector4_1",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "Merge2_1",
+									Source = "Output",
+								},
+								PerformDepthMerge = Input { Value = 0, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 218, 73.2544 } },
+						},
+						Merge2_1 = Merge {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								Background = Input {
+									SourceOp = "Background1_1",
+									Source = "Output",
+								},
+								PerformDepthMerge = Input { Value = 0, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 194.955, 12.5462 } },
+						},
+						ColorCorrector1_1 = ColorCorrector {
+							CtrlWShown = false,
+							Inputs = {
+								MasterRGBGamma = Input {
+									SourceOp = "Shake1_1",
+									Source = "X",
+								},
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -219.172, 70.6834 } },
+						},
+						ColorCorrector2_1 = ColorCorrector {
+							CtrlWShown = false,
+							Inputs = {
+								Blend = Input { Value = 0, },
+								MasterRGBGain = Input {
+									SourceOp = "Shake1_1",
+									Source = "X",
+								},
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "ColorCorrector1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -109.172, 72.3974 } },
+						},
+						ColorCorrector3_1 = ColorCorrector {
+							CtrlWShown = false,
+							Inputs = {
+								Blend = Input { Value = 0, },
+								MasterRGBLift = Input {
+									SourceOp = "Shake1_1",
+									Source = "X",
+								},
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "ColorCorrector2_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 1.77098, 73.2544 } },
+						},
+						ColorCorrector4_1 = ColorCorrector {
+							CtrlWShown = false,
+							Inputs = {
+								Blend = Input { Value = 0, },
+								MasterRGBBrightness = Input {
+									SourceOp = "Shake1_1",
+									Source = "X",
+								},
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "ColorCorrector3_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 110.828, 73.2544 } },
+						},
+						Background1_1 = Background {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								TopLeftAlpha = Input { Value = 0, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -4.92101, 8.26074 } },
+						}
+					},
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaTool_BetterFlicker"
+}

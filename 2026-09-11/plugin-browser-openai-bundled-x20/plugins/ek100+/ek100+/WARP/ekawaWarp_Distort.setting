@@ -1,0 +1,125 @@
+{
+	Tools = ordered() {
+		ekawaWarp_Distort = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Blur1",
+					Source = "XBlurSize",
+					Name = "Blur Lens",
+					Default = 100,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "MasterRGBContrast",
+					Name = "Distort Amount",
+					MinScale = -30,
+					MaxScale = 30,
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Displace1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Blur1 = Blur {
+					CtrlWZoom = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Bartlett" }, },
+						XBlurSize = Input { Value = 100, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 261.688, 163.074 } },
+				},
+				CreateBumpMap1 = CreateBumpMap {
+					Inputs = {
+						Input = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+						HeightScale = Input { Value = 100, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 402.101, 175.576 } },
+				},
+				Merge1 = Merge {
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 195.381, 276.421 } },
+				},
+				ColorCorrector2 = ColorCorrector {
+					Inputs = {
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "CreateBumpMap1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 520.799, 171.792 } },
+				},
+				Displace1 = Displace {
+					Inputs = {
+						Type = Input { Value = 1, },
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input { Value = 0.1, },
+						YOffset = Input { Value = -0.5, },
+						YRefraction = Input { Value = 0.1, },
+						RefractionStrength = Input { Value = 2, },
+						Spread = Input { Value = 0.5, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "PipeRouter1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 614.975, 282.593 } },
+				},
+				PipeRouter1 = PipeRouter {
+					Inputs = {
+						Input = Input {
+							SourceOp = "ColorCorrector2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = PipeRouterInfo { Pos = { 618.313, 178.147 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaWarp_Distort"
+}

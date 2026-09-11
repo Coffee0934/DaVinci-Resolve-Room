@@ -1,0 +1,233 @@
+{
+	Tools = ordered() {
+		ekawaWarp_NoiseWarp = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "LumaKeyer1_1",
+					Source = "Invert",
+					Name = "View Noise ",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "Invert",
+					Name = "Enable Grid",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBContrast",
+					Name = "Strength (Contrast)",
+					Default = 0.3,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise3",
+					Source = "Center",
+					Name = "Center (experimental)",
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise3",
+					Source = "XScale",
+					Default = 2,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "FastNoise3",
+					Source = "Angle",
+					Name = "Angle (experimental)",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "FastNoise3",
+					Source = "Seethe",
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "FastNoise3",
+					Source = "SeetheRate",
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge7",
+					Source = "Background",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge6",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				LumaKeyer1_1 = LumaKeyer {
+					Inputs = {
+						Channel = Input { Value = 3, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "Merge7",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 560.427, -52.1417 } },
+				},
+				LumaKeyer1 = LumaKeyer {
+					Inputs = {
+						Channel = Input { Value = 3, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Invert = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Merge7",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 564.198, -3.28704 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					Inputs = {
+						MasterRGBContrast = Input { Value = 0.3, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "CreateBumpMap1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 727.939, 32.7145 } },
+				},
+				CreateBumpMap1 = CreateBumpMap {
+					Inputs = {
+						Input = Input {
+							SourceOp = "FastNoise3",
+							Source = "Output",
+						},
+						ClampNormalZ = Input { Value = 1, },
+						HeightScale = Input { Value = 300, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 732.035, -5.00125 } },
+				},
+				FastNoise3 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Type = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 745.852, -36.7139 } },
+				},
+				Merge7 = Merge {
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 532.095, 64.9278 } },
+				},
+				Grid1 = ofx.com.blackmagicdesign.resolvefx.Grid {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+						Blend = Input { Value = 0.5, },
+						ApplyMaskInverted = Input { Value = 1, },
+						Source = Input {
+							SourceOp = "Merge7",
+							Source = "Output",
+						},
+						vernum = Input { Value = 12, },
+						hornum = Input { Value = 20, },
+						majorspace = Input { Value = 4, },
+						lineprop = Input { Value = 1, },
+						linecolorRed = Input { Value = 1, },
+						linecolorGreen = Input { Value = 1, },
+						linecolorBlue = Input { Value = 1, },
+						horwidth = Input { Value = 0.021, },
+						verwidth = Input { Value = 0.05, },
+						majorwidth = Input { Value = 1.197, },
+						tranform = Input { Value = 1, },
+						pan = Input { Value = 0, },
+						tilt = Input { Value = 0, },
+						zoom = Input { Value = 1.005, },
+						rotate = Input { Value = 0, },
+						gridwidth = Input { Value = 1, },
+						gridheight = Input { Value = 1, },
+						ShearX = Input { Value = 0, },
+						ShearY = Input { Value = 0, },
+						pitch = Input { Value = 0, },
+						yaw = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 643.038, 71.7142 } },
+				},
+				Displace2 = Displace {
+					Inputs = {
+						Type = Input { Value = 1, },
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input { Value = 0.4, },
+						YOffset = Input { Value = -0.5, },
+						YRefraction = Input { Value = 0.4, },
+						Offset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = 2, },
+						Input = Input {
+							SourceOp = "Grid1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 753.038, 79.4247 } },
+				},
+				Merge6 = Merge {
+					CtrlWZoom = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Output",
+						},
+						ApplyMaskInverted = Input { Value = 1, },
+						Background = Input {
+							SourceOp = "Displace2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise3",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 862.095, 71.2806 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaWarp_NoiseWarp"
+}

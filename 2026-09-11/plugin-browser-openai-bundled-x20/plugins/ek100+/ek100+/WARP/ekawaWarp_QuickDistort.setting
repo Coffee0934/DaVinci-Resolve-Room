@@ -1,0 +1,91 @@
+{
+	Tools = ordered() {
+		ekawaWarp_QuickDistort1 = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "Background",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Blur1",
+					Source = "XBlurSize",
+					Name = "Blur Amount",
+					Default = 100,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Displace1_1",
+					Source = "YRefraction",
+					Name = "Distort Strength",
+					MinScale = -25,
+					MaxScale = 25,
+					Default = 0,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Displace1_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Merge2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 66.6667, -144.151 } },
+				},
+				Blur1 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 100, },
+						Input = Input {
+							SourceOp = "CreateBumpMap1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 224, -140.242 } },
+				},
+				CreateBumpMap1 = CreateBumpMap {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						ClampNormalZ = Input { Value = 1, },
+						HeightScale = Input { Value = 100, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 294, -179.303 } },
+				},
+				Displace1_1 = Displace {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Type = Input { Value = 1, },
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input {
+							Value = 4,
+							Expression = "YRefraction",
+						},
+						YOffset = Input { Value = -0.5, },
+						Offset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = 16, },
+						Input = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 260.667, -65.7575 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaWarp_QuickDistort1"
+}

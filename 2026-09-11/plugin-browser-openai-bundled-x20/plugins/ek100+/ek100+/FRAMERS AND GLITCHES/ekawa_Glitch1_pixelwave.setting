@@ -1,0 +1,345 @@
+{
+	Tools = ordered() {
+		ekawaGlitch1_pixelwave1 = MacroOperator {
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "ErodeDilate1_1",
+					Source = "XAmount",
+					MinScale = -0.004,
+					MaxScale = 0.003,
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Merge1_1",
+					Source = "ApplyMode",
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Merge1_1",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Merge1_1",
+					Source = "ProcessRed",
+					Name = "RGB Split",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Merge1_1",
+					Source = "ProcessGreen",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Merge1_1",
+					Source = "ProcessBlue",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Merge1_1",
+					Source = "ProcessAlpha",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge2_1",
+					Source = "Background",
+				},
+				Input8 = InstanceInput {
+					SourceOp = "LumaKeyer1_1",
+					Source = "Channel",
+					Default = 4,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "LumaKeyer1_1",
+					Source = "High",
+					ControlGroup = 7,
+					Default = 0.994,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "LumaKeyer1_1",
+					Source = "Low",
+					ControlGroup = 7,
+					Default = 0,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "LumaKeyer1_1",
+					Source = "ClippingMode",
+				},
+				Input12 = InstanceInput {
+					SourceOp = "LumaKeyer1_1",
+					Source = "MatteContrast",
+					Default = -1,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { -335.519, 254.444 } },
+			Tools = ordered() {
+				ErodeDilate1_1 = ErodeDilate {
+					CtrlWShown = false,
+					Inputs = {
+						LockXY = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Displace2_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 282, 129.495 } },
+				},
+				Displace2_1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						Type = Input { Value = 1, },
+						XOffset = Input { Value = -0.556, },
+						XRefraction = Input { Value = 0.8, },
+						Input = Input {
+							SourceOp = "Displace1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 280.667, 96.495 } },
+				},
+				Merge1_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Output",
+						},
+						Background = Input {
+							SourceOp = "Merge2_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ErodeDilate1_1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Soft Light" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 224.073, 197.443 } },
+				},
+				Merge2_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "MediaIn1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2.91021, 192.754 } },
+				},
+				LumaKeyer1_1 = LumaKeyer {
+					CtrlWShown = false,
+					Inputs = {
+						Channel = Input { Value = 0, },
+						High = Input { Value = 0, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MatteContrast = Input { Value = -1, },
+						MatteGamma = Input { Value = 1.03, },
+						Input = Input {
+							SourceOp = "Merge2_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 66.24, 146.826 } },
+				},
+				FastNoise1_1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 34103, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						LockXY = Input { Value = 0, },
+						XScale = Input { Value = 0, },
+						YScale = Input { Value = 330, },
+						SeetheRate = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 89.816, 8.07221 } },
+				},
+				Displace1_1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						Type = Input { Value = 1, },
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input { Value = 0.1, },
+						Input = Input {
+							SourceOp = "Transform1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 88.481, 87.1531 } },
+				},
+				Background1_1 = Background {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 34103, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Type = Input { Value = FuID { "Corner" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+						BottomRightRed = Input { Value = 1, },
+						BottomRightGreen = Input { Value = 1, },
+						BottomRightBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -282.761, 29.0481 } },
+				},
+				MosaicBlur1_1 = ofx.com.blackmagicdesign.resolvefx.MosaicBlur {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Background1_1",
+							Source = "Output",
+						},
+						PixelFrequency = Input { Value = 2, },
+						SmoothStrength = Input { Value = 0, },
+						cellShape = Input { Value = FuID { "CellShapeSquare" }, },
+						aliasing = Input { Value = 1, },
+						advancedControlsGroup = Input { Value = 0, },
+						xOffset = Input { Value = 0, },
+						yOffset = Input { Value = 0, },
+						aspect = Input { Value = 1, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_REFLECT" }, },
+						isAntiAlias = Input { Value = 0, },
+						isBlurAlpha = Input { Value = 1, },
+						isBinarizeAlpha = Input { Value = 0, },
+						isLegacyMethod = Input { Value = 0, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "3.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -187.685, 34.1907 } },
+				},
+				ColorCorrector1_1 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						MasterRGBContrast = Input { Value = 3, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "MosaicBlur1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -113.511, 53.9039 } },
+				},
+				Transform1_1 = ofx.com.blackmagicdesign.resolvefx.Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "ColorCorrector1_1",
+							Source = "Output",
+						},
+						controlMode = Input { Value = FuID { "TransformControlsSliders" }, },
+						controlReset = Input { Value = 0, },
+						controlGroup = Input { Value = 1, },
+						controlVisibility = Input { Value = FuID { "Show" }, },
+						posX = Input { Value = 0, },
+						posY = Input { Value = 0, },
+						zoom = Input { Value = 0.01, },
+						rotate = Input { Value = 0, },
+						scaleX = Input { Value = 1, },
+						scaleY = Input { Value = 1, },
+						pitch = Input { Value = 0, },
+						yaw = Input { Value = 0, },
+						flipH = Input { Value = 0, },
+						flipV = Input { Value = 0, },
+						adjustGroup = Input { Value = 0, },
+						isCrop = Input { Value = 0, },
+						cropL = Input { Value = 0, },
+						cropR = Input { Value = 0, },
+						cropT = Input { Value = 0, },
+						cropB = Input { Value = 0, },
+						edgeSoftness = Input { Value = 0, },
+						edgeRounding = Input { Value = 0, },
+						animationGroup = Input { Value = 0, },
+						serializedWarpable = Input {
+							Value = Text {
+							},
+						},
+						serializedPinnable = Input {
+							Value = Text {
+							},
+						},
+						motionBlur = Input { Value = 0, },
+						advancedGroup = Input { Value = 1, },
+						edgeBehaviour = Input { Value = FuID { "Wrap" }, },
+						CompositeType = Input { Value = FuID { "COMPOSITE_NORMAL" }, },
+						olayAntiAlias = Input { Value = 1, },
+						previewAlpha = Input { Value = 0, },
+						isLegacyCrop = Input { Value = 0, },
+						isLegacyAlphaHandling = Input { Value = 0, },
+						isEnforceBlanking = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.4", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1.04101, 60.7607 } },
+				}
+			},
+		}
+	}
+}

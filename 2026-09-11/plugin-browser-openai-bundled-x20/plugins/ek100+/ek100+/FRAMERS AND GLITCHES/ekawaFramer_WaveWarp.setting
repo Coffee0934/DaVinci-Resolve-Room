@@ -1,0 +1,176 @@
+{
+	Tools = ordered() {
+		ekawaFramer_WaveWarp = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "ekawa_ButtonMask",
+					Source = "Input1",
+					Name = "Rotate ",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Default = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Contrast",
+					Name = "Strength",
+					Default = 0.28,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Input",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Displace1_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				ekawa_ButtonMask = MacroOperator {
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Invert",
+							Name = "Button",
+							Default = 0,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Garbage.MaskInverted",
+							Name = "Invert control",
+							Default = 0,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 524.6, -60.7127 } },
+					Tools = ordered() {
+						LumaKeyer1_1 = LumaKeyer {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								Channel = Input { Value = 3, },
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								Input = Input {
+									SourceOp = "Background1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 62, 8.15153 } },
+						},
+						Background1 = Background {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								TopLeftAlpha = Input { Value = 0, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -62, 9.36363 } },
+						}
+					},
+				},
+				FastNoise1 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Contrast = Input { Value = 0.28, },
+						LockXY = Input { Value = 0, },
+						XScale = Input { Value = 0, },
+						YScale = Input { Value = 2000, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 484.06, -16.1435 } },
+				},
+				Instance_FastNoise1 = FastNoise {
+					SourceOp = "FastNoise1",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						ImageNest = Input { },
+						["Gamut.ColorSpaceNest"] = Input { },
+						["Gamut.GammaSpaceNest"] = Input { },
+						NoiseNest = Input { },
+						XScale = Input { Value = 2000, },
+						YScale = Input { Value = 0, },
+						Color1Nest = Input { },
+						Color2Nest = Input { },
+						GradientNest = Input { },
+						NoiseBrightnessMap = Input { },
+						NoiseDetailMap = Input { },
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { 602.853, -13.5722 } },
+				},
+				Displace1_1 = Displace {
+					CtrlWZoom = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Output",
+						},
+						Type = Input { Value = 1, },
+						XChannel = Input { Value = 4, },
+						XOffset = Input { Value = -0.5, },
+						YChannel = Input { Value = 4, },
+						YOffset = Input { Value = -0.5, },
+						YRefraction = Input { Value = 0.1, },
+						Input = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Instance_FastNoise1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 627.366, 43.8534 } },
+				},
+				Displace1 = Displace {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Output",
+						},
+						ApplyMaskInverted = Input { Value = 1, },
+						Type = Input { Value = 1, },
+						XChannel = Input { Value = 4, },
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input { Value = 0.1, },
+						YChannel = Input { Value = 4, },
+						YOffset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = 0.1, },
+						Foreground = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 509.142, 44.3574 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaFramer_WaveWarp"
+}

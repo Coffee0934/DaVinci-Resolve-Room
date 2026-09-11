@@ -1,0 +1,166 @@
+{
+	Tools = ordered() {
+		ekawa_camshake_CHK = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "CameraShake1_1_5",
+					Source = "YDeviation",
+					Default = 0.2,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "CameraShake1_1_5",
+					Source = "Speed",
+					Name = "Y Speed",
+					Default = 0.8,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "CameraShake1_7",
+					Source = "Input",
+				},
+				Input3 = InstanceInput {
+					SourceOp = "CameraShake1_7",
+					Source = "XDeviation",
+					Default = 0.2,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "CameraShake1_7",
+					Source = "OverallStrength",
+					Default = 0.3,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "CameraShake1_7",
+					Source = "Speed",
+					Name = "X Speed",
+					Default = 0.8,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "CameraShake1_7",
+					Source = "InvertTransform",
+				},
+				Input7 = InstanceInput {
+					SourceOp = "CameraShake1_2_5",
+					Source = "RotationDeviation",
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "CameraShake1_2_5",
+					Source = "Speed",
+					Name = "Rotation Speed",
+					Default = 0.8,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "CameraShake2_5",
+					Source = "ZAmpl",
+					Default = 0,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "CameraShake2_5",
+					Source = "ZFreq",
+					Default = 0.268,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "CameraShake2_5",
+					Source = "zoomType",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "CameraShake2_5",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				CameraShake1_1_5 = CameraShake {
+					CtrlWShown = false,
+					Inputs = {
+						XDeviation = Input { Value = 0, },
+						RotationDeviation = Input { Value = 0, },
+						Randomness = Input { Expression = "CameraShake1_7.Randomness", },
+						OverallStrength = Input { Expression = "CameraShake1_7.OverallStrength", },
+						Edges = Input { Value = 3, },
+						InvertTransform = Input { Expression = "CameraShake1_7.InvertTransform", },
+						Input = Input {
+							SourceOp = "CameraShake1_7",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -66.333, 8.33334 } },
+				},
+				CameraShake1_7 = CameraShake {
+					CtrlWShown = false,
+					Inputs = {
+						YDeviation = Input { Value = 0, },
+						RotationDeviation = Input { Value = 0, },
+						OverallStrength = Input { Value = 0.3, },
+						Edges = Input { Value = 3, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -167, 10.7576 } },
+				},
+				CameraShake1_2_5 = CameraShake {
+					CtrlWShown = false,
+					Inputs = {
+						XDeviation = Input { Value = 0, },
+						YDeviation = Input { Value = 0, },
+						RotationDeviation = Input { Value = 0, },
+						Randomness = Input { Expression = "CameraShake1_7.Randomness", },
+						OverallStrength = Input { Expression = "CameraShake1_7.OverallStrength", },
+						Edges = Input { Value = 3, },
+						InvertTransform = Input { Expression = "CameraShake1_7.InvertTransform", },
+						Input = Input {
+							SourceOp = "CameraShake1_1_5",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 43.667, 13.1818 } },
+				},
+				CameraShake2_5 = ofx.com.blackmagicdesign.resolvefx.CameraShake {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "CameraShake1_2_5",
+							Source = "Output",
+						},
+						MotionScale = Input {
+							Value = 0.3,
+							Expression = "CameraShake1_7.OverallStrength",
+						},
+						SpeedScale = Input { Value = 1, },
+						MotionBlurAmt = Input { Value = 0, },
+						ShakeLevelsGroup = Input { Value = 1, },
+						XAmpl = Input { Value = 0, },
+						YAmpl = Input { Value = 0, },
+						RAmpl = Input { Value = 0, },
+						XYFreq = Input { Value = 0.5, },
+						ZAmpl = Input { Value = 0, },
+						ZFreq = Input { Value = 0.268, },
+						zoomType = Input { Value = FuID { "ZOOM_OUTWARD_INWARD" }, },
+						ShakeQualityGroup = Input { Value = 1, },
+						motionType = Input { Value = FuID { "MOTION_TYPE_SINE" }, },
+						XYPhase = Input { Value = 0.5, },
+						ShakeRand = Input { Value = 0, },
+						RandSpeed = Input { Value = 0, },
+						ShakePsLen = Input { Value = 0, },
+						ShakePsInt = Input { Value = 0, },
+						PauseRand = Input { Value = 0, },
+						RandSeed = Input { Value = 1, },
+						BlankingHandlingGroup = Input { Value = 1, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_REFLECT" }, },
+						ZoomCrop = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.2", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 167, 10.7576 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_camshake_CHK"
+}

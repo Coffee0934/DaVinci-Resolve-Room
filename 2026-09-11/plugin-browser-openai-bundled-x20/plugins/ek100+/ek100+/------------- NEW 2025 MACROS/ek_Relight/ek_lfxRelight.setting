@@ -1,0 +1,268 @@
+{
+	Tools = ordered() {
+		ek_lfxRelight = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "Type",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopLeftRed",
+					Name = "Top Left",
+					ControlGroup = 2,
+					Default = 0,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopLeftGreen",
+					ControlGroup = 2,
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopLeftBlue",
+					ControlGroup = 2,
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopLeftAlpha",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopRightSep",
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopRightRed",
+					Name = "Top Right",
+					ControlGroup = 4,
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopRightGreen",
+					ControlGroup = 4,
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopRightBlue",
+					ControlGroup = 4,
+					Default = 0,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopRightAlpha",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomLeftSep",
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomLeftRed",
+					Name = "Bottom Left",
+					ControlGroup = 6,
+					Default = 0,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomLeftGreen",
+					ControlGroup = 6,
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomLeftBlue",
+					ControlGroup = 6,
+					Default = 0,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomLeftAlpha",
+					ControlGroup = 6,
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomRightSep",
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomRightRed",
+					Name = "Bottom Right",
+					ControlGroup = 8,
+					Default = 0,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomRightGreen",
+					ControlGroup = 8,
+					Default = 0,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomRightBlue",
+					ControlGroup = 8,
+					Default = 0,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomRightAlpha",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "GradientType",
+				},
+				Input22 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "Start",
+					DefaultX = 0.508529824512849,
+					DefaultY = 0.496969005138892,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "End",
+					DefaultX = 0.814776763883629,
+					DefaultY = 0.486621382330467,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "Gradient",
+				},
+				Input25 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "Offset",
+					Default = 0,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "Blur2",
+					Source = "XBlurSize",
+					MaxScale = 1000,
+					Default = 100,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge4",
+					Source = "Foreground",
+					Name = "Pre-Unlight Input",
+				},
+				Input27 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "MasterRGBGain",
+					Name = "Gain",
+					Default = 3.35,
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "Background",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge4",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Background3 = Background {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Type = Input { Value = FuID { "Gradient" }, },
+						GradientType = Input { Value = FuID { "Radial" }, },
+						Start = Input { Value = { 0.508529824512849, 0.496969005138892 }, },
+						End = Input { Value = { 0.814776763883629, 0.486621382330467 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 1, 1, 1 },
+									[1] = { 0.0235294117647059, 0.0235294117647059, 0.0235294117647059, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 648.109, 22.4259 } },
+				},
+				Blur2 = Blur {
+					CtrlWZoom = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 100, },
+						Input = Input {
+							SourceOp = "Background3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 753.395, 34.4253 } },
+				},
+				Merge4 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "ColorCorrector3",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Geometric" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1034.69, 138.138 } },
+				},
+				ColorCorrector3 = ColorCorrector {
+					Inputs = {
+						MasterRGBGain = Input { Value = 3.35, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 877.554, 139.852 } },
+				},
+				Merge3 = Merge {
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "Blur2",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Hard Light" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 723.241, 139.852 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ek_lfxRelight"
+}

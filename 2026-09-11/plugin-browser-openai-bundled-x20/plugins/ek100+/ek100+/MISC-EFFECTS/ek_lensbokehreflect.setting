@@ -1,0 +1,382 @@
+{
+	Tools = ordered() {
+		ek_lensbokehreflect1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Center",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Default = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Contrast",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Brightness",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Start",
+					DefaultX = 0.198151867785133,
+					DefaultY = 0.737732082090578,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "End",
+					DefaultX = 0.992962747380675,
+					DefaultY = 0.0196687370600415,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Gradient",
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "PipeRouter1",
+					Source = "Input",
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "MasterRGBGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "MasterRGBGamma",
+					Name = "Gamma",
+					Default = 0.19,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Blur1",
+					Source = "XBlurSize",
+					Name = "Displace Blur",
+					Default = 0,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "TimeSpeed1",
+					Source = "Speed",
+					MinScale = 0,
+					MaxScale = 1,
+					Default = 1,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "TimeSpeed1",
+					Source = "Delay",
+					MinScale = 0,
+					Default = 0,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "TimeSpeed1",
+					Source = "InterpolateBetweenFrames",
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "RefractionStrength",
+					MinScale = 0,
+					Default = 0,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "LensBlur1",
+					Source = "BlurStrength",
+					Default = 4.17,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "LensBlur1",
+					Source = "HighlightAmount",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Unmult_1",
+					Source = "MainOutput1",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Brightness = Input { Value = 1, },
+						XScale = Input { Value = 20, },
+						Type = Input { Value = 1, },
+						GradientType = Input { Value = 5, },
+						Start = Input { Value = { 0.198151867785133, 0.737732082090578 }, },
+						End = Input { Value = { 0.992962747380675, 0.0196687370600415 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 1, 1, 1 },
+									[1] = { 0, 0, 0, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 154, -123.545 } },
+				},
+				PipeRouter1 = PipeRouter {
+					CtrlWShown = false,
+					ViewInfo = PipeRouterInfo { Pos = { 47.3334, 47.3636 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "PipeRouter1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Color Dodge" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 247.333, -60.5152 } },
+				},
+				ColorCorrector2 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						MasterRGBGamma = Input { Value = 0.19, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 357.333, -60.5152 } },
+				},
+				BrightnessContrast1 = BrightnessContrast {
+					CtrlWShown = false,
+					Inputs = {
+						ClipWhite = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "ColorCorrector2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 467.333, -76 } },
+				},
+				Blur1 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "PipeRouter1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 514, -7.18179 } },
+				},
+				TimeSpeed1 = TimeSpeed {
+					CtrlWShown = false,
+					Inputs = {
+						InterpolateBetweenFrames = Input { Value = 0, },
+						SampleSpread = Input { Disabled = true, },
+						Input = Input {
+							SourceOp = "BrightnessContrast1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 578.667, -77.2121 } },
+				},
+				MosaicBlur1 = ofx.com.blackmagicdesign.resolvefx.MosaicBlur {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+						PixelFrequency = Input { Value = 8.1, },
+						SmoothStrength = Input { Value = 0, },
+						cellShape = Input { Value = FuID { "CellShapeSquare" }, },
+						aliasing = Input { Value = 0, },
+						advancedControlsGroup = Input { Value = 0, },
+						xOffset = Input { Value = 0, },
+						yOffset = Input { Value = 0, },
+						aspect = Input { Value = 1, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_REFLECT" }, },
+						isAntiAlias = Input { Value = 0, },
+						isBlurAlpha = Input { Value = 1, },
+						isBinarizeAlpha = Input { Value = 0, },
+						isLegacyMethod = Input { Value = 0, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "3.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 624, -7.18179 } },
+				},
+				Displace1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input { Value = 0.1, },
+						YOffset = Input { Value = -0.5, },
+						YRefraction = Input { Value = 0.1, },
+						Offset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "TimeSpeed1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "MosaicBlur1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 687.333, -52.9697 } },
+				},
+				LensBlur1 = ofx.com.blackmagicdesign.resolvefx.LensBlur {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+						shapeGroup = Input { Value = 1, },
+						shapeClass = Input { Value = FuID { "SHAPE_CLASS_REAL" }, },
+						ShapeType = Input { Value = FuID { "LENS_SHAPE_TYPE_HEXAGON" }, },
+						creativeShape = Input { Value = FuID { "LENS_SHAPE_TYPE_HEART" }, },
+						previewShape = Input { Value = 0, },
+						speedGroup = Input { Value = 0, },
+						processingRes = Input { Value = FuID { "PROCESSING_RESOLUTION_FULL" }, },
+						horizontalCrop = Input { Value = 0, },
+						verticalCrop = Input { Value = 0, },
+						isBlurAlpha = Input { Value = 1, },
+						controlsGroup = Input { Value = 1, },
+						BlurStrength = Input { Value = 4.17, },
+						userShapeScale = Input { Value = 1, },
+						BladeCurvature = Input { Value = 0, },
+						Rotation = Input { Value = 0, },
+						Anamorphism = Input { Value = 1, },
+						ChromaShift = Input { Value = 0, },
+						HighlightAmount = Input { Value = 1, },
+						apodization = Input { Value = 0, },
+						catadioptric = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 891.333, -50.8182 } },
+				},
+				Unmult_1 = MacroOperator {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						}
+					},
+					Inputs = ordered() {
+						MainInput1 = InstanceInput {
+							SourceOp = "unmult",
+							Source = "Background",
+						},
+						Unmult = InstanceInput {
+							SourceOp = "unmult",
+							Source = "Unmult",
+							Page = "Controls",
+							Default = 1,
+						},
+						EffectMask = InstanceInput {
+							SourceOp = "unmult",
+							Source = "EffectMask",
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "unmult",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 1001.33, -52.0304 } },
+					Tools = ordered() {
+						unmult = ChannelBoolean {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								ToRed = Input { Value = 4, },
+								ToGreen = Input { Value = 4, },
+								ToBlue = Input { Value = 4, },
+								ToAlpha = Input {
+									Value = 13,
+									Expression = "iif(Unmult==1,13.0,4)",
+								},
+								Background = Input {
+									SourceOp = "LensBlur1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 0, 8.75757 } },
+							UserControls = ordered() {
+								Unmult = {
+									INP_MaxAllowed = 1000000,
+									INP_Integer = false,
+									INPID_InputControl = "CheckboxControl",
+									INP_MaxScale = 1,
+									INP_Default = 1,
+									INP_MinScale = 0,
+									INP_MinAllowed = -1000000,
+									LINKID_DataType = "Number",
+									ICS_ControlPage = "Controls",
+									CBC_TriState = false,
+									LINKS_Name = "Unmult"
+								}
+							}
+						}
+					},
+				}
+			},
+		}
+	},
+	ActiveTool = "ek_lensbokehreflect1"
+}

@@ -1,0 +1,165 @@
+{
+	Tools = ordered() {
+		ekawa_QDP_QuickDisplace1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Blur1",
+					Source = "XBlurSize",
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "Background",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "ApplyMode",
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "ProcessRed",
+					Name = "Process",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "ProcessGreen",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "ProcessBlue",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Displace2",
+					Source = "Type",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Displace2",
+					Source = "Center",
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Displace2",
+					Source = "Channel",
+					Default = 4,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Displace2",
+					Source = "XChannel",
+					Default = 4,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Displace2",
+					Source = "XOffset",
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Displace2",
+					Source = "XRefraction",
+					MinScale = -2,
+					MaxScale = 2,
+					Default = 0,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Displace2",
+					Source = "YChannel",
+					Default = 4,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Displace2",
+					Source = "YOffset",
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Displace2",
+					Source = "YRefraction",
+					MinScale = -2,
+					MaxScale = 2,
+					Default = 0,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Displace2",
+					Source = "Offset",
+					Default = 0,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Displace2",
+					Source = "RefractionStrength",
+					MinScale = -5,
+					MaxScale = 5,
+					Default = 0.1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge3",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Blur1 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 96.6666, -117.485 } },
+				},
+				Merge2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -30.6667, -79.9091 } },
+				},
+				Merge3 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Displace2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 186, -26.5758 } },
+				},
+				Displace2 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						Type = Input { Value = 1, },
+						XChannel = Input { Value = 4, },
+						YChannel = Input { Value = 4, },
+						Input = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 236, -62.9394 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_QDP_QuickDisplace1"
+}

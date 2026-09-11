@@ -1,0 +1,421 @@
+{
+	Tools = ordered() {
+		ekawadisplacelines = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "Center",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "Detail",
+					Default = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "Contrast",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "Brightness",
+					Default = -1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "LockXY",
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "XScale",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "YScale",
+					Default = 170,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "Angle",
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "Seethe",
+					Default = 0,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "SeetheRate",
+					Default = 0,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "Discontinuous",
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "Inverted",
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge16",
+					Source = "Background",
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Blur1",
+					Source = "XBlurSize",
+					Name = "Blur Map",
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Displace3",
+					Source = "Type",
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Displace3",
+					Source = "Center",
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Displace3",
+					Source = "Channel",
+					Default = 4,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Displace3",
+					Source = "XChannel",
+					Default = 0,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Displace3",
+					Source = "XOffset",
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Displace3",
+					Source = "XRefraction",
+					Default = 0.017,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Displace3",
+					Source = "YChannel",
+					Default = 1,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "Displace3",
+					Source = "YOffset",
+				},
+				Input22 = InstanceInput {
+					SourceOp = "Displace3",
+					Source = "YRefraction",
+				},
+				Input23 = InstanceInput {
+					SourceOp = "Displace3",
+					Source = "Offset",
+					Default = 0,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "Displace3",
+					Source = "RefractionStrength",
+					Default = 0.1,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "Displace3",
+					Source = "LightPower",
+					Default = 0,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "Displace3",
+					Source = "LightAngle",
+					Default = 135,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "Displace3",
+					Source = "Spread",
+					Default = 0,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "Displace3",
+					Source = "LightChannel",
+					Default = 0,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "High",
+					ControlGroup = 30,
+					Default = 0,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "Low",
+					ControlGroup = 30,
+					Default = 0,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "DifferenceKeyer1",
+					Source = "Low",
+					Name = "Color Low",
+					ControlGroup = 31,
+					Default = 0,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "DifferenceKeyer1",
+					Source = "High",
+					Name = "Color High",
+					ControlGroup = 31,
+					Default = 0.1,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelHue1",
+					ControlGroup = 32,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelSaturation1",
+					ControlGroup = 32,
+					Default = 1,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelTintAngle1",
+					ControlGroup = 32,
+					Default = 0.0373572640325,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelTintLength1",
+					ControlGroup = 32,
+					Default = 1,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelRangeDummy1",
+					ControlGroup = 32,
+					Default = 0,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelHue2",
+					ControlGroup = 32,
+				},
+				Input39 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelSaturation2",
+					ControlGroup = 32,
+					Default = 1,
+				},
+				Input40 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelTintAngle2",
+					ControlGroup = 32,
+				},
+				Input41 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelTintLength2",
+					ControlGroup = 32,
+				},
+				Input42 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelHue3",
+					ControlGroup = 32,
+				},
+				Input43 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelSaturation3",
+					ControlGroup = 32,
+					Default = 1,
+				},
+				Input44 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelTintAngle3",
+					ControlGroup = 32,
+				},
+				Input45 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelTintLength3",
+					ControlGroup = 32,
+				},
+				Input46 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelHue4",
+					ControlGroup = 32,
+				},
+				Input47 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelSaturation4",
+					ControlGroup = 32,
+					Default = 1,
+				},
+				Input48 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelTintAngle4",
+					ControlGroup = 32,
+				},
+				Input49 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "WheelTintLength4",
+					ControlGroup = 32,
+				},
+				Input50 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "MasterRGBContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				Input51 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "MasterRGBGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input52 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "MasterRGBLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input53 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "MasterRGBGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input54 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "MasterRGBBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "ColorCorrector3",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise6 = FastNoise {
+					CtrlWZoom = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Brightness = Input { Value = -1, },
+						LockXY = Input { Value = 0, },
+						XScale = Input { Value = 0, },
+						YScale = Input { Value = 170, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 121.667, -89.6212 } },
+				},
+				Merge16 = Merge {
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 53.6667, 1.2933 } },
+				},
+				Blur1 = Blur {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "FastNoise6",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 231.667, -89.6212 } },
+				},
+				Displace3 = Displace {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+						Type = Input { Value = 1, },
+						XRefraction = Input { Value = 0.017, },
+						RefractionStrength = Input { Value = 0.1, },
+						Input = Input {
+							SourceOp = "Merge16",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 305.667, 3.71904 } },
+				},
+				LumaKeyer1 = LumaKeyer {
+					Inputs = {
+						High = Input { Value = 0, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "Merge16",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 211.333, 60.6969 } },
+				},
+				DifferenceKeyer1 = DifferenceKeyer {
+					Inputs = {
+						High = Input { Value = 0.1, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Background = Input {
+							SourceOp = "Merge16",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Displace3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 375, -72.6525 } },
+				},
+				ColorCorrector3 = ColorCorrector {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "DifferenceKeyer1",
+							Source = "Output",
+						},
+						WheelTintAngle1 = Input { Value = 0.0373572640325, },
+						WheelTintLength1 = Input { Value = 1, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Displace3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 461.666, 13.4176 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawadisplacelines"
+}

@@ -1,0 +1,18 @@
+{
+	Tools = ordered() {
+		Cube3D1 = Cube3D {
+			CtrlWZoom = false,
+			Inputs = {
+				["SurfaceCubeInputs.ObjectID.ObjectID"] = Input { Value = 3, },
+				MtlFace = Input { Value = 5, },
+				["Front.MtlStdInputs.MaterialID"] = Input { Value = 3, },
+				["Right.MtlStdInputs.MaterialID"] = Input { Value = 4, },
+				["Left.MtlStdInputs.MaterialID"] = Input { Value = 5, },
+				["Bottom.MtlStdInputs.MaterialID"] = Input { Value = 6, },
+				["Top.MtlStdInputs.MaterialID"] = Input { Value = 7, },
+				["Back.MtlStdInputs.MaterialID"] = Input { Value = 8, },
+			},
+			ViewInfo = OperatorInfo { Pos = { -127.334, 28.2424 } },
+		}
+	}
+}

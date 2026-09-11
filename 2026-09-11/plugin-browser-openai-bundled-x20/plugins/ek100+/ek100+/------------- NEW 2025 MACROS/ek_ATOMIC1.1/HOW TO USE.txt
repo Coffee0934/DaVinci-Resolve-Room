@@ -1,0 +1,54 @@
+ek_ATOMIC by ekawa
+Version: 1.1
+- discord.gg/rn85D6e382
+- youtube.com/@ekawa001
+
+Place ek_ATOMIC in:
+AppData\Roaming\Blackmagic Design\DaVinci Resolve\Support\Fusion\Macros
+
+--------------------------------------------------------------------------------------------
+BASIC INTRODUCTION:
+
+Add ek_ATOMIC in fusion.
+It will spawn multiple nodes.
+View the node "OUTPUT". Put "ATOMIC_UI" on your second viewer.
+
+"OUTPUT" shows you the final result. 
+- Similar to pRender, you have to use a merge to add the particles to your clip.
+
+"ATOMICMAIN" is where most of the controls are.
+
+"Spheres/blob/smoke/cloudy"
+You can click on each individual node and customize settings within them.
+
+"ATOMIC_UI" is the user interface for the macro.
+- it is useful for configuring the particles quickly with less lag
+(you can view only the UI to make the movement of the particles, then view the output after)
+- you can delete it after you are done to improve performance.
+
+--------------------------------------------------------------------------------------------
+
+Changing particle types:
+In ATOMICMAIN, you can change the Source to select between the 5 default particle presets.
+
+Using a custom input:
+In ATOMICMAIN, change Source to custom input. Then, connect an image of your choice to CustomInput.
+A resize node has been added for you to help with performance. If you want, you can remove it.
+
+Displace1 and Displace2 - applies a displace effect to your particles. This can improve
+the appearance of your result (especially with smoke/cloud particles)
+
+BezierControl:
+You can use a Bezier (aka Polygon) as the region of the particles.
+First, change region to Bezier in ATOMICMAIN.
+Then, click on the BezierControl node to make the Bezier.
+
+PAvoidBitmap:
+You can connect an image here.
+It will use the luminance (bright and dark points) of the image.
+The particles will start to "avoid" the bright parts.
+You can use this to drive the particles in different directions.
+
+--------------------------------------------------------------------------------------------
+
+

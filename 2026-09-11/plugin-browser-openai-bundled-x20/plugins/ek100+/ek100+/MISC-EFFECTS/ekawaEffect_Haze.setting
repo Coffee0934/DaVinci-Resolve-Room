@@ -1,0 +1,294 @@
+{
+	Tools = ordered() {
+		ekawaEffect_Haze1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Center",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Default = 10,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Contrast",
+					Default = 1.38,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Brightness",
+					Default = -0.39,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "LockXY",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "XScale",
+					Default = 6.61,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Seethe",
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "SeetheRate",
+					Default = 0.063,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Discontinuous",
+					Default = 0,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color1Red",
+					Name = "Color 1",
+					ControlGroup = 10,
+					Default = 0,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color1Green",
+					ControlGroup = 10,
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color1Blue",
+					ControlGroup = 10,
+					Default = 0,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color1Alpha",
+					ControlGroup = 10,
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color2Red",
+					Name = "Color 2",
+					ControlGroup = 11,
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color2Green",
+					ControlGroup = 11,
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color2Blue",
+					ControlGroup = 11,
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color2Alpha",
+					ControlGroup = 11,
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "GradientType",
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ApplyMode",
+				},
+				Input21 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "EffectMask",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1_1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						Contrast = Input { Value = 1.38, },
+						Brightness = Input { Value = 0.17, },
+						XScale = Input { Value = 6.61, },
+						SeetheRate = Input { Value = 0.063, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -91.3333, -130.818 } },
+				},
+				FastNoise1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						Contrast = Input { Value = 1.38, },
+						Brightness = Input { Value = -0.39, },
+						XScale = Input { Value = 6.61, },
+						SeetheRate = Input { Value = 0.063, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -110, 20.6971 } },
+				},
+				Displace1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						Offset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = 0.41, },
+						Input = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "RadialBlur1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 46, 1.30318 } },
+				},
+				RadialBlur1 = ofx.com.blackmagicdesign.resolvefx.RadialBlur {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "FastNoise1_1",
+							Source = "Output",
+						},
+						CenterXPos = Input { Value = 0.5, },
+						CenterYPos = Input { Value = 0.5, },
+						xyPosition = Input { Value = { 0.5, 0.5 }, },
+						SmoothStrength = Input { Value = 0.472, },
+						blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+						blurSymmetry = Input { Value = FuID { "BlurSymmetryBothSides" }, },
+						advancedControlsGroup = Input { Value = 0, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_REPLICATE" }, },
+						isFollowSizing = Input { Value = 1, },
+						isBlurAlpha = Input { Value = 1, },
+						BlendAmount = Input { Value = 0, },
+						isUseLegacyPosition = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "3.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 58, -101.727 } },
+				},
+				Transform1 = ofx.com.blackmagicdesign.resolvefx.Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+						controlMode = Input { Value = FuID { "TransformControlsSliders" }, },
+						controlReset = Input { Value = 0, },
+						controlGroup = Input { Value = 1, },
+						controlVisibility = Input { Value = FuID { "Show" }, },
+						posX = Input { Value = 0, },
+						posY = Input { Value = 0, },
+						zoom = Input { Value = 1, },
+						rotate = Input { Value = 0, },
+						scaleX = Input { Value = 1, },
+						scaleY = Input { Value = 1, },
+						pitch = Input { Value = -0.05, },
+						yaw = Input { Value = 0, },
+						flipH = Input { Value = 0, },
+						flipV = Input { Value = 0, },
+						adjustGroup = Input { Value = 0, },
+						isCrop = Input { Value = 0, },
+						cropL = Input { Value = 0, },
+						cropR = Input { Value = 0, },
+						cropT = Input { Value = 0, },
+						cropB = Input { Value = 0, },
+						edgeSoftness = Input { Value = 0, },
+						edgeRounding = Input { Value = 0, },
+						animationGroup = Input { Value = 0, },
+						serializedWarpable = Input {
+							Value = Text {
+							},
+						},
+						serializedPinnable = Input {
+							Value = Text {
+							},
+						},
+						motionBlur = Input { Value = 0, },
+						advancedGroup = Input { Value = 1, },
+						edgeBehaviour = Input { Value = FuID { "Reflect" }, },
+						CompositeType = Input { Value = FuID { "COMPOSITE_NORMAL" }, },
+						olayAntiAlias = Input { Value = 1, },
+						previewAlpha = Input { Value = 0, },
+						isLegacyCrop = Input { Value = 0, },
+						isLegacyAlphaHandling = Input { Value = 0, },
+						isEnforceBlanking = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.4", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 156, 1.30318 } },
+				},
+				Merge1 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "DVE1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 255.333, 106.758 } },
+				},
+				DVE1 = DVE {
+					CtrlWShown = false,
+					Inputs = {
+						Center = Input { Value = { 0.5, 0.522 }, },
+						ZMove = Input { Value = 0.31, },
+						XRotation = Input { Value = 67.8, },
+						Perspective = Input { Value = 7.3, },
+						AlphaMode = Input { Value = 2, },
+						Input = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 376, 6.15167 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaEffect_Haze1"
+}

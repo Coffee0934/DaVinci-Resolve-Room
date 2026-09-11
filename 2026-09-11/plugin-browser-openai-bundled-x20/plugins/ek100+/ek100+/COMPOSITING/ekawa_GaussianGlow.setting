@@ -1,0 +1,425 @@
+{
+	Tools = ordered() {
+		ekawa_GaussianGlow1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "LumaKeyer5",
+					Source = "High",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "LumaKeyer5",
+					Source = "Low",
+					ControlGroup = 1,
+					Default = 0,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "LumaKeyer5",
+					Source = "Invert",
+					Name = "Invert Threshold",
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "LumaKeyer5",
+					Source = "Blend",
+					Name = "Use Threshold",
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Blur5",
+					Source = "XBlurSize",
+					Name = "Glow Size",
+					Default = 100,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Blur6",
+					Source = "XBlurSize",
+					Name = "Overbrightness Blur",
+					Default = 100,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge15",
+					Source = "Background",
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelHue1",
+					ControlGroup = 7,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelSaturation1",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelTintAngle1",
+					ControlGroup = 7,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelTintLength1",
+					ControlGroup = 7,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelRangeDummy1",
+					ControlGroup = 7,
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelHue2",
+					ControlGroup = 7,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelSaturation2",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelTintAngle2",
+					ControlGroup = 7,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelTintLength2",
+					ControlGroup = 7,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelHue3",
+					ControlGroup = 7,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelSaturation3",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelTintAngle3",
+					ControlGroup = 7,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelTintLength3",
+					ControlGroup = 7,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelHue4",
+					ControlGroup = 7,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelSaturation4",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelTintAngle4",
+					ControlGroup = 7,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "WheelTintLength4",
+					ControlGroup = 7,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "MasterRGBGain",
+					Name = "Gain",
+					Default = 3.16,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "MasterRGBGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "Merge12",
+					Source = "ApplyMode",
+				},
+				Input27 = InstanceInput {
+					SourceOp = "Merge12",
+					Source = "BlendClone",
+					Name = "Glow Blend",
+					Default = 1,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "Merge12",
+					Source = "MaskLow",
+					Name = "Fix Overbrightness",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "Merge12",
+					Source = "MaskHigh",
+					Name = "",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "Merge14",
+					Source = "BlendClone",
+					Name = "View Glow ",
+					Default = 0,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "ColorCurves1",
+					Source = "Red",
+					ControlGroup = 14,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "ColorCurves1",
+					Source = "Green",
+					ControlGroup = 14,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "ColorCurves1",
+					Source = "Blue",
+					ControlGroup = 14,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge14",
+					Source = "Output",
+				},
+				Output1 = InstanceOutput {
+					SourceOp = "ColorCurves1Red",
+					Source = "Value",
+				},
+				Output2 = InstanceOutput {
+					SourceOp = "ColorCurves1Green",
+					Source = "Value",
+				},
+				Output3 = InstanceOutput {
+					SourceOp = "ColorCurves1Alpha",
+					Source = "Value",
+				},
+				Output4 = InstanceOutput {
+					SourceOp = "ColorCurves1Blue",
+					Source = "Value",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Merge13 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "LumaKeyer5",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1172.55, 51.5939 } },
+				},
+				LumaKeyer5 = LumaKeyer {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "Merge15",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1060.55, 54.2908 } },
+				},
+				Blur5 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 100, },
+						Input = Input {
+							SourceOp = "Merge13",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1259.89, 55.2302 } },
+				},
+				Blur6 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 100, },
+						Input = Input {
+							SourceOp = "LumaKeyer5",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1256.55, 85.806 } },
+				},
+				Merge15 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1114.76, 134.028 } },
+				},
+				ColorCorrector5 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						MasterRGBGain = Input { Value = 3.16, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Blur5",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1397.89, 56.7151 } },
+				},
+				Merge12 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Blur6",
+							Source = "Output",
+						},
+						ApplyMaskInverted = Input { Value = 1, },
+						MaskChannel = Input { Value = 5, },
+						MaskLow = Input { Value = 1, },
+						Background = Input {
+							SourceOp = "Merge15",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector5",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Screen" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1389.22, 142.776 } },
+				},
+				Merge14 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0, },
+						Background = Input {
+							SourceOp = "Merge12",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCurves1",
+							Source = "Output",
+						},
+						Operator = Input { Value = FuID { "In" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1527.22, 140.351 } },
+				},
+				ColorCurves1 = ColorCurves {
+					PickColor = true,
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						EditAlpha = Input { Value = 0, },
+						Red = Input {
+							SourceOp = "ColorCurves1Red",
+							Source = "Value",
+						},
+						Green = Input {
+							SourceOp = "ColorCurves1Green",
+							Source = "Value",
+						},
+						Blue = Input {
+							SourceOp = "ColorCurves1Blue",
+							Source = "Value",
+						},
+						Alpha = Input {
+							SourceOp = "ColorCurves1Alpha",
+							Source = "Value",
+						},
+						NumberOfSamplesOnMatchCurve = Input { Value = 64, },
+						IgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "ColorCorrector5",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1531.22, 60.3514 } },
+					Tools = {
+						ColorCurves1Red = LUTBezier {
+							KeyColorSplines = {
+								[0] = {
+									[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+									[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+								}
+							},
+							SplineColor = { Red = 255, Green = 52, Blue = 52 },
+							CtrlWZoom = false,
+							NameSet = true,
+						},
+						ColorCurves1Green = LUTBezier {
+							KeyColorSplines = {
+								[0] = {
+									[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+									[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+								}
+							},
+							SplineColor = { Red = 0, Green = 255, Blue = 0 },
+							CtrlWZoom = false,
+							NameSet = true,
+						},
+						ColorCurves1Alpha = LUTBezier {
+							KeyColorSplines = {
+								[0] = {
+									[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+									[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+								}
+							},
+							SplineColor = { Red = 204, Green = 204, Blue = 204 },
+							CtrlWZoom = false,
+						},
+						ColorCurves1Blue = LUTBezier {
+							KeyColorSplines = {
+								[0] = {
+									[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+									[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+								}
+							},
+							SplineColor = { Red = 68, Green = 68, Blue = 255 },
+							CtrlWZoom = false,
+							NameSet = true,
+						}
+					},
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_GaussianGlow1"
+}

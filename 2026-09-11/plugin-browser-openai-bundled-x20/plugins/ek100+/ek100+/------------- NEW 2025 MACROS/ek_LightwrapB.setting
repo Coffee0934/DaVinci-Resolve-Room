@@ -1,0 +1,370 @@
+{
+	Tools = ordered() {
+		ek_LightwrapB = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Merge9",
+					Source = "ApplyMode",
+					Name = "BlendingMode",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Merge9",
+					Source = "BlendClone",
+					Name = "Overall Blend",
+					Default = 1,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "PipeRouter6",
+					Source = "Input",
+					Name = "Background",
+				},
+				Input3 = InstanceInput {
+					SourceOp = "ResizeControl",
+					Source = "ResetSize",
+					Name = "Resize BG",
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "AlphaControl",
+					Source = "MaskLow",
+					ControlGroup = 5,
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "AlphaControl",
+					Source = "MaskHigh",
+					ControlGroup = 5,
+					Default = 0.789,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "MasterRGBGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "BlurControl",
+					Source = "XBlurSize",
+					Name = "Lightwrap Blur",
+					Default = 9.4,
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "PipeRouter1",
+					Source = "Input",
+					Name = "Added Object",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge9",
+					Source = "Output",
+				},
+				MainOutput2 = InstanceOutput {
+					SourceOp = "Resize2_1",
+					Source = "Output",
+					Name = "SecondaryOutput",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Merge9 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "PipeRouter6",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Resize2_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 903.463, 570.717 } },
+				},
+				Resize2_1 = BetterResize {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input {
+							Value = 736,
+							Expression = "ResizeControl.Width",
+						},
+						Height = Input {
+							Value = 414,
+							Expression = "ResizeControl.Height",
+						},
+						HiQOnly = Input { Value = 0, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						Input = Input {
+							SourceOp = "Merge8",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 586.638, 469.788 } },
+				},
+				PipeRouter6 = PipeRouter {
+					CtrlWShown = false,
+					ViewInfo = PipeRouterInfo { Pos = { 101.431, 534.966 } },
+				},
+				ResizeControl = BetterResize {
+					PassThrough = true,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 736, },
+						Height = Input { Value = 414, },
+						HiQOnly = Input { Value = 0, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						Input = Input {
+							SourceOp = "PipeRouter4",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 248.396, 414.526 } },
+				},
+				Merge8 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "PipeRouter1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "AlphaControl",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 629.321, 400.46 } },
+				},
+				PipeRouter4 = PipeRouter {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "PipeRouter6",
+							Source = "Output",
+						},
+					},
+					ViewInfo = PipeRouterInfo { Pos = { 176.169, 368.694 } },
+				},
+				AlphaControl = BrightnessContrast {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+						MultiplyByMask = Input { Value = 1, },
+						MaskHigh = Input { Value = 0.789, },
+						Input = Input {
+							SourceOp = "ColorCorrector2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 911.56, 351.029 } },
+				},
+				ColorCorrector2 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Blur3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 746.388, 343.64 } },
+				},
+				Merge7 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Background4",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Resize1",
+							Source = "Output",
+						},
+						Operator = Input { Value = FuID { "Under" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 371.607, 341.464 } },
+				},
+				Blur3 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Background2",
+							Source = "Output",
+						},
+						MultiplyByMask = Input { Value = 1, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input {
+							Value = 18.8,
+							Expression = "BlurControl.XBlurSize*2",
+						},
+						Input = Input {
+							SourceOp = "Merge7",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 590.274, 339.152 } },
+				},
+				Resize1 = BetterResize {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						HiQOnly = Input { Value = 0, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						Input = Input {
+							SourceOp = "PipeRouter4",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 254.941, 339.102 } },
+				},
+				PipeRouter1 = PipeRouter {
+					CtrlWShown = false,
+					ViewInfo = PipeRouterInfo { Pos = { 172.933, 298.842 } },
+				},
+				Background4 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 343.945, 285.531 } },
+				},
+				BlurControl = Blur {
+					PassThrough = true,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						MultiplyByMask = Input { Value = 1, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 9.4, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 560.444, 267.105 } },
+				},
+				Background2 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "PipeRouter1",
+							Source = "Output",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 291.757, 260.796 } },
+				},
+				Blur1 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 13.4, },
+						Input = Input {
+							SourceOp = "Instance_Blur3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 757.664, 235.206 } },
+				},
+				Background5 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 294.624, 225.276 } },
+				},
+				Instance_Blur3 = Blur {
+					CtrlWShown = false,
+					SourceOp = "Blur3",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						XBlurSize = Input { Expression = "BlurControl.XBlurSize*2" },
+						Input = Input {
+							SourceOp = "Merge6",
+							Source = "Output",
+						},
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { 622.721, 221.848 } },
+				},
+				Merge6 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Background5",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background3",
+							Source = "Output",
+						},
+						Operator = Input { Value = FuID { "Under" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 417.188, 220.99 } },
+				},
+				Background3 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Background2",
+							Source = "Output",
+						},
+						ApplyMaskInverted = Input { Value = 1, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 284.252, 192.706 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ek_LightwrapB"
+}

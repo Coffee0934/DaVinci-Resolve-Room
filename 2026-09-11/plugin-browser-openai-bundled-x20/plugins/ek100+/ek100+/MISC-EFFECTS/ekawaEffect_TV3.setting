@@ -1,0 +1,675 @@
+{
+	Tools = ordered() {
+		ekawaEffect_TV3 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelHue1",
+					ControlGroup = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelSaturation1",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelTintAngle1",
+					ControlGroup = 1,
+					Default = 0.0579290501099,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelTintLength1",
+					ControlGroup = 1,
+					Default = 0.4708,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelRangeDummy1",
+					ControlGroup = 1,
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelHue2",
+					ControlGroup = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelSaturation2",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelTintAngle2",
+					ControlGroup = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelTintLength2",
+					ControlGroup = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelHue3",
+					ControlGroup = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelSaturation3",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelTintAngle3",
+					ControlGroup = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelTintLength3",
+					ControlGroup = 1,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelHue4",
+					ControlGroup = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelSaturation4",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelTintAngle4",
+					ControlGroup = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "WheelTintLength4",
+					ControlGroup = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "MasterRGBContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "MasterRGBGain",
+					Name = "Gain",
+					Default = 4.24,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "MasterRGBLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "MasterRGBGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "ColorCorrector6",
+					Source = "MasterRGBBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge17",
+					Source = "Background",
+				},
+				Input23 = InstanceInput {
+					SourceOp = "Merge17",
+					Source = "ApplyMode",
+				},
+				Input24 = InstanceInput {
+					SourceOp = "Merge17",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "Blur9",
+					Source = "XBlurSize",
+					Default = 3.3,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "Sharpen2",
+					Source = "XAmount",
+					Default = 100,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge17",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise6 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 4.49, },
+						Contrast = Input { Value = 0.36, },
+						Brightness = Input { Value = -0.08, },
+						Type = Input { Value = 1, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0.384313725490196, 0.152941176470588, 0.392156862745098, 1 },
+									[1] = { 0.592156862745098, 0.870588235294118, 1, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 2311.09, 385.959 } },
+				},
+				Background9 = Background {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2209.72, 444.297 } },
+				},
+				Grid1 = ofx.com.blackmagicdesign.resolvefx.Grid {
+					Inputs = {
+						Source = Input {
+							SourceOp = "Background9",
+							Source = "Output",
+						},
+						vernum = Input { Value = 100, },
+						hornum = Input { Value = 100, },
+						majorspace = Input { Value = 4, },
+						lineprop = Input { Value = 1, },
+						linecolorRed = Input { Value = 0.8196078431373, },
+						linecolorGreen = Input { Value = 0.8196078431373, },
+						linecolorBlue = Input { Value = 0.8196078431373, },
+						horwidth = Input { Value = 0.394, },
+						verwidth = Input { Value = 0.102, },
+						majorwidth = Input { Value = 1, },
+						tranform = Input { Value = 1, },
+						pan = Input { Value = 0, },
+						tilt = Input { Value = 0, },
+						zoom = Input { Value = 1, },
+						rotate = Input { Value = 0, },
+						gridwidth = Input { Value = 1, },
+						gridheight = Input { Value = 1, },
+						ShearX = Input { Value = 0, },
+						ShearY = Input { Value = 0, },
+						pitch = Input { Value = 0, },
+						yaw = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2394.7, 456.999 } },
+				},
+				Merge15 = Merge {
+					CtrlWZoom = false,
+					Inputs = {
+						MaskChannel = Input { Value = 5, },
+						Background = Input {
+							SourceOp = "Blur8",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise6",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Difference" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2785.25, 471.858 } },
+				},
+				Merge16 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge15",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise7",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Color Dodge" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2895.25, 471.858 } },
+				},
+				FastNoise7 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						Contrast = Input { Value = 0.69, },
+						Brightness = Input { Value = -0.64, },
+						LockXY = Input { Value = 0, },
+						XScale = Input { Value = 29.4, },
+						YScale = Input { Value = 170, },
+						SeetheRate = Input { Value = 100, },
+						Type = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2812.08, 419.106 } },
+				},
+				Blur8 = Blur {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 3.6, },
+						Input = Input {
+							SourceOp = "Mask",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 2640.58, 483.128 } },
+				},
+				ml_FastChroma = MacroOperator {
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\Effect\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						CommentsNest = Input { Value = 0, },
+						Comments = Input { Value = "FastChroma v 1.0\nMacro by Emilio Sapia - Millolab\nhttps://emiliosapia.myportfolio.com", },
+						Position = InstanceInput {
+							SourceOp = "CH_1",
+							Source = "OffsetX",
+							Name = "Position",
+							Page = "Controls",
+							DefaultX = 0.5,
+							DefaultY = 0.5,
+						},
+						Size = InstanceInput {
+							SourceOp = "CH_1",
+							Source = "Control",
+							Name = "Size",
+							MinScale = 1,
+							MaxScale = 1.05,
+							Page = "Controls",
+							Default = 1,
+						},
+						Edges = InstanceInput {
+							SourceOp = "CH_1",
+							Source = "Edges",
+							Default = 3,
+						},
+						Blank2 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "Blank5",
+						},
+						Process = InstanceInput {
+							SourceOp = "CH_1",
+							Source = "ProcessRed",
+							Name = "Channel Split A",
+							ControlGroup = 3,
+							Default = 1,
+						},
+						ProcessGreen = InstanceInput {
+							SourceOp = "CH_1",
+							Source = "ProcessGreen",
+							ControlGroup = 3,
+							Default = 0,
+						},
+						ProcessBlue = InstanceInput {
+							SourceOp = "CH_1",
+							Source = "ProcessBlue",
+							ControlGroup = 3,
+							Default = 0,
+						},
+						ProcessB = InstanceInput {
+							SourceOp = "CH_2",
+							Source = "ProcessRed",
+							Name = "Channel Split B",
+							ControlGroup = 4,
+							Default = 1,
+						},
+						ProcessGreenB = InstanceInput {
+							SourceOp = "CH_2",
+							Source = "ProcessGreen",
+							ControlGroup = 4,
+							Default = 0,
+						},
+						ProcessBlueB = InstanceInput {
+							SourceOp = "CH_2",
+							Source = "ProcessBlue",
+							ControlGroup = 4,
+							Default = 0,
+						},
+						Input = InstanceInput {
+							SourceOp = "PipeRouter1",
+							Source = "Input",
+							Page = "Common",
+						},
+						Input12 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "Blend",
+							Default = 1,
+						},
+						Input13 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "Blank1",
+						},
+						Input14 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "ApplyMaskInverted",
+							Default = 0,
+						},
+						Input15 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "MultiplyByMask",
+							Default = 0,
+						},
+						Input16 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "FitMask",
+						},
+						Input17 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "Blank2",
+						},
+						Input18 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "MaskChannel",
+							Default = 3,
+						},
+						Input19 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "MaskLow",
+							ControlGroup = 14,
+							Default = 0,
+						},
+						Input20 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "MaskHigh",
+							ControlGroup = 14,
+							Default = 1,
+						},
+						Input21 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "MaskClipBlack",
+							Name = "Black",
+							Width = 0.5,
+							Default = 1,
+						},
+						Input22 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "MaskClipWhite",
+							Name = "White",
+							Width = 0.5,
+							Default = 1,
+						},
+						Input23 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "Blank4",
+						},
+						Input24 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "UseObject",
+							Default = 0,
+						},
+						Input25 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "UseMaterial",
+							Default = 0,
+						},
+						Input26 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "CorrectEdges",
+						},
+						Input27 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "ObjectID",
+							ControlGroup = 21,
+							Default = 0,
+						},
+						Input28 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "MaterialID",
+							ControlGroup = 21,
+							Default = 0,
+						},
+						Input29 = InstanceInput {
+							SourceOp = "Mask",
+							Source = "Blank5",
+						},
+						EffectMask = InstanceInput {
+							SourceOp = "Mask",
+							Source = "EffectMask",
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Mask",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 2555.38, 464.185 } },
+					Tools = ordered() {
+						CH_1 = Transform {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								ProcessGreen = Input { Value = 0, },
+								ProcessBlue = Input { Value = 0, },
+								ProcessAlpha = Input { Value = 0, },
+								Center = Input {
+									Value = { 0.496, 0.5 },
+									Expression = "OffsetX",
+								},
+								Size = Input { Expression = "Control", },
+								Edges = Input { Value = 3, },
+								FilterMethod = Input { Value = 1, },
+								FlattenTransform = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "PipeRouter1",
+									Source = "Output",
+								},
+								OffsetX = Input { Value = { 0.496, 0.5 }, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -60.0004, 75.4964 } },
+							UserControls = ordered() {
+								Control = {
+									INP_MaxAllowed = 1000000,
+									INP_Integer = false,
+									INPID_InputControl = "SliderControl",
+									INP_MaxScale = 1.5,
+									INP_Default = 1,
+									INP_MinScale = 0.5,
+									INP_MinAllowed = 0,
+									LINKID_DataType = "Number",
+									ICS_ControlPage = "Controls",
+									ICD_Center = 1,
+									LINKS_Name = "Control"
+								},
+								OffsetX = {
+									INP_DefaultX = 0.5,
+									INPID_PreviewControl = "CrosshairControl",
+									INP_DefaultY = 0.5,
+									LINKID_DataType = "Point",
+									ICS_ControlPage = "Controls",
+									INPID_InputControl = "OffsetControl",
+									CHC_Style = "NormalCross",
+									LINKS_Name = "OffsetX",
+								}
+							}
+						},
+						PipeRouter1 = PipeRouter {
+							CtrlWShown = false,
+							Inputs = {
+								Input = Input {
+									SourceOp = "Grid1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = PipeRouterInfo { Pos = { -33.396, 7.98866 } },
+						},
+						Mask = Merge {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								Background = Input {
+									SourceOp = "BrightnessContrast1",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "DirectionalBlur1_3",
+									Source = "Output",
+								},
+								FlattenTransform = Input { Value = 1, },
+								PerformDepthMerge = Input { Value = 0, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 60, 261.526 } },
+						},
+						DirectionalBlur1_3 = DirectionalBlur {
+							CtrlWShown = false,
+							Inputs = {
+								Type = Input { Value = 3, },
+								Length = Input { Expression = "CH_1.Size-1", },
+								Input = Input {
+									SourceOp = "CH_2",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -60.0004, 261.526 } },
+						},
+						CH_2 = Transform {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								ProcessRed = Input { Value = 0, },
+								ProcessGreen = Input { Value = 0, },
+								ProcessBlue = Input { Value = 0, },
+								ProcessAlpha = Input { Value = 0, },
+								Center = Input {
+									Value = { 0.496, 0.5 },
+									Expression = "CH_1.Center",
+								},
+								Pivot = Input { Expression = "CH_1.Pivot", },
+								Size = Input { Expression = "CH_1.Size", },
+								Angle = Input { Expression = "CH_1.Angle", },
+								Edges = Input {
+									Value = 3,
+									Expression = "CH_1.Edges",
+								},
+								FilterMethod = Input { Value = 1, },
+								InvertTransform = Input { Value = 1, },
+								FlattenTransform = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "CH_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -60.0004, 125.738 } },
+						},
+						BrightnessContrast1 = BrightnessContrast {
+							CtrlWShown = false,
+							Inputs = {
+								Alpha = Input { Value = 1, },
+								Gain = Input { Value = 0, },
+								Input = Input {
+									SourceOp = "PipeRouter1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 60, 132.686 } },
+						}
+					},
+				},
+				ColorCorrector6 = ColorCorrector {
+					Inputs = {
+						WheelTintAngle1 = Input { Value = 0.0579290501099, },
+						WheelTintLength1 = Input { Value = 0.4708, },
+						MasterRGBGain = Input { Value = 4.24, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						PreDividePostMultiply = Input { Value = 1, },
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Blur9",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 3006.28, 536.921 } },
+				},
+				Merge17 = Merge {
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "ColorCorrector6",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Soft Light" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 3030.8, 570.858 } },
+				},
+				Blur9 = Blur {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 3.3, },
+						Input = Input {
+							SourceOp = "Sharpen2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 3005.25, 503.921 } },
+				},
+				Sharpen2 = Sharpen {
+					Inputs = {
+						XAmount = Input { Value = 100, },
+						Input = Input {
+							SourceOp = "Merge16",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 3004.22, 470.921 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaEffect_TV3"
+}

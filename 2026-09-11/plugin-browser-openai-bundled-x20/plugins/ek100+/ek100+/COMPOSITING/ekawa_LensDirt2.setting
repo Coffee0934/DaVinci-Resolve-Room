@@ -1,0 +1,951 @@
+{
+	Tools = ordered() {
+		ekawa_LensDirt21 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Duplicate1",
+					Source = "Copies",
+					Name = "Bokeh Amnt",
+					Default = 45,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Duplicate1",
+					Source = "XSize",
+					Name = "Bokeh DupSize",
+					Default = 0.971,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Duplicate1",
+					Source = "LayerBlend",
+					Name = "Bokeh Blend",
+					Default = 0.945,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Duplicate1",
+					Source = "Randomize",
+					Name = "Reseed Bokeh",
+					Width = 0.385,
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Duplicate1",
+					Source = "JitterCenter",
+					Name = "Bokeh DupJitCenter",
+					DefaultX = 0.532,
+					DefaultY = 0.566,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Duplicate1",
+					Source = "JitterXSize",
+					Name = "Bokeh DupJitSize",
+					Default = 0.45,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Duplicate1",
+					Source = "JitterRedGain",
+					Name = "Bokeh Red Gain",
+					Default = 0.181,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Duplicate1",
+					Source = "JitterGreenGain",
+					Name = "Bokeh Green Gain",
+					Default = 0.197,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Duplicate1",
+					Source = "JitterBlueGain",
+					Name = "Bokeh Blue Gain",
+					Default = 0.291,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Duplicate1",
+					Source = "JitterLayerBlend",
+					Name = "Bokeh JitBlend",
+					Default = 0.866,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Duplicate2",
+					Source = "Copies",
+					Name = "Scratch Amnt",
+					Default = 45,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Duplicate2",
+					Source = "XSize",
+					Name = "Scratch DupSize",
+					Default = 0.992,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Duplicate2",
+					Source = "Randomize",
+					Name = "Reseed Scratches",
+					Width = 0.385,
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "WriteLength",
+					Name = "Scratch Length",
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "Size",
+					Name = "Scratch Size",
+					Default = 0.473,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Polygon1_1",
+					Source = "WriteLength",
+					Name = "Dust Length",
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Polygon1_1",
+					Source = "Size",
+					Name = "Dust Size",
+					Default = 0.045,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Duplicate3",
+					Source = "Copies",
+					Name = "Dust Amnt",
+					Default = 100,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Duplicate3",
+					Source = "XSize",
+					Name = "Dust DupSize",
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Duplicate3",
+					Source = "Randomize",
+					Name = "Reseed Dust",
+					Width = 0.385,
+					Default = 0,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "Duplicate3",
+					Source = "JitterCenter",
+					Name = "Dust DupJitCenter",
+					DefaultX = 0.5,
+					DefaultY = 0.51,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "Duplicate3",
+					Source = "JitterXSize",
+					Name = "Dust DupJit Size",
+					Default = 0.89,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "ekawa_DupliNoise1",
+					Source = "Input10",
+					Name = "Color Gradient",
+				},
+				Input24 = InstanceInput {
+					SourceOp = "ekawa_DupliNoise1",
+					Source = "Input16",
+					Name = "Reseed Colors",
+					Width = 0.385,
+					Default = 0,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "Detail",
+					Name = "Noise Detail",
+					Default = 9.53,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "Contrast",
+					Name = "Noise Contrast",
+					Default = 1.19,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "Brightness",
+					Name = "Noise Brightness",
+					Default = -0.53,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "FastNoise6",
+					Source = "XScale",
+					Name = "Noise Scale",
+					Default = 2,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "ekawaheatblur_2",
+					Source = "MainOutput1",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise4 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Contrast = Input { Value = 1.83, },
+						Brightness = Input { Value = -0.14, },
+						XScale = Input { Value = 6.93, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1130.91, -182.641 } },
+				},
+				Ellipse1 = EllipseMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.418, 0.5 }, },
+						Width = Input { Value = 0.069, },
+						Height = Input { Value = 0.068, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 621.574, -125.671 } },
+				},
+				Blur5 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 1.8, },
+						Input = Input {
+							SourceOp = "Duplicate3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1701.38, -138.794 } },
+				},
+				Blur4 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 2.4, },
+						Input = Input {
+							SourceOp = "Duplicate1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1094.24, -98.7318 } },
+				},
+				Duplicate1 = Fuse.Duplicate {
+					CtrlWShown = false,
+					Inputs = {
+						Copies = Input { Value = 45, },
+						Pivot = Input { Value = { 0.534, 0.5 }, },
+						XSize = Input { Value = 0.971, },
+						GainNest = Input { Value = 1, },
+						BlurNest = Input { Value = 1, },
+						LayerBlend = Input { Value = 0.945, },
+						RandomSeed = Input { Value = 26024, },
+						JitterCenter = Input { Value = { 0.532, 0.566 }, },
+						JitterXSize = Input { Value = 0.45, },
+						JitterGainNest = Input { Value = 1, },
+						JitterRedGain = Input { Value = 0.181, },
+						JitterGreenGain = Input { Value = 0.197, },
+						JitterBlueGain = Input { Value = 0.291, },
+						JitterLayerBlend = Input { Value = 0.866, },
+						Background = Input {
+							SourceOp = "FastNoise3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 984.241, -97.5197 } },
+				},
+				FastNoise3 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Ellipse1",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 768.241, -112.338 } },
+				},
+				Duplicate2 = Fuse.Duplicate {
+					CtrlWShown = false,
+					Inputs = {
+						Copies = Input { Value = 45, },
+						XSize = Input { Value = 0.992, },
+						RandomSeed = Input { Value = 19336, },
+						JitterCenter = Input { Value = { 0.586, 0.625 }, },
+						JitterXSize = Input { Value = 1.44, },
+						JitterAngle = Input { Value = 618.27, },
+						JitterLayerBlend = Input { Value = 0.291, },
+						Background = Input {
+							SourceOp = "Polygon1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1527.38, -184.854 } },
+				},
+				LumaKeyer2 = LumaKeyer {
+					CtrlWShown = false,
+					Inputs = {
+						High = Input { Value = 0.061, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "FastNoise5",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1297.45, -125.46 } },
+				},
+				PrismBlur1 = ofx.com.blackmagicdesign.resolvefx.PrismBlur {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "FastNoise4",
+							Source = "Output",
+						},
+						Source = Input {
+							SourceOp = "Blur4",
+							Source = "Output",
+						},
+						CenterXPos = Input { Value = 0.5, },
+						CenterYPos = Input { Value = 0.5, },
+						xyPosition = Input { Value = { 0.725, 0.712 }, },
+						BlurStrength = Input { Value = 0, },
+						AberrationDistance = Input { Value = 0.024, },
+						AberrationStrength = Input { Value = 1, },
+						VignetteSize = Input { Value = 0.100000001490116, },
+						VignetteSharpness = Input { Value = 5, },
+						BlendAmount = Input { Value = 0, },
+						isUseLegacyPosition = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "2.3", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1204.24, -92.4603 } },
+				},
+				Polygon1 = PolylineMask {
+					DrawMode = "InsertAndModify",
+					DrawMode2 = "InsertAndModify",
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						BorderWidth = Input { Value = 0.0004, },
+						Solid = Input { Value = 0, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Size = Input { Value = 0.473, },
+						Polyline = Input {
+							SourceOp = "Polygon1Polyline",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1377.45, -183.642 } },
+				},
+				Polygon1Polyline = BezierSpline {
+					SplineColor = { Red = 173, Green = 255, Blue = 47 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[67] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline {
+								Points = {
+									{ Linear = true, X = -0.22119341563786, Y = 0.06672760511883, RX = 0.0483539094650206, RY = -0.0700792199878123 },
+									{ X = -0.128600823045267, Y = -0.176416819012797, LX = -0.0123456790123457, LY = 0.0975015234613041 }
+								}
+							} }
+					}
+				},
+				Polygon1_1 = PolylineMask {
+					DrawMode = "InsertAndModify",
+					DrawMode2 = "InsertAndModify",
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						BorderWidth = Input { Value = 0.0004, },
+						Solid = Input { Value = 0, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Size = Input { Value = 0.045, },
+						Polyline = Input {
+							SourceOp = "Polygon1_1Polyline",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1611.38, -159.4 } },
+				},
+				Polygon1_1Polyline = BezierSpline {
+					SplineColor = { Red = 173, Green = 255, Blue = 47 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[67] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline {
+								Points = {
+									{ Linear = true, X = -0.22119341563786, Y = 0.06672760511883, RX = 0.0483539094650206, RY = -0.0700792199878123 },
+									{ X = -0.128600823045267, Y = -0.176416819012797, LX = -0.0123456790123457, LY = 0.0975015234613041 }
+								}
+							} }
+					}
+				},
+				DirectionalBlur2 = ofx.com.blackmagicdesign.resolvefx.DirectionalBlur {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Duplicate2",
+							Source = "Output",
+						},
+						BlurStrength = Input { Value = 0.315, },
+						BlurAngle = Input { Value = 23, },
+						advancedControlsGroup = Input { Value = 1, },
+						blurTypeChoice = Input { Value = FuID { "BlurTypeStylized" }, },
+						isSymmetric = Input { Value = 1, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_REFLECT" }, },
+						isBlurAlpha = Input { Value = 1, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "3.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1501.38, -153.066 } },
+				},
+				ColorCorrector4 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						WheelSaturation1 = Input { Value = 0.61, },
+						MasterRGBGain = Input { Value = 0.78, },
+						MasterRGBGamma = Input { Value = 0.47, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Duplicate1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1796.78, -108.491 } },
+				},
+				Duplicate3 = Fuse.Duplicate {
+					CtrlWShown = false,
+					Inputs = {
+						Copies = Input { Value = 100, },
+						RandomSeed = Input { Value = 19336, },
+						JitterCenter = Input { Value = { 0.5, 0.51 }, },
+						JitterXSize = Input { Value = 0.89, },
+						JitterAngle = Input { Value = 929.36, },
+						JitterLayerBlend = Input { Value = 0.551, },
+						Background = Input {
+							SourceOp = "Polygon1_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1831.38, -155.763 } },
+				},
+				ekawa_DupliNoise1 = MacroOperator {
+					CtrlWShown = false,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						}
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "FastNoise3_1",
+							Source = "Center",
+						},
+						Input2 = InstanceInput {
+							SourceOp = "FastNoise3_1",
+							Source = "Detail",
+							Default = 10,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "FastNoise3_1",
+							Source = "Contrast",
+							Default = 1,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "FastNoise3_1",
+							Source = "Brightness",
+							Default = 0,
+						},
+						Input5 = InstanceInput {
+							SourceOp = "FastNoise3_1",
+							Source = "XScale",
+							Default = 10.08,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "FastNoise3_1",
+							Source = "Seethe",
+							Default = 0,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "FastNoise3_1",
+							Source = "SeetheRate",
+							Default = 0.087,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "FastNoise3_1",
+							Source = "Discontinuous",
+							Default = 0,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "FastNoise3_1",
+							Source = "Type",
+							Default = 1,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "FastNoise3_1",
+							Source = "Gradient",
+						},
+						Input11 = InstanceInput {
+							SourceOp = "Duplicate1_1",
+							Source = "Copies",
+							Default = 16.73,
+						},
+						Input12 = InstanceInput {
+							SourceOp = "Duplicate1_1",
+							Source = "ApplyMode",
+							Name = "Apply Mode (normal/difference)",
+						},
+						Input13 = InstanceInput {
+							SourceOp = "Duplicate1_1",
+							Source = "RedGain",
+							Default = 1,
+						},
+						Input14 = InstanceInput {
+							SourceOp = "Duplicate1_1",
+							Source = "GreenGain",
+							Default = 1,
+						},
+						Input15 = InstanceInput {
+							SourceOp = "Duplicate1_1",
+							Source = "BlueGain",
+							Default = 1,
+						},
+						Input16 = InstanceInput {
+							SourceOp = "Duplicate1_1",
+							Source = "Randomize",
+							Width = 0.385,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Duplicate1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 1906.78, -108.491 } },
+					Tools = ordered() {
+						Ellipse1_1 = EllipseMask {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								SoftEdge = Input { Value = 0.2, },
+								MaskWidth = Input { Value = 1920, },
+								MaskHeight = Input { Value = 1080, },
+								PixelAspect = Input { Value = { 1, 1 }, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								ClippingMode = Input { Value = FuID { "None" }, },
+								Width = Input { Value = 0.394, },
+								Height = Input { Value = 0.268, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -64.4688, 8.16208 } },
+						},
+						FastNoise3_1 = FastNoise {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "Ellipse1_1",
+									Source = "Mask",
+								},
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Detail = Input { Value = 10, },
+								XScale = Input { Value = 10.08, },
+								SeetheRate = Input { Value = 0.087, },
+								Type = Input { Value = 1, },
+								GradientType = Input { Value = 6, },
+								Start = Input { Value = { 1.01452282157676, 0.209558823529412 }, },
+								End = Input { Value = { 1.01452282157676, 0.522058823529412 }, },
+								Gradient = Input {
+									Value = Gradient {
+										Colors = {
+											[0] = { 0.549019607843137, 0.384313725490196, 0.631372549019608, 1 },
+											[0.467661691542289] = { 0.470588235294118, 0.552941176470588, 0.584313725490196, 1 },
+											[1] = { 0.556862745098039, 0.627450980392157, 1, 1 }
+										}
+									},
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -36.7588, 28.0501 } },
+						},
+						Duplicate1_1 = Fuse.Duplicate {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								Copies = Input { Value = 16.73, },
+								XSize = Input { Value = 1.002, },
+								RedGain = Input { Value = 0.622, },
+								GreenGain = Input { Value = 0.252, },
+								RandomSeed = Input { Value = 26113, },
+								JitterCenter = Input { Value = { 0.437, 0.335 }, },
+								JitterXSize = Input { Value = 2.08, },
+								JitterAngle = Input { Value = 54.78, },
+								JitterGainNest = Input { Value = 1, },
+								JitterRedGain = Input { Value = 1, },
+								JitterGreenGain = Input { Value = 1, },
+								JitterBlueGain = Input { Value = 1, },
+								Background = Input {
+									SourceOp = "FastNoise3_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 63.0312, 33.3531 } },
+						}
+					},
+				},
+				FastNoise5 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Contrast = Input { Value = 0.3, },
+						Brightness = Input { Value = -0.87, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 908.243, -60.2167 } },
+				},
+				Ellipse2 = EllipseMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						SoftEdge = Input { Value = 0.1039, },
+						Invert = Input { Value = 1, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input { Value = 0.882, },
+						Height = Input { Value = 0.614, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1920.11, -78.1875 } },
+				},
+				Merge5 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer2",
+							Source = "Output",
+						},
+						Background = Input {
+							SourceOp = "FastNoise5",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "PrismBlur1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "DarkerColor" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1350.78, -53.945 } },
+				},
+				Merge8 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge6",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Blur5",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1579.45, -50.3086 } },
+				},
+				Merge6 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge5",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "DirectionalBlur2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1469.45, -50.3086 } },
+				},
+				Blur7 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 2.3, },
+						Input = Input {
+							SourceOp = "Blur6",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 2018.11, -38.1874 } },
+				},
+				Merge9 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge8",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector4",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "LinearDodge" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1689.45, -38.1874 } },
+				},
+				Blur6 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Ellipse2",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 10.2, },
+						Input = Input {
+							SourceOp = "Merge9",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1798.11, -38.1874 } },
+				},
+				FastNoise6 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 9.53, },
+						Contrast = Input { Value = 1.19, },
+						Brightness = Input { Value = -0.53, },
+						Seethe = Input { Value = 0.704, },
+						Color2Red = Input { Value = 0.4901960784314, },
+						Color2Green = Input { Value = 0.4901960784314, },
+						Color2Blue = Input { Value = 0.4901960784314, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2104.11, -144.854 } },
+				},
+				Merge10 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Blur7",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2138.78, -44.248 } },
+				},
+				Merge11 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge10",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise6",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "LinearDodge" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2196.78, -36.9753 } },
+				},
+				ekawaheatblur_2 = MacroOperator {
+					CtrlWShown = false,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						}
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Center",
+						},
+						Input2 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Detail",
+							Default = 2,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Contrast",
+							Default = 4.56,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Brightness",
+							Default = 0.19,
+						},
+						Input5 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "LockXY",
+							Default = 1,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "XScale",
+							Default = 3.15,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "YScale",
+							Default = 2,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Angle",
+							Default = 0,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Seethe",
+							Default = 0,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "SeetheRate",
+							Default = 0.079,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Discontinuous",
+							Default = 0,
+						},
+						Input12 = InstanceInput {
+							SourceOp = "FastNoise1_2",
+							Source = "Inverted",
+							Default = 0,
+						},
+						MainInput1 = InstanceInput {
+							SourceOp = "Blur1_3",
+							Source = "Input",
+						},
+						Input13 = InstanceInput {
+							SourceOp = "Blur1_3",
+							Source = "XBlurSize",
+							Default = 7.9,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Blur1_3",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 2302.78, -30.6419 } },
+					Tools = ordered() {
+						FastNoise1_2 = FastNoise {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Contrast = Input { Value = 4.56, },
+								Brightness = Input { Value = 0.54, },
+								XScale = Input { Value = 3.15, },
+								Seethe = Input { Value = 1.492, },
+								SeetheRate = Input { Value = 0.079, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -29.203, 8.22223 } },
+						},
+						Blur1_3 = Blur {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "FastNoise1_2",
+									Source = "Output",
+								},
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								XBlurSize = Input { Value = 7.9, },
+								Input = Input {
+									SourceOp = "Merge11",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 28, 101.293 } },
+						}
+					},
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_LensDirt21"
+}

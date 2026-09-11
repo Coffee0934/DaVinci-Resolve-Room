@@ -1,0 +1,592 @@
+{
+	Tools = ordered() {
+		ek_lfxUnlight = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "High",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "Low",
+					ControlGroup = 1,
+					Default = 0.35,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "MatteContrast",
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "MatteGamma",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "CorrectionRange",
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "Saturation1",
+					Name = "Saturation",
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "Saturation2",
+					Name = "Saturation",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "Saturation3",
+					Name = "Saturation",
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "Saturation4",
+					Name = "Saturation",
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBGain",
+					Name = "Gain",
+					Default = 0,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRedContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRedGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRedLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRedGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRedBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterGreenContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterGreenGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterGreenLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterGreenGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterGreenBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterBlueContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterBlueGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterBlueLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterBlueGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterBlueBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsRGBContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsRGBGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsRGBLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsRGBGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsRGBBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsRedContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsRedGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsRedLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsRedGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsRedBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				Input39 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsGreenContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				Input40 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsGreenGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input41 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsGreenLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input42 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsGreenGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input43 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsGreenBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				Input44 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsBlueContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				Input45 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsBlueGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input46 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsBlueLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input47 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsBlueGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input48 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "ShadowsBlueBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				Input49 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MidTonesRGBContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				Input50 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MidTonesRGBGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input51 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MidTonesRGBLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input52 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MidTonesRGBGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input53 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MidTonesRGBBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				Input54 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MidTonesRedContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				Input55 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MidTonesRedGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input56 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MidTonesRedLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input57 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MidTonesRedGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input58 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MidTonesRedBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				Input59 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MidTonesGreenContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				Input60 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MidTonesGreenGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input61 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MidTonesGreenLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input62 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MidTonesGreenGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input63 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MidTonesGreenBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				Input64 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "HighlightsRGBContrast",
+					Name = "Contrast",
+					Default = 1,
+				},
+				Input65 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "HighlightsRGBGain",
+					Name = "Gain",
+					Default = 1,
+				},
+				Input66 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "HighlightsRGBLift",
+					Name = "Lift",
+					Default = 0,
+				},
+				Input67 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "HighlightsRGBGamma",
+					Name = "Gamma",
+					Default = 1,
+				},
+				Input68 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "HighlightsRGBBrightness",
+					Name = "Brightness",
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "PipeRouter1",
+					Source = "Input",
+				},
+				Input69 = InstanceInput {
+					SourceOp = "Blur1",
+					Source = "XBlurSize",
+					Name = "Soften Lighting",
+					MaxScale = 500,
+					Default = 300,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				LumaKeyer1 = LumaKeyer {
+					CtrlWShown = false,
+					Inputs = {
+						Low = Input { Value = 0.35, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "PipeRouter1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 202.794, -23.0003 } },
+				},
+				Background1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 296.441, 8.71233 } },
+				},
+				Background2 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 367.151, -45.2849 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Background2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 413.983, 5.28393 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+						MasterRGBGain = Input { Value = 0, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "PipeRouter1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 318.125, 116.707 } },
+				},
+				Merge2 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Geometric" }, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 439.13, 126.995 } },
+				},
+				PipeRouter1 = PipeRouter {
+					CtrlWShown = false,
+					ViewInfo = PipeRouterInfo { Pos = { 140.877, 127.849 } },
+				},
+				Blur1 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 300, },
+						Input = Input {
+							SourceOp = "Instance_LumaKeyer1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 484.06, 33.5682 } },
+				},
+				Instance_LumaKeyer1 = LumaKeyer {
+					CtrlWShown = false,
+					SourceOp = "LumaKeyer1",
+					Inputs = {
+						EffectMask = Input {
+						},
+						SettingsNest = Input {
+						},
+						Invert = Input {
+							Value = 1,
+						},
+						["Solid.Matte"] = Input {
+						},
+						["Solid.MaskNest"] = Input {
+						},
+						["Garbage.Matte"] = Input {
+						},
+						["Garbage.MaskNest"] = Input {
+						},
+						Input = Input {
+							SourceOp = "PipeRouter1",
+							Source = "Output",
+						},
+						CommentsNest = Input {
+						},
+						FrameRenderScriptNest = Input {
+						},
+						StartRenderScripts = Input {
+						},
+						EndRenderScripts = Input {
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 478.403, -45.2849 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ek_lfxUnlight"
+}

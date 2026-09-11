@@ -1,0 +1,364 @@
+{
+	Tools = ordered() {
+		ekawaFramer_InvertDisplace111111 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Center",
+					Name = "Noise Center",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Name = "Noise Detail",
+					Default = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Contrast",
+					Name = "Noise Contrast",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Brightness",
+					Name = "Noise Brightness",
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "XScale",
+					Name = "Noise X Scale",
+					Default = 7.56,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "YScale",
+					Name = "Noise Y Scale",
+					Default = 2,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Discontinuous",
+					Name = "Noise Discontinuous",
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "XOffset",
+					Default = -0.5,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "XRefraction",
+					MinScale = -0.5,
+					MaxScale = 0.5,
+					Default = 0,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "YOffset",
+					Default = -0.5,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "YRefraction",
+					MinScale = -0.5,
+					MaxScale = 0.5,
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Spread",
+					Default = 0,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ekawa_ButtonMask",
+					Source = "Input1",
+					Name = "Displace with original",
+					Default = 1,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "Background",
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "ApplyMode",
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "ProcessRed",
+					Name = "Process",
+					ControlGroup = 18,
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "ProcessGreen",
+					ControlGroup = 18,
+					Default = 1,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "ProcessBlue",
+					ControlGroup = 18,
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Shownoise",
+					Source = "Input1",
+					Name = "View noise",
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "EffectMask",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge4",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						LockXY = Input { Value = 0, },
+						XScale = Input { Value = 7.56, },
+						Type = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -900.565, 60.9354 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Output",
+						},
+						Background = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -832.565, 132.451 } },
+				},
+				Displace1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						Type = Input { Value = 1, },
+						XChannel = Input { Value = 4, },
+						XOffset = Input { Value = -0.5, },
+						YChannel = Input { Value = 4, },
+						YOffset = Input { Value = -0.5, },
+						Input = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -737.666, 188.481 } },
+				},
+				ekawa_ButtonMask = MacroOperator {
+					CtrlWShown = false,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						}
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Invert",
+							Name = "Button",
+							Default = 0,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Garbage.MaskInverted",
+							Name = "Invert control",
+							Default = 0,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { -624.565, 60.9354 } },
+					Tools = ordered() {
+						LumaKeyer1_1 = LumaKeyer {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								Channel = Input { Value = 3, },
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								Invert = Input { Value = 1, },
+								["Garbage.MaskInverted"] = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "Background1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 62, 8.15153 } },
+						},
+						Background1 = Background {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								TopLeftAlpha = Input { Value = 0, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -62, 9.36363 } },
+						}
+					},
+				},
+				Displace1_1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						Type = Input { Value = 1, },
+						XChannel = Input { Value = 4, },
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input { Expression = "-Displace1.XRefraction", },
+						YChannel = Input { Value = 4, },
+						YOffset = Input { Value = -0.5, },
+						YRefraction = Input { Expression = "-Displace1.YRefraction", },
+						Input = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -605.897, 182.148 } },
+				},
+				Merge2 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -947, 228.481 } },
+				},
+				Merge3 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Displace1_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -527.23, 233.057 } },
+				},
+				Shownoise = MacroOperator {
+					CtrlWShown = false,
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						}
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "LumaKeyer1_1_1",
+							Source = "Invert",
+							Name = "Button",
+							Default = 0,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "LumaKeyer1_1_1",
+							Source = "Garbage.MaskInverted",
+							Name = "Invert control",
+							Default = 0,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "LumaKeyer1_1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { -484.564, 81.5415 } },
+					Tools = ordered() {
+						LumaKeyer1_1_1 = LumaKeyer {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								Channel = Input { Value = 3, },
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								Input = Input {
+									SourceOp = "Background1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 62, 8.15153 } },
+						},
+						Background1_1 = Background {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								TopLeftAlpha = Input { Value = 0, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -62, 9.36363 } },
+						}
+					},
+				},
+				Merge4 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Expression = "LumaKeyer1_1_1.Invert", },
+						Background = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -417.23, 233.057 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaFramer_InvertDisplace111111"
+}

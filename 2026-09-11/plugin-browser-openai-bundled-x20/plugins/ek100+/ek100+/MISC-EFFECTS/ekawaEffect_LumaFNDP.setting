@@ -1,0 +1,267 @@
+{
+	Tools = ordered() {
+		ekawaEffect_LumaFNDP11 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "High",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "Low",
+					ControlGroup = 1,
+					Default = 0,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "MatteContrast",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "MatteGamma",
+					Default = 1e-06,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ErodeDilate1",
+					Source = "YAmount",
+					Name = "Erode/Dilate Y",
+					MinScale = 0,
+					MaxScale = 0.08,
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "XRefraction",
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Displace2",
+					Source = "YRefraction",
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ApplyMode",
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ErodeDilate1_1",
+					Source = "XAmount",
+					Name = "Erode/Dilate X",
+					MinScale = 0,
+					MaxScale = 0.08,
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Instance_Merge2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				LumaKeyer1 = LumaKeyer {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MatteContrast = Input { Value = 1, },
+						MatteGamma = Input { Value = 1e-06, },
+						["Solid.MaskNest"] = Input { Value = 1, },
+						["Garbage.MaskNest"] = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -1731.48, 72.1216 } },
+				},
+				FastNoise1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Contrast = Input { Value = 5, },
+						Brightness = Input { Value = 1, },
+						LockXY = Input { Value = 0, },
+						XScale = Input { Value = 0, },
+						YScale = Input { Value = 170, },
+						SeetheRate = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -1526.77, 52.0819 } },
+				},
+				ErodeDilate1 = ErodeDilate {
+					CtrlWShown = false,
+					Inputs = {
+						LockXY = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -1501.66, 105.688 } },
+				},
+				Instance_LumaKeyer1 = LumaKeyer {
+					CtrlWShown = false,
+					SourceOp = "LumaKeyer1",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						["Solid.Matte"] = Input { },
+						["Solid.MaskNest"] = Input { Value = 1, },
+						["Garbage.Matte"] = Input { },
+						["Garbage.MaskNest"] = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { -1330.81, 74.2204 } },
+				},
+				Displace1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+						Type = Input { Value = 1, },
+						XRefraction = Input { Value = -0.1, },
+						RefractionStrength = Input { Value = 2, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ErodeDilate1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -1529.56, 157.111 } },
+				},
+				Displace2 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Instance_LumaKeyer1",
+							Source = "Output",
+						},
+						Type = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ErodeDilate1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -1274.81, 140.887 } },
+				},
+				Instance_FastNoise1 = FastNoise {
+					CtrlWShown = false,
+					SourceOp = "FastNoise1",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						ImageNest = Input { },
+						["Gamut.ColorSpaceNest"] = Input { },
+						["Gamut.GammaSpaceNest"] = Input { },
+						NoiseNest = Input { },
+						XScale = Input { Value = 170, },
+						YScale = Input { Value = 0, },
+						Color1Nest = Input { },
+						Color2Nest = Input { },
+						GradientNest = Input { },
+						NoiseBrightnessMap = Input { },
+						NoiseDetailMap = Input { },
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { -1208.14, 34.2204 } },
+				},
+				Instance_Merge2 = Merge {
+					CtrlWShown = false,
+					SourceOp = "Merge2",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Displace2",
+							Source = "Output",
+						},
+						Merge = Input { },
+						Channels = Input { },
+						ReferenceSize = Input { },
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { -1238.81, 199.069 } },
+				},
+				Merge2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Lighten" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -1469.15, 199.682 } },
+				},
+				ErodeDilate1_1 = ErodeDilate {
+					CtrlWShown = false,
+					Inputs = {
+						LockXY = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Instance_FastNoise1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -1160.14, 102.099 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -1709.02, 204.323 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaEffect_LumaFNDP11"
+}

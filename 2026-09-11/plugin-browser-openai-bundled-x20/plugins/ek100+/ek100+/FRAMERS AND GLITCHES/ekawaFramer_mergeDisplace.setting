@@ -1,0 +1,150 @@
+{
+	Tools = ordered() {
+		ekawamergeDisplace1 = MacroOperator {
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Center",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Offset",
+					Default = 0,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "RefractionStrength",
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "DifferenceKeyer1",
+					Source = "Low",
+					Name = "Threshold",
+					ControlGroup = 5,
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "DifferenceKeyer1",
+					Source = "High",
+					Name = "",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ApplyMode",
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ProcessRed",
+					Name = "RGB Split",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ProcessGreen",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ProcessBlue",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ProcessAlpha",
+					ControlGroup = 8,
+					Default = 1,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 51.3106, 168.637 } },
+			Tools = ordered() {
+				Displace1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						RefractionStrength = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0.472, 8.11172 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "MediaIn1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -196.266, 93.4044 } },
+				},
+				DifferenceKeyer1 = DifferenceKeyer {
+					CtrlWShown = false,
+					Inputs = {
+						High = Input { Value = 1, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 153.516, 16.2653 } },
+				},
+				Merge2 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "DifferenceKeyer1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Lighten" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 195, 105.403 } },
+				}
+			},
+		}
+	}
+}

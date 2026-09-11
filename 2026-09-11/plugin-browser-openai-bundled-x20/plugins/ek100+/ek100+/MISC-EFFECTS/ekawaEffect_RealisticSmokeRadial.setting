@@ -1,0 +1,435 @@
+{
+	Tools = ordered() {
+		ekawaEffect_RealisticSmokeRadial111 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Ellipse1",
+					Source = "SoftEdge",
+					Default = 0.0551,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Ellipse1",
+					Source = "BorderWidth",
+					Name = "Mask Size",
+					Default = 0,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Ellipse1",
+					Source = "Width",
+					Name = "Mask Width",
+					Default = 0.5,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Ellipse1",
+					Source = "Height",
+					Name = "Mask Height",
+					Default = 0.5,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Center",
+				},
+				Input6 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Default = 10,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Contrast",
+					Default = 1.25,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Brightness",
+					Default = -0.23,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "LockXY",
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "XScale",
+					Default = 9.13,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "YScale",
+					Default = 2,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Seethe",
+					Default = 0,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "SeetheRate",
+					Default = 0.039,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Discontinuous",
+					Default = 0,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color1Red",
+					Name = "Color 1",
+					ControlGroup = 15,
+					Default = 0,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color1Green",
+					ControlGroup = 15,
+					Default = 0,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color1Blue",
+					ControlGroup = 15,
+					Default = 0,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color1Alpha",
+					ControlGroup = 15,
+					Default = 0,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color2Red",
+					Name = "Color 2",
+					ControlGroup = 16,
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color2Green",
+					ControlGroup = 16,
+					Default = 1,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color2Blue",
+					ControlGroup = 16,
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Color2Alpha",
+					ControlGroup = 16,
+					Default = 1,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "GradientType",
+				},
+				Input24 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Start",
+					DefaultX = 0.527,
+					DefaultY = 0.5,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "End",
+					DefaultX = 0.736,
+					DefaultY = 0.5,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Gradient",
+				},
+				Input27 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "GradientInterpolationMethod",
+				},
+				Input28 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Offset",
+					Default = 0,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Repeat",
+					Default = 0,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "Displace2",
+					Source = "RefractionStrength",
+					Name = "Smoke Depth",
+					Default = 0.22,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input32 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Center",
+					Name = "Smoke Center",
+				},
+				Input33 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Size",
+					Name = "Smoke Size",
+					Default = 1,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ApplyMode",
+				},
+				Input35 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "EffectMask",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Displace1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						Offset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = 0.86, },
+						Input = Input {
+							SourceOp = "Ellipse1",
+							Source = "Mask",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 170.604, -73.8484 } },
+				},
+				FastNoise2 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Expression = "FastNoise1.Center", },
+						Detail = Input { Value = 10, },
+						Contrast = Input { Value = 1.38, },
+						Brightness = Input { Value = -0.31, },
+						XScale = Input { Value = 7.56, },
+						Seethe = Input { Expression = "FastNoise1.Seethe", },
+						SeetheRate = Input {
+							Value = 0.039,
+							Expression = "FastNoise1.SeetheRate",
+						},
+						Discontinuous = Input { Expression = "FastNoise1.Discontinuous", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 122, -144.151 } },
+				},
+				Ellipse1 = EllipseMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						SoftEdge = Input { Value = 0.0551, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 35.3333, -78.6969 } },
+				},
+				FastNoise1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						Contrast = Input { Value = 1.25, },
+						Brightness = Input { Value = -0.23, },
+						XScale = Input { Value = 9.13, },
+						SeetheRate = Input { Value = 0.039, },
+						Type = Input { Value = 1, },
+						Start = Input { Value = { 0.527, 0.5 }, },
+						End = Input { Value = { 0.736, 0.5 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 0.8 },
+									[1] = { 1, 1, 1, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 64, -2.33333 } },
+				},
+				Vignette1 = ofx.com.blackmagicdesign.resolvefx.Vignette {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "FastNoise3",
+							Source = "Output",
+						},
+						controlMode = Input { Value = FuID { "VIGNETTE_PLUGIN_MODE_BASIC" }, },
+						shapeGroup = Input { Value = 1, },
+						shape = Input { Value = FuID { "VIGNETTE_SHAPE_OVAL" }, },
+						size = Input { Value = 0.1388, },
+						rotation = Input {
+							Value = 0,
+							Disabled = true,
+						},
+						anamorphism = Input { Value = 1.77999997138977, },
+						xyPosition = Input { Value = { 0.5, 0.5 }, },
+						appearanceGroup = Input { Value = 1, },
+						softness = Input { Value = 1, },
+						transparency = Input { Value = 0, },
+						colorRed = Input { Value = 0, },
+						colorGreen = Input { Value = 0, },
+						colorBlue = Input { Value = 0, },
+						CompositeType = Input { Value = FuID { "COMPOSITE_MULTIPLY" }, },
+						centerX = Input { Value = 0.5, },
+						centerY = Input { Value = 0.5, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.2", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 318, -77.212 } },
+				},
+				FastNoise3 = FastNoise {
+					ExtentSet = true,
+					CtrlWShown = false,
+					Inputs = {
+						GlobalIn = Input { Value = 2, },
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						Contrast = Input { Value = 1.63, },
+						XScale = Input { Value = 20, },
+						SeetheRate = Input {
+							Value = 0.039,
+							Expression = "FastNoise1.SeetheRate",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 318, -110.212 } },
+				},
+				Displace2 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input { Value = 0.1, },
+						YOffset = Input { Value = -0.5, },
+						YRefraction = Input { Value = 0.1, },
+						Offset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = 0.22, },
+						Input = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Vignette1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 174, 0.63651 } },
+				},
+				Transform1 = ofx.com.blackmagicdesign.resolvefx.Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Displace2",
+							Source = "Output",
+						},
+						controlMode = Input { Value = FuID { "TransformControlsSliders" }, },
+						controlReset = Input { Value = 0, },
+						controlGroup = Input { Value = 1, },
+						controlVisibility = Input { Value = FuID { "Show" }, },
+						posX = Input { Value = 0, },
+						posY = Input { Value = 0, },
+						zoom = Input { Value = 1.113, },
+						rotate = Input { Value = 0, },
+						scaleX = Input { Value = 1, },
+						scaleY = Input { Value = 1, },
+						pitch = Input { Value = 0, },
+						yaw = Input { Value = 0, },
+						flipH = Input { Value = 0, },
+						flipV = Input { Value = 0, },
+						adjustGroup = Input { Value = 0, },
+						isCrop = Input { Value = 0, },
+						cropL = Input { Value = 0, },
+						cropR = Input { Value = 0, },
+						cropT = Input { Value = 0, },
+						cropB = Input { Value = 0, },
+						edgeSoftness = Input { Value = 0, },
+						edgeRounding = Input { Value = 0, },
+						animationGroup = Input { Value = 0, },
+						serializedWarpable = Input {
+							Value = Text {
+							},
+						},
+						serializedPinnable = Input {
+							Value = Text {
+							},
+						},
+						motionBlur = Input { Value = 0, },
+						advancedGroup = Input { Value = 0, },
+						edgeBehaviour = Input { Value = FuID { "Constant" }, },
+						CompositeType = Input { Value = FuID { "COMPOSITE_NORMAL" }, },
+						olayAntiAlias = Input { Value = 1, },
+						previewAlpha = Input { Value = 0, },
+						isLegacyCrop = Input { Value = 0, },
+						isLegacyAlphaHandling = Input { Value = 0, },
+						isEnforceBlanking = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.4", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 394, 3.06075 } },
+				},
+				Merge1 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 238.667, 89.7879 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaEffect_RealisticSmokeRadial111"
+}

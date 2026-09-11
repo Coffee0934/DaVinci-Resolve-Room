@@ -1,0 +1,333 @@
+{
+	Tools = ordered() {
+		ekawaWarp_DistortRGB1_11 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "ColorCorrector1_2_1",
+					Source = "MasterRGBContrast",
+					Name = "Warp Blue",
+					MinScale = -5,
+					MaxScale = 5,
+					Default = 1.9,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1_1_1",
+					Source = "Background",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ColorCorrector1_1_1",
+					Source = "MasterRGBContrast",
+					Name = "Warp Green",
+					MinScale = -5,
+					MaxScale = 5,
+					Default = 1.6,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "ColorCorrector1_3",
+					Source = "MasterRGBContrast",
+					Name = "Warp Red",
+					MinScale = -5,
+					MaxScale = 5,
+					Default = 1.3,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "ColorCorrector2_1_1",
+					Source = "MasterRGBContrast",
+					Name = "Distort Amount",
+					MinScale = -15,
+					MaxScale = 15,
+					Default = -15,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Blur1_1_1",
+					Source = "XBlurSize",
+					MaxScale = 150,
+					Default = 100,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Instance_Instance_Instance_Displace1_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				PipeRouter1_1_1 = PipeRouter {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "ColorCorrector2_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = PipeRouterInfo { Pos = { -29.165, 24.2834 } },
+				},
+				ColorCorrector1_2_1 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						MasterRGBContrast = Input { Value = 1.9, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "PipeRouter1_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 251.158, 71.4234 } },
+				},
+				Instance_Instance_Instance_Displace1_1 = Displace {
+					CtrlWShown = false,
+					SourceOp = "Instance_Instance_Displace1_1",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						Blend = Input { },
+						ProcessRed = Input { Value = 0, },
+						ProcessGreen = Input { Value = 0, },
+						ProcessBlue = Input { },
+						Input = Input {
+							SourceOp = "Instance_Instance_Displace1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector1_2_1",
+							Source = "Output",
+						},
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { 386, 117.707 } },
+				},
+				Merge1_1_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -342.765, 127.406 } },
+				},
+				Displace1_1_1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						Type = Input { Value = 1, },
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input { Value = 0.1, },
+						YOffset = Input { Value = -0.5, },
+						YRefraction = Input { Value = 0.1, },
+						RefractionStrength = Input { Value = 2, },
+						Spread = Input { Value = 5, },
+						Input = Input {
+							SourceOp = "Merge1_1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "PipeRouter1_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -91.17, 127.517 } },
+				},
+				Instance_Displace1_1 = Displace {
+					CtrlWShown = false,
+					SourceOp = "Displace1_1_1",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						Blend = Input { },
+						ProcessRed = Input { },
+						ProcessGreen = Input { Value = 0, },
+						ProcessBlue = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Displace1_1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector1_3",
+							Source = "Output",
+						},
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { 42.2443, 116.854 } },
+				},
+				Instance_Instance_Displace1_1 = Displace {
+					CtrlWShown = false,
+					SourceOp = "Instance_Displace1_1",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						Blend = Input { },
+						ProcessRed = Input { Value = 0, },
+						ProcessGreen = Input { },
+						ProcessBlue = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Instance_Displace1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector1_1_1",
+							Source = "Output",
+						},
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { 259.578, 120.712 } },
+				},
+				ColorCorrector1_1_1 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						MasterRGBContrast = Input { Value = 1.6, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "PipeRouter1_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 113.507, 73.1374 } },
+				},
+				ColorCorrector1_3 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						MasterRGBContrast = Input { Value = 1.3, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "PipeRouter1_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 16.398, 72.2804 } },
+				},
+				CreateBumpMap1_1_1 = CreateBumpMap {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "Blur1_1_1",
+							Source = "Output",
+						},
+						HeightScale = Input { Value = 100, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -245.377, 21.7114 } },
+				},
+				ColorCorrector2_1_1 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						MasterRGBContrast = Input { Value = -15, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "CreateBumpMap1_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -129.347, 17.9284 } },
+				},
+				Blur1_1_1 = Blur {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Bartlett" }, },
+						XBlurSize = Input { Value = 100, },
+						Input = Input {
+							SourceOp = "Merge1_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -387.124, 7.99837 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaWarp_DistortRGB1_11"
+}

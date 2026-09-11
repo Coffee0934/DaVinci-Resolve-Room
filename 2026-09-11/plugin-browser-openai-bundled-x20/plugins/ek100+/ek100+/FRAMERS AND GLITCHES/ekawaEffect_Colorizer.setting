@@ -1,0 +1,629 @@
+{
+	Tools = ordered() {
+		ekawaEffect_Colorizer = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "InvertColor1_1",
+					Source = "isInvertR",
+					Name = "MIDTONES -  Invert Red",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "InvertColor1_1",
+					Source = "isInvertG",
+					Name = "MIDTONES -  Invert Green",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "InvertColor1_1",
+					Source = "isInvertB",
+					Name = "MIDTONES - Invert Blue",
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "InvertColor1",
+					Source = "isInvertR",
+					Name = "SHADOWS - Invert Red",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "InvertColor1",
+					Source = "isInvertG",
+					Name = "SHADOWS -Invert Green",
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "InvertColor1",
+					Source = "isInvertB",
+					Name = "SHADOWS -Invert Blue",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "InvertColor1_2",
+					Source = "isInvertR",
+					Name = "HIGHLIGHTS - Invert Red",
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "InvertColor1_2",
+					Source = "isInvertG",
+					Name = "HIGHLIGHTS -Invert Green",
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "InvertColor1_2",
+					Source = "isInvertB",
+					Name = "HIGHLIGHTS -Invert Blue",
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ColorCorrector4",
+					Source = "Hue1",
+					Name = "MIDTONES - Hue",
+					Default = -0.3,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ColorCorrector4",
+					Source = "Hue3",
+					Name = "Hue",
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ColorCorrector4",
+					Source = "Hue4",
+					Name = "Hue",
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "Hue1",
+					Name = "SHADOWS - Hue",
+					Default = -0.41,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "Hue1",
+					Name = "HIGHLIGHTS - Hue",
+					Default = 0.24,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ApplyMode",
+					Name = "SHADOW/MIDTONES - Apply Mode",
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Merge4",
+					Source = "ApplyMode",
+					Name = "OVERALL - Apply Mode",
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Merge4",
+					Source = "BlendClone",
+					Name = "OVERALL - Blend",
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelHue1",
+					ControlGroup = 19,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelSaturation1",
+					ControlGroup = 19,
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintAngle1",
+					ControlGroup = 19,
+					Default = -0.25,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintLength1",
+					ControlGroup = 19,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelRangeDummy1",
+					ControlGroup = 19,
+					Default = 0,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelHue2",
+					ControlGroup = 19,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelSaturation2",
+					ControlGroup = 19,
+					Default = 1,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintAngle2",
+					ControlGroup = 19,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintLength2",
+					ControlGroup = 19,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelHue3",
+					ControlGroup = 19,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelSaturation3",
+					ControlGroup = 19,
+					Default = 1,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintAngle3",
+					ControlGroup = 19,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintLength3",
+					ControlGroup = 19,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelHue4",
+					ControlGroup = 19,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelSaturation4",
+					ControlGroup = 19,
+					Default = 1,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintAngle4",
+					ControlGroup = 19,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintLength4",
+					ControlGroup = 19,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "Hue1",
+					Name = "OVERALL - Hue",
+					Default = 0,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "MasterRGBContrast",
+					Name = "OVERALL - Contrast",
+					Default = 1,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "MasterRGBGain",
+					Name = "OVERALL - Gain",
+					Default = 1,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "MasterRGBLift",
+					Name = "OVERALL - Lift",
+					Default = 0,
+				},
+				Input39 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "MasterRGBGamma",
+					Name = "OVERALL - Gamma",
+					Default = 1,
+				},
+				Input40 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "MasterRGBBrightness",
+					Name = "OVERALL - Brightness",
+					Default = 0,
+				},
+				Input41 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "ApplyMode",
+					Name = "HIGHLIGHTS - Apply Mode",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge4",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				ColorCorrector1_2 = ColorCorrector {
+					Inputs = {
+						RangesRange = Input { Value = 3, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -229.447, -88.1146 } },
+				},
+				ColorCorrector1_1 = ColorCorrector {
+					Inputs = {
+						RangesRange = Input { Value = 2, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -224.114, -35.9934 } },
+				},
+				LumaKeyer1_1 = LumaKeyer {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "ColorCorrector1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -78.7808, -46.9025 } },
+				},
+				InvertColor1_1 = ofx.com.blackmagicdesign.resolvefx.InvertColor {
+					Inputs = {
+						Source = Input {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Output",
+						},
+						isInvertR = Input { Value = 0, },
+						isInvertG = Input { Value = 1, },
+						isInvertB = Input { Value = 0, },
+						isInvertA = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 39.8859, -43.2661 } },
+				},
+				Merge1 = Merge {
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -344.333, 48.2879 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					Inputs = {
+						RangesRange = Input { Value = 1, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -233.447, 16.4005 } },
+				},
+				LumaKeyer1 = LumaKeyer {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -98.7808, 8.85509 } },
+				},
+				InvertColor1 = ofx.com.blackmagicdesign.resolvefx.InvertColor {
+					Inputs = {
+						Source = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+						isInvertR = Input { Value = 1, },
+						isInvertG = Input { Value = 0, },
+						isInvertB = Input { Value = 0, },
+						isInvertA = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 11.2192, 8.85509 } },
+				},
+				InvertColor1_2 = ofx.com.blackmagicdesign.resolvefx.InvertColor {
+					Inputs = {
+						Source = Input {
+							SourceOp = "LumaKeyer1_2",
+							Source = "Output",
+						},
+						isInvertR = Input { Value = 0, },
+						isInvertG = Input { Value = 0, },
+						isInvertB = Input { Value = 1, },
+						isInvertA = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 35.8859, -95.3873 } },
+				},
+				LumaKeyer1_2 = LumaKeyer {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "ColorCorrector1_2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -77.4474, -101.448 } },
+				},
+				ColorCorrector4 = ColorCorrector {
+					Inputs = {
+						WheelHue1 = Input { Value = -0.3, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						PreDividePostMultiply = Input { Value = 1, },
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "InvertColor1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 149.886, -42.054 } },
+				},
+				ColorCorrector3 = ColorCorrector {
+					Inputs = {
+						WheelHue1 = Input { Value = -0.41, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						PreDividePostMultiply = Input { Value = 1, },
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "InvertColor1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 122.553, 8.85509 } },
+				},
+				ColorCorrector5 = ColorCorrector {
+					Inputs = {
+						WheelHue1 = Input { Value = 0.24, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						PreDividePostMultiply = Input { Value = 1, },
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "InvertColor1_2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 149.886, -99.0237 } },
+				},
+				Merge2 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "ColorCorrector3",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector4",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 232.553, 10.0672 } },
+				},
+				Merge4 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector2",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "LinearBurn" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 307.886, 98.5521 } },
+				},
+				ColorCorrector2 = ColorCorrector {
+					Inputs = {
+						WheelTintAngle1 = Input { Value = -0.25, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 338.553, 51.2794 } },
+				},
+				Merge3 = Merge {
+					CtrlWZoom = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector5",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 349.219, 10.0672 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaEffect_Colorizer"
+}

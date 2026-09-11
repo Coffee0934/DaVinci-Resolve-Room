@@ -1,0 +1,510 @@
+{
+	Tools = ordered() {
+		ek_EmitGlow1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "High",
+					ControlGroup = 1,
+					Default = 0.756,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "Low",
+					ControlGroup = 1,
+					Default = 0,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "ErodeDilate1",
+					Source = "XAmount",
+					Name = "Layer1 Dist",
+					Default = 0.08,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "ErodeDilate2",
+					Source = "XAmount",
+					Name = "Layer2 Dist",
+					MinScale = 0,
+					MaxScale = 0.06,
+					Default = 0.019,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "Saturation1",
+					Name = "Saturation",
+					Default = 0.63,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "Saturation2",
+					Name = "Saturation",
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "Saturation3",
+					Name = "Saturation",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ColorCorrector3",
+					Source = "Saturation4",
+					Name = "Saturation",
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ColorCorrector4",
+					Source = "MasterRGBGain",
+					Name = "Layer3 Gain",
+					Default = 5,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ColorCorrector5",
+					Source = "MasterRGBGain",
+					Name = "Layer2 Gain",
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "MasterRGBGain",
+					Name = "Layer1 Gain",
+					Default = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Merge4",
+					Source = "BlendClone",
+					Name = "Layer3 Blend",
+					Default = 1,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "BlendClone",
+					Name = "Layer1 Blend",
+					Default = 0.354,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "ApplyMode",
+					Name = "Layer2 Mode",
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "BlendClone",
+					Name = "Layer2 Blend",
+					Default = 1,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "PipeRouter6",
+					Source = "Input",
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ApplyMode",
+					Name = "Emit Mode",
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "BlendClone",
+					Name = "Emit Blend",
+					Default = 1,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Merge4",
+					Source = "EffectMask",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				LumaKeyer1 = LumaKeyer {
+					CtrlWShown = false,
+					Inputs = {
+						High = Input { Value = 0.756, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MatteBlur = Input { Value = 3.62, },
+						Input = Input {
+							SourceOp = "PipeRouter6",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 144.589, 343.885 } },
+				},
+				ErodeDilate1 = ErodeDilate {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = 3, },
+						XAmount = Input { Value = 0.08, },
+						Input = Input {
+							SourceOp = "PipeRouter5",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 362.667, 340.697 } },
+				},
+				ErodeDilate2 = ErodeDilate {
+					CtrlWShown = false,
+					Inputs = {
+						XAmount = Input { Value = 0.019, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Input = Input {
+							SourceOp = "PipeRouter5",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 424.667, 385.819 } },
+				},
+				PipeRouter5 = PipeRouter {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "ColorCorrector3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = PipeRouterInfo { Pos = { 461.334, 290.061 } },
+				},
+				PipeRouter2 = PipeRouter {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = PipeRouterInfo { Pos = { 460.667, 221.909 } },
+				},
+				ColorCorrector3 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						WheelSaturation1 = Input { Value = 0.63, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						PreDividePostMultiply = Input { Value = 1, },
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "PipeRouter2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 533.667, 269.455 } },
+				},
+				ErodeDilate3 = ErodeDilate {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = 2, },
+						XAmount = Input { Value = 0.04, },
+						Input = Input {
+							SourceOp = "PipeRouter5",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 543.334, 330.061 } },
+				},
+				Blur3 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 100, },
+						Input = Input {
+							SourceOp = "ErodeDilate3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 571.333, 393.364 } },
+				},
+				Blur1 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 100, },
+						Input = Input {
+							SourceOp = "ErodeDilate1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 339.334, 441.576 } },
+				},
+				ColorCurves1 = ColorCurves {
+					PickColor = true,
+					CtrlWShown = false,
+					Inputs = {
+						Red = Input {
+							SourceOp = "ColorCurves1Red",
+							Source = "Value",
+						},
+						Green = Input {
+							SourceOp = "ColorCurves1Green",
+							Source = "Value",
+						},
+						Blue = Input {
+							SourceOp = "ColorCurves1Blue",
+							Source = "Value",
+						},
+						Alpha = Input {
+							SourceOp = "ColorCurves1Alpha",
+							Source = "Value",
+						},
+						NumberOfSamplesOnMatchCurve = Input { Value = 64, },
+						IgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Blur3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 635.334, 474.303 } },
+					Tools = {
+						ColorCurves1Red = LUTBezier {
+							KeyColorSplines = {
+								[0] = {
+									[0] = { 0, RH = { 0.354723707664884, -0.0148148148148146 } },
+									[1] = { 1, LH = { 1, 0.792592592592591 } }
+								}
+							},
+							SplineColor = { Red = 255, Green = 52, Blue = 52 },
+							CtrlWZoom = false,
+						},
+						ColorCurves1Green = LUTBezier {
+							KeyColorSplines = {
+								[0] = {
+									[0] = { 0, RH = { 0.354723707664884, -0.0148148148148146 } },
+									[1] = { 1, LH = { 1, 0.792592592592591 } }
+								}
+							},
+							SplineColor = { Red = 0, Green = 255, Blue = 0 },
+							CtrlWZoom = false,
+						},
+						ColorCurves1Alpha = LUTBezier {
+							KeyColorSplines = {
+								[0] = {
+									[0] = { 0, RH = { 0.354723707664884, -0.0148148148148146 } },
+									[1] = { 1, LH = { 1, 0.792592592592591 } }
+								}
+							},
+							SplineColor = { Red = 204, Green = 204, Blue = 204 },
+							CtrlWZoom = false,
+						},
+						ColorCurves1Blue = LUTBezier {
+							KeyColorSplines = {
+								[0] = {
+									[0] = { 0, RH = { 0.354723707664884, -0.0148148148148146 } },
+									[1] = { 1, LH = { 1, 0.792592592592591 } }
+								}
+							},
+							SplineColor = { Red = 68, Green = 68, Blue = 255 },
+							CtrlWZoom = false,
+						}
+					},
+				},
+				Blur2 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 100, },
+						Input = Input {
+							SourceOp = "ErodeDilate2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 433.334, 456.121 } },
+				},
+				ColorCorrector4 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						MasterRGBGain = Input { Value = 5, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "ColorCurves1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 655.334, 525.485 } },
+				},
+				ColorCorrector5 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						PreDividePostMultiply = Input { Value = 1, },
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Blur2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 487.334, 553.364 } },
+				},
+				ColorCorrector2 = ColorCorrector {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 325.334, 566.698 } },
+				},
+				Merge4 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector4",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Soft Light" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 896.667, 668.788 } },
+				},
+				Merge2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0.354, },
+						Background = Input {
+							SourceOp = "PipeRouter6",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector2",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Hypotenuse" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 310, 691.819 } },
+				},
+				Merge3 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector5",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Soft Light" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 549.333, 689.394 } },
+				},
+				PipeRouter6 = PipeRouter {
+					CtrlWShown = false,
+					ViewInfo = PipeRouterInfo { Pos = { 2.13065, 694.932 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "PipeRouter6",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge4",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Lighten" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1043.79, 696.875 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ek_EmitGlow1"
+}

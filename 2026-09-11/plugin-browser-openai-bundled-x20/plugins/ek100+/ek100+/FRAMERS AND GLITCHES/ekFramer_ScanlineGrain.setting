@@ -1,0 +1,259 @@
+{
+	Tools = ordered() {
+		ekawaTexture_ScanlineGrain1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Scanlines1",
+					Source = "frequency",
+					Default = 20,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Scanlines1",
+					Source = "sharpness",
+					Default = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Scanlines1",
+					Source = "angle",
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Grain2",
+					Source = "Power",
+					Name = "Grain Power",
+					Default = 19.53,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Grain2",
+					Source = "RedDifference",
+					Default = 9.21,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Grain2",
+					Source = "GreenDifference",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Grain2",
+					Source = "BlueDifference",
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Grain2",
+					Source = "GrainSoftness",
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Grain2",
+					Source = "GrainSize",
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Rectangle1",
+					Source = "SoftEdge",
+					Default = 0.085,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Rectangle1",
+					Source = "Center",
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Rectangle1",
+					Source = "Width",
+					Default = 0.583,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Rectangle1",
+					Source = "Height",
+					Default = 2,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "FlipHoriz",
+					ControlGroup = 15,
+					Default = 0,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "FlipVert",
+					ControlGroup = 15,
+					Default = 0,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ApplyMode",
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "BlendClone",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Background1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 550.056, -51.2846 } },
+				},
+				Scanlines1 = ofx.com.blackmagicdesign.resolvefx.ScanlineV2 {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+						appearanceGroup = Input { Value = 1, },
+						frequency = Input { Value = 20, },
+						sharpness = Input { Value = 2, },
+						angle = Input { Value = 0, },
+						width = Input { Value = 0.5, },
+						shift = Input { Value = 0, },
+						colorGroup = Input { Value = 1, },
+						color1Red = Input { Value = 1, },
+						color1Green = Input { Value = 1, },
+						color1Blue = Input { Value = 1, },
+						color2Red = Input { Value = 0, },
+						color2Green = Input { Value = 0, },
+						color2Blue = Input { Value = 0, },
+						phaseOffR = Input { Value = 0, },
+						phaseOffG = Input { Value = 0, },
+						phaseOffB = Input { Value = 0, },
+						compositeGroup = Input { Value = 1, },
+						LinesOnly = Input { Value = 1, },
+						CompositeType = Input {
+							Value = FuID { "COMPOSITE_OVERLAY" },
+							Disabled = true,
+						},
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 660.056, -51.2846 } },
+				},
+				Grain2 = Grain {
+					CtrlWShown = false,
+					Inputs = {
+						Power = Input { Value = 19.53, },
+						RedDifference = Input { Value = 9.21, },
+						Red = Input {
+							SourceOp = "Grain2Red",
+							Source = "Value",
+						},
+						Green = Input {
+							SourceOp = "Grain2Green",
+							Source = "Value",
+						},
+						Blue = Input {
+							SourceOp = "Grain2Blue",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "Scanlines1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 770.999, -51.2846 } },
+				},
+				Grain2Red = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 1, RH = { 0.333333333333333, 1 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 1 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 0, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				Grain2Green = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 1, RH = { 0.333333333333333, 1 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 1 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 255, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				Grain2Blue = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 1, RH = { 0.333333333333333, 1 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 1 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 128, Green = 128, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Rectangle1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						SoftEdge = Input { Value = 0.085, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.185, 0.5 }, },
+						Width = Input { Value = 0.583, },
+						Height = Input { Value = 2, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 845.481, -89.4272 } },
+				},
+				Merge1 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Rectangle1",
+							Source = "Mask",
+						},
+						Blend = Input {
+							SourceOp = "Merge1Blend",
+							Source = "Value",
+						},
+						Foreground = Input {
+							SourceOp = "Grain2",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Geometric" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 719, 44.6515 } },
+				},
+				Merge1Blend = BezierSpline {
+					SplineColor = { Red = 205, Green = 205, Blue = 205 },
+					CtrlWZoom = false,
+					NameSet = true,
+					KeyFrames = {
+						[883] = { 0, RH = { 883.333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+						[884] = { 1, LH = { 883.666666666667, 0.666666666666667 }, RH = { 884.333333333333, 0.666666666666667 }, Flags = { Linear = true } },
+						[885] = { 0, LH = { 884.666666666667, 0.333333333333333 }, Flags = { Linear = true } }
+					}
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaTexture_ScanlineGrain1"
+}

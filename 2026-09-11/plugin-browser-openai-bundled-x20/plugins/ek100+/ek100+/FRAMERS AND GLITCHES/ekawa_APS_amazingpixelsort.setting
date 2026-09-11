@@ -1,0 +1,201 @@
+{
+	Tools = ordered() {
+		ekawa_APS_amazingpixelsort = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "ErodeDilate1",
+					Source = "XAmount",
+					Name = "Amazingness",
+					MinScale = -0.08,
+					MaxScale = 0.08,
+					Default = -0.04,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Blur1",
+					Source = "XBlurSize",
+					Name = "Smoothness",
+					Default = 0,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "XOffset",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "XRefraction",
+					Name = "X Amount",
+					MinScale = -2,
+					MaxScale = 2,
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Displace1_1",
+					Source = "YOffset",
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Displace1_1",
+					Source = "YRefraction",
+					Name = "Y Amount",
+					MinScale = -2,
+					MaxScale = 2,
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "ApplyMode",
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "BlendClone",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				CreateBumpMap1 = CreateBumpMap {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						ClampNormalZ = Input { Value = 1, },
+						HeightScale = Input { Value = 100, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 204.667, -55.6667 } },
+				},
+				ErodeDilate1 = ErodeDilate {
+					CtrlWShown = false,
+					Inputs = {
+						LockXY = Input { Value = 0, },
+						XAmount = Input { Value = -0.04, },
+						Input = Input {
+							SourceOp = "CreateBumpMap1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 271.333, -19.303 } },
+				},
+				Blur1 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "ErodeDilate1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 271.333, 13.697 } },
+				},
+				Displace1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						Type = Input { Value = 1, },
+						Center = Input { Value = { -2.232, 0.5 }, },
+						XChannel = Input { Value = 4, },
+						XOffset = Input { Value = -0.5, },
+						YChannel = Input { Value = 4, },
+						Offset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = -0.97, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 317.333, 53.1364 } },
+				},
+				Displace1_1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						Type = Input { Value = 1, },
+						Center = Input { Value = { -2.232, 0.5 }, },
+						XChannel = Input { Value = 4, },
+						XOffset = Input { Value = -0.5, },
+						YChannel = Input { Value = 4, },
+						YOffset = Input { Value = -0.5, },
+						Offset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = -0.97, },
+						Input = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Blur1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 448.667, 55.8485 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 163.667, 48.2879 } },
+				},
+				Blur1_1 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input {
+							Value = 0,
+							Expression = "Blur1.BlurSize",
+						},
+						Input = Input {
+							SourceOp = "ErodeDilate1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 436.667, 14.6364 } },
+				},
+				ErodeDilate1_1 = ErodeDilate {
+					CtrlWShown = false,
+					Inputs = {
+						LockXY = Input { Value = 0, },
+						YAmount = Input {
+							Value = -0.01,
+							Expression = "ErodeDilate1.XAmount",
+						},
+						Input = Input {
+							SourceOp = "CreateBumpMap1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 418, -21.7273 } },
+				},
+				Merge2 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Displace1_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 540.667, 106.758 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawa_APS_amazingpixelsort"
+}

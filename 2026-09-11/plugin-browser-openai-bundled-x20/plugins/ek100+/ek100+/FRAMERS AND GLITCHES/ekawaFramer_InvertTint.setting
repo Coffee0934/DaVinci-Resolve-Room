@@ -1,0 +1,555 @@
+{
+	Tools = ordered() {
+		ekawaFramer_InvertTint = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftRed",
+					Name = "Tint Highlights",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftGreen",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftBlue",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftAlpha",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopRightSep",
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopRightRed",
+					Name = "Top Right",
+					ControlGroup = 3,
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopRightGreen",
+					ControlGroup = 3,
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopRightBlue",
+					ControlGroup = 3,
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopRightAlpha",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomLeftSep",
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomLeftRed",
+					Name = "Bottom Left",
+					ControlGroup = 5,
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomLeftGreen",
+					ControlGroup = 5,
+					Default = 0,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomLeftBlue",
+					ControlGroup = 5,
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomLeftAlpha",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomRightSep",
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomRightRed",
+					Name = "Bottom Right",
+					ControlGroup = 7,
+					Default = 0,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomRightGreen",
+					ControlGroup = 7,
+					Default = 0,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomRightBlue",
+					ControlGroup = 7,
+					Default = 0,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomRightAlpha",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "InvertColor1",
+					Source = "isInvertR",
+					Default = 1,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "InvertColor1",
+					Source = "isInvertG",
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "InvertColor1",
+					Source = "isInvertB",
+					Default = 1,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "InvertColor1",
+					Source = "isInvertA",
+					Default = 0,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopLeftRed",
+					Name = "Tint Midtones",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopLeftGreen",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopLeftBlue",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopLeftAlpha",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopRightSep",
+				},
+				Input29 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopRightRed",
+					Name = "Top Right",
+					ControlGroup = 14,
+					Default = 0,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopRightGreen",
+					ControlGroup = 14,
+					Default = 0,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopRightBlue",
+					ControlGroup = 14,
+					Default = 0,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopRightAlpha",
+					ControlGroup = 14,
+					Default = 1,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomLeftSep",
+				},
+				Input34 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomLeftRed",
+					Name = "Bottom Left",
+					ControlGroup = 16,
+					Default = 0,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomLeftGreen",
+					ControlGroup = 16,
+					Default = 0,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomLeftBlue",
+					ControlGroup = 16,
+					Default = 0,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomLeftAlpha",
+					ControlGroup = 16,
+					Default = 1,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomRightSep",
+				},
+				Input39 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomRightRed",
+					Name = "Bottom Right",
+					ControlGroup = 18,
+					Default = 0,
+				},
+				Input40 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomRightGreen",
+					ControlGroup = 18,
+					Default = 0,
+				},
+				Input41 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomRightBlue",
+					ControlGroup = 18,
+					Default = 0,
+				},
+				Input42 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomRightAlpha",
+					ControlGroup = 18,
+					Default = 1,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge5",
+					Source = "Background",
+				},
+				Input43 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopLeftRed",
+					Name = "Tint Shadows",
+					ControlGroup = 20,
+					Default = 1,
+				},
+				Input44 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopLeftGreen",
+					ControlGroup = 20,
+					Default = 1,
+				},
+				Input45 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopLeftBlue",
+					ControlGroup = 20,
+					Default = 1,
+				},
+				Input46 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopLeftAlpha",
+					ControlGroup = 20,
+					Default = 1,
+				},
+				Input47 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopRightSep",
+				},
+				Input48 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopRightRed",
+					Name = "Top Right",
+					ControlGroup = 22,
+					Default = 0,
+				},
+				Input49 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopRightGreen",
+					ControlGroup = 22,
+					Default = 0,
+				},
+				Input50 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopRightBlue",
+					ControlGroup = 22,
+					Default = 0,
+				},
+				Input51 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "TopRightAlpha",
+					ControlGroup = 22,
+					Default = 1,
+				},
+				Input52 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomLeftSep",
+				},
+				Input53 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomLeftRed",
+					Name = "Bottom Left",
+					ControlGroup = 24,
+					Default = 0,
+				},
+				Input54 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomLeftGreen",
+					ControlGroup = 24,
+					Default = 0,
+				},
+				Input55 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomLeftBlue",
+					ControlGroup = 24,
+					Default = 0,
+				},
+				Input56 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomLeftAlpha",
+					ControlGroup = 24,
+					Default = 1,
+				},
+				Input57 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomRightSep",
+				},
+				Input58 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomRightRed",
+					Name = "Bottom Right",
+					ControlGroup = 26,
+					Default = 0,
+				},
+				Input59 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomRightGreen",
+					ControlGroup = 26,
+					Default = 0,
+				},
+				Input60 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomRightBlue",
+					ControlGroup = 26,
+					Default = 0,
+				},
+				Input61 = InstanceInput {
+					SourceOp = "Background3",
+					Source = "BottomRightAlpha",
+					ControlGroup = 26,
+					Default = 1,
+				},
+				Input62 = InstanceInput {
+					SourceOp = "Merge4",
+					Source = "BlendClone",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge4",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				LumaKeyer1 = LumaKeyer {
+					Inputs = {
+						High = Input { Value = 0.267, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "InvertColor1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 268.264, -64.8763 } },
+				},
+				Background1 = Background {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 379.515, -28.0211 } },
+				},
+				LumaKeyer1_1 = LumaKeyer {
+					Inputs = {
+						High = Input { Value = 0.617, },
+						Low = Input { Value = 0.267, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "InvertColor1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 397.429, -93.5908 } },
+				},
+				InvertColor1 = ofx.com.blackmagicdesign.resolvefx.InvertColor {
+					Inputs = {
+						Source = Input {
+							SourceOp = "Merge5",
+							Source = "Output",
+						},
+						isInvertR = Input { Value = 1, },
+						isInvertG = Input { Value = 1, },
+						isInvertB = Input { Value = 1, },
+						isInvertA = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 234.957, 45.7166 } },
+				},
+				Merge2 = Merge {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Output",
+						},
+						ApplyMaskInverted = Input { Value = 1, },
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background2",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Multiply" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 500.846, 33.7172 } },
+				},
+				Merge1 = Merge {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+						ApplyMaskInverted = Input { Value = 1, },
+						Background = Input {
+							SourceOp = "InvertColor1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Multiply" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 405.931, 50.8592 } },
+				},
+				Background2 = Background {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 492.652, -33.1637 } },
+				},
+				Merge5 = Merge {
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 156.07, 92.8298 } },
+				},
+				LumaKeyer1_1_1 = LumaKeyer {
+					Inputs = {
+						Low = Input { Value = 0.617, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "InvertColor1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 526.285, -102.162 } },
+				},
+				Background3 = Background {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 589.762, -29.7353 } },
+				},
+				Merge4 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge5",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 562.42, 117.686 } },
+				},
+				Merge3 = Merge {
+					CtrlWZoom = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1_1_1",
+							Source = "Output",
+						},
+						ApplyMaskInverted = Input { Value = 1, },
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background3",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Multiply" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 627.816, 26.0033 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaFramer_InvertTint"
+}

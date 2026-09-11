@@ -1,0 +1,434 @@
+{
+	Tools = ordered() {
+		ekawaEffect_LightRays11 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "High",
+					Name = "Threshold High",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "Low",
+					Name = "Threshold Low",
+					ControlGroup = 1,
+					Default = 0.65,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "Invert",
+					Name = "Invert Threshold",
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelHue1",
+					ControlGroup = 3,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelSaturation1",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintAngle1",
+					ControlGroup = 3,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintLength1",
+					ControlGroup = 3,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelRangeDummy1",
+					ControlGroup = 3,
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelHue2",
+					ControlGroup = 3,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelSaturation2",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintAngle2",
+					ControlGroup = 3,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintLength2",
+					ControlGroup = 3,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelHue3",
+					ControlGroup = 3,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelSaturation3",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintAngle3",
+					ControlGroup = 3,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintLength3",
+					ControlGroup = 3,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelHue4",
+					ControlGroup = 3,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelSaturation4",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintAngle4",
+					ControlGroup = 3,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintLength4",
+					ControlGroup = 3,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "TintMode",
+					Default = 2,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "MasterRGBGain",
+					Name = "Brightness",
+					Default = 1,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "Background",
+				},
+				Input23 = InstanceInput {
+					SourceOp = "Blur1",
+					Source = "XBlurSize",
+					Name = "Softness",
+					Default = 1,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "ApplyMode",
+				},
+				Input25 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "ZoomBlur1",
+					Source = "CenterXPos",
+					Default = 0.5,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "ZoomBlur1",
+					Source = "CenterYPos",
+					Default = 0.5,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "ZoomBlur1",
+					Source = "xyPosition",
+					DefaultX = 0.5,
+					DefaultY = 0.5,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "ZoomBlur1",
+					Source = "zoomAmount",
+					Name = "Length",
+					Default = 0.5,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "ekawa_ButtonMask",
+					Source = "Input1",
+					Name = "View Threshold Selection",
+					Default = 0,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge3",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				LumaKeyer1 = LumaKeyer {
+					CtrlWShown = false,
+					Inputs = {
+						Low = Input { Value = 0.65, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 331, -13.5303 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						WheelSaturation1 = Input { Value = 0, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 433, 30.1061 } },
+				},
+				ColorCorrector2 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 548.333, -14.7424 } },
+				},
+				Background1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 408.667, 65.5454 } },
+				},
+				Merge2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 313.667, 74.9545 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 531.333, 84.9394 } },
+				},
+				Blur1 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "ZoomBlur1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 632.666, 25.5455 } },
+				},
+				Merge4 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 656.666, 67.9697 } },
+				},
+				Merge3 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Output",
+						},
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge4",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 640.666, 106.758 } },
+				},
+				ZoomBlur1 = ofx.com.blackmagicdesign.resolvefx.ZoomBlur {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "ColorCorrector2",
+							Source = "Output",
+						},
+						CenterXPos = Input { Value = 0.5, },
+						CenterYPos = Input { Value = 0.5, },
+						xyPosition = Input { Value = { 0.5, 0.5 }, },
+						SmoothStrength = Input { Value = 0.400000005960464, },
+						zoomAmount = Input { Value = 0.5, },
+						blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+						centerExclusion = Input { Value = 0, },
+						advancedControlsGroup = Input { Value = 0, },
+						BorderType = Input {
+							Value = FuID { "BORDER_TYPE_REPLICATE" },
+							Disabled = true,
+						},
+						isFollowSizing = Input { Value = 1, },
+						isBlurAlpha = Input { Value = 1, },
+						BlendAmount = Input { Value = 0, },
+						isUseLegacyPosition = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "2.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 768.333, -13.5303 } },
+				},
+				ekawa_ButtonMask = MacroOperator {
+					CtrlWShown = false,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						}
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Invert",
+							Name = "Button",
+							Default = 0,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Garbage.MaskInverted",
+							Name = "Invert control",
+							Default = 0,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "LumaKeyer1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 772.666, 42.5151 } },
+					Tools = ordered() {
+						LumaKeyer1_1 = LumaKeyer {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								Channel = Input { Value = 3, },
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								Input = Input {
+									SourceOp = "Background1_1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 62, 8.15153 } },
+						},
+						Background1_1 = Background {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								TopLeftAlpha = Input { Value = 0, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -62, 9.36363 } },
+						}
+					},
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaEffect_LightRays11"
+}

@@ -1,0 +1,181 @@
+{
+	Tools = ordered() {
+		Background1 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 10, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Radial" }, },
+				Start = Input { Value = { 0.5, 0.5 }, },
+				End = Input { Value = { 0.69, 0.5 }, },
+				Gradient = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 1, 1, 1, 1 },
+							[1] = { 0, 0, 0, 1 }
+						}
+					},
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 446.667, -75.0606 } },
+		},
+		ColorCurves1 = ColorCurves {
+			PickColor = true,
+			Inputs = {
+				Red = Input {
+					SourceOp = "ColorCurves1Red",
+					Source = "Value",
+				},
+				Green = Input {
+					SourceOp = "ColorCurves1Green",
+					Source = "Value",
+				},
+				Blue = Input {
+					SourceOp = "ColorCurves1Blue",
+					Source = "Value",
+				},
+				Alpha = Input {
+					SourceOp = "ColorCurves1Alpha",
+					Source = "Value",
+				},
+				NumberOfSamplesOnMatchCurve = Input { Value = 64, },
+				IgnoreTransparent = Input { Value = 1, },
+				Input = Input {
+					SourceOp = "Background1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 557.333, -54.4545 } },
+			Tools = {
+				ColorCurves1Red = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.188105117524205, 0.0133333333333335 } },
+							[1] = { 1, LH = { 1, 0.883809523809535 } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 52, Blue = 52 },
+					NameSet = true,
+				},
+				ColorCurves1Green = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.188105117524205, 0.0133333333333335 } },
+							[1] = { 1, LH = { 1, 0.883809523809535 } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 255, Blue = 0 },
+					NameSet = true,
+				},
+				ColorCurves1Blue = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.188105117524205, 0.0133333333333335 } },
+							[1] = { 1, LH = { 1, 0.883809523809535 } }
+						}
+					},
+					SplineColor = { Red = 68, Green = 68, Blue = 255 },
+					NameSet = true,
+				},
+				ColorCurves1Alpha = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.188105117524205, 0.0133333333333335 } },
+							[1] = { 1, LH = { 1, 0.883809523809535 } }
+						}
+					},
+					SplineColor = { Red = 204, Green = 204, Blue = 204 },
+					CtrlWZoom = false,
+					NameSet = true,
+				}
+			},
+		},
+		Unmult_1 = MacroOperator {
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "unmult",
+					Source = "Background",
+				},
+				Unmult = InstanceInput {
+					SourceOp = "unmult",
+					Source = "Unmult",
+					Page = "Controls",
+					Default = 1,
+				},
+				EffectMask = InstanceInput {
+					SourceOp = "unmult",
+					Source = "EffectMask",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "unmult",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 642.667, -39.9091 } },
+			Tools = ordered() {
+				unmult = ChannelBoolean {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						ToRed = Input { Value = 4, },
+						ToGreen = Input { Value = 4, },
+						ToBlue = Input { Value = 4, },
+						ToAlpha = Input {
+							Value = 4,
+							Expression = "iif(Unmult==1,13.0,4)",
+						},
+						Background = Input {
+							SourceOp = "ColorCurves1",
+							Source = "Output",
+						},
+						Unmult = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 8.75757 } },
+					UserControls = ordered() {
+						Unmult = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "CheckboxControl",
+							INP_MaxScale = 1,
+							INP_Default = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							ICS_ControlPage = "Controls",
+							CBC_TriState = false,
+							LINKS_Name = "Unmult"
+						}
+					}
+				}
+			},
+		},
+		Merge2 = Merge {
+			CtrlWZoom = false,
+			Inputs = {
+				Foreground = Input {
+					SourceOp = "unmult",
+					Source = "Output",
+				},
+				ApplyMode = Input { Value = FuID { "VividLight" }, },
+				BurnIn = Input { Value = 1, },
+				Edges = Input { Value = 2, },
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 534, 52.2121 } },
+		}
+	},
+	ActiveTool = "Merge2"
+}

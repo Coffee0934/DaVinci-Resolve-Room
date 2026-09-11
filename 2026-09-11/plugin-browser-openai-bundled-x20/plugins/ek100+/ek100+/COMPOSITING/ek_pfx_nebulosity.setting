@@ -1,0 +1,460 @@
+{
+	Tools = ordered() {
+		ek_pfx_nebulosity = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Center",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Default = 10,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Contrast",
+					Default = 0.92,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Brightness",
+					Default = -0.14,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "LockXY",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "XScale",
+					Default = 1.89,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "YScale",
+					Default = 2,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Angle",
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Seethe",
+					Default = 1.599,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "SeetheRate",
+					Default = 0.029,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Displace2",
+					Source = "Center",
+					Name = "Noise Direction",
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Displace2",
+					Source = "Offset",
+					Name = "Displace offset",
+					Default = -0.062,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Displace2",
+					Source = "RefractionStrength",
+					Name = "Displace strength",
+					Default = -1.28,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "multiplymask",
+					Source = "EffectMask",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "multiplymask",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { -0.034, 0.5 }, },
+						Detail = Input { Value = 10, },
+						Contrast = Input { Value = 0.92, },
+						Brightness = Input { Value = -0.14, },
+						XScale = Input { Value = 1.89, },
+						Seethe = Input { Value = 1.599, },
+						SeetheRate = Input { Value = 0.029, },
+						Type = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 311.526, 6.14104 } },
+				},
+				FastNoise1_1 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input {
+							Value = { -0.17, 2.5 },
+							Expression = "FastNoise1.Center*4/0.8",
+						},
+						Detail = Input { Value = 10, },
+						Contrast = Input {
+							Value = 0.92,
+							Expression = "FastNoise1.Contrast",
+						},
+						Brightness = Input {
+							Value = -0.14,
+							Expression = "FastNoise1.Brightness",
+						},
+						XScale = Input {
+							Value = 2.079,
+							Expression = "FastNoise1.XScale*1.1",
+						},
+						Angle = Input { Value = 93.9, },
+						Seethe = Input {
+							Value = 4.264,
+							Expression = "FastNoise1.Seethe*4/1.5",
+						},
+						SeetheRate = Input {
+							Value = 0.0435,
+							Expression = "FastNoise1.SeetheRate*1.5",
+						},
+						Type = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 447.29, -16.5704 } },
+				},
+				Background1 = Background {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 151.539, 65.0937 } },
+				},
+				CreateBumpMap1 = CreateBumpMap {
+					Inputs = {
+						Input = Input {
+							SourceOp = "FastNoise2",
+							Source = "Output",
+						},
+						ClampNormalZ = Input { Value = 1, },
+						HeightScale = Input { Value = 100, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 711.602, -0.715762 } },
+				},
+				Instance_FastNoise1_1 = FastNoise {
+					SourceOp = "FastNoise1_1",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						ImageNest = Input { },
+						["Gamut.ColorSpaceNest"] = Input { },
+						["Gamut.GammaSpaceNest"] = Input { },
+						NoiseNest = Input { },
+						Center = Input {
+							Value = { -0.113333333333333, 1.66666666666667 },
+							Expression = "FastNoise1.Center*2/0.6"
+						},
+						Contrast = Input { Expression = "FastNoise1.Contrast" },
+						Brightness = Input { Expression = "FastNoise1.Brightness" },
+						XScale = Input { Expression = "FastNoise1.XScale*1.1" },
+						Seethe = Input {
+							Value = 7.462,
+							Expression = "FastNoise1.Seethe*7/1.5"
+						},
+						SeetheRate = Input {
+							Value = 0.058,
+							Expression = "FastNoise1.SeetheRate*2"
+						},
+						Color1Nest = Input { },
+						Color2Nest = Input { },
+						GradientNest = Input { },
+						NoiseBrightnessMap = Input { },
+						NoiseDetailMap = Input { },
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { 585.883, -2.42994 } },
+				},
+				FastNoise2 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Contrast = Input { Value = 0.19, },
+						Brightness = Input { Value = 0.22, },
+						XScale = Input { Value = 3.94, },
+						Seethe = Input {
+							Value = 1.066,
+							Expression = "FastNoise1.Seethe/1.5",
+						},
+						Type = Input { Value = 1, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { -1, -1, -1, 1 },
+									[1] = { 1, 1, 1, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 707.197, -48.7133 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					Inputs = {
+						MasterRGBGain = Input { Value = 0, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 335.078, 92.708 } },
+				},
+				Displace1 = Displace {
+					Inputs = {
+						Type = Input { Value = 1, },
+						XChannel = Input { Value = 1, },
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input { Value = 0.1, },
+						YChannel = Input { Value = 0, },
+						YOffset = Input { Value = -0.5, },
+						YRefraction = Input { Value = 0.1, },
+						Input = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "CreateBumpMap1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 774.136, 96.1364 } },
+				},
+				Merge3 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Instance_FastNoise1_1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Multiply" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 665.078, 96.1364 } },
+				},
+				Merge1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 445.078, 95.2793 } },
+				},
+				Merge2 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise1_1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Multiply" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 555.078, 99.5648 } },
+				},
+				ekawaWarp_QuickDistort1 = MacroOperator {
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						MainInput1 = InstanceInput {
+							SourceOp = "Merge2_1",
+							Source = "Background",
+						},
+						Input1 = InstanceInput {
+							SourceOp = "Blur1",
+							Source = "XBlurSize",
+							Name = "Blur Amount",
+							Default = 100,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "Displace1_1_1",
+							Source = "YRefraction",
+							Name = "Distort Strength",
+							MinScale = -25,
+							MaxScale = 25,
+							Default = 0,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Displace1_1_1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 894.849, 95.2793 } },
+					Tools = ordered() {
+						Merge2_1 = Merge {
+							CtrlWShown = false,
+							Inputs = {
+								Background = Input {
+									SourceOp = "Displace1",
+									Source = "Output",
+								},
+								PerformDepthMerge = Input { Value = 0, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -114.333, 43.1368 } },
+						},
+						Blur1 = Blur {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								XBlurSize = Input { Value = 50.4, },
+								Input = Input {
+									SourceOp = "CreateBumpMap1_2",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 43, 47.0458 } },
+						},
+						CreateBumpMap1_2 = CreateBumpMap {
+							CtrlWShown = false,
+							Inputs = {
+								Input = Input {
+									SourceOp = "Merge2_1",
+									Source = "Output",
+								},
+								ClampNormalZ = Input { Value = 1, },
+								HeightScale = Input { Value = 100, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 113, 7.98483 } },
+						},
+						Displace1_1_1 = Displace {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								Type = Input { Value = 1, },
+								XOffset = Input { Value = -0.5, },
+								XRefraction = Input {
+									Value = -0.01,
+									Expression = "YRefraction",
+								},
+								YOffset = Input { Value = -0.5, },
+								YRefraction = Input { Value = -0.01, },
+								Offset = Input { Value = -0.5, },
+								RefractionStrength = Input { Value = 16, },
+								Input = Input {
+									SourceOp = "Merge2_1",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "Blur1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 79.667, 121.53 } },
+						}
+					},
+				},
+				Displace2 = Displace {
+					Inputs = {
+						Center = Input { Value = { 0.03, 0.92 }, },
+						Offset = Input { Value = -0.062, },
+						RefractionStrength = Input { Value = -1.28, },
+						Input = Input {
+							SourceOp = "Displace1_1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Displace1_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1004.85, 5.28395 } },
+				},
+				Merge4 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Displace1_1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Displace2",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "LinearDodge" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1016.75, 98.7077 } },
+				},
+				multiplymask = BrightnessContrast {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						MultiplyByMask = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Merge4",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1126.75, 101.279 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ek_pfx_nebulosity"
+}

@@ -1,0 +1,154 @@
+{
+	Tools = ordered() {
+		ekawaFramer_FastDPLuma1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "High",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "Low",
+					ControlGroup = 1,
+					Default = 0.5,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "DirectionalBlur1",
+					Source = "BlurStrength",
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "DirectionalBlur1",
+					Source = "BlurAngle",
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "XRefraction",
+					MinScale = -0.5,
+					MaxScale = 0.5,
+					Default = 0.076,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "YRefraction",
+					MinScale = -0.5,
+					MaxScale = 0.5,
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "BlendClone",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				LumaKeyer1 = LumaKeyer {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Low = Input { Value = 0.5, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MatteContrast = Input { Value = 1, },
+						MatteGamma = Input { Value = 1e-06, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -495.595, 13.0951 } },
+				},
+				DirectionalBlur1 = ofx.com.blackmagicdesign.resolvefx.DirectionalBlur {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+						Source = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+						BlurStrength = Input { Value = 0, },
+						BlurAngle = Input { Value = 0, },
+						advancedControlsGroup = Input { Value = 1, },
+						blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+						isSymmetric = Input { Value = 1, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_REFLECT" }, },
+						isBlurAlpha = Input { Value = 1, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "3.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -251.257, 119.703 } },
+				},
+				Displace1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+						Type = Input { Value = 1, },
+						Center = Input { Value = { 0.5, 0.506 }, },
+						XOffset = Input { Value = -0.5, },
+						XRefraction = Input { Value = 0.076, },
+						YOffset = Input { Value = -0.5, },
+						Offset = Input { Value = -0.5, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -377.257, 142.734 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -624.928, 171.883 } },
+				},
+				Merge2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "DirectionalBlur1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -141.257, 156.067 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaFramer_FastDPLuma1"
+}

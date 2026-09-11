@@ -1,0 +1,297 @@
+{
+	Tools = ordered() {
+		ekawaComposite_QuickParticles = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "Number",
+					Default = 10,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "Lifespan",
+					Default = 1000,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "Velocity",
+					Default = 0.024,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "VelocityVariance",
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "Angle",
+					Default = 23.5,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "AngleVariance",
+					Default = 151.3,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.Red",
+					Name = "Color",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.Green",
+					ControlGroup = 7,
+					Default = 0.3450980392157,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.Blue",
+					ControlGroup = 7,
+					Default = 0.1450980392157,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.Alpha",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.RedLow",
+					ControlGroup = 8,
+					Default = -1,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.RedHigh",
+					ControlGroup = 8,
+					Default = 0,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.GreenLow",
+					ControlGroup = 9,
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.GreenHigh",
+					ControlGroup = 9,
+					Default = 0,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.BlueLow",
+					ControlGroup = 10,
+					Default = 0.05,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.BlueHigh",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.AlphaLow",
+					ControlGroup = 11,
+					Default = 0,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.AlphaHigh",
+					ControlGroup = 11,
+					Default = 0,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.LockColorVariance",
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.Size",
+					Default = 0.614,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.SizeVariance",
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.FadeIn",
+					Name = "In",
+					ControlGroup = 15,
+					Default = 0,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.FadeOut",
+					Name = "Out",
+					ControlGroup = 15,
+					Default = 1,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "Region",
+				},
+				Input25 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "SphereRgn.Size",
+					Default = 0.953,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "SphereRgn.Translate.X",
+					Default = -0.3844011142061,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "SphereRgn.Translate.Y",
+					Default = -0.2266295480623,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "pRender1",
+					Source = "PreGenerateFrames",
+					Default = 0,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "pRender1",
+					Source = "KillParticlesThatLeaveTheView",
+					Default = 1,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "Glow2",
+					Source = "BlendClone",
+					Name = "Glow",
+					Default = 0.283,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Glow2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				pEmitter1 = pEmitter {
+					ID = 1,
+					Inputs = {
+						Number = Input {
+							SourceOp = "pEmitter1Number",
+							Source = "Value",
+						},
+						Lifespan = Input { Value = 1000, },
+						VelocityControls = Input { Value = 1, },
+						Velocity = Input { Value = 0.024, },
+						Angle = Input { Value = 23.5, },
+						AngleVariance = Input { Value = 151.3, },
+						Style = Input { Value = FuID { "ParticleStyleBlob" }, },
+						["SphereRgn.Size"] = Input { Value = 0.953, },
+						["SphereRgn.Translate.X"] = Input { Value = -0.3844011142061, },
+						["SphereRgn.Translate.Y"] = Input { Value = -0.2266295480623, },
+						["ParticleStyle.ColorControls"] = Input { Value = 1, },
+						["ParticleStyle.Green"] = Input { Value = 0.3450980392157, },
+						["ParticleStyle.Blue"] = Input { Value = 0.1450980392157, },
+						["ParticleStyle.ColorVariance"] = Input { Value = 1, },
+						["ParticleStyle.RedLow"] = Input { Value = -1, },
+						["ParticleStyle.BlueLow"] = Input { Value = 0.05, },
+						["ParticleStyle.BlueHigh"] = Input { Value = 1, },
+						["ParticleStyle.SizeControls"] = Input { Value = 1, },
+						["ParticleStyle.Size"] = Input { Value = 0.614, },
+						["ParticleStyle.SizeVariance"] = Input { Value = 1, },
+						["ParticleStyle.SizeOverLife"] = Input {
+							SourceOp = "pEmitter1SizeOverLife",
+							Source = "Value",
+						},
+						["ParticleStyle.BlurOverLife"] = Input {
+							SourceOp = "pEmitter1BlurOverLife2D",
+							Source = "Value",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 281.898, 42.0131 } },
+				},
+				pEmitter1Number = BezierSpline {
+					SplineColor = { Red = 233, Green = 206, Blue = 78 },
+					CtrlWZoom = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 200, RH = { 0.333333333333333, 133.333333333333 }, Flags = { Linear = true } },
+						[1] = { 0, LH = { 0.666666666666667, 66.6666666666667 }, Flags = { Linear = true } }
+					}
+				},
+				pEmitter1SizeOverLife = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+				},
+				pEmitter1BlurOverLife2D = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+				},
+				pRender1 = pRender {
+					Inputs = {
+						_MotionBlurWarning = Input { Disabled = true, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						OutputMode = Input {
+							Value = FuID { "TwoD" },
+							Disabled = true,
+						},
+						KillParticlesThatLeaveTheView = Input { Value = 1, },
+						["MaterialID.MaterialID"] = Input { Value = 2, },
+						["ObjectID.ObjectID"] = Input { Value = 2, },
+						Input = Input {
+							SourceOp = "pEmitter1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 444.565, 42.0131 } },
+				},
+				Glow1 = Glow {
+					Inputs = {
+						Blend = Input { Value = 0.37, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XGlowSize = Input { Value = 4.7, },
+						Input = Input {
+							SourceOp = "pRender1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 574.565, 39.5889 } },
+				},
+				Glow2 = Glow {
+					CtrlWZoom = false,
+					Inputs = {
+						Blend = Input { Value = 0.283, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XGlowSize = Input { Value = 15.7, },
+						Input = Input {
+							SourceOp = "Glow1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 716.565, 33.5283 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaComposite_QuickParticles"
+}

@@ -1,0 +1,114 @@
+{
+	Tools = ordered() {
+		ekawa_Shakelicious11_1 = MacroOperator {
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Macros:\\"
+					}
+				},
+			},
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "CameraShake1_2",
+					Source = "Input",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "CameraShake1_2",
+					Source = "OverallStrength",
+					Default = 1,
+				},
+				Input1 = InstanceInput {
+					SourceOp = "CameraShake1_2",
+					Source = "XDeviation",
+					Default = 0.2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "CameraShake1_2",
+					Source = "Speed",
+					Name = "X Speed",
+					Default = 0.8,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "CameraShake1_1_2",
+					Source = "YDeviation",
+					Default = 0.2,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "CameraShake1_1_2",
+					Source = "Speed",
+					Name = "Y Speed",
+					Default = 0.8,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "CameraShake1_1_1_1",
+					Source = "RotationDeviation",
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "CameraShake1_1_1_1",
+					Source = "Speed",
+					Name = "Rotation Speed",
+					Default = 0.8,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "CameraShake1_2",
+					Source = "InvertTransform",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "CameraShake1_1_1_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 239.333, -45.9697 } },
+			Tools = ordered() {
+				CameraShake1_2 = CameraShake {
+					CtrlWShown = false,
+					Inputs = {
+						YDeviation = Input { Value = 0, },
+						RotationDeviation = Input { Value = 0, },
+						Randomness = Input { Value = 0, },
+						Edges = Input { Value = 3, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -142.667, 8.76516 } },
+				},
+				CameraShake1_1_2 = CameraShake {
+					CtrlWShown = false,
+					Inputs = {
+						XDeviation = Input { Value = 0, },
+						RotationDeviation = Input { Value = 0, },
+						Randomness = Input { Value = 0, },
+						OverallStrength = Input { Expression = "CameraShake1_2.OverallStrength", },
+						Edges = Input { Value = 3, },
+						InvertTransform = Input { Expression = "CameraShake1_2.InvertTransform", },
+						Input = Input {
+							SourceOp = "CameraShake1_2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -20.334, 18.75 } },
+				},
+				CameraShake1_1_1_1 = CameraShake {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						XDeviation = Input { Value = 0, },
+						RotationDeviation = Input { Value = 0, },
+						Randomness = Input { Value = 0, },
+						OverallStrength = Input { Expression = "CameraShake1_2.OverallStrength", },
+						Edges = Input { Value = 3, },
+						InvertTransform = Input { Expression = "CameraShake1_2.InvertTransform", },
+						Input = Input {
+							SourceOp = "CameraShake1_1_2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 141, 11.4773 } },
+				}
+			},
+		}
+	}
+}

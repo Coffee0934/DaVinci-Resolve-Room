@@ -1,0 +1,120 @@
+{
+	Tools = ordered() {
+		ekawaFramer_ErDiBlending = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "ErodeDilate1",
+					Source = "Filter",
+					Name = "Type",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ErodeDilate1",
+					Source = "XAmount",
+					MinScale = -0.08,
+					MaxScale = 0.08,
+					Default = 0,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "ErodeDilate1",
+					Source = "YAmount",
+					MinScale = -0.08,
+					MaxScale = 0.08,
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "Background",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ApplyMode",
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ProcessRed",
+					Name = "Process",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ProcessGreen",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ProcessBlue",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ProcessAlpha",
+					ControlGroup = 7,
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				ErodeDilate1 = ErodeDilate {
+					Inputs = {
+						ApplyMaskInverted = Input { Value = 1, },
+						LockXY = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -692.564, 142.148 } },
+				},
+				Merge2 = Merge {
+					CtrlWZoom = false,
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -813.898, 171.238 } },
+				},
+				ErodeDilate1_1 = ErodeDilate {
+					Inputs = {
+						LockXY = Input { Value = 0, },
+						XAmount = Input { Expression = "-ErodeDilate1.XAmount", },
+						YAmount = Input { Expression = "-ErodeDilate1.YAmount", },
+						Input = Input {
+							SourceOp = "ErodeDilate1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -573.231, 142.148 } },
+				},
+				Merge1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ErodeDilate1_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -481.898, 196.693 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaFramer_ErDiBlending"
+}

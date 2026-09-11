@@ -1,0 +1,29 @@
+{
+	Tools = ordered() {
+		CameraShake1 = CameraShake {
+			CtrlWZoom = false,
+			Inputs = {
+				Edges = Input { Value = 3, },
+				Input = Input {
+					SourceOp = "DirectionalBlur1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 658, 67.9697 } },
+			UserControls = ordered() {
+				OverallStrength = {
+					LINKS_Name = "Overall Strength",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "SliderControl",
+					INP_Default = 1,
+					INP_Integer = false,
+					INP_MinScale = 0,
+					INP_MaxScale = 10,
+					INP_MinAllowed = 0,
+					INP_MaxAllowed = 10,
+					ICS_ControlPage = "Controls"
+				}
+			}
+		}
+	}
+}

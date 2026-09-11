@@ -1,0 +1,72 @@
+{
+	Tools = ordered() {
+		yug_DogVision1 = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "ChannelBooleans1",
+					Source = "Background",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "ChannelBooleans1",
+					Source = "ToGreen",
+					Name = "Channels",
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ChannelBooleans1",
+					Source = "Blend",
+					Name = "Blend Green",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "ChannelBooleans1_1_2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				ChannelBooleans1_1_2 = ChannelBoolean {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "ChannelBooleans1_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 880, 49.5 } },
+				},
+				ChannelBooleans1_1_1 = ChannelBoolean {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "ChannelBooleans1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 660, 49.5 } },
+				},
+				ChannelBooleans1_1 = ChannelBoolean {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "ChannelBooleans1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 440, 49.5 } },
+				},
+				ChannelBooleans1 = ChannelBoolean {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						ToRed = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 220, 49.5 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "yug_DogVision1"
+}

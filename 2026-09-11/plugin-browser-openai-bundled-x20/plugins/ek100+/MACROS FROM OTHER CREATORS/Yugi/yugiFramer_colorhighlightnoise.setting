@@ -1,0 +1,447 @@
+{
+	Tools = ordered() {
+		yugiFramer_colorhighlightnoise1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Name = "fastnoise Detail",
+					Default = 2,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Contrast",
+					Name = "fastnoise Contrast",
+					Default = 2.104,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Brightness",
+					Name = "fastnoise Brightness",
+					Default = 0.185,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "XScale",
+					Name = "fastnoise Scale",
+					Default = 1.98,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "SeetheRate",
+					Name = "fastnoise Seethe Rate",
+					Default = 0.804,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "InvertColor1",
+					Source = "isInvertR",
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "InvertColor1",
+					Source = "isInvertG",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "InvertColor1",
+					Source = "isInvertB",
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ZoomBlur1",
+					Source = "SmoothStrength",
+					Name = "zoomblur Strength",
+					Default = 0.638,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ZoomBlur1",
+					Source = "blurTypeChoice",
+					Name = "zoomblur Type",
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "Background",
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue1",
+					ControlGroup = 12,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation1",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle1",
+					ControlGroup = 12,
+					Default = -0.4262081911748,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength1",
+					ControlGroup = 12,
+					Default = 0.4207,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelRangeDummy1",
+					ControlGroup = 12,
+					Default = 0,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue2",
+					ControlGroup = 12,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation2",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle2",
+					ControlGroup = 12,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength2",
+					ControlGroup = 12,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue3",
+					ControlGroup = 12,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation3",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle3",
+					ControlGroup = 12,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength3",
+					ControlGroup = 12,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue4",
+					ControlGroup = 12,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation4",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle4",
+					ControlGroup = 12,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength4",
+					ControlGroup = 12,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBGain",
+					Name = "Gain",
+					Default = 0.99,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "MasterRGBGamma",
+					Name = "Gamma",
+					Default = 0.206,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "Grain1",
+					Source = "Power",
+					Name = "Grain Power",
+					Default = 5,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "Grain1",
+					Source = "Blend",
+					Name = "Grain Blend",
+					Default = 0,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "Center",
+				},
+				Input33 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "Size",
+					Default = 1,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "Edges",
+					Default = 3,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "ApplyMode",
+				},
+				Input37 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "Merge3",
+					Source = "EffectMask",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge3",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Contrast = Input { Value = 2.104, },
+						Brightness = Input { Value = 0.185, },
+						XScale = Input { Value = 1.98, },
+						Seethe = Input { Value = 0.206, },
+						SeetheRate = Input { Value = 0.804, },
+						Color2Red = Input { Value = 0, },
+						Color2Green = Input { Value = 0, },
+						Color2Blue = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, 49.5 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, 115.5 } },
+				},
+				InvertColor1 = ofx.com.blackmagicdesign.resolvefx.InvertColor {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						isInvertR = Input { Value = 1, },
+						isInvertG = Input { Value = 1, },
+						isInvertB = Input { Value = 1, },
+						isInvertA = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -165, 115.5 } },
+				},
+				ZoomBlur1 = ofx.com.blackmagicdesign.resolvefx.ZoomBlur {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "InvertColor1",
+							Source = "Output",
+						},
+						CenterXPos = Input { Value = 0.5, },
+						CenterYPos = Input { Value = 0.5, },
+						xyPosition = Input { Value = { 0.5, 0.5 }, },
+						SmoothStrength = Input { Value = 0.638, },
+						zoomAmount = Input { Value = 0.400000005960464, },
+						blurTypeChoice = Input { Value = FuID { "BlurTypeStylized" }, },
+						centerExclusion = Input { Value = 0, },
+						advancedControlsGroup = Input { Value = 0, },
+						BorderType = Input {
+							Value = FuID { "BORDER_TYPE_REPLICATE" },
+							Disabled = true,
+						},
+						isFollowSizing = Input { Value = 1, },
+						isBlurAlpha = Input { Value = 1, },
+						BlendAmount = Input { Value = 0, },
+						isUseLegacyPosition = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "2.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -55, 115.5 } },
+				},
+				Merge2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -440, 214.5 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						WheelTintAngle1 = Input { Value = -0.4262081911748, },
+						WheelTintLength1 = Input { Value = 0.4207, },
+						MasterRGBGain = Input { Value = 0.99, },
+						MasterRGBGamma = Input { Value = 0.206, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "ZoomBlur1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 55, 115.5 } },
+				},
+				ErodeDilate1 = ErodeDilate {
+					CtrlWShown = false,
+					Inputs = {
+						LockXY = Input { Value = 0, },
+						XAmount = Input { Value = 0.05, },
+						Input = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 165, 115.5 } },
+				},
+				Grain1 = Grain {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0, },
+						Red = Input {
+							SourceOp = "Grain1Red",
+							Source = "Value",
+						},
+						Green = Input {
+							SourceOp = "Grain1Green",
+							Source = "Value",
+						},
+						Blue = Input {
+							SourceOp = "Grain1Blue",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "ErodeDilate1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 330, 115.5 } },
+				},
+				Grain1Red = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 1, RH = { 0.333333333333333, 1 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 1 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 0, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				Grain1Green = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 1, RH = { 0.333333333333333, 1 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 1 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 0, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				Grain1Blue = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 1, RH = { 0.333333333333333, 1 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 1 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 0, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				Transform1 = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Edges = Input { Value = 3, },
+						Input = Input {
+							SourceOp = "Grain1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 495, 115.5 } },
+				},
+				Merge3 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Hard Light" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 605, 115.5 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "yugiFramer_colorhighlightnoise1"
+}

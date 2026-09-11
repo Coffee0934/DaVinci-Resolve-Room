@@ -1,0 +1,283 @@
+{
+	Tools = ordered() {
+		ekawaTool_FastLine11 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "Type",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopLeftGreen",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopLeftBlue",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopLeftAlpha",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopRightRed",
+					Name = "Top Right",
+					ControlGroup = 3,
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopRightGreen",
+					ControlGroup = 3,
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopRightBlue",
+					ControlGroup = 3,
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopRightAlpha",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomLeftRed",
+					Name = "Bottom Left",
+					ControlGroup = 4,
+					Default = 0,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomLeftGreen",
+					ControlGroup = 4,
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomLeftBlue",
+					ControlGroup = 4,
+					Default = 0,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomLeftAlpha",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomRightRed",
+					Name = "Bottom Right",
+					ControlGroup = 5,
+					Default = 0,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomRightGreen",
+					ControlGroup = 5,
+					Default = 0,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomRightBlue",
+					ControlGroup = 5,
+					Default = 0,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "BottomRightAlpha",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Blur1",
+					Source = "XBlurSize",
+					Default = 0,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Glow1",
+					Source = "BlendClone",
+					Name = "Glow",
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "BorderWidth",
+					Default = 0.0017,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "WriteLength",
+					Name = "Length (Animation)",
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "Center",
+				},
+				Input23 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "Size",
+					Name = "Length",
+					Default = 5,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "ZRotation",
+					Name = "Rotation",
+					Default = 0,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "BlendClone",
+					Name = "Show effect only",
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				Input27 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ApplyMode",
+				},
+				Input28 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "EffectMask",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Background2 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon1",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 283.333, -31.4243 } },
+				},
+				Blur1 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Background2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 308.666, 0.363625 } },
+				},
+				Glow1 = Glow {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XGlowSize = Input { Value = 59.8, },
+						ApplyMode = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 308.666, 33.3636 } },
+				},
+				Polygon1 = PolylineMask {
+					DrawMode = "ClickAppend",
+					DrawMode2 = "InsertAndModify",
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						BorderWidth = Input { Value = 0.0017, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Size = Input { Value = 5, },
+						Polyline = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, X = -0.5, Y = -0.500028254972875, RX = 0.333333801597765, RY = 0.333344000362094 },
+									{ Linear = true, X = 0.500001404793295, Y = 0.500003746113407, LX = -0.333333801597765, LY = -0.333344000362094 }
+								}
+							},
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 556.666, -8.39397 } },
+				},
+				Merge2 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0, },
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Glow1",
+							Source = "Output",
+						},
+						Operator = Input { Value = FuID { "In" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 430, 95.8484 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "Glow1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 316.943, 95.4934 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ekawaTool_FastLine11"
+}

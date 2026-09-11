@@ -1,0 +1,305 @@
+{
+	Tools = ordered() {
+		ek_efx_stars = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Center",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Detail",
+					Default = 160,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Contrast",
+					Default = 5.44,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Brightness",
+					Default = -4,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "LockXY",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "XScale",
+					Default = 20,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "YScale",
+					Default = 20,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Angle",
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Seethe",
+					Default = 0.674,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "SeetheRate",
+					Default = 0,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "FastNoise1",
+					Source = "Discontinuous",
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ek_pfx_TurbDisplace",
+					Source = "Input7",
+					Name = "Scatter",
+					Default = 0,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Highlight1",
+					Source = "Low",
+					ControlGroup = 13,
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Highlight1",
+					Source = "High",
+					ControlGroup = 13,
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Highlight1",
+					Source = "Curve",
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Highlight1",
+					Source = "Length",
+					Default = 0.795,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Highlight1",
+					Source = "NumberOfPoints",
+					Default = 4,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Highlight1",
+					Source = "Angle",
+					Default = 0,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Highlight1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 160, },
+						Contrast = Input { Value = 5.44, },
+						Brightness = Input { Value = -4, },
+						XScale = Input { Value = 20, },
+						YScale = Input { Value = 20, },
+						Seethe = Input { Value = 0.674, },
+						Type = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -564.033, 246.532 } },
+				},
+				ek_pfx_TurbDisplace = MacroOperator {
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "Detail",
+							Name = "Noise Detail",
+							Default = 3,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "LockXY",
+							Default = 1,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "XScale",
+							Default = 2.2,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "YScale",
+							Default = 2,
+						},
+						Input5 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "Seethe",
+							Default = 0,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "FastNoise1_1",
+							Source = "SeetheRate",
+							Default = 0,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "ColorCorrector1",
+							Source = "MasterRGBContrast",
+							Name = "Contrast",
+							Default = 1,
+						},
+						MainInput1 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "Input",
+						},
+						Input8 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "Type",
+							Default = 1,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "RefractionStrength",
+							Default = 2,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Displace1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { -450.7, 247.744 } },
+					Tools = ordered() {
+						FastNoise1_1 = FastNoise {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Detail = Input { Value = 10, },
+								XScale = Input { Value = 2.83, },
+								Seethe = Input { Value = 0.478, },
+								Type = Input { Value = 1, },
+								Color1Red = Input { Value = -1, },
+								Color1Green = Input { Value = -1, },
+								Color1Blue = Input { Value = -1, },
+								Gradient = Input {
+									Value = Gradient {
+										Colors = {
+											[0] = { -1, -1, -1, 1 },
+											[1] = { 1, 1, 1, 1 }
+										}
+									},
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -17.667, 8.75758 } },
+						},
+						CreateBumpMap1 = CreateBumpMap {
+							CtrlWShown = false,
+							Inputs = {
+								Input = Input {
+									SourceOp = "FastNoise1_1",
+									Source = "Output",
+								},
+								ClampNormalZ = Input { Value = 1, },
+								HeightScale = Input { Value = 100, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 4.33301, 74.7576 } },
+						},
+						ColorCorrector1 = ColorCorrector {
+							CtrlWShown = false,
+							Inputs = {
+								MasterRGBContrast = Input { Value = 0, },
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "CreateBumpMap1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 3, 107.758 } },
+						},
+						Displace1 = Displace {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								Type = Input { Value = 1, },
+								Channel = Input { Value = 1, },
+								XChannel = Input { Value = 1, },
+								XOffset = Input { Value = -0.5, },
+								XRefraction = Input { Value = 0.1, },
+								YChannel = Input { Value = 0, },
+								YOffset = Input { Value = -0.5, },
+								YRefraction = Input { Value = 0.1, },
+								Offset = Input { Value = -0.5, },
+								RefractionStrength = Input { Value = 2, },
+								Input = Input {
+									SourceOp = "FastNoise1",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "ColorCorrector1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 16, 140.758 } },
+						}
+					},
+				},
+				Highlight1 = Highlight {
+					CtrlWZoom = false,
+					Inputs = {
+						Low = Input { Value = 0, },
+						Length = Input { Value = 0.795, },
+						Input = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -343.366, 252.32 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ek_efx_stars"
+}

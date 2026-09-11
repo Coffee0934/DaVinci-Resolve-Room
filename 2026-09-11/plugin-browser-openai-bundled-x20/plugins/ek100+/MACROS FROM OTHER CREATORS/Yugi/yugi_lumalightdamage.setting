@@ -1,0 +1,1499 @@
+{
+	Tools = ordered() {
+		yugi_lumalightdamage = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "Background",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "Channel",
+					Name = "Luma Channel",
+					Default = 4,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "High",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "Low",
+					ControlGroup = 3,
+					Default = 0.183,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "Filter",
+					Name = "Luma Filter",
+				},
+				Input5 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "MatteBlur",
+					Name = "Luma Blur",
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "LumaKeyer1",
+					Source = "MatteGamma",
+					Name = "Luma Gamma",
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue1",
+					ControlGroup = 7,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation1",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle1",
+					ControlGroup = 7,
+					Default = -0.3805910036795,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength1",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelRangeDummy1",
+					ControlGroup = 7,
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue2",
+					ControlGroup = 7,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation2",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle2",
+					ControlGroup = 7,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength2",
+					ControlGroup = 7,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue3",
+					ControlGroup = 7,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation3",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle3",
+					ControlGroup = 7,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength3",
+					ControlGroup = 7,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelHue4",
+					ControlGroup = 7,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelSaturation4",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintAngle4",
+					ControlGroup = 7,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "WheelTintLength4",
+					ControlGroup = 7,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "JPEGDamage1",
+					Source = "ofxQuality",
+					Default = 23.27,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "JPEGDamage1",
+					Source = "Resolution",
+					Default = 6.62,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "JPEGDamage1",
+					Source = "AspectRatio",
+					Default = 1.074,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "JPEGDamage1",
+					Source = "FrequencyScale",
+					Default = 1.26,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "SoftGlow1",
+					Source = "Gain",
+					Default = 2,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "SoftGlow1",
+					Source = "XGlowSize",
+					Default = 100,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "MosaicBlur1",
+					Source = "PixelFrequency",
+					MinScale = 0.2000000029802,
+					Default = 179.5,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "Emboss1",
+					Source = "power",
+					Name = "Emboss Power",
+					Default = 10,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "Emboss1",
+					Source = "angle",
+					Name = "Emboss Angle",
+					Default = 277.8,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ApplyMode",
+				},
+				Input35 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "Sharpen1",
+					Source = "XAmount",
+					Default = 0,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "ekawa_TurbDisplace",
+					Source = "Input4",
+					Name = "Turbdisplace Strength",
+					Default = 0.166,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "ekawaPixelSort1",
+					Source = "Input1",
+					Name = "Pixelsort Rotate",
+					Default = 90,
+				},
+				Input39 = InstanceInput {
+					SourceOp = "ekawaPixelSort1",
+					Source = "Input3",
+					Name = "Pixelsort X",
+					Default = 0.006,
+				},
+				Input40 = InstanceInput {
+					SourceOp = "ekawaPixelSort1",
+					Source = "Input5",
+					Name = "Pixelsort Y ",
+					Default = 0,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "EffectMask",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Merge2 = Merge {
+					Inputs = {
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -1430, 115.5 } },
+				},
+				LumaKeyer1 = LumaKeyer {
+					Inputs = {
+						Low = Input { Value = 0.183, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Input = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -1265, -16.5 } },
+				},
+				ColorCorrector1 = ColorCorrector {
+					Inputs = {
+						WheelTintAngle1 = Input { Value = -0.3805910036795, },
+						WheelTintLength1 = Input { Value = 1, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "SoftGlow1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -1045, -16.5 } },
+				},
+				JPEGDamage1 = ofx.com.blackmagicdesign.resolvefx.JPEGDamage {
+					Inputs = {
+						Source = Input {
+							SourceOp = "MosaicBlur1",
+							Source = "Output",
+						},
+						ofxQuality = Input { Value = 23.27, },
+						Resolution = Input { Value = 6.62, },
+						AspectRatio = Input { Value = 1.074, },
+						FrequencyScale = Input { Value = 1.26, },
+						FrequencyType = Input { Value = FuID { "FREQUENCY_TYPE_XY" }, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -825, -16.5 } },
+				},
+				SoftGlow1 = SoftGlow {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XGlowSize = Input { Value = 100, },
+						Input = Input {
+							SourceOp = "LumaKeyer1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -1155, -16.5 } },
+				},
+				MosaicBlur1 = ofx.com.blackmagicdesign.resolvefx.MosaicBlur {
+					Inputs = {
+						Source = Input {
+							SourceOp = "ColorCorrector1",
+							Source = "Output",
+						},
+						PixelFrequency = Input { Value = 179.5, },
+						SmoothStrength = Input { Value = 0, },
+						cellShape = Input { Value = FuID { "CellShapeSquare" }, },
+						aliasing = Input { Value = 1, },
+						advancedControlsGroup = Input { Value = 0, },
+						xOffset = Input { Value = 0, },
+						yOffset = Input { Value = 0, },
+						aspect = Input { Value = 1, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_REFLECT" }, },
+						isAntiAlias = Input { Value = 0, },
+						isBlurAlpha = Input { Value = 1, },
+						isBinarizeAlpha = Input { Value = 0, },
+						isLegacyMethod = Input { Value = 0, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "3.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -935, -16.5 } },
+				},
+				Emboss1 = ofx.com.blackmagicdesign.resolvefx.Emboss {
+					CtrlWZoom = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "JPEGDamage1",
+							Source = "Output",
+						},
+						embossStyle = Input { Value = FuID { "EMBOSS_MODE_EMBOSSOVER" }, },
+						power = Input { Value = 10, },
+						angle = Input { Value = 277.8, },
+						enableChannels = Input { Value = 1, },
+						useRedChannel = Input { Value = 1, },
+						useGreenChannel = Input { Value = 1, },
+						useBlueChannel = Input { Value = 1, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -715, -16.5 } },
+				},
+				Merge1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Instance_Instance_Instance_Instance_Displace2_1",
+							Source = "Output",
+						},
+						Operator = Input { Value = FuID { "In" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -605, 115.5 } },
+				},
+				Sharpen1 = Sharpen {
+					Inputs = {
+						XAmount = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Emboss1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -605, -16.5 } },
+				},
+				ekawa_TurbDisplace = MacroOperator {
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "FastNoise1",
+							Source = "Detail",
+							Default = 2,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "FastNoise1",
+							Source = "XScale",
+							Default = 2,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "FastNoise1",
+							Source = "SeetheRate",
+							Default = 0,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "ColorCorrector2",
+							Source = "MasterRGBContrast",
+							Name = "Overall Strength",
+							Default = 1,
+						},
+						MainInput1 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "Input",
+						},
+						Input5 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "XRefraction",
+							Default = 0.1,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "YRefraction",
+							Default = 0.1,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "Blend",
+							Default = 1,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "ProcessRed",
+							Name = "Process",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "ProcessGreen",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "ProcessBlue",
+							ControlGroup = 9,
+							Default = 1,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "Displace1",
+							Source = "ProcessAlpha",
+							ControlGroup = 9,
+							Default = 1,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Displace1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { -605, 16.5 } },
+					Tools = ordered() {
+						FastNoise1 = FastNoise {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Color1Red = Input { Value = -1, },
+								Color1Green = Input { Value = -1, },
+								Color1Blue = Input { Value = -1, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -106.864, 8.54678 } },
+						},
+						CreateBumpMap1 = CreateBumpMap {
+							CtrlWShown = false,
+							Inputs = {
+								Input = Input {
+									SourceOp = "FastNoise1",
+									Source = "Output",
+								},
+								ClampNormalZ = Input { Value = 1, },
+								HeightScale = Input { Value = 100, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -5.88498, 46.2591 } },
+						},
+						ColorCorrector2 = ColorCorrector {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								MasterRGBContrast = Input { Value = 0.166, },
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "CreateBumpMap1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 106, 46.2591 } },
+						},
+						Displace1 = Displace {
+							CtrlWShown = false,
+							Inputs = {
+								Type = Input { Value = 1, },
+								XChannel = Input { Value = 1, },
+								XOffset = Input { Value = -0.5, },
+								XRefraction = Input { Value = 0.1, },
+								YChannel = Input { Value = 0, },
+								YOffset = Input { Value = -0.5, },
+								YRefraction = Input { Value = 0.1, },
+								Offset = Input { Value = -0.5, },
+								Input = Input {
+									SourceOp = "Sharpen1",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "ColorCorrector2",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 62.533, 110.968 } },
+						}
+					},
+				},
+				ekawaPixelSort1 = MacroOperator {
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Macros:\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						MainInput1 = InstanceInput {
+							SourceOp = "ekawaPixelSort11",
+							Source = "MainInput1",
+						},
+						Input1 = InstanceInput {
+							SourceOp = "ekawaPixelSort11",
+							Source = "Input1",
+							MinScale = -180,
+							MaxScale = 90,
+							Default = 0,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "ekawaPixelSort11",
+							Source = "Input2",
+						},
+						Input3 = InstanceInput {
+							SourceOp = "ekawaPixelSort11",
+							Source = "Input3",
+						},
+						Input4 = InstanceInput {
+							SourceOp = "ekawaPixelSort11",
+							Source = "Input4",
+						},
+						Input5 = InstanceInput {
+							SourceOp = "ekawaPixelSort11",
+							Source = "Input5",
+							Default = 0,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "ekawaPixelSort11",
+							Source = "Input6",
+							Default = 1,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "ekawaPixelSort11",
+							Source = "Input7",
+							ControlGroup = 8,
+							Default = 1,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "ekawaPixelSort11",
+							Source = "Input8",
+							ControlGroup = 8,
+							Default = 1,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "ekawaPixelSort11",
+							Source = "Input9",
+							ControlGroup = 8,
+							Default = 1,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "ekawaPixelSort11",
+							Source = "Input10",
+							ControlGroup = 8,
+							Default = 1,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "ekawaPixelSort11",
+							Source = "MainOutput1",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { -605, 49.5 } },
+					Tools = ordered() {
+						ekawaPixelSort11 = MacroOperator {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							CustomData = {
+								Path = {
+									Map = {
+										["Setting:"] = "Macros:\\"
+									}
+								}
+							},
+							Inputs = ordered() {
+								Input1 = InstanceInput {
+									SourceOp = "Transform1_1",
+									Source = "rotate",
+									MinScale = 0,
+									Default = 0,
+								},
+								Input2 = InstanceInput {
+									SourceOp = "Displace2_1",
+									Source = "XOffset",
+								},
+								Input3 = InstanceInput {
+									SourceOp = "Displace2_1",
+									Source = "XRefraction",
+								},
+								Input4 = InstanceInput {
+									SourceOp = "Displace2_1",
+									Source = "YOffset",
+								},
+								Input5 = InstanceInput {
+									SourceOp = "Displace2_1",
+									Source = "YRefraction",
+									Default = 0.013,
+								},
+								Input6 = InstanceInput {
+									SourceOp = "Displace2_1",
+									Source = "Blend",
+									Default = 1,
+								},
+								Input7 = InstanceInput {
+									SourceOp = "Displace2_1",
+									Source = "ProcessRed",
+									Name = "RGB Split",
+									ControlGroup = 7,
+									Default = 1,
+								},
+								Input8 = InstanceInput {
+									SourceOp = "Displace2_1",
+									Source = "ProcessGreen",
+									ControlGroup = 7,
+									Default = 1,
+								},
+								Input9 = InstanceInput {
+									SourceOp = "Displace2_1",
+									Source = "ProcessBlue",
+									ControlGroup = 7,
+									Default = 1,
+								},
+								Input10 = InstanceInput {
+									SourceOp = "Displace2_1",
+									Source = "ProcessAlpha",
+									ControlGroup = 7,
+									Default = 1,
+								},
+								MainInput1 = InstanceInput {
+									SourceOp = "Merge2_1",
+									Source = "Background",
+								}
+							},
+							Outputs = {
+								MainOutput1 = InstanceOutput {
+									SourceOp = "Instance_Instance_Instance_Instance_Displace2_1",
+									Source = "Output",
+								}
+							},
+							ViewInfo = GroupInfo { Pos = { 0, 8.75757 } },
+							Tools = ordered() {
+								PipeRouter2_1 = PipeRouter {
+									CtrlWShown = false,
+									Inputs = {
+										Input = Input {
+											SourceOp = "Merge2_1",
+											Source = "Output",
+										},
+									},
+									ViewInfo = PipeRouterInfo { Pos = { -1287.34, 257.606 } },
+								},
+								Instance_Instance_Instance_Instance_FastNoise1_1_1 = FastNoise {
+									CtrlWZoom = false,
+									CtrlWShown = false,
+									Inputs = {
+										Width = Input { Value = 1920, },
+										Height = Input { Value = 1080, },
+										UseFrameFormatSettings = Input { Value = 1, },
+										["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+										Contrast = Input { Value = 5, },
+										Brightness = Input { Value = 1, },
+										LockXY = Input { Value = 0, },
+										XScale = Input { Value = 2000, },
+										YScale = Input { Value = 0, },
+										Seethe = Input { Value = 300, },
+									},
+									ViewInfo = OperatorInfo { Pos = { 1466, 7.90898 } },
+								},
+								Instance_Instance_Instance_Instance_FastNoise1_2 = FastNoise {
+									CtrlWShown = false,
+									Inputs = {
+										Width = Input { Value = 1920, },
+										Height = Input { Value = 1080, },
+										UseFrameFormatSettings = Input { Value = 1, },
+										["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+										Contrast = Input { Value = 5, },
+										Brightness = Input { Value = -1, },
+										LockXY = Input { Value = 0, },
+										XScale = Input { Value = 2000, },
+										YScale = Input { Value = 0, },
+										Seethe = Input { Value = 300, },
+									},
+									ViewInfo = OperatorInfo { Pos = { 1107.33, 12.7574 } },
+								},
+								Instance_Instance_Instance_FastNoise1_1_1 = FastNoise {
+									CtrlWShown = false,
+									Inputs = {
+										Width = Input { Value = 1920, },
+										Height = Input { Value = 1080, },
+										UseFrameFormatSettings = Input { Value = 1, },
+										["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+										Contrast = Input { Value = 5, },
+										Brightness = Input { Value = 1, },
+										LockXY = Input { Value = 0, },
+										XScale = Input { Value = 2000, },
+										YScale = Input { Value = 0, },
+										Seethe = Input { Value = 100, },
+									},
+									ViewInfo = OperatorInfo { Pos = { 778, 20.0304 } },
+								},
+								Instance_Instance_Instance_Instance_Instance_Transform1_1 = ofx.com.blackmagicdesign.resolvefx.Transform {
+									CtrlWShown = false,
+									SourceOp = "Instance_Instance_Instance_Instance_Transform1_1_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Source = Input {
+											SourceOp = "Instance_Instance_Instance_Instance_Merge1_1",
+											Source = "Output",
+										},
+										SourceTo = Input { },
+										controlReset = Input { Value = 0, },
+										controlGroup = Input { Value = 1, },
+										adjustGroup = Input { Value = 0, },
+										animationGroup = Input { Value = 0, },
+										advancedGroup = Input { Value = 1, },
+										blendGroup = Input { Value = 0, },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { 1318, 125.484 } },
+								},
+								Instance_Instance_Instance_FastNoise1_2 = FastNoise {
+									CtrlWShown = false,
+									Inputs = {
+										Width = Input { Value = 1920, },
+										Height = Input { Value = 1080, },
+										UseFrameFormatSettings = Input { Value = 1, },
+										["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+										Contrast = Input { Value = 5, },
+										Brightness = Input { Value = -1, },
+										LockXY = Input { Value = 0, },
+										XScale = Input { Value = 2000, },
+										YScale = Input { Value = 0, },
+										Seethe = Input { Value = 100, },
+									},
+									ViewInfo = OperatorInfo { Pos = { 419.33, 24.8787 } },
+								},
+								Instance_Instance_Instance_Instance_Transform1_2 = ofx.com.blackmagicdesign.resolvefx.Transform {
+									CtrlWShown = false,
+									SourceOp = "Instance_Instance_Instance_Transform1_1_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Source = Input {
+											SourceOp = "Instance_Instance_Instance_Merge1_1",
+											Source = "Output",
+										},
+										SourceTo = Input { },
+										controlReset = Input { Value = 0, },
+										controlGroup = Input { Value = 1, },
+										adjustGroup = Input { Value = 0, },
+										animationGroup = Input { Value = 0, },
+										advancedGroup = Input { Value = 1, },
+										blendGroup = Input { Value = 0, },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { 628.67, 137.605 } },
+								},
+								Instance_Instance_Instance_Instance_Transform1_1_1 = ofx.com.blackmagicdesign.resolvefx.Transform {
+									CtrlWShown = false,
+									SourceOp = "Instance_Instance_Instance_Transform1_1_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Source = Input {
+											SourceOp = "Instance_Instance_Instance_Instance_FastNoise1_1_1",
+											Source = "Output",
+										},
+										SourceTo = Input { },
+										controlReset = Input { Value = 0, },
+										controlGroup = Input { Value = 1, },
+										adjustGroup = Input { Value = 0, },
+										animationGroup = Input { Value = 0, },
+										advancedGroup = Input { Value = 1, },
+										blendGroup = Input { Value = 0, },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { 1461.99, 84.2715 } },
+								},
+								Instance_Instance_FastNoise1_1_1 = FastNoise {
+									CtrlWShown = false,
+									Inputs = {
+										Width = Input { Value = 1920, },
+										Height = Input { Value = 1080, },
+										UseFrameFormatSettings = Input { Value = 1, },
+										["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+										Contrast = Input { Value = 5, },
+										Brightness = Input { Value = 1, },
+										LockXY = Input { Value = 0, },
+										XScale = Input { Value = 2000, },
+										YScale = Input { Value = 0, },
+										Seethe = Input { Value = 10, },
+									},
+									ViewInfo = OperatorInfo { Pos = { 243.33, 13.97 } },
+								},
+								Instance_Instance_Instance_Instance_Displace2_1 = Displace {
+									CtrlWShown = false,
+									SourceOp = "Instance_Instance_Instance_Displace2_1",
+									Inputs = {
+										EffectMask = Input {
+											SourceOp = "Instance_Instance_Instance_Instance_Transform1_1_1",
+											Source = "Output",
+										},
+										SettingsNest = Input { },
+										Input = Input {
+											SourceOp = "Instance_Instance_Instance_Displace2_1",
+											Source = "Output",
+										},
+										Foreground = Input {
+											SourceOp = "Instance_Instance_Instance_Instance_Instance_Transform1_1",
+											Source = "Output",
+										},
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { 1372.66, 233.363 } },
+								},
+								Instance_Instance_Instance_Instance_Merge1_1 = Merge {
+									CtrlWShown = false,
+									SourceOp = "Instance_Instance_Instance_Merge1_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Background = Input {
+											SourceOp = "Instance_Instance_Instance_Instance_FastNoise1_2",
+											Source = "Output",
+										},
+										Foreground = Input {
+											SourceOp = "Instance_Instance_Instance_Instance_Merge2_1",
+											Source = "Output",
+										},
+										Merge = Input { },
+										Channels = Input { },
+										ReferenceSize = Input { },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { 1188.66, 124.271 } },
+								},
+								Instance_Instance_FastNoise1_2 = FastNoise {
+									CtrlWShown = false,
+									Inputs = {
+										Width = Input { Value = 1920, },
+										Height = Input { Value = 1080, },
+										UseFrameFormatSettings = Input { Value = 1, },
+										["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+										Contrast = Input { Value = 5, },
+										Brightness = Input { Value = -1, },
+										LockXY = Input { Value = 0, },
+										XScale = Input { Value = 2000, },
+										YScale = Input { Value = 0, },
+										Seethe = Input { Value = 10, },
+									},
+									ViewInfo = OperatorInfo { Pos = { -122.01, 20.0304 } },
+								},
+								Instance_Instance_Instance_Instance_Merge2_1 = Merge {
+									CtrlWShown = false,
+									SourceOp = "Instance_Instance_Instance_Merge2_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Background = Input { },
+										Foreground = Input {
+											SourceOp = "Instance_Instance_Instance_Displace2_1",
+											Source = "Output",
+										},
+										Merge = Input { },
+										Channels = Input { },
+										ReferenceSize = Input { },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { 1040.66, 200.635 } },
+								},
+								Instance_FastNoise1_1_1 = FastNoise {
+									CtrlWShown = false,
+									Inputs = {
+										Width = Input { Value = 1920, },
+										Height = Input { Value = 1080, },
+										UseFrameFormatSettings = Input { Value = 1, },
+										["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+										Contrast = Input { Value = 5, },
+										Brightness = Input { Value = 1, },
+										LockXY = Input { Value = 0, },
+										XScale = Input { Value = 1290, },
+										YScale = Input { Value = 0, },
+										Seethe = Input { Value = 5, },
+									},
+									ViewInfo = OperatorInfo { Pos = { -524.673, 21.2426 } },
+								},
+								Instance_Instance_Instance_Transform1_2 = ofx.com.blackmagicdesign.resolvefx.Transform {
+									CtrlWShown = false,
+									SourceOp = "Instance_Instance_Transform1_1_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Source = Input {
+											SourceOp = "Instance_Instance_Merge1_1",
+											Source = "Output",
+										},
+										SourceTo = Input { },
+										controlReset = Input { Value = 0, },
+										controlGroup = Input { Value = 1, },
+										adjustGroup = Input { Value = 0, },
+										animationGroup = Input { Value = 0, },
+										advancedGroup = Input { Value = 1, },
+										blendGroup = Input { Value = 0, },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { 83.33, 115.788 } },
+								},
+								Instance_Instance_Instance_Transform1_1_1 = ofx.com.blackmagicdesign.resolvefx.Transform {
+									CtrlWShown = false,
+									SourceOp = "Instance_Instance_Transform1_1_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Source = Input {
+											SourceOp = "Instance_Instance_Instance_FastNoise1_1_1",
+											Source = "Output",
+										},
+										SourceTo = Input { },
+										controlReset = Input { Value = 0, },
+										controlGroup = Input { Value = 1, },
+										adjustGroup = Input { Value = 0, },
+										animationGroup = Input { Value = 0, },
+										advancedGroup = Input { Value = 1, },
+										blendGroup = Input { Value = 0, },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { 773.99, 96.3935 } },
+								},
+								Instance_Instance_Instance_Displace2_1 = Displace {
+									CtrlWShown = false,
+									SourceOp = "Instance_Instance_Displace2_1",
+									Inputs = {
+										EffectMask = Input {
+											SourceOp = "Instance_Instance_Instance_Transform1_1_1",
+											Source = "Output",
+										},
+										SettingsNest = Input { },
+										Input = Input {
+											SourceOp = "Instance_Instance_Instance_Merge2_1",
+											Source = "Output",
+										},
+										Foreground = Input {
+											SourceOp = "Instance_Instance_Instance_Instance_Transform1_2",
+											Source = "Output",
+										},
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { 713.99, 234.575 } },
+								},
+								Instance_Instance_Instance_Merge1_1 = Merge {
+									CtrlWShown = false,
+									SourceOp = "Instance_Instance_Merge1_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Background = Input {
+											SourceOp = "Instance_Instance_Instance_FastNoise1_2",
+											Source = "Output",
+										},
+										Foreground = Input {
+											SourceOp = "Instance_Instance_Instance_Merge2_1",
+											Source = "Output",
+										},
+										Merge = Input { },
+										Channels = Input { },
+										ReferenceSize = Input { },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { 500.66, 136.393 } },
+								},
+								Merge2_1 = Merge {
+									CtrlWShown = false,
+									Inputs = {
+										Background = Input {
+											SourceOp = "Displace1",
+											Source = "Output",
+										},
+										PerformDepthMerge = Input { Value = 0, },
+									},
+									ViewInfo = OperatorInfo { Pos = { -1466.01, 227.303 } },
+								},
+								Instance_FastNoise1_2 = FastNoise {
+									CtrlWShown = false,
+									Inputs = {
+										Width = Input { Value = 1920, },
+										Height = Input { Value = 1080, },
+										UseFrameFormatSettings = Input { Value = 1, },
+										["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+										Contrast = Input { Value = 5, },
+										Brightness = Input { Value = -1, },
+										LockXY = Input { Value = 0, },
+										XScale = Input { Value = 1290, },
+										YScale = Input { Value = 0, },
+										Seethe = Input { Value = 5, },
+									},
+									ViewInfo = OperatorInfo { Pos = { -895.34, 28.5152 } },
+								},
+								Instance_Merge2_1 = Merge {
+									CtrlWShown = false,
+									SourceOp = "Merge2_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Background = Input {
+											SourceOp = "Displace2_1",
+											Source = "Output",
+										},
+										Foreground = Input { },
+										Merge = Input { },
+										Channels = Input { },
+										ReferenceSize = Input { },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { -951.34, 215.181 } },
+								},
+								Instance_Instance_Merge2_1 = Merge {
+									CtrlWShown = false,
+									SourceOp = "Instance_Merge2_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Background = Input {
+											SourceOp = "Instance_Displace2_1",
+											Source = "Output",
+										},
+										Foreground = Input { },
+										Merge = Input { },
+										Channels = Input { },
+										ReferenceSize = Input { },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { -183.34, 207.909 } },
+								},
+								Instance_Instance_Instance_Merge2_1 = Merge {
+									CtrlWShown = false,
+									SourceOp = "Instance_Instance_Merge2_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Background = Input {
+											SourceOp = "Instance_Instance_Displace2_1",
+											Source = "Output",
+										},
+										Foreground = Input { },
+										Merge = Input { },
+										Channels = Input { },
+										ReferenceSize = Input { },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { 352.66, 212.757 } },
+								},
+								Displace2_1 = Displace {
+									CtrlWShown = false,
+									Inputs = {
+										EffectMask = Input {
+											SourceOp = "Transform1_1",
+											Source = "Output",
+										},
+										ApplyMaskInverted = Input { Value = 1, },
+										Type = Input { Value = 1, },
+										XChannel = Input { Value = 4, },
+										XRefraction = Input { Value = 0.006, },
+										YChannel = Input { Value = 4, },
+										Offset = Input { Value = -0.5, },
+										RefractionStrength = Input { Value = 0.86, },
+										Input = Input {
+											SourceOp = "Merge2_1",
+											Source = "Output",
+										},
+										Foreground = Input {
+											SourceOp = "Instance_Transform1_2",
+											Source = "Output",
+										},
+									},
+									ViewInfo = OperatorInfo { Pos = { -1150.17, 204.029 } },
+								},
+								Instance_Displace2_1 = Displace {
+									CtrlWShown = false,
+									SourceOp = "Displace2_1",
+									Inputs = {
+										EffectMask = Input {
+											SourceOp = "Instance_Transform1_1_1",
+											Source = "Output",
+										},
+										SettingsNest = Input { },
+										Input = Input {
+											SourceOp = "Instance_Merge2_1",
+											Source = "Output",
+										},
+										Foreground = Input {
+											SourceOp = "Instance_Instance_Transform1_2",
+											Source = "Output",
+										},
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { -603.34, 204.272 } },
+								},
+								Instance_Instance_Displace2_1 = Displace {
+									CtrlWShown = false,
+									SourceOp = "Instance_Displace2_1",
+									Inputs = {
+										EffectMask = Input {
+											SourceOp = "Instance_Instance_Transform1_1_1",
+											Source = "Output",
+										},
+										SettingsNest = Input { },
+										Input = Input {
+											SourceOp = "Instance_Instance_Merge2_1",
+											Source = "Output",
+										},
+										Foreground = Input {
+											SourceOp = "Instance_Instance_Instance_Transform1_2",
+											Source = "Output",
+										},
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { 155.33, 210.333 } },
+								},
+								FastNoise1_1_1 = FastNoise {
+									CtrlWShown = false,
+									Inputs = {
+										Width = Input { Value = 1920, },
+										Height = Input { Value = 1080, },
+										UseFrameFormatSettings = Input { Value = 1, },
+										["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+										Contrast = Input { Value = 5, },
+										Brightness = Input { Value = 1, },
+										LockXY = Input { Value = 0, },
+										XScale = Input { Value = 1290, },
+										YScale = Input { Value = 0, },
+									},
+									ViewInfo = OperatorInfo { Pos = { -1063.34, 20.0304 } },
+								},
+								Transform1_1 = ofx.com.blackmagicdesign.resolvefx.Transform {
+									CtrlWShown = false,
+									Inputs = {
+										Source = Input {
+											SourceOp = "FastNoise1_1_1",
+											Source = "Output",
+										},
+										controlMode = Input { Value = FuID { "TransformControlsSliders" }, },
+										controlReset = Input { Value = 0, },
+										controlGroup = Input { Value = 1, },
+										controlVisibility = Input { Value = FuID { "Show" }, },
+										posX = Input { Value = 0, },
+										posY = Input { Value = 0, },
+										zoom = Input { Value = 1, },
+										rotate = Input { Value = 90, },
+										scaleX = Input { Value = 1, },
+										scaleY = Input { Value = 1, },
+										pitch = Input { Value = 0, },
+										yaw = Input { Value = 0, },
+										flipH = Input { Value = 0, },
+										flipV = Input { Value = 0, },
+										adjustGroup = Input { Value = 0, },
+										isCrop = Input { Value = 0, },
+										cropL = Input { Value = 0, },
+										cropR = Input { Value = 0, },
+										cropT = Input { Value = 0, },
+										cropB = Input { Value = 0, },
+										edgeSoftness = Input { Value = 0, },
+										edgeRounding = Input { Value = 0, },
+										animationGroup = Input { Value = 0, },
+										serializedWarpable = Input {
+											Value = Text {
+											},
+										},
+										serializedPinnable = Input {
+											Value = Text {
+											},
+										},
+										motionBlur = Input { Value = 0, },
+										advancedGroup = Input { Value = 1, },
+										edgeBehaviour = Input { Value = FuID { "Replicate" }, },
+										CompositeType = Input { Value = FuID { "COMPOSITE_NORMAL" }, },
+										olayAntiAlias = Input { Value = 1, },
+										previewAlpha = Input { Value = 0, },
+										isLegacyCrop = Input { Value = 0, },
+										isLegacyAlphaHandling = Input { Value = 0, },
+										isEnforceBlanking = Input { Value = 0, },
+										blendGroup = Input { Value = 0, },
+										blendIn = Input { Value = 1, },
+										blend = Input { Value = 0, },
+										ignoreContentShape = Input { Value = 0, },
+										legacyIsProcessRGBOnly = Input { Value = 0, },
+										IsNoTemporalFramesReqd = Input { Value = 0, },
+										refreshTrigger = Input { Value = 1, },
+										resolvefxVersion = Input { Value = "1.4", },
+									},
+									ViewInfo = OperatorInfo { Pos = { -1068.67, 98.8185 } },
+								},
+								Instance_Transform1_1_1 = ofx.com.blackmagicdesign.resolvefx.Transform {
+									CtrlWShown = false,
+									SourceOp = "Transform1_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Source = Input {
+											SourceOp = "Instance_FastNoise1_1_1",
+											Source = "Output",
+										},
+										SourceTo = Input { },
+										controlReset = Input { Value = 0, },
+										controlGroup = Input { Value = 1, },
+										adjustGroup = Input { Value = 0, },
+										animationGroup = Input { Value = 0, },
+										advancedGroup = Input { Value = 1, },
+										blendGroup = Input { Value = 0, },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { -530.006, 98.8175 } },
+								},
+								Instance_Instance_Transform1_2 = ofx.com.blackmagicdesign.resolvefx.Transform {
+									CtrlWShown = false,
+									SourceOp = "Instance_Transform1_1_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Source = Input {
+											SourceOp = "Instance_Merge1_1",
+											Source = "Output",
+										},
+										SourceTo = Input { },
+										controlReset = Input { Value = 0, },
+										controlGroup = Input { Value = 1, },
+										adjustGroup = Input { Value = 0, },
+										animationGroup = Input { Value = 0, },
+										advancedGroup = Input { Value = 1, },
+										blendGroup = Input { Value = 0, },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { -684.672, 123.06 } },
+								},
+								Instance_Instance_Transform1_1_1 = ofx.com.blackmagicdesign.resolvefx.Transform {
+									CtrlWShown = false,
+									SourceOp = "Instance_Transform1_1_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Source = Input {
+											SourceOp = "Instance_Instance_FastNoise1_1_1",
+											Source = "Output",
+										},
+										SourceTo = Input { },
+										controlReset = Input { Value = 0, },
+										controlGroup = Input { Value = 1, },
+										adjustGroup = Input { Value = 0, },
+										animationGroup = Input { Value = 0, },
+										advancedGroup = Input { Value = 1, },
+										blendGroup = Input { Value = 0, },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { 237.99, 91.5455 } },
+								},
+								Instance_Transform1_2 = ofx.com.blackmagicdesign.resolvefx.Transform {
+									CtrlWShown = false,
+									SourceOp = "Transform1_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Source = Input {
+											SourceOp = "Merge1_1",
+											Source = "Output",
+										},
+										SourceTo = Input { },
+										controlReset = Input { Value = 0, },
+										controlGroup = Input { Value = 1, },
+										adjustGroup = Input { Value = 0, },
+										animationGroup = Input { Value = 0, },
+										advancedGroup = Input { Value = 1, },
+										blendGroup = Input { Value = 0, },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { -1222.01, 123.06 } },
+								},
+								Merge1_1 = Merge {
+									CtrlWShown = false,
+									Inputs = {
+										Background = Input {
+											SourceOp = "FastNoise1_2",
+											Source = "Output",
+										},
+										Foreground = Input {
+											SourceOp = "PipeRouter2_1",
+											Source = "Output",
+										},
+										ApplyMode = Input { Value = FuID { "Overlay" }, },
+										PerformDepthMerge = Input { Value = 0, },
+									},
+									ViewInfo = OperatorInfo { Pos = { -1264.67, 66.091 } },
+								},
+								Instance_Merge1_1 = Merge {
+									CtrlWShown = false,
+									SourceOp = "Merge1_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Background = Input {
+											SourceOp = "Instance_FastNoise1_2",
+											Source = "Output",
+										},
+										Foreground = Input {
+											SourceOp = "Instance_Merge2_1",
+											Source = "Output",
+										},
+										Merge = Input { },
+										Channels = Input { },
+										ReferenceSize = Input { },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { -803.339, 138.818 } },
+								},
+								Instance_Instance_Merge1_1 = Merge {
+									CtrlWShown = false,
+									SourceOp = "Instance_Merge1_1",
+									Inputs = {
+										EffectMask = Input { },
+										SettingsNest = Input { },
+										Background = Input {
+											SourceOp = "Instance_Instance_FastNoise1_2",
+											Source = "Output",
+										},
+										Foreground = Input {
+											SourceOp = "Instance_Instance_Merge2_1",
+											Source = "Output",
+										},
+										Merge = Input { },
+										Channels = Input { },
+										ReferenceSize = Input { },
+										CommentsNest = Input { },
+										FrameRenderScriptNest = Input { },
+										StartRenderScripts = Input { },
+										EndRenderScripts = Input { },
+									},
+									ViewInfo = OperatorInfo { Pos = { -35.3401, 131.545 } },
+								},
+								FastNoise1_2 = FastNoise {
+									CtrlWShown = false,
+									Inputs = {
+										Width = Input { Value = 1920, },
+										Height = Input { Value = 1080, },
+										UseFrameFormatSettings = Input { Value = 1, },
+										["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+										Contrast = Input { Value = 5, },
+										Brightness = Input { Value = -1, },
+										LockXY = Input { Value = 0, },
+										XScale = Input { Value = 1290, },
+										YScale = Input { Value = 0, },
+									},
+									ViewInfo = OperatorInfo { Pos = { -1432.67, 35.7879 } },
+								}
+							},
+						}
+					},
+				}
+			},
+		}
+	},
+	ActiveTool = "yugi_lumalightdamage"
+}
