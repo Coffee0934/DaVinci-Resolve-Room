@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <!-- 스크롤 시안의 디자인은 scroll-effects.css에서 따로 수정합니다. -->
+    <link rel="stylesheet" href="scroll-effects.css" />
   </head>
   <body>
     <div class="glow glow-one"></div>
@@ -85,14 +87,27 @@
         </div>
         <div class="plugin-list" id="plugin-list">
           <a class="plugin-row" href="plugins/ek100-plus.zip" download><span class="number">01</span><span class="plugin-name">ek100+</span><span class="plugin-type">ekawa님의 매크로 모음</span><span class="plugin-price free">ZIP</span><span class="arrow">↓</span></a>
-          <div class="plugin-row plugin-row--pending"><span class="number">02</span><span class="plugin-name">추가 예정</span><span class="plugin-type">추가 예정</span><span class="plugin-price">준비 중</span><span class="arrow" aria-hidden="true">—</span></div>
+          <a class="plugin-row plugin-row--pending" href="plugins/card-dance-setting.zip" download><span class="number">02</span><span class="plugin-name">카드 댄스</span><span class="plugin-type">카드 댄스 효과 모음</span><span class="plugin-price free">ZIP</span><span class="arrow" aria-hidden="true">↓</span></a>
           <div class="plugin-row plugin-row--pending"><span class="number">03</span><span class="plugin-name">추가 예정</span><span class="plugin-type">추가 예정</span><span class="plugin-price">준비 중</span><span class="arrow" aria-hidden="true">—</span></div>
           <div class="plugin-row plugin-row--pending"><span class="number">04</span><span class="plugin-name">추가 예정</span><span class="plugin-type">추가 예정</span><span class="plugin-price">준비 중</span><span class="arrow" aria-hidden="true">—</span></div>
         </div>
       </section>
 
-      <section class="workflow section" id="workflow">
-        <div class="workflow-heading"><p class="eyebrow"><span></span> ONE PROJECT, LESS CHAOS</p><h2>편집의 흐름을<br />다시 설계해 보세요.</h2></div>
+      <!-- 스크롤 시안 01: 제목은 잠시 고정되고, 현재 읽는 단계가 강조됩니다. -->
+      <section class="workflow section workflow--scroll" id="workflow" data-scroll-workflow>
+        <div class="workflow-heading">
+          <p class="eyebrow"><span></span> ONE PROJECT, LESS CHAOS</p>
+          <h2>편집의 흐름을<br />다시 설계해 보세요.</h2>
+          <!-- 장식용 진행 표시: 단계 수와 현재 번호는 자동으로 갱신됩니다. -->
+          <div class="workflow-progress" aria-hidden="true">
+            <div class="workflow-progress__meta">
+              <span>WORKFLOW</span>
+              <span><b data-workflow-current>01</b> / <span data-workflow-total>04</span></span>
+            </div>
+            <div class="workflow-progress__track"></div>
+            <p>스크롤하며 단계별로 살펴보세요 <span>↓</span></p>
+          </div>
+        </div>
         <div class="steps">
           <div><b>01</b><span>미디어 정리</span><p>폴더 구조와 메타데이터부터</p></div>
           <div><b>02</b><span>러프 컷</span><p>완벽보다 리듬에 집중하기</p></div>
@@ -103,5 +118,6 @@
     </main>
     <footer><a class="brand" href="#top"><span class="brand-mark"><i></i><i></i><i></i></span><span>RESOLVE<br />ROOM</span></a><p>FOR PEOPLE WHO MAKE THINGS MOVE.</p><p>© 2026 RESOLVE ROOM</p></footer>
     <script src="script.js"></script>
+    <script src="scroll-effects.js"></script>
   </body>
 </html>
