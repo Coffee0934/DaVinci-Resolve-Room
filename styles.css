@@ -778,154 +778,6 @@ body {
   white-space: nowrap;
 }
 
-/* Responsive layout */
-@media (max-width: 850px) {
-  .site-header nav {
-    display: none;
-  }
-
-  .header-link {
-    font-size: 11px;
-  }
-
-  .hero,.tips,.plugin-section {
-    grid-template-columns: 1fr;
-    gap: 54px;
-  }
-
-  .hero {
-    padding-top: 85px;
-  }
-
-  .hero-visual {
-    max-width: 500px;
-    width: 86%;
-    margin: auto;
-  }
-
-  .tip-grid {
-    grid-template-columns: repeat(3,1fr);
-  }
-
-  .plugin-section {
-    gap: 50px;
-  }
-
-  .section-heading h2 {
-    max-width: 500px;
-  }
-
-  .steps {
-    grid-template-columns: repeat(2,1fr);
-    gap: 35px;
-  }
-
-  .steps>div {
-    margin: 0;
-    border-right: 0;
-  }
-
-  .steps b {
-    margin-bottom: 22px;
-  }
-
-}
-
-@media (max-width: 570px) {
-  .site-header {
-    height: 70px;
-  }
-
-  .header-link {
-    display: none;
-  }
-
-  .hero {
-    min-height: auto;
-    padding-bottom: 100px;
-  }
-
-  .hero h1 {
-    font-size: 51px;
-  }
-
-  .intro {
-    font-size: 14px;
-  }
-
-  .window {
-    border-width: 5px;
-    box-shadow: 12px 12px 0 var(--coral);
-  }
-
-  .preview {
-    height: 160px;
-  }
-
-  .timeline {
-    height: 80px;
-  }
-
-  .floating-note {
-    bottom: -45px;
-    font-size: 8px;
-  }
-
-  .tips {
-    gap: 37px;
-  }
-
-  .tip-grid {
-    display: flex;
-    overflow: auto;
-    margin-right: -22px;
-    padding: 20px 22px 25px 0;
-  }
-
-  .tip-card {
-    min-width: 230px;
-    min-height: 360px;
-  }
-
-  .tip-card.featured {
-    margin-top: 0;
-  }
-
-  .plugin-row {
-    grid-template-columns: 28px 1fr auto 16px;
-    gap: 9px;
-  }
-
-  .plugin-type {
-    display: none;
-  }
-
-  .plugin-name {
-    font-size: 15px;
-  }
-
-  .steps {
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-  }
-
-  /* Footer */
-footer {
-    gap: 20px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  footer p {
-    margin: 0;
-  }
-
-  .ticker {
-    font-size: 12px;
-  }
-
-}
-
 
 /* Tip detail page */
 .tip-card-link {
@@ -1076,21 +928,6 @@ footer {
   line-height: 1.7;
 }
 
-@media (max-width: 570px) {
-  .article-page__lead {
-    margin-bottom: 48px;
-    font-size: 16px;
-  }
-
-  .shortcut-item {
-    grid-template-columns: 32px 1fr;
-    gap: 12px;
-  }
-
-  .shortcut-item p {
-    grid-column: 2;
-  }
-}
 
 /* Shortcut accordion */
 .shortcut-item {
@@ -1225,15 +1062,499 @@ footer {
   object-fit: cover;
 }
 
-@media (max-width: 570px) {
+/* ============================================================
+   반응형 화면 설정
+   - 851px 이상: 위의 기존 PC 디자인을 그대로 사용합니다.
+   - 601~850px: 태블릿 / 작은 창
+   - 600px 이하: 휴대폰
+   모바일 글자 크기·여백·배치는 아래에서 수정하세요.
+   ============================================================ */
+
+/* 태블릿: 메뉴를 숨기지 않고 두 번째 줄에 표시 */
+@media (max-width: 850px) {
+  :root {
+    --mobile-gutter: clamp(20px, 5vw, 42px);
+  }
+
+  /* 화면 밖 배경 장식 때문에 모바일 전체 화면이 축소되지 않게 합니다. */
+  .glow-one {
+    right: 0;
+  }
+
+  .glow-two {
+    left: 0;
+  }
+
+  .ticker {
+    transform: none;
+  }
+
+  .site-header {
+    height: auto;
+    min-height: 76px;
+    padding: 12px var(--mobile-gutter);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 4px 16px;
+  }
+
+  .site-header .brand,
+  .header-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .header-link {
+    font-size: 12px;
+    padding: 0;
+    border-bottom: 0;
+  }
+
+  .site-header nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+    border-top: 1px solid #d6d3cd;
+  }
+
+  .site-header nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 4px;
+  }
+
+  .site-header a:focus-visible,
+  .button:focus-visible,
+  .text-link:focus-visible,
+  .plugin-row:focus-visible {
+    outline: 2px solid var(--coral);
+    outline-offset: 3px;
+  }
+
+  /* 메인 화면: 1열 구성 + 편집 팁 카드 2열 */
+  .hero,
+  .tips,
+  .plugin-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 64px var(--mobile-gutter) 88px;
+  }
+
+  .hero-copy,
+  .section-heading,
+  .plugin-intro,
+  .plugin-list {
+    min-width: 0;
+  }
+
+  .hero h1,
+  .section h2,
+  .article-page h1 {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-visual {
+    width: min(86%, 480px);
+    margin: 0 auto;
+  }
+
+  .window {
+    width: 100%;
+  }
+
+  .section {
+    padding: 80px var(--mobile-gutter);
+  }
+
+  .tip-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .tip-card {
+    min-width: 0;
+    min-height: 340px;
+    padding: 22px;
+  }
+
+  .tip-card:hover {
+    transform: none;
+  }
+
+  .tip-card.featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 20px;
+    min-height: 240px;
+    margin-top: 0;
+    align-items: center;
+  }
+
+  .featured .card-top {
+    grid-column: 1 / -1;
+  }
+
+  .featured .card-art,
+  .featured .card-copy {
+    margin: 0;
+  }
+
+  .card-copy h3 {
+    word-break: keep-all;
+  }
+
+  .card-copy a,
+  .card-copy .coming-soon {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 13px;
+  }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 20px;
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 36px;
+  }
+
+  .steps > div {
+    margin: 0;
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  .steps b {
+    margin-bottom: 20px;
+  }
+
+  /* 상세 페이지: 44px 터치 버튼과 넓은 설명 패널 */
+  .article-page {
+    padding: 64px var(--mobile-gutter);
+  }
+
   .shortcut-row {
-    grid-template-columns: 32px 1fr 32px;
+    grid-template-columns: 28px minmax(140px, auto) minmax(0, 1fr) 44px;
     gap: 12px;
+  }
+
+  .shortcut-detail-toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .shortcut-row p {
+    line-height: 1.7;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .shortcut-detail {
+    margin-left: 0;
+  }
+
+  .shortcut-detail__content {
+    max-width: none;
+  }
+
+  /* 모바일/태블릿 푸터만 정리 — PC 화면에는 영향 없음 */
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 32px var(--mobile-gutter);
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  footer .brand {
+    min-height: 44px;
+  }
+
+  footer .brand-mark i:nth-child(2) {
+    background: var(--paper);
+  }
+
+  footer p {
+    margin: 0;
+    font: 10px/1.7 "DM Mono", monospace;
+  }
+}
+
+/* 휴대폰: 가로 스크롤 없이 모든 내용을 순서대로 읽도록 구성 */
+@media (max-width: 600px) {
+  .hero {
+    gap: 36px;
+    padding-top: 44px;
+    padding-bottom: 76px;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 8.6vw, 48px);
+    line-height: 1.15;
+    letter-spacing: -.065em;
+  }
+
+  .section h2 {
+    font-size: clamp(30px, 8vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -.06em;
+  }
+
+  .eyebrow {
+    margin-bottom: 18px;
+    font-size: 9px;
+    letter-spacing: .04em;
+  }
+
+  .intro {
+    margin: 24px 0;
+    font-size: 15px;
+    line-height: 1.85;
+    word-break: keep-all;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .hero-actions .button {
+    min-height: 48px;
+    padding: 12px;
+    gap: 8px;
+    justify-content: space-between;
+  }
+
+  .hero-visual {
+    width: calc(100% - 28px);
+  }
+
+  .window {
+    border-width: 5px;
+    box-shadow: 12px 12px 0 var(--coral);
+  }
+
+  .preview {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .sun {
+    width: 64px;
+    height: 64px;
+    top: 20px;
+  }
+
+  .timeline {
+    height: 94px;
+    padding: 14px 12px;
+  }
+
+  .floating-note {
+    right: 0;
+    bottom: -42px;
+    font-size: 9px;
+  }
+
+  .ticker {
+    font-size: 12px;
+  }
+
+  .section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .tips,
+  .plugin-section {
+    gap: 28px;
+  }
+
+  .tip-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tip-card,
+  .tip-card.featured {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    min-height: 0;
+  }
+
+  .card-art,
+  .featured .card-art {
+    min-height: 125px;
+    margin: 18px 0;
+  }
+
+  .card-copy p {
+    font-size: 12px;
+  }
+
+  .card-copy h3 {
+    margin-bottom: 6px;
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .card-copy a,
+  .card-copy .coming-soon {
+    font-size: 14px;
+  }
+
+  /* 플러그인: 이름 아래에 설명 표시, 오른쪽은 다운로드 */
+  .plugin-intro > p:not(.eyebrow) {
+    margin: 24px 0;
+    line-height: 1.85;
+    word-break: keep-all;
+  }
+
+  .plugin-row {
+    grid-template-columns: 24px minmax(0, 1fr) auto 44px;
+    grid-template-areas:
+      "number name price arrow"
+      "number type type arrow";
+    gap: 4px 8px;
+    min-height: 96px;
+    padding: 18px 0;
+  }
+
+  .plugin-row:not(.plugin-row--pending):hover {
+    padding-left: 0;
+  }
+
+  .plugin-row .number {
+    grid-area: number;
+  }
+
+  .plugin-name {
+    grid-area: name;
+    min-width: 0;
+    font-size: 18px;
+    overflow-wrap: anywhere;
+  }
+
+  .plugin-type {
+    grid-area: type;
+    display: block;
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+
+  .plugin-price {
+    grid-area: price;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .plugin-row .arrow {
+    grid-area: arrow;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+
+  .steps {
+    gap: 24px 20px;
+    margin-top: 32px;
+  }
+
+  .steps p {
+    font-size: 13px;
+    word-break: keep-all;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  /* 단축키 안내: 긴 Windows 조합도 화면 안에 표시 */
+  .article-page {
+    padding-top: 44px;
+    padding-bottom: 56px;
+  }
+
+  .article-page__meta {
+    margin-bottom: 24px;
+  }
+
+  .article-page h1 {
+    font-size: clamp(32px, 8.5vw, 48px);
+    line-height: 1.15;
+    letter-spacing: -.065em;
+  }
+
+  .article-page__lead {
+    margin: 24px 0 36px;
+    font-size: 16px;
+    line-height: 1.85;
+    word-break: keep-all;
+  }
+
+  .shortcut-platform {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .shortcut-platform__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .shortcut-platform__status {
+    font-size: 12px;
+  }
+
+  .shortcut-row {
+    grid-template-columns: 24px minmax(0, 1fr) 44px;
+    gap: 8px;
+    padding: 16px 0;
+  }
+
+  .shortcut-row .keycap {
+    min-width: 0;
+    font-size: 13px;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .shortcut-row p {
     grid-column: 2 / -1;
     grid-row: 2;
+    font-size: 14px;
   }
 
   .shortcut-detail-toggle {
@@ -1241,7 +1562,37 @@ footer {
     grid-row: 1;
   }
 
-  .shortcut-detail {
-    margin-left: 0;
+  .shortcut-detail__content {
+    padding: 16px 14px;
+  }
+
+  .shortcut-walkthrough {
+    gap: 24px;
+  }
+
+  .article-page__note {
+    margin-top: 32px;
+    padding: 18px;
+  }
+
+  .shortcut-source {
+    min-height: 44px;
+    padding-top: 8px;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* 작은 화면에서 움직임을 줄이도록 설정한 사용자를 배려합니다. */
+@media (max-width: 850px) and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ticker div {
+    animation: none;
+  }
+
+  .shortcut-detail-toggle span {
+    transition: none;
   }
 }
